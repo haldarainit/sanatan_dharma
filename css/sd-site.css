@@ -97,17 +97,19 @@
 /* --------------------------------------------------------------------------
    4. Long-Term Commitment box — colored panel, expandable, closable
    -------------------------------------------------------------------------- */
-/* Shared dark panel backdrop — deep burgundy with warm gold accents.
-   Used by Long-Term Commitment and Fundraising Support. */
+/* Dark section backdrop — deep burgundy with warm gold accents.
+   Used by the Fundraising Support section. */
 .sd-dark-section {
   background: radial-gradient(ellipse at 50% 0%, #5c1d31 0%, #36121e 46%, #1b080f 100%);
 }
 
+/* The Commitment panel is its own dark surface sitting on the light section —
+   deep emerald with warm gold, distinct from the burgundy Fundraising card. */
 .sd-commitment-box {
   position: relative;
-  background: linear-gradient(150deg, #6d2439 0%, #451626 55%, #2b0d17 100%) !important;
-  border: 1px solid rgba(245, 193, 115, .42) !important;
-  box-shadow: 0 22px 52px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+  background: linear-gradient(150deg, #1a5240 0%, #113526 55%, #0a2018 100%) !important;
+  border: 1px solid rgba(240, 196, 106, .45) !important;
+  box-shadow: 0 26px 56px rgba(9, 40, 29, .34), 0 6px 16px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .09) !important;
   overflow: hidden;
 }
 
@@ -120,7 +122,7 @@
   width: 320px;
   height: 320px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 168, 76, .30) 0%, rgba(255, 168, 76, 0) 70%);
+  background: radial-gradient(circle, rgba(240, 196, 106, .28) 0%, rgba(240, 196, 106, 0) 70%);
   pointer-events: none;
 }
 
@@ -133,15 +135,15 @@
   width: 320px;
   height: 320px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 110, 90, .16) 0%, rgba(255, 110, 90, 0) 70%);
+  background: radial-gradient(circle, rgba(64, 214, 154, .16) 0%, rgba(64, 214, 154, 0) 70%);
   pointer-events: none;
 }
 
 /* Headline colours live here, not in arbitrary Tailwind classes — the
    prebuilt CSS bundle only ships the utilities the original site used. */
-.sd-cm-accent { color: #F5C173; }
-.sd-cm-sub { color: #F3D3A6; }
-.sd-cm-lead { color: #FDF3E7; }
+.sd-cm-accent { color: #F0C46A; }
+.sd-cm-sub { color: #EBD9A8; }
+.sd-cm-lead { color: #F3FBF6; }
 
 .sd-commitment-box > * { position: relative; z-index: 1; }
 
@@ -189,7 +191,7 @@
 
 /* panel internals */
 .sd-cm-p {
-  color: #EADCE0;
+  color: #D6E7DC;
   font-size: 15px;
   line-height: 1.85;
   margin-bottom: 14px;
@@ -215,12 +217,12 @@
   width: 34px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(245, 193, 115, 0), #F5C173);
+  background: linear-gradient(90deg, rgba(240, 196, 106, 0), #F0C46A);
   flex: 0 0 auto;
 }
 
 .sd-cm-head::after {
-  background: linear-gradient(90deg, #F5C173, rgba(245, 193, 115, 0));
+  background: linear-gradient(90deg, #F0C46A, rgba(240, 196, 106, 0));
 }
 
 .sd-cm-grid {
@@ -247,21 +249,21 @@
 .sd-cm-card:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, .09);
-  border-color: rgba(245, 193, 115, .48);
+  border-color: rgba(240, 196, 106, .50);
   box-shadow: 0 12px 26px rgba(0, 0, 0, .4);
 }
 
 .sd-cm-card h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #F5C173;
+  color: #F0C46A;
   margin-bottom: 7px;
 }
 
 .sd-cm-card p {
   font-size: 14px;
   line-height: 1.8;
-  color: #EADCE0;
+  color: #D6E7DC;
 }
 
 .sd-cm-center { text-align: center; max-width: 46rem; margin: 0 auto; }
@@ -276,7 +278,7 @@
 
 .sd-cm-quote {
   text-align: center;
-  color: #F5C173;
+  color: #F0C46A;
   font-style: italic;
   font-size: 14px;
   padding-top: 20px;
