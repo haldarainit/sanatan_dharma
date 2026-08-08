@@ -373,7 +373,8 @@ const FUTURE_MISSIONS_SCRIPT = `
     const tabButtons = Array.from(tabContainer.children).filter(el => el.tagName === 'BUTTON');
     const imageTrack = section.querySelector('div.flex.w-full.h-full.transition-transform');
     const titleEl = section.querySelector('h3');
-    const descEl = section.querySelector('p.text-slate-600') || section.querySelector('p.leading-relaxed');
+    const cardPanel = section.querySelector('div.lg\\:flex-1') || section.querySelector('div.bg-white.rounded-2xl.p-6') || section.querySelector('div.bg-white.rounded-2xl.p-8');
+    const descEl = (cardPanel && cardPanel.querySelector('p')) || section.querySelector('#fm-card-desc') || null;
     
     const prevBtn = allButtons.find(b => b.innerText.includes('Previous'));
     const nextBtn = allButtons.find(b => b.innerText.includes('Next'));
