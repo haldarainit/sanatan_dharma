@@ -260,19 +260,19 @@ header a.logo-shift {
 }
 
 header a.logo-shift img {
-  margin-left: -10px !important;
+  margin-left: -2px !important;
   object-position: left center !important;
 }
 
 @media (min-width: 640px) {
   header a.logo-shift img {
-    margin-left: -16px !important;
+    margin-left: -3px !important;
   }
 }
 
 @media (min-width: 1024px) {
   header a.logo-shift img {
-    margin-left: -22px !important;
+    margin-left: -4px !important;
   }
 }
 
