@@ -246,3 +246,33 @@
 /* The compiled Tailwind build has no py-2.5 utility, so size these explicitly. */
 .sd-commitment-toggle { padding: 10px 24px !important; font-size: 14px; }
 .sd-cm-actions .sd-btn { padding: 11px 26px !important; font-size: 14px; }
+
+/* --------------------------------------------------------------------------
+   8. Header Logo Ribbon — Start at very left edge of screen
+   -------------------------------------------------------------------------- */
+header > div {
+  padding-left: 0 !important;
+}
+
+header a.logo-shift {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+header a.logo-shift img {
+  margin-left: -10px !important;
+  object-position: left center !important;
+}
+
+@media (min-width: 640px) {
+  header a.logo-shift img {
+    margin-left: -16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  header a.logo-shift img {
+    margin-left: -22px !important;
+  }
+}
+
