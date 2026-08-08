@@ -1,0 +1,336 @@
+/* ==========================================================================
+   OFFICIAL BUTTON COLOR PALETTE  —  Sanatan Dharm Manav Kalyan Foundation
+   --------------------------------------------------------------------------
+   These 30 colors are the ONLY colors permitted on buttons.
+   Every action button carries  class="... sd-btn sd-btn--<purpose>".
+   Do not introduce any other button background color anywhere on the site.
+
+   Color meaning guide
+     Orange / Amber .... Action / Energy        Green ......... Success / Growth
+     Red / Crimson ..... Urgent / Danger        Gray .......... Neutral / Disabled
+     Blue .............. Primary / Trust        Indigo / Purple  Special / Premium
+     Teal / Cyan ....... Calm / Info            Dark Teal ..... Communication / Support
+   ========================================================================== */
+
+:root {
+  --btn-donate-now: #FF9933;
+  --btn-donate-now-hover: #E3882D;
+  --btn-join-mission: #1E3A8A;
+  --btn-join-mission-hover: #1B347B;
+  --btn-need-help: #DC2626;
+  --btn-need-help-hover: #C42222;
+  --btn-start-fundraising: #F59E0B;
+  --btn-start-fundraising-hover: #DA8D0A;
+  --btn-login-register: #17A398;
+  --btn-login-register-hover: #149187;
+  --btn-share-it: #059669;
+  --btn-share-it-hover: #04865D;
+  --btn-watch-video: #E11D48;
+  --btn-watch-video-hover: #C81A40;
+  --btn-view-details: #2563EB;
+  --btn-view-details-hover: #2158D1;
+  --btn-next: #2563EB;
+  --btn-next-hover: #2158D1;
+  --btn-previous: #6B7280;
+  --btn-previous-hover: #5F6572;
+  --btn-submit: #16A34A;
+  --btn-submit-hover: #149142;
+  --btn-pay-now: #FF6B00;
+  --btn-pay-now-hover: #E35F00;
+  --btn-download: #0F766E;
+  --btn-download-hover: #0D6962;
+  --btn-upload: #0891B2;
+  --btn-upload-hover: #07819E;
+  --btn-edit: #D97706;
+  --btn-edit-hover: #C16A05;
+  --btn-delete: #DC2626;
+  --btn-delete-hover: #C42222;
+  --btn-cancel: #6B7280;
+  --btn-cancel-hover: #5F6572;
+  --btn-search: #0284C7;
+  --btn-search-hover: #0275B1;
+  --btn-refresh: #0EA5E9;
+  --btn-refresh-hover: #0C93CF;
+  --btn-add-new: #10B981;
+  --btn-add-new-hover: #0EA573;
+  --btn-contact-us: #14B8A6;
+  --btn-contact-us-hover: #12A494;
+  --btn-send-message: #06B6D4;
+  --btn-send-message-hover: #05A2BD;
+  --btn-locate-us: #0F766E;
+  --btn-locate-us-hover: #0D6962;
+  --btn-book-appointment: #8B5CF6;
+  --btn-book-appointment-hover: #7C52DB;
+  --btn-apply-now: #2563EB;
+  --btn-apply-now-hover: #2158D1;
+  --btn-register-now: #17A398;
+  --btn-register-now-hover: #149187;
+  --btn-become-a-donor: #FF9933;
+  --btn-become-a-donor-hover: #E3882D;
+  --btn-become-volunteer: #1E3A8A;
+  --btn-become-volunteer-hover: #1B347B;
+  --btn-csr-partnership: #4F46E5;
+  --btn-csr-partnership-hover: #463ECC;
+  --btn-sponsor-a-cause: #EA580C;
+  --btn-sponsor-a-cause-hover: #D04E0B;
+}
+
+/* --------------------------------------------------------------------------
+   Shared button style — identical for every button, only the color differs.
+   Radius 9999px | white text + icons | 0 4px 12px rgba(0,0,0,.10) shadow
+   Hover: 11% darker shade + 2px lift
+   -------------------------------------------------------------------------- */
+.sd-btn {
+  border-radius: 9999px !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) !important;
+  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease !important;
+}
+
+.sd-btn span,
+.sd-btn strong,
+.sd-btn small,
+.sd-btn svg,
+.sd-btn path {
+  color: #FFFFFF !important;
+}
+
+.sd-btn svg {
+  stroke: currentColor;
+}
+
+.sd-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14) !important;
+}
+
+.sd-btn:active {
+  transform: translateY(0);
+}
+
+/* Icon sizing target from the spec (24px) — only applied where the markup
+   does not already pin an explicit icon size. */
+.sd-btn > svg:only-of-type:not([class*="h-"]) {
+  width: 24px;
+  height: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   Purpose colors
+   -------------------------------------------------------------------------- */
+
+/* Donate Now */
+.sd-btn--donate-now { background-color: var(--btn-donate-now) !important; }
+.sd-btn--donate-now:hover,
+.sd-btn--donate-now:focus-visible { background-color: var(--btn-donate-now-hover) !important; }
+
+/* Join The Mission */
+.sd-btn--join-mission { background-color: var(--btn-join-mission) !important; }
+.sd-btn--join-mission:hover,
+.sd-btn--join-mission:focus-visible { background-color: var(--btn-join-mission-hover) !important; }
+
+/* Need Help */
+.sd-btn--need-help { background-color: var(--btn-need-help) !important; }
+.sd-btn--need-help:hover,
+.sd-btn--need-help:focus-visible { background-color: var(--btn-need-help-hover) !important; }
+
+/* Start Fundraising */
+.sd-btn--start-fundraising { background-color: var(--btn-start-fundraising) !important; }
+.sd-btn--start-fundraising:hover,
+.sd-btn--start-fundraising:focus-visible { background-color: var(--btn-start-fundraising-hover) !important; }
+
+/* Login / Register */
+.sd-btn--login-register { background-color: var(--btn-login-register) !important; }
+.sd-btn--login-register:hover,
+.sd-btn--login-register:focus-visible { background-color: var(--btn-login-register-hover) !important; }
+
+/* Share It */
+.sd-btn--share-it { background-color: var(--btn-share-it) !important; }
+.sd-btn--share-it:hover,
+.sd-btn--share-it:focus-visible { background-color: var(--btn-share-it-hover) !important; }
+
+/* Watch Video */
+.sd-btn--watch-video { background-color: var(--btn-watch-video) !important; }
+.sd-btn--watch-video:hover,
+.sd-btn--watch-video:focus-visible { background-color: var(--btn-watch-video-hover) !important; }
+
+/* View Details */
+.sd-btn--view-details { background-color: var(--btn-view-details) !important; }
+.sd-btn--view-details:hover,
+.sd-btn--view-details:focus-visible { background-color: var(--btn-view-details-hover) !important; }
+
+/* Next */
+.sd-btn--next { background-color: var(--btn-next) !important; }
+.sd-btn--next:hover,
+.sd-btn--next:focus-visible { background-color: var(--btn-next-hover) !important; }
+
+/* Previous */
+.sd-btn--previous { background-color: var(--btn-previous) !important; }
+.sd-btn--previous:hover,
+.sd-btn--previous:focus-visible { background-color: var(--btn-previous-hover) !important; }
+
+/* Submit */
+.sd-btn--submit { background-color: var(--btn-submit) !important; }
+.sd-btn--submit:hover,
+.sd-btn--submit:focus-visible { background-color: var(--btn-submit-hover) !important; }
+
+/* Pay Now */
+.sd-btn--pay-now { background-color: var(--btn-pay-now) !important; }
+.sd-btn--pay-now:hover,
+.sd-btn--pay-now:focus-visible { background-color: var(--btn-pay-now-hover) !important; }
+
+/* Download */
+.sd-btn--download { background-color: var(--btn-download) !important; }
+.sd-btn--download:hover,
+.sd-btn--download:focus-visible { background-color: var(--btn-download-hover) !important; }
+
+/* Upload */
+.sd-btn--upload { background-color: var(--btn-upload) !important; }
+.sd-btn--upload:hover,
+.sd-btn--upload:focus-visible { background-color: var(--btn-upload-hover) !important; }
+
+/* Edit */
+.sd-btn--edit { background-color: var(--btn-edit) !important; }
+.sd-btn--edit:hover,
+.sd-btn--edit:focus-visible { background-color: var(--btn-edit-hover) !important; }
+
+/* Delete */
+.sd-btn--delete { background-color: var(--btn-delete) !important; }
+.sd-btn--delete:hover,
+.sd-btn--delete:focus-visible { background-color: var(--btn-delete-hover) !important; }
+
+/* Cancel */
+.sd-btn--cancel { background-color: var(--btn-cancel) !important; }
+.sd-btn--cancel:hover,
+.sd-btn--cancel:focus-visible { background-color: var(--btn-cancel-hover) !important; }
+
+/* Search */
+.sd-btn--search { background-color: var(--btn-search) !important; }
+.sd-btn--search:hover,
+.sd-btn--search:focus-visible { background-color: var(--btn-search-hover) !important; }
+
+/* Refresh */
+.sd-btn--refresh { background-color: var(--btn-refresh) !important; }
+.sd-btn--refresh:hover,
+.sd-btn--refresh:focus-visible { background-color: var(--btn-refresh-hover) !important; }
+
+/* Add New */
+.sd-btn--add-new { background-color: var(--btn-add-new) !important; }
+.sd-btn--add-new:hover,
+.sd-btn--add-new:focus-visible { background-color: var(--btn-add-new-hover) !important; }
+
+/* Contact Us */
+.sd-btn--contact-us { background-color: var(--btn-contact-us) !important; }
+.sd-btn--contact-us:hover,
+.sd-btn--contact-us:focus-visible { background-color: var(--btn-contact-us-hover) !important; }
+
+/* Send Message */
+.sd-btn--send-message { background-color: var(--btn-send-message) !important; }
+.sd-btn--send-message:hover,
+.sd-btn--send-message:focus-visible { background-color: var(--btn-send-message-hover) !important; }
+
+/* Locate Us */
+.sd-btn--locate-us { background-color: var(--btn-locate-us) !important; }
+.sd-btn--locate-us:hover,
+.sd-btn--locate-us:focus-visible { background-color: var(--btn-locate-us-hover) !important; }
+
+/* Book Appointment */
+.sd-btn--book-appointment { background-color: var(--btn-book-appointment) !important; }
+.sd-btn--book-appointment:hover,
+.sd-btn--book-appointment:focus-visible { background-color: var(--btn-book-appointment-hover) !important; }
+
+/* Apply Now */
+.sd-btn--apply-now { background-color: var(--btn-apply-now) !important; }
+.sd-btn--apply-now:hover,
+.sd-btn--apply-now:focus-visible { background-color: var(--btn-apply-now-hover) !important; }
+
+/* Register Now */
+.sd-btn--register-now { background-color: var(--btn-register-now) !important; }
+.sd-btn--register-now:hover,
+.sd-btn--register-now:focus-visible { background-color: var(--btn-register-now-hover) !important; }
+
+/* Become a Donor */
+.sd-btn--become-a-donor { background-color: var(--btn-become-a-donor) !important; }
+.sd-btn--become-a-donor:hover,
+.sd-btn--become-a-donor:focus-visible { background-color: var(--btn-become-a-donor-hover) !important; }
+
+/* Become Volunteer */
+.sd-btn--become-volunteer { background-color: var(--btn-become-volunteer) !important; }
+.sd-btn--become-volunteer:hover,
+.sd-btn--become-volunteer:focus-visible { background-color: var(--btn-become-volunteer-hover) !important; }
+
+/* CSR Partnership */
+.sd-btn--csr-partnership { background-color: var(--btn-csr-partnership) !important; }
+.sd-btn--csr-partnership:hover,
+.sd-btn--csr-partnership:focus-visible { background-color: var(--btn-csr-partnership-hover) !important; }
+
+/* Sponsor a Cause */
+.sd-btn--sponsor-a-cause { background-color: var(--btn-sponsor-a-cause) !important; }
+.sd-btn--sponsor-a-cause:hover,
+.sd-btn--sponsor-a-cause:focus-visible { background-color: var(--btn-sponsor-a-cause-hover) !important; }
+
+/* --------------------------------------------------------------------------
+   Legacy color quarantine
+   --------------------------------------------------------------------------
+   Buttons that are not action buttons (filter chips, tabs, selection cards)
+   keep their own size and shape, but any off-palette fill they still carry is
+   snapped to the nearest approved palette color. Scoped to <a>/<button> only,
+   and never applied to .sd-btn (which already owns its color).
+   -------------------------------------------------------------------------- */
+/* #FF6F00 -> Pay Now orange */
+a.bg-\[\#FF6F00\]:not(.sd-btn), button.bg-\[\#FF6F00\]:not(.sd-btn) { background-color: #FF6B00 !important; }
+/* #FF6F00 hover -> Pay Now orange */
+a.hover\:bg-\[\#FF6F00\]:not(.sd-btn):hover, button.hover\:bg-\[\#FF6F00\]:not(.sd-btn):hover { background-color: #FF6B00 !important; }
+/* #e06200 hover -> darker Pay Now orange */
+a.hover\:bg-\[\#e06200\]:not(.sd-btn):hover, button.hover\:bg-\[\#e06200\]:not(.sd-btn):hover { background-color: #E35F00 !important; }
+/* #cc4a00 hover -> darker Pay Now orange */
+a.hover\:bg-\[\#cc4a00\]:not(.sd-btn):hover, button.hover\:bg-\[\#cc4a00\]:not(.sd-btn):hover { background-color: #E35F00 !important; }
+/* #e35300 -> Sponsor a Cause orange */
+a.bg-\[\#e35300\]:not(.sd-btn), button.bg-\[\#e35300\]:not(.sd-btn) { background-color: #EA580C !important; }
+/* brand navy -> Join The Mission navy */
+a.bg-\[\#0D1B2A\]:not(.sd-btn), button.bg-\[\#0D1B2A\]:not(.sd-btn) { background-color: #1E3A8A !important; }
+/* #F97316 -> Sponsor a Cause orange */
+a.bg-saffron-500:not(.sd-btn), button.bg-saffron-500:not(.sd-btn) { background-color: #EA580C !important; }
+/* #F97316 hover -> Sponsor a Cause orange */
+a.hover\:bg-saffron-500:not(.sd-btn):hover, button.hover\:bg-saffron-500:not(.sd-btn):hover { background-color: #EA580C !important; }
+/* saffron-600 hover -> Sponsor a Cause orange */
+a.hover\:bg-saffron-600:not(.sd-btn):hover, button.hover\:bg-saffron-600:not(.sd-btn):hover { background-color: #EA580C !important; }
+/* saffron-700 hover -> darker Sponsor orange */
+a.hover\:bg-saffron-700:not(.sd-btn):hover, button.hover\:bg-saffron-700:not(.sd-btn):hover { background-color: #D04E0B !important; }
+/* orange-600 hover -> Sponsor a Cause orange */
+a.hover\:bg-orange-600:not(.sd-btn):hover, button.hover\:bg-orange-600:not(.sd-btn):hover { background-color: #EA580C !important; }
+/* orange-700 hover -> darker Sponsor orange */
+a.hover\:bg-orange-700:not(.sd-btn):hover, button.hover\:bg-orange-700:not(.sd-btn):hover { background-color: #D04E0B !important; }
+/* slate-900 -> Neutral gray */
+a.bg-slate-900:not(.sd-btn), button.bg-slate-900:not(.sd-btn) { background-color: #6B7280 !important; }
+/* slate-800 -> Neutral gray */
+a.bg-slate-800:not(.sd-btn), button.bg-slate-800:not(.sd-btn) { background-color: #6B7280 !important; }
+/* slate-800 hover -> darker Neutral gray */
+a.hover\:bg-slate-800:not(.sd-btn):hover, button.hover\:bg-slate-800:not(.sd-btn):hover { background-color: #5F6672 !important; }
+/* #1976D2 -> Primary blue */
+a.bg-\[\#1976D2\]:not(.sd-btn), button.bg-\[\#1976D2\]:not(.sd-btn) { background-color: #2563EB !important; }
+/* #1565C0 hover -> darker Primary blue */
+a.hover\:bg-\[\#1565C0\]:not(.sd-btn):hover, button.hover\:bg-\[\#1565C0\]:not(.sd-btn):hover { background-color: #2159D1 !important; }
+/* #00897B -> Dark teal */
+a.bg-\[\#00897B\]:not(.sd-btn), button.bg-\[\#00897B\]:not(.sd-btn) { background-color: #0F766E !important; }
+/* #00796B hover -> darker Dark teal */
+a.hover\:bg-\[\#00796B\]:not(.sd-btn):hover, button.hover\:bg-\[\#00796B\]:not(.sd-btn):hover { background-color: #0D6962 !important; }
+/* #C62828 -> Urgent red */
+a.bg-\[\#C62828\]:not(.sd-btn), button.bg-\[\#C62828\]:not(.sd-btn) { background-color: #DC2626 !important; }
+/* #C62828 hover -> darker Urgent red */
+a.hover\:bg-\[\#C62828\]:not(.sd-btn):hover, button.hover\:bg-\[\#C62828\]:not(.sd-btn):hover { background-color: #C42222 !important; }
+/* #B71C1C hover -> darker Urgent red */
+a.hover\:bg-\[\#B71C1C\]:not(.sd-btn):hover, button.hover\:bg-\[\#B71C1C\]:not(.sd-btn):hover { background-color: #C42222 !important; }
+/* #F57C00 hover -> darker Amber */
+a.hover\:bg-\[\#F57C00\]:not(.sd-btn):hover, button.hover\:bg-\[\#F57C00\]:not(.sd-btn):hover { background-color: #DA8C0A !important; }
+/* #2E7D32 hover -> darker Success green */
+a.hover\:bg-\[\#2E7D32\]:not(.sd-btn):hover, button.hover\:bg-\[\#2E7D32\]:not(.sd-btn):hover { background-color: #149142 !important; }
+/* #15803D hover -> darker Success green */
+a.hover\:bg-\[\#15803D\]:not(.sd-btn):hover, button.hover\:bg-\[\#15803D\]:not(.sd-btn):hover { background-color: #149142 !important; }
+/* #1D4ED8 hover -> darker Primary blue */
+a.hover\:bg-\[\#1D4ED8\]:not(.sd-btn):hover, button.hover\:bg-\[\#1D4ED8\]:not(.sd-btn):hover { background-color: #2159D1 !important; }
+/* #E6821B hover -> darker Donate orange */
+a.hover\:bg-\[\#E6821B\]:not(.sd-btn):hover, button.hover\:bg-\[\#E6821B\]:not(.sd-btn):hover { background-color: #E3882D !important; }
