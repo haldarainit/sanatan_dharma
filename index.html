@@ -178,44 +178,35 @@
       });
     }
 
-    /* Auto-advance the slides. Slow enough to read the full landing text, pauses
-       while the pointer is over the section, and stops once a tab is picked. */
+    /* Auto-advance the slides, continuously. Picking a tab does not stop the
+       rotation — it just restarts the clock so that slide gets a full turn. */
     (function () {
+      var SLIDE_MS = 6000;
       var current = 0;
       var timer = null;
-      var stopped = false;
 
       function tick() {
-        if (stopped) return;
         current = (current + 1) % fmData.length;
         switchFutureMission(current);
       }
 
-      function start() {
-        if (stopped || timer) return;
-        timer = setInterval(tick, 8000);
-      }
-
-      function pause() {
-        if (timer) { clearInterval(timer); timer = null; }
+      function restart() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(tick, SLIDE_MS);
       }
 
       function init() {
-        var section = document.getElementById('future-missions');
-        if (!section) return;
+        var btns = document.querySelectorAll('.fm-tab-btn');
+        if (!btns.length) return;
 
-        section.addEventListener('mouseenter', pause);
-        section.addEventListener('mouseleave', start);
-
-        document.querySelectorAll('.fm-tab-btn').forEach(function (btn, i) {
+        btns.forEach(function (btn, i) {
           btn.addEventListener('click', function () {
-            stopped = true;
-            pause();
             current = i;
+            restart();
           });
         });
 
-        start();
+        restart();
       }
 
       if (document.readyState === 'loading') {
