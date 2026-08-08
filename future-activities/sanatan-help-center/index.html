@@ -7,10 +7,12 @@
   <title>सनातन हेल्प सेंटर | सनातन धर्म मानव कल्याण फाउंडेशन</title>
   <link rel="icon" href="/favicon.ico"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/_next/static/css/441af1d1000b02be.css"/>
+  <link rel="stylesheet" href="/css/sd-buttons.css"/>
+  <link rel="stylesheet" href="/css/sd-site.css"/>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Noto Sans Devanagari',sans-serif;background:#fdfbf7;color:#1a1a2e;min-height:100vh}
     .deva{font-family:'Noto Sans Devanagari','Noto Serif Devanagari',sans-serif}
     .hero-section{background:linear-gradient(135deg,#fff8f0 0%,#fdf4ea 50%,#fef9f2 100%);border-bottom:1px solid #f0e8d8;padding:3rem 1rem 2.5rem}
@@ -26,30 +28,24 @@
     .desc-card{background:#fff;border-radius:20px;padding:2rem 2rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1px solid #f0ece6;margin-bottom:2rem;display:flex;flex-direction:column;gap:1.25rem}
     .section-heading{font-size:1.05rem;font-weight:700;color:#e35300;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
     .divider{width:40px;height:3px;background:linear-gradient(90deg,#e35300,#ff8c00);border-radius:2px;margin-bottom:1.25rem}
-    .support-card{background:linear-gradient(135deg,#fff8f0,#fef3e2);border-radius:20px;padding:2rem;border:1px solid #f5dfc0;margin-bottom:2rem}
-    .support-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1a1a2e;margin-bottom:0.5rem}
-    .support-subtitle{font-size:0.9rem;color:#7c6f5c;margin-bottom:1.5rem}
-    .support-items{display:flex;flex-direction:column;gap:0.85rem;margin-bottom:1.5rem}
-    .support-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border-radius:12px;padding:0.85rem 1rem;border:1px solid #f0e8d8}
-    .support-icon{font-size:1.1rem;min-width:24px}
-    .support-item-title{font-weight:700;color:#1a1a2e;font-size:0.88rem;margin-bottom:2px}
-    .support-item-desc{font-size:0.82rem;color:#7c6f5c;line-height:1.5}
-    .action-btns{display:flex;flex-wrap:wrap;gap:0.75rem}
-    .btn-donate{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#e35300,#ff6b1a);color:#fff;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px rgba(227,83,0,0.25);transition:all .2s}
-    .btn-donate:hover{background:linear-gradient(135deg,#c44800,#e85c0d);transform:translateY(-1px)}
-    .btn-join{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:#1a1a2e;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;border:2px solid #e35300;transition:all .2s}
-    .btn-join:hover{background:#fff8f0;transform:translateY(-1px)}
-    .btn-share{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:#1a1a2e;color:#fff;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:all .2s;cursor:pointer;border:none}
-    .btn-share:hover{background:#2d2d4a;transform:translateY(-1px)}
+    .support-card{background:linear-gradient(135deg,#fff8f0,#fef3e2);border-radius:20px;padding:2rem;border:1px solid #f5dfc0;margin-bottom:2rem;text-align:center}
+    .support-title{font-family:'Playfair Display','Noto Serif Devanagari',serif;font-size:1.4rem;font-weight:700;color:#1a1a2e;margin-bottom:1.5rem}
+    .action-btns{display:flex;flex-wrap:wrap;gap:0.85rem;justify-content:center}
+    .btn-donate{flex:1;min-width:140px;max-width:220px;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#e35300,#ff6b1a);color:#fff;font-weight:700;font-size:0.95rem;padding:0.85rem 1.25rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(227,83,0,0.3);transition:all .2s}
+    .btn-donate:hover{background:linear-gradient(135deg,#c44800,#e85c0d);transform:translateY(-2px);color:#fff}
+    .btn-join{flex:1;min-width:140px;max-width:220px;display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#e35300;font-weight:700;font-size:0.95rem;padding:0.85rem 1.25rem;border-radius:999px;text-decoration:none;border:2px solid #e35300;transition:all .2s}
+    .btn-join:hover{background:#fff8f0;transform:translateY(-2px)}
+    .btn-share{flex:1;min-width:140px;max-width:220px;display:flex;align-items:center;justify-content:center;gap:8px;background:#1a1a2e;color:#fff;font-weight:700;font-size:0.95rem;padding:0.85rem 1.25rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.2);transition:all .2s;cursor:pointer;border:none}
+    .btn-share:hover{background:#2d2d4a;transform:translateY(-2px)}
     .sankalp-box{background:linear-gradient(135deg,#1a1a2e,#2d1a00);border-radius:16px;padding:1.25rem 1.5rem;color:#fff;text-align:center;font-size:0.95rem;line-height:1.7;font-weight:500;letter-spacing:0.3px;margin-bottom:2rem}
     .back-btn{display:inline-flex;align-items:center;gap:6px;color:#e35300;font-weight:600;font-size:0.88rem;text-decoration:none;margin-bottom:1.5rem}
     .back-btn:hover{text-decoration:underline}
-    @media(max-width:640px){.desc-card{padding:1.25rem}.content-wrap{padding:1.5rem 0.9rem}.action-btns{flex-direction:column}.btn-donate,.btn-join,.btn-share{min-width:auto}}
+    @media(max-width:640px){.desc-card{padding:1.25rem}.content-wrap{padding:1.5rem 0.9rem}.action-btns{flex-direction:column;align-items:stretch}.btn-donate,.btn-join,.btn-share{max-width:none;width:100%}}
   </style>
 </head>
-<body>
-  <!-- include nav partial -->
-  <div id="nav-root"></div>
+<body class="bg-cream text-ink font-sans antialiased">
+  <!-- SITE HEADER -->
+  <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white shadow-md transition-all"><div class="mx-auto flex h-[82px] sm:h-[90px] md:h-[96px] max-w-screen-2xl items-center justify-between pl-0 pr-2 sm:pr-6 lg:pr-10 py-1"><a class="flex items-center shrink-0 group py-1 min-w-0 logo-shift" href="/"><img src="/img/logo.jpeg" alt="Sanatan Dharm Manav Kalyan Foundation" class="h-14 xs:h-15 sm:h-18 md:h-[74px] lg:h-[78px] w-auto max-w-[220px] xs:max-w-[280px] sm:max-w-none object-contain mix-blend-multiply transition-transform group-hover:scale-[1.02]"/></a><nav class="hidden lg:flex items-center ml-4 xl:ml-6 flex-1 min-w-0 justify-center"><a class="group relative inline-flex items-center px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap" href="/"><span>Home</span><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a><a class="group relative inline-flex items-center px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap" href="/about"><span>About</span><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>Activities</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>Donation</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div><a class="group relative inline-flex items-center px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap" href="/membership"><span>Join Us</span><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>Media</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>Portal</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>Partners</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div><div class="relative group"><button class="group relative inline-flex items-center gap-0.5 px-2 xl:px-2.5 py-2 text-[11px] font-semibold tracking-[0.04em] uppercase text-[#0D1B2A] hover:text-[#FF6F00] transition-colors whitespace-nowrap outline-none cursor-pointer"><span>More</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 text-[#0D1B2A]/70 group-hover:text-[#FF6F00]"><path d="m6 9 6 6 6-6"></path></svg><span class="pointer-events-none absolute left-2 right-2 -bottom-0.5 h-px bg-[#FF6F00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></button></div></nav><div class="flex items-center gap-2 shrink-0"><div class="relative hidden sm:block"><button class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0D1B2A]/85 hover:text-[#FF6F00] transition-colors cursor-pointer outline-none whitespace-nowrap bg-transparent border-0 px-1.5 py-2" aria-label="Select Language"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-3.5 w-3.5 text-[#FF6F00]"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><span>Sanskrit (संस्कृत)</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3 w-3 transition-transform duration-200 "><path d="m6 9 6 6 6-6"></path></svg></button></div><a class="inline-flex items-center justify-center font-bold text-[12px] xs:text-xs text-white h-8 sm:h-9 px-3 xs:px-4 rounded-full whitespace-nowrap bg-[#FF9933] border border-orange-200/50 shadow-md shadow-[#FF9933]/20 hover:bg-[#E6821B] transition-all cursor-pointer shrink-0 sd-btn sd-btn--donate-now sd-donate-signal" href="/donate"><span>Donate Now</span></a><button class="lg:hidden p-2 -mr-1 rounded-md text-[#0D1B2A] hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer" aria-label="Open Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div></header>
 
   <!-- HERO -->
   <section class="hero-section">
@@ -57,7 +53,7 @@
       <div class="breadcrumb">
         <a href="/">होम</a>
         <span>›</span>
-        <a href="/#future-missions">आगामी सेवा मिशन</a>
+        <a href="/future-activities">आगामी सेवा मिशन</a>
         <span>›</span>
         <span>सनातन हेल्प सेंटर</span>
       </div>
@@ -70,7 +66,7 @@
 
   <!-- CONTENT -->
   <div class="content-wrap">
-    <a href="/#future-missions" class="back-btn">← आगामी सेवा मिशन</a>
+    <a href="/future-activities" class="back-btn">← आगामी सेवा मिशन सूची पर वापस जाएँ</a>
 
     <!-- Description card -->
     <div class="desc-card">
@@ -78,43 +74,19 @@
         <p class="section-heading deva">🔶 मिशन परिचय</p>
         <div class="divider"></div>
       </div>
-      <p class="deva text-slate-700 text-base leading-relaxed text-justify">सनातन हेल्प सेंटर एक सेवा-आधारित सहायता मंच है, जिसका उद्देश्य जरूरतमंद व्यक्तियों एवं परिवारों तक समय पर सही जानकारी, मार्गदर्शन और सहयोग पहुँचाना है। अनेक लोग जानकारी के अभाव, संसाधनों की कमी या उचित मार्गदर्शन न मिलने के कारण कठिनाइयों का सामना करते हैं; यह केंद्र उनके लिए सहयोग का माध्यम बनने का प्रयास करेगा।</p>
-            <p class="deva text-slate-700 text-base leading-relaxed text-justify">इस केंद्र के माध्यम से सामाजिक, कानूनी, प्रशासनिक, दस्तावेज़ी, रोजगार, स्वास्थ्य, शिक्षा तथा अन्य आवश्यक सेवाओं से संबंधित प्राथमिक मार्गदर्शन एवं सहायता उपलब्ध कराने का प्रयास किया जाएगा। हमारा लक्ष्य सहायता को सरल, सम्मानजनक और जरूरतमंदों तक सुलभ बनाना है।</p>
-            <p class="deva text-slate-700 text-base leading-relaxed text-justify">सनातन हेल्प सेंटर द्वारा प्रदान की जाने वाली मार्गदर्शन एवं सहयोग सेवाएँ पूर्णतः निःशुल्क (Free of Cost) होंगी। केवल सरकारी विभागों, संस्थाओं अथवा तृतीय-पक्ष सेवा प्रदाताओं द्वारा निर्धारित शुल्क, फीस या अन्य देय राशि का भुगतान संबंधित व्यक्ति को स्वयं करना होगा।</p>
-            <p class="deva text-slate-700 text-base leading-relaxed text-justify">हमारा विश्वास है कि सही समय पर मिला मार्गदर्शन किसी व्यक्ति, परिवार या जीवन की दिशा बदल सकता है। यह केंद्र सेवा, करुणा और सामाजिक उत्तरदायित्व की भावना पर आधारित एक जनसहयोग पहल है।</p>
-            <p class="deva text-slate-700 text-base leading-relaxed text-justify">आपका सहयोग इस सेवा मिशन को नई शक्ति दे सकता है।</p>
+      <p class="deva text-slate-700 text-base sm:text-[17px] leading-relaxed text-justify">सनातन हेल्प सेंटर एक सेवा-आधारित सहायता मंच है, जिसका उद्देश्य जरूरतमंद व्यक्तियों एवं परिवारों तक समय पर सही जानकारी, मार्गदर्शन और सहयोग पहुँचाना है। अनेक लोग जानकारी के अभाव, संसाधनों की कमी या उचित मार्गदर्शन न मिलने के कारण कठिनाइयों का सामना करते हैं; यह केंद्र उनके लिए सहयोग का माध्यम बनने का प्रयास करेगा।</p>
+            <p class="deva text-slate-700 text-base sm:text-[17px] leading-relaxed text-justify">इस केंद्र के माध्यम से सामाजिक, कानूनी, प्रशासनिक, दस्तावेज़ी, रोजगार, स्वास्थ्य, शिक्षा तथा अन्य आवश्यक सेवाओं से संबंधित प्राथमिक मार्गदर्शन एवं सहायता उपलब्ध कराने का प्रयास किया जाएगा। हमारा लक्ष्य सहायता को सरल, सम्मानजनक और जरूरतमंदों तक सुलभ बनाना है।</p>
+            <p class="deva text-slate-700 text-base sm:text-[17px] leading-relaxed text-justify">सनातन हेल्प सेंटर द्वारा प्रदान की जाने वाली मार्गदर्शन एवं सहयोग सेवाएँ पूर्णतः निःशुल्क (Free of Cost) होंगी। केवल सरकारी विभागों, संस्थाओं अथवा तृतीय-पक्ष सेवा प्रदाताओं द्वारा निर्धारित शुल्क, फीस या अन्य देय राशि का भुगतान संबंधित व्यक्ति को स्वयं करना होगा।</p>
+            <p class="deva text-slate-700 text-base sm:text-[17px] leading-relaxed text-justify">हमारा विश्वास है कि सही समय पर मिला मार्गदर्शन किसी व्यक्ति, परिवार या जीवन की दिशा बदल सकता है। यह केंद्र सेवा, करुणा और सामाजिक उत्तरदायित्व की भावना पर आधारित एक जनसहयोग पहल है।</p>
+            <p class="deva text-slate-700 text-base sm:text-[17px] leading-relaxed text-justify">आपका सहयोग इस सेवा मिशन को नई शक्ति दे सकता है।</p>
     </div>
 
-    <!-- Sankalp -->
+    <!-- Sankalp Box -->
     <div class="sankalp-box deva">🚩 कोई भी जरूरतमंद अकेला न रहे — यही सनातन हेल्प सेंटर का संकल्प है।</div>
 
-    <!-- Support card -->
+    <!-- Support Action Card (Only Bottom 3 Action Buttons) -->
     <div class="support-card">
-      <h2 class="support-title deva">आपका सहयोग इस मिशन को नई शक्ति दे सकता है</h2>
-      <p class="support-subtitle deva">इस सेवा अभियान में अपनी भूमिका चुनें</p>
-      <div class="support-items">
-        <div class="support-item">
-          <span class="support-icon">💛</span>
-          <div>
-            <p class="support-item-title deva">Donate</p>
-            <p class="support-item-desc deva">हेल्प सेंटर की सहायता सेवाओं को अधिक लोगों तक पहुँचाने में सहयोग करें।</p>
-          </div>
-        </div>
-        <div class="support-item">
-          <span class="support-icon">🤝</span>
-          <div>
-            <p class="support-item-title deva">Join</p>
-            <p class="support-item-desc deva">स्वयंसेवक, मार्गदर्शक या सहयोगी बनकर इस सेवा अभियान से जुड़ें।</p>
-          </div>
-        </div>
-        <div class="support-item">
-          <span class="support-icon">📢</span>
-          <div>
-            <p class="support-item-title deva">Share</p>
-            <p class="support-item-desc deva">इस संदेश को अधिक से अधिक लोगों तक पहुँचाएँ ताकि जरूरतमंद सही सहायता तक पहुँच सकें।</p>
-          </div>
-        </div>
-      </div>
+      <h2 class="support-title deva">सहयोग एवं सहभागिता माध्यम</h2>
       <div class="action-btns">
         <a href="/donate" class="btn-donate">💛 Donate</a>
         <a href="/membership" class="btn-join">🤝 Join</a>
@@ -122,15 +94,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Inject nav from root page via fetch
-    fetch('/').then(r=>r.text()).then(html=>{
-      const parser=new DOMParser();
-      const doc=parser.parseFromString(html,'text/html');
-      const nav=doc.querySelector('nav')||doc.querySelector('header');
-      if(nav){document.getElementById('nav-root').appendChild(nav.cloneNode(true))}
-    }).catch(()=>{});
-  </script>
 </body>
 </html>
