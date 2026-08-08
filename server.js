@@ -1,3 +1,39 @@
+
+const READ_MORE_NAVIGATION_SCRIPT = `
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('button, a, .sd-btn');
+    if (!btn) return;
+    const text = (btn.innerText || btn.textContent || '').trim();
+    if (text.includes('Read More') || text.includes('Detail')) {
+      const card = btn.closest('.bg-white, .rounded-2xl, div[class*="border"], div[class*="shadow"]');
+      if (card) {
+        const cardText = card.innerText || card.textContent || '';
+        let targetUrl = '';
+        if (cardText.includes('सनातन हेल्प सेंटर') || cardText.includes('Help Center')) {
+          targetUrl = '/future-activities/sanatan-help-center';
+        } else if (cardText.includes('भोजनालय') || cardText.includes('Bhojanalaya')) {
+          targetUrl = '/future-activities/sanatan-bhojanalaya';
+        } else if (cardText.includes('कौशल') || cardText.includes('Skill')) {
+          targetUrl = '/future-activities/skill-development';
+        } else if (cardText.includes('शेल्टर') || cardText.includes('आश्रय') || cardText.includes('Shelter')) {
+          targetUrl = '/future-activities/ashray-dham';
+        } else if (cardText.includes('गुरुकुल') || cardText.includes('Gurukul')) {
+          targetUrl = '/future-activities/gurukul-sansar-kendra';
+        }
+
+        if (targetUrl) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = targetUrl;
+        }
+      }
+    }
+  }, true);
+})();
+</script>
+`;
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -598,7 +634,7 @@ const requestHandler = (req, res) => {
         htmlStr = htmlStr.replace(/style="[^"]*height\s*:\s*0px[^"]*"/gi, 'style="opacity:1;height:auto"');
         htmlStr = htmlStr.replace(/style="transform:\s*translateX\(calc\(-5[^"]*\)"/gi, 'style="transform:translateX(0px)"');
 
-        htmlStr = htmlStr.replace('</body>', DROPDOWN_SCRIPT + HERO_SLIDER_SCRIPT + FUTURE_MISSIONS_SCRIPT + VOLUNTEER_CAROUSEL_SCRIPT + '</body>');
+        htmlStr = htmlStr.replace('</body>', DROPDOWN_SCRIPT + HERO_SLIDER_SCRIPT + FUTURE_MISSIONS_SCRIPT + VOLUNTEER_CAROUSEL_SCRIPT + READ_MORE_NAVIGATION_SCRIPT + '</body>');
 
         res.writeHead(200, {
           'Content-Type': contentType,
