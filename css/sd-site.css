@@ -277,19 +277,35 @@ header a.logo-shift img {
 }
 
 /* --------------------------------------------------------------------------
-   9. Announcement Marquee Ticker — Scroll Left-to-Right
+   9. Mobile Marquee Animation — Right to Left Flow
+   Ensure all marquee streams (badges, announcements, partner logos)
+   scroll smoothly from Right to Left on mobile devices.
    -------------------------------------------------------------------------- */
-@keyframes marqueeReverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+@keyframes sdMarqueeRightToLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-marquee {
-  animation: marqueeReverse 22s linear infinite !important;
+@keyframes sdMarqueeRightToLeftFull {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 767px) {
+  .animate-marquee,
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-marquee-right-half {
+    animation-direction: normal !important;
+  }
+
+  .animate-marquee-right {
+    animation: sdMarqueeRightToLeftFull 30s linear infinite !important;
+  }
+
+  .animate-marquee-right-half {
+    animation: sdMarqueeRightToLeft 22s linear infinite !important;
+  }
 }
 
 
