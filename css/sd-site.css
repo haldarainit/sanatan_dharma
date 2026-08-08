@@ -292,19 +292,20 @@ header a.logo-shift img {
 }
 
 @media (max-width: 767px) {
-  .animate-marquee,
-  .animate-marquee-left,
-  .animate-marquee-right,
-  .animate-marquee-right-half {
-    animation-direction: normal !important;
+  .animate-marquee {
+    animation: sdMarqueeRightToLeft 12s linear infinite !important;
+  }
+
+  .animate-marquee-left {
+    animation: sdMarqueeRightToLeftFull 16s linear infinite !important;
   }
 
   .animate-marquee-right {
-    animation: sdMarqueeRightToLeftFull 30s linear infinite !important;
+    animation: sdMarqueeRightToLeftFull 16s linear infinite !important;
   }
 
   .animate-marquee-right-half {
-    animation: sdMarqueeRightToLeft 22s linear infinite !important;
+    animation: sdMarqueeRightToLeft 14s linear infinite !important;
   }
 }
 
