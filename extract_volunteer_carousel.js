@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const html = fs.readFileSync('index.html', 'utf8');
-const idx = html.indexOf('Volunteer • Ecosystem');
+const idx = html.indexOf('Volunteer Ecosystem');
 
 if (idx !== -1) {
   console.log('Volunteer Ecosystem Section in index.html:');
