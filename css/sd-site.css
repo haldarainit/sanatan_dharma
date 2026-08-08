@@ -99,22 +99,22 @@
    -------------------------------------------------------------------------- */
 .sd-commitment-box {
   position: relative;
-  background: linear-gradient(135deg, #FFF7ED 0%, #FFEBD2 48%, #FFE0BC 100%) !important;
-  border: 2px solid #FF9933 !important;
-  box-shadow: 0 12px 34px rgba(234, 88, 12, 0.13) !important;
+  background: linear-gradient(150deg, #2b1d14 0%, #1a1009 52%, #0d0805 100%) !important;
+  border: 1px solid rgba(212, 155, 75, .42) !important;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .04) !important;
   overflow: hidden;
 }
 
-/* soft saffron glow in the corners */
+/* soft gold glow in the corners */
 .sd-commitment-box::before {
   content: "";
   position: absolute;
   top: -90px;
   right: -90px;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 153, 51, .28) 0%, rgba(255, 153, 51, 0) 70%);
+  background: radial-gradient(circle, rgba(212, 155, 75, .22) 0%, rgba(212, 155, 75, 0) 70%);
   pointer-events: none;
 }
 
@@ -164,7 +164,7 @@
 
 /* panel internals */
 .sd-cm-p {
-  color: #4B5563;
+  color: #bfb8b2;
   font-size: 15px;
   line-height: 1.85;
   margin-bottom: 14px;
@@ -175,14 +175,24 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
-  color: #1F2937;
+  color: #ffffff;
   padding-top: 30px;
   padding-bottom: 16px;
 }
 
-.sd-cm-head span:first-child { color: #DC2626; }
+/* gold rules flanking each panel heading, in place of the old flag glyph */
+.sd-cm-head::before,
+.sd-cm-head::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  border-radius: 999px;
+  background: #d49b4b;
+  flex: 0 0 auto;
+}
 
 .sd-cm-grid {
   display: grid;
@@ -196,31 +206,32 @@
 }
 
 .sd-cm-card {
-  background: #fff;
-  border: 1px solid #FFE0BC;
-  border-left: 4px solid #FF9933;
+  background: rgba(255, 255, 255, .045);
+  border: 1px solid rgba(212, 155, 75, .22);
+  border-left: 4px solid #d49b4b;
   border-radius: 14px;
   padding: 18px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .sd-cm-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(234, 88, 12, .12);
+  border-color: rgba(212, 155, 75, .5);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .4);
 }
 
 .sd-cm-card h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #C2410C;
+  color: #e0b56d;
   margin-bottom: 7px;
 }
 
 .sd-cm-card p {
   font-size: 14px;
   line-height: 1.8;
-  color: #4B5563;
+  color: #bfb8b2;
 }
 
 .sd-cm-center { text-align: center; max-width: 46rem; margin: 0 auto; }
@@ -235,7 +246,7 @@
 
 .sd-cm-quote {
   text-align: center;
-  color: #6B7280;
+  color: #d49b4b;
   font-style: italic;
   font-size: 14px;
   padding-top: 20px;
