@@ -63,8 +63,8 @@
   --btn-book-appointment-hover: #7C52DB;
   --btn-apply-now: #2563EB;
   --btn-apply-now-hover: #2158D1;
-  --btn-register-now: #17A398;
-  --btn-register-now-hover: #149187;
+  --btn-register-now: #EA580C;
+  --btn-register-now-hover: #D04E0B;
   --btn-become-a-donor: #FF9933;
   --btn-become-a-donor-hover: #E3882D;
   --btn-become-volunteer: #1E3A8A;
@@ -82,7 +82,9 @@
    -------------------------------------------------------------------------- */
 .sd-btn {
   border-radius: 9999px !important;
+.sd-btn:not([class*="bg-gradient"]) {
   background-image: none !important;
+}
   border-color: transparent !important;
   color: #FFFFFF !important;
   font-weight: 600 !important;
@@ -248,9 +250,18 @@
 .sd-btn--apply-now:focus-visible { background-color: var(--btn-apply-now-hover) !important; }
 
 /* Register Now */
-.sd-btn--register-now { background-color: var(--btn-register-now) !important; }
+.sd-btn--register-now,
+.sd-btn--join-orange {
+  background-color: var(--btn-register-now) !important;
+  background-image: linear-gradient(to right, #ea580c, #f97316) !important;
+}
 .sd-btn--register-now:hover,
-.sd-btn--register-now:focus-visible { background-color: var(--btn-register-now-hover) !important; }
+.sd-btn--register-now:focus-visible,
+.sd-btn--join-orange:hover,
+.sd-btn--join-orange:focus-visible {
+  background-color: var(--btn-register-now-hover) !important;
+  background-image: linear-gradient(to right, #c2410c, #ea580c) !important;
+}
 
 /* Become a Donor */
 .sd-btn--become-a-donor { background-color: var(--btn-become-a-donor) !important; }
