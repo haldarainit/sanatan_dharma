@@ -1,39 +1,4 @@
 
-const READ_MORE_NAVIGATION_SCRIPT = `
-<script>
-(function() {
-  document.addEventListener('click', function(e) {
-    const btn = e.target.closest('button, a, .sd-btn');
-    if (!btn) return;
-    const text = (btn.innerText || btn.textContent || '').trim();
-    if (text.includes('Read More') || text.includes('Detail')) {
-      const card = btn.closest('.bg-white, .rounded-2xl, div[class*="border"], div[class*="shadow"]');
-      if (card) {
-        const cardText = card.innerText || card.textContent || '';
-        let targetUrl = '';
-        if (cardText.includes('सनातन हेल्प सेंटर') || cardText.includes('Help Center')) {
-          targetUrl = '/future-activities/sanatan-help-center';
-        } else if (cardText.includes('भोजनालय') || cardText.includes('Bhojanalaya')) {
-          targetUrl = '/future-activities/sanatan-bhojanalaya';
-        } else if (cardText.includes('कौशल') || cardText.includes('Skill')) {
-          targetUrl = '/future-activities/skill-development';
-        } else if (cardText.includes('शेल्टर') || cardText.includes('आश्रय') || cardText.includes('Shelter')) {
-          targetUrl = '/future-activities/ashray-dham';
-        } else if (cardText.includes('गुरुकुल') || cardText.includes('Gurukul')) {
-          targetUrl = '/future-activities/gurukul-sansar-kendra';
-        }
-
-        if (targetUrl) {
-          e.preventDefault();
-          e.stopPropagation();
-          window.location.href = targetUrl;
-        }
-      }
-    }
-  }, true);
-})();
-</script>
-`;
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -364,121 +329,7 @@ const HERO_SLIDER_SCRIPT = `
 </script>
 `;
 
-const FUTURE_MISSIONS_SCRIPT = `
-<script>
-(function() {
-  const missionsData = [{ title: "सनातन हेल्प सेंटर", tagline: "सहायता • मार्गदर्शन • सहयोग", desc: "सनातन हेल्प सेंटर का उद्देश्य सनातनी समाज के प्रत्येक जरूरतमंद व्यक्ति एवं परिवार को मार्गदर्शन, सहायता एवं सहयोग उपलब्ध कराना है। सेवाएँ पूर्णतः निःशुल्क होंगी।", img: "/img/future-sahayata.jpg", detailUrl: "/future-activities/sanatan-help-center" },
-    { title: "सनातनी भोजनालय", tagline: "अन्न सेवा • सम्मान • संतोष", desc: "सनातनी भोजनालय का उद्देश्य जरूरतमंद, श्रमिक, वृद्ध एवं असहाय लोगों तक सम्मानपूर्वक भोजन पहुँचाना है। यह सेवा करुणा और मानव सेवा का एक सतत प्रयास है।", img: "/img/future-bhojanalaya.jpg", detailUrl: "/future-activities/sanatan-bhojanalaya" },
-    { title: "सनातनी स्किल डेवलपमेंट सेंटर", tagline: "कौशल • स्वावलंबन • सम्मान", desc: "युवाओं, महिलाओं एवं जरूरतमंद परिवारों को कौशल प्रशिक्षण देकर आत्मनिर्भर बनाना। कौशल विकास आत्मविश्वास, स्वाभिमान और सुरक्षित भविष्य का आधार है।", img: "/img/future-skill.jpg", detailUrl: "/future-activities/skill-development" },
-    { title: "सनातनी आश्रय धाम", tagline: "आश्रय • सुरक्षा • करुणा", desc: "निराश्रित, असहाय, वृद्ध एवं बेसहारा व्यक्तियों को सुरक्षित आश्रय, संरक्षण और सम्मानपूर्ण जीवन उपलब्ध कराना — यही सनातनी आश्रय धाम का संकल्प है।", img: "/img/future-ashray.jpg", detailUrl: "/future-activities/ashray-dham" },
-    { title: "सनातन गुरुकुल एवं संस्कार केंद्र", tagline: "शिक्षा • संस्कार • संस्कृति", desc: "बच्चों और युवाओं में शिक्षा, संस्कार, चरित्र निर्माण तथा सनातन सांस्कृतिक मूल्यों का विकास। संस्कारित पीढ़ी ही सशक्त समाज और सुदृढ़ राष्ट्र की आधारशिला होती है।", img: "/img/future-gurukul.png", detailUrl: "/future-activities/gurukul-sansar-kendra" }];
 
-  function initMissions() {
-    const allButtons = Array.from(document.querySelectorAll('button'));
-    const sahayataBtn = allButtons.find(b => b.innerText.includes('सनातन हेल्प सेंटर'));
-    if (!sahayataBtn) return;
-
-    const tabContainer = sahayataBtn.parentElement;
-    if (!tabContainer) return;
-
-    const section = tabContainer.closest('section') || tabContainer.parentElement.parentElement;
-    if (!section) return;
-
-    const tabButtons = Array.from(tabContainer.children).filter(el => el.tagName === 'BUTTON');
-    const imageTrack = section.querySelector('div.flex.w-full.h-full.transition-transform');
-    const titleEl = section.querySelector('h3');
-    const taglineEl = section.querySelector('.fm-card-tagline');
-    const cardPanel = section.querySelector('div.lg\\:flex-1') || section.querySelector('div.bg-white.rounded-2xl.p-6') || section.querySelector('div.bg-white.rounded-2xl.p-8');
-    const descEl = (cardPanel && cardPanel.querySelector('p')) || section.querySelector('#fm-card-desc') || null;
-    const detailBtn = section.querySelector('.sd-btn--view-details');
-    
-    const prevBtn = allButtons.find(b => b.innerText.includes('Previous'));
-    const nextBtn = allButtons.find(b => b.innerText.includes('Next'));
-    const dotsContainer = prevBtn ? prevBtn.parentElement : null;
-    const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('button')).filter(b => !b.innerText.includes('Previous') && !b.innerText.includes('Next')) : [];
-
-    let activeIndex = 0;
-    let autoSlideTimer = null;
-
-    function startAutoSlide() {
-      if (autoSlideTimer) clearInterval(autoSlideTimer);
-      autoSlideTimer = setInterval(() => {
-        setActiveTab((activeIndex + 1) % missionsData.length);
-      }, 3000);
-    }
-
-    function setActiveTab(index) {
-      if (index < 0) index = missionsData.length - 1;
-      if (index >= missionsData.length) index = 0;
-      activeIndex = index;
-
-      const data = missionsData[index];
-
-      if (imageTrack) {
-        imageTrack.style.transform = 'translateX(-' + (index * 100) + '%)';
-      }
-
-      tabButtons.forEach((btn, idx) => {
-        if (idx === index) {
-          btn.className = "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer bg-gradient-to-b from-orange-500 to-orange-600 text-white border-orange-600 shadow-lg shadow-orange-500/30 scale-[1.02]";
-        } else {
-          btn.className = "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer bg-gradient-to-b from-white to-slate-50 text-slate-800 border-slate-200 hover:border-orange-300 hover:text-orange-600 shadow-sm";
-        }
-      });
-
-      if (titleEl) titleEl.textContent = data.title;
-      if (taglineEl) taglineEl.textContent = data.tagline || '';
-      if (descEl) descEl.textContent = data.desc;
-      if (detailBtn && data.detailUrl) detailBtn.href = data.detailUrl;
-
-      if (dots && dots.length > 0) {
-        dots.forEach((dot, dIdx) => {
-          if (dIdx === index) {
-            dot.className = "h-2 rounded-full transition-all w-8 bg-[#FF6F00]";
-          } else {
-            dot.className = "h-2 rounded-full transition-all w-2 bg-[#0D1B2A]/20 hover:bg-[#0D1B2A]/40";
-          }
-        });
-      }
-    }
-
-    tabButtons.forEach((btn, idx) => {
-      btn.addEventListener('click', () => {
-        setActiveTab(idx);
-        startAutoSlide();
-      });
-    });
-
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-      setActiveTab(activeIndex - 1);
-      startAutoSlide();
-    });
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-      setActiveTab(activeIndex + 1);
-      startAutoSlide();
-    });
-
-    if (dots && dots.length > 0) {
-      dots.forEach((dot, dIdx) => {
-        dot.addEventListener('click', () => {
-          setActiveTab(dIdx);
-          startAutoSlide();
-        });
-      });
-    }
-
-    setActiveTab(0);
-    startAutoSlide();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMissions);
-  } else {
-    initMissions();
-  }
-})();
-</script>
-`;
 
 const VOLUNTEER_CAROUSEL_SCRIPT = `
 <script>
@@ -634,7 +485,7 @@ const requestHandler = (req, res) => {
         htmlStr = htmlStr.replace(/style="[^"]*height\s*:\s*0px[^"]*"/gi, 'style="opacity:1;height:auto"');
         htmlStr = htmlStr.replace(/style="transform:\s*translateX\(calc\(-5[^"]*\)"/gi, 'style="transform:translateX(0px)"');
 
-        htmlStr = htmlStr.replace('</body>', DROPDOWN_SCRIPT + HERO_SLIDER_SCRIPT + FUTURE_MISSIONS_SCRIPT + VOLUNTEER_CAROUSEL_SCRIPT + READ_MORE_NAVIGATION_SCRIPT + '</body>');
+        htmlStr = htmlStr.replace('</body>', DROPDOWN_SCRIPT + HERO_SLIDER_SCRIPT + VOLUNTEER_CAROUSEL_SCRIPT + '</body>');
 
         res.writeHead(200, {
           'Content-Type': contentType,
