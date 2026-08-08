@@ -276,3 +276,20 @@ header a.logo-shift img {
   }
 }
 
+/* --------------------------------------------------------------------------
+   9. Announcement Marquee Ticker — Scroll Left-to-Right
+   -------------------------------------------------------------------------- */
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marqueeReverse 22s linear infinite !important;
+}
+
+
