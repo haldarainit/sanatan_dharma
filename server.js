@@ -2,8 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
-const PUBLIC_DIR = process.cwd();
+const PORT = process.env.PORT || 3000;
+const PUBLIC_DIR = __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -569,36 +569,34 @@ const VOLUNTEER_CAROUSEL_SCRIPT = `
 function resolveFile(rawUrl) {
   const cleanUrl = rawUrl.split('?')[0].split('#')[0];
   const decodedPath = decodeURIComponent(cleanUrl);
+  const pathSegments = decodedPath.split('/').filter(Boolean);
 
-  let candidatePaths = [
-    path.join(PUBLIC_DIR, decodedPath.startsWith('/') ? decodedPath.slice(1) : decodedPath),
-    path.join(PUBLIC_DIR, cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl)
-  ];
+  const mainCandidate = path.join(PUBLIC_DIR, ...pathSegments);
 
-  for (let candidate of candidatePaths) {
-    if (fs.existsSync(candidate) && !fs.statSync(candidate).isDirectory()) {
-      return candidate;
-    }
+  if (fs.existsSync(mainCandidate) && !fs.statSync(mainCandidate).isDirectory()) {
+    return mainCandidate;
   }
 
-  let mainCandidate = candidatePaths[0];
   if (fs.existsSync(mainCandidate + '.html')) {
     return mainCandidate + '.html';
   }
+
   if (fs.existsSync(path.join(mainCandidate, 'index.html'))) {
     return path.join(mainCandidate, 'index.html');
   }
 
-  const cleanRoute = decodedPath.replace(/^\//, '').replace(/\/$/, '');
-  const alt = path.join(PUBLIC_DIR, cleanRoute.replace(/\//g, '-') + '.html');
-  if (fs.existsSync(alt)) {
-    return alt;
+  const cleanRoute = pathSegments.join('-');
+  if (cleanRoute) {
+    const alt = path.join(PUBLIC_DIR, cleanRoute + '.html');
+    if (fs.existsSync(alt)) {
+      return alt;
+    }
   }
 
   return path.join(PUBLIC_DIR, 'index.html');
 }
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   const filePath = resolveFile(req.url);
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
@@ -633,8 +631,13 @@ const server = http.createServer((req, res) => {
       }
     }
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
+if (require.main === module) {
+  const server = http.createServer(requestHandler);
+  server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+  });
+}
+
+module.exports = requestHandler;
