@@ -331,33 +331,11 @@ const HERO_SLIDER_SCRIPT = `
 const FUTURE_MISSIONS_SCRIPT = `
 <script>
 (function() {
-  const missionsData = [
-    {
-      title: "सनातन हेल्प सेंटर",
-      desc: "सनातन हेल्प सेंटर का उद्देश्य सनातनी समाज के प्रत्येक जरूरतमंद व्यक्ति एवं परिवार को मार्गदर्शन, सहायता एवं सहयोग उपलब्ध कराना है। सामाजिक, कानूनी, प्रशासनिक, दस्तावेजी, रोजगार, स्वास्थ्य एवं अन्य आवश्यक सेवाओं से संबंधित सहायता प्रदान करने का प्रयास किया जाएगा।",
-      img: "/img/future-sahayata.jpg"
-    },
-    {
-      title: "सनातन भोजनालय",
-      desc: "अन्न सेवा के संकल्प को आगे बढ़ाते हुए जरूरतमंदों, अस्पताल के मरीजों के परिजनों, असहाय वृद्धों एवं विद्यार्थियों के लिए निःशुल्क अथवा न्यूनतम सहयोग राशि पर शुद्ध, सात्विक एवं पौष्टिक भोजन उपलब्ध कराने की योजना।",
-      img: "/img/future-bhojanalaya.jpg"
-    },
-    {
-      title: "रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र",
-      desc: "समाज के अंतिम व्यक्ति तक भोजन, वस्त्र एवं आश्रय सहायता पहुँचाने के साथ-साथ युवाओं और महिलाओं को स्वरोजगार व कौशल विकास (Skill Development) का प्रशिक्षण देकर उन्हें आत्मनिर्भर बनाने की पहल।",
-      img: "/img/future-skill.jpg"
-    },
-    {
-      title: "सनातन शेल्टर हाउस",
-      desc: "निराश्रित वृद्धजनों, अनाथ बच्चों, पीड़ित महिलाओं एवं आपदा पीड़ितों के लिए एक सुरक्षित, स्नेहमय और सम्मानजनक आश्रय स्थल का निर्माण, जहाँ आवास के साथ-साथ चिकित्सा, भोजन एवं आध्यात्मिक वातावरण उपलब्ध कराया जाएगा।",
-      img: "/img/future-ashray.jpg"
-    },
-    {
-      title: "सनातन गुरुकुल एवं संस्कार केंद्र",
-      desc: "भावी पीढ़ी को अपनी जड़ों, संस्कृति, संस्कृत भाषा एवं नैतिक मूल्यों से जोड़ने के लिए आधुनिक शिक्षा के साथ-साथ वैदिक संस्कार, योग एवं चरित्र निर्माण पर आधारित गुरुकुलों की स्थापना।",
-      img: "/img/future-gurukul.png"
-    }
-  ];
+  const missionsData = [{ title: "सनातन हेल्प सेंटर", tagline: "सहायता • मार्गदर्शन • सहयोग", desc: "सनातन हेल्प सेंटर का उद्देश्य सनातनी समाज के प्रत्येक जरूरतमंद व्यक्ति एवं परिवार को मार्गदर्शन, सहायता एवं सहयोग उपलब्ध कराना है। सेवाएँ पूर्णतः निःशुल्क होंगी।", img: "/img/future-sahayata.jpg", detailUrl: "/future-activities/sanatan-help-center" },
+    { title: "सनातनी भोजनालय", tagline: "अन्न सेवा • सम्मान • संतोष", desc: "सनातनी भोजनालय का उद्देश्य जरूरतमंद, श्रमिक, वृद्ध एवं असहाय लोगों तक सम्मानपूर्वक भोजन पहुँचाना है। यह सेवा करुणा और मानव सेवा का एक सतत प्रयास है।", img: "/img/future-bhojanalaya.jpg", detailUrl: "/future-activities/sanatan-bhojanalaya" },
+    { title: "सनातनी स्किल डेवलपमेंट सेंटर", tagline: "कौशल • स्वावलंबन • सम्मान", desc: "युवाओं, महिलाओं एवं जरूरतमंद परिवारों को कौशल प्रशिक्षण देकर आत्मनिर्भर बनाना। कौशल विकास आत्मविश्वास, स्वाभिमान और सुरक्षित भविष्य का आधार है।", img: "/img/future-skill.jpg", detailUrl: "/future-activities/skill-development" },
+    { title: "सनातनी आश्रय धाम", tagline: "आश्रय • सुरक्षा • करुणा", desc: "निराश्रित, असहाय, वृद्ध एवं बेसहारा व्यक्तियों को सुरक्षित आश्रय, संरक्षण और सम्मानपूर्ण जीवन उपलब्ध कराना — यही सनातनी आश्रय धाम का संकल्प है।", img: "/img/future-ashray.jpg", detailUrl: "/future-activities/ashray-dham" },
+    { title: "सनातन गुरुकुल एवं संस्कार केंद्र", tagline: "शिक्षा • संस्कार • संस्कृति", desc: "बच्चों और युवाओं में शिक्षा, संस्कार, चरित्र निर्माण तथा सनातन सांस्कृतिक मूल्यों का विकास। संस्कारित पीढ़ी ही सशक्त समाज और सुदृढ़ राष्ट्र की आधारशिला होती है।", img: "/img/future-gurukul.png", detailUrl: "/future-activities/gurukul-sansar-kendra" }];
 
   function initMissions() {
     const allButtons = Array.from(document.querySelectorAll('button'));
@@ -373,8 +351,10 @@ const FUTURE_MISSIONS_SCRIPT = `
     const tabButtons = Array.from(tabContainer.children).filter(el => el.tagName === 'BUTTON');
     const imageTrack = section.querySelector('div.flex.w-full.h-full.transition-transform');
     const titleEl = section.querySelector('h3');
+    const taglineEl = section.querySelector('.fm-card-tagline');
     const cardPanel = section.querySelector('div.lg\\:flex-1') || section.querySelector('div.bg-white.rounded-2xl.p-6') || section.querySelector('div.bg-white.rounded-2xl.p-8');
     const descEl = (cardPanel && cardPanel.querySelector('p')) || section.querySelector('#fm-card-desc') || null;
+    const detailBtn = section.querySelector('.sd-btn--view-details');
     
     const prevBtn = allButtons.find(b => b.innerText.includes('Previous'));
     const nextBtn = allButtons.find(b => b.innerText.includes('Next'));
@@ -411,7 +391,9 @@ const FUTURE_MISSIONS_SCRIPT = `
       });
 
       if (titleEl) titleEl.textContent = data.title;
+      if (taglineEl) taglineEl.textContent = data.tagline || '';
       if (descEl) descEl.textContent = data.desc;
+      if (detailBtn && data.detailUrl) detailBtn.href = data.detailUrl;
 
       if (dots && dots.length > 0) {
         dots.forEach((dot, dIdx) => {

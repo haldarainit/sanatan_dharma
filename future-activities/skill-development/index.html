@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="सनातनी स्किल डेवलपमेंट सेंटर — कौशल • स्वावलंबन • सम्मान. युवाओं, महिलाओं एवं जरूरतमंद परिवारों को कौशल प्रशिक्षण देकर आत्मनिर्भर बनाना। कौशल विकास आत्मविश्वास, स्वाभिमान और सुरक्षित भविष्य का आधार है।"/>
+  <title>सनातनी स्किल डेवलपमेंट सेंटर | सनातन धर्म मानव कल्याण फाउंडेशन</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles.css"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans Devanagari',sans-serif;background:#fdfbf7;color:#1a1a2e;min-height:100vh}
+    .deva{font-family:'Noto Sans Devanagari','Noto Serif Devanagari',sans-serif}
+    .hero-section{background:linear-gradient(135deg,#fff8f0 0%,#fdf4ea 50%,#fef9f2 100%);border-bottom:1px solid #f0e8d8;padding:3rem 1rem 2.5rem}
+    .hero-inner{max-width:900px;margin:0 auto;text-align:center}
+    .breadcrumb{font-size:13px;color:#8a7e72;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+    .breadcrumb a{color:#e35300;text-decoration:none;font-weight:500}
+    .breadcrumb a:hover{text-decoration:underline}
+    .hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#e35300;margin-bottom:0.75rem}
+    .hero-title{font-family:'Playfair Display','Noto Serif Devanagari',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:800;color:#1a1a2e;line-height:1.15;margin-bottom:0.6rem}
+    .hero-tagline{font-size:clamp(0.95rem,2.5vw,1.2rem);color:#7c6f5c;font-weight:500;margin-bottom:1.5rem;letter-spacing:0.5px}
+    .status-badge{display:inline-flex;align-items:center;gap:6px;background:#fff3e0;border:1px solid #ffa040;color:#c45000;font-size:12px;font-weight:600;padding:4px 14px;border-radius:999px;letter-spacing:0.5px}
+    .content-wrap{max-width:860px;margin:0 auto;padding:2.5rem 1rem 3rem}
+    .desc-card{background:#fff;border-radius:20px;padding:2rem 2rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1px solid #f0ece6;margin-bottom:2rem;display:flex;flex-direction:column;gap:1.25rem}
+    .section-heading{font-size:1.05rem;font-weight:700;color:#e35300;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
+    .divider{width:40px;height:3px;background:linear-gradient(90deg,#e35300,#ff8c00);border-radius:2px;margin-bottom:1.25rem}
+    .support-card{background:linear-gradient(135deg,#fff8f0,#fef3e2);border-radius:20px;padding:2rem;border:1px solid #f5dfc0;margin-bottom:2rem}
+    .support-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1a1a2e;margin-bottom:0.5rem}
+    .support-subtitle{font-size:0.9rem;color:#7c6f5c;margin-bottom:1.5rem}
+    .support-items{display:flex;flex-direction:column;gap:0.85rem;margin-bottom:1.5rem}
+    .support-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border-radius:12px;padding:0.85rem 1rem;border:1px solid #f0e8d8}
+    .support-icon{font-size:1.1rem;min-width:24px}
+    .support-item-title{font-weight:700;color:#1a1a2e;font-size:0.88rem;margin-bottom:2px}
+    .support-item-desc{font-size:0.82rem;color:#7c6f5c;line-height:1.5}
+    .action-btns{display:flex;flex-wrap:wrap;gap:0.75rem}
+    .btn-donate{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#e35300,#ff6b1a);color:#fff;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px rgba(227,83,0,0.25);transition:all .2s}
+    .btn-donate:hover{background:linear-gradient(135deg,#c44800,#e85c0d);transform:translateY(-1px)}
+    .btn-join{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:#1a1a2e;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;border:2px solid #e35300;transition:all .2s}
+    .btn-join:hover{background:#fff8f0;transform:translateY(-1px)}
+    .btn-share{flex:1;min-width:130px;display:flex;align-items:center;justify-content:center;gap:6px;background:#1a1a2e;color:#fff;font-weight:700;font-size:0.88rem;padding:0.75rem 1rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:all .2s;cursor:pointer;border:none}
+    .btn-share:hover{background:#2d2d4a;transform:translateY(-1px)}
+    .sankalp-box{background:linear-gradient(135deg,#1a1a2e,#2d1a00);border-radius:16px;padding:1.25rem 1.5rem;color:#fff;text-align:center;font-size:0.95rem;line-height:1.7;font-weight:500;letter-spacing:0.3px;margin-bottom:2rem}
+    .back-btn{display:inline-flex;align-items:center;gap:6px;color:#e35300;font-weight:600;font-size:0.88rem;text-decoration:none;margin-bottom:1.5rem}
+    .back-btn:hover{text-decoration:underline}
+    @media(max-width:640px){.desc-card{padding:1.25rem}.content-wrap{padding:1.5rem 0.9rem}.action-btns{flex-direction:column}.btn-donate,.btn-join,.btn-share{min-width:auto}}
+  </style>
+</head>
+<body>
+  <!-- include nav partial -->
+  <div id="nav-root"></div>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="breadcrumb">
+        <a href="/">होम</a>
+        <span>›</span>
+        <a href="/#future-missions">आगामी सेवा मिशन</a>
+        <span>›</span>
+        <span>सनातनी स्किल डेवलपमेंट सेंटर</span>
+      </div>
+      <p class="hero-eyebrow deva">🚩 आगामी सेवा मिशन</p>
+      <h1 class="hero-title deva">सनातनी स्किल डेवलपमेंट सेंटर</h1>
+      <p class="hero-tagline deva">कौशल • स्वावलंबन • सम्मान</p>
+      <span class="status-badge deva">⏳ Upcoming</span>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+    <a href="/#future-missions" class="back-btn">← आगामी सेवा मिशन</a>
+
+    <!-- Description card -->
+    <div class="desc-card">
+      <div>
+        <p class="section-heading deva">🔶 मिशन परिचय</p>
+        <div class="divider"></div>
+      </div>
+      <p class="deva text-slate-700 text-base leading-relaxed text-justify">सनातनी स्किल डेवलपमेंट सेंटर एक भावी सेवा मिशन है, जिसका उद्देश्य युवाओं, महिलाओं एवं आर्थिक रूप से कमजोर परिवारों को उपयोगी कौशल प्रशिक्षण प्रदान कर आत्मनिर्भर बनाना है। अनेक प्रतिभाशाली लोग अवसर, प्रशिक्षण और मार्गदर्शन के अभाव में अपनी क्षमता का पूर्ण उपयोग नहीं कर पाते; यह केंद्र उनके लिए सशक्तिकरण और सम्मानजनक जीवन का माध्यम बनेगा।</p>
+            <p class="deva text-slate-700 text-base leading-relaxed text-justify">हमारा मूल संकल्प है कि समाज का प्रत्येक परिवार अपनी मेहनत और कौशल के बल पर रोटी, कपड़ा और मकान जैसी जीवन की मूलभूत आवश्यकताओं को सम्मानपूर्वक प्राप्त कर सके। यह मिशन दान पर स्थायी निर्भरता नहीं, बल्कि आत्मनिर्भरता, स्वाभिमान और दीर्घकालिक सशक्तिकरण की दिशा में कार्य करेगा।</p>
+            <p class="deva text-slate-700 text-base leading-relaxed text-justify">इस मिशन के अंतर्गत कंप्यूटर प्रशिक्षण, डिजिटल कौशल, स्वरोजगार, लघु उद्योग, हस्तकला, सेवा व्यवसाय, उद्यमिता तथा जीवनोपयोगी कौशलों से संबंधित प्रशिक्षण कार्यक्रम विकसित करने का लक्ष्य है। हमारा प्रयास है कि प्रशिक्षण केवल प्रमाणपत्र तक सीमित न रहे, बल्कि रोजगार, आयवृद्धि, परिवार की आर्थिक स्थिरता और सम्मानजनक जीवन से सीधे जुड़ सके।</p>
+            <p class="deva text-slate-700 text-base leading-relaxed text-justify">हम मानते हैं कि जब एक व्यक्ति आत्मनिर्भर बनता है, तब पूरा परिवार सशक्त होता है; जब हजारों परिवार सशक्त होते हैं, तब समाज बदलता है; और जब समाज बदलता है, तब राष्ट्र मजबूत बनता है। इसलिए यह मिशन केवल कौशल प्रशिक्षण नहीं, बल्कि आत्मनिर्भर भारत और संस्कारित समाज निर्माण की आधारशिला है।</p>
+            <p class="deva text-slate-700 text-base leading-relaxed text-justify">हम चरणबद्ध रूप से प्रशिक्षण केंद्र, स्वरोजगार सहायता, उद्यमिता मार्गदर्शन, रोजगार संपर्क एवं सामुदायिक सहयोग तंत्र विकसित करने का संकल्प लेकर आगे बढ़ रहे हैं। आपका सहयोग इस स्वप्न को वास्तविकता में बदलने की महत्वपूर्ण शक्ति बन सकता है।</p>
+    </div>
+
+    <!-- Sankalp -->
+    <div class="sankalp-box deva">🚩 कौशल से रोजगार, रोजगार से स्वावलंबन, स्वावलंबन से सम्मान और सम्मान से सशक्त राष्ट्र का निर्माण होता है।</div>
+
+    <!-- Support card -->
+    <div class="support-card">
+      <h2 class="support-title deva">आपका सहयोग इस मिशन को नई शक्ति दे सकता है</h2>
+      <p class="support-subtitle deva">इस सेवा अभियान में अपनी भूमिका चुनें</p>
+      <div class="support-items">
+        <div class="support-item">
+          <span class="support-icon">💛</span>
+          <div>
+            <p class="support-item-title deva">Donate</p>
+            <p class="support-item-desc deva">प्रशिक्षण सामग्री, उपकरण, छात्रवृत्ति एवं कौशल कार्यक्रमों में सहयोग करें।</p>
+          </div>
+        </div>
+        <div class="support-item">
+          <span class="support-icon">🤝</span>
+          <div>
+            <p class="support-item-title deva">Join</p>
+            <p class="support-item-desc deva">प्रशिक्षक, मार्गदर्शक या स्वयंसेवक बनकर इस मिशन से जुड़ें।</p>
+          </div>
+        </div>
+        <div class="support-item">
+          <span class="support-icon">📢</span>
+          <div>
+            <p class="support-item-title deva">Share</p>
+            <p class="support-item-desc deva">इस संदेश को अधिक से अधिक युवाओं और परिवारों तक पहुँचाएँ ताकि उन्हें नए अवसर मिल सकें।</p>
+          </div>
+        </div>
+      </div>
+      <div class="action-btns">
+        <a href="/donate" class="btn-donate">💛 Donate</a>
+        <a href="/membership" class="btn-join">🤝 Join</a>
+        <button class="btn-share" onclick="if(navigator.share){navigator.share({title:'सनातनी स्किल डेवलपमेंट सेंटर',text:'🚩 कौशल से रोजगार, रोजगार से स्वावलंबन, स्वावलंबन से सम्मान और सम्मान से सशक्त राष्ट्र का निर्माण होता है।',url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('लिंक कॉपी किया गया!')}">📢 Share</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inject nav from root page via fetch
+    fetch('/').then(r=>r.text()).then(html=>{
+      const parser=new DOMParser();
+      const doc=parser.parseFromString(html,'text/html');
+      const nav=doc.querySelector('nav')||doc.querySelector('header');
+      if(nav){document.getElementById('nav-root').appendChild(nav.cloneNode(true))}
+    }).catch(()=>{});
+  </script>
+</body>
+</html>
