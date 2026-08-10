@@ -184,9 +184,14 @@
     });
   }
 
-  /* Inspiration sliders: one row per group, arrows scroll by a whole card.
-     The scrolling itself is native scroll-snap, so touch and trackpad already
-     feel right without JS; this only adds the buttons and their state. */
+  /* Inspiration sliders: one endless row per group.
+     The set of cards is cloned until it comfortably overfills the viewport,
+     then the row drifts continuously and the scroll position is wrapped by one
+     set-width whenever it crosses a boundary. Because the clone is identical,
+     the jump is invisible and the row never has a first or last card.
+     Native scrolling is left intact, so touch momentum still works. */
+  var PPL_SPEED = 38; /* px per second */
+
   function initPeopleSliders() {
     var sliders = document.querySelectorAll('[data-sd-ppl]');
 
@@ -199,59 +204,150 @@
       var next = slider.querySelector('.sd-ppl__nav--next');
       if (!track) return;
 
-      function step() {
-        var item = track.querySelector('.sd-ppl__item');
-        if (!item) return track.clientWidth;
-        var gap = parseFloat(getComputedStyle(track).columnGap || '20') || 20;
-        return item.getBoundingClientRect().width + gap;
+      var originals = Array.prototype.slice.call(track.querySelectorAll('.sd-ppl__item'));
+      if (!originals.length) return;
+
+      var setWidth = 0;
+      var looping = false;
+      var paused = false;
+      var dragging = false;
+      var resumeTimer = null;
+      var rafId = null;
+      var lastFrame = 0;
+      var carry = 0;
+
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function gap() {
+        return parseFloat(getComputedStyle(track).columnGap || '20') || 20;
       }
 
-      function sync() {
-        var slack = track.scrollWidth - track.clientWidth;
-        var isStatic = slack < 8;
-        slider.classList.toggle('is-static', isStatic);
-        if (isStatic) {
+      function measureSet() {
+        var g = gap();
+        var w = 0;
+        originals.forEach(function (item) { w += item.getBoundingClientRect().width + g; });
+        return w;
+      }
+
+      function clearClones() {
+        Array.prototype.forEach.call(track.querySelectorAll('[data-sd-clone]'), function (c) {
+          track.removeChild(c);
+        });
+      }
+
+      /* Lay out enough copies that a wrap always lands on identical content. */
+      function build() {
+        clearClones();
+        track.scrollLeft = 0;
+        setWidth = measureSet();
+
+        var viewport = track.clientWidth;
+        /* measureSet() counts a trailing gap; ignore it, otherwise a group that
+           exactly fills the row would loop and visibly repeat the same faces. */
+        looping = (setWidth - gap()) > viewport + 8;
+        slider.classList.toggle('is-static', !looping);
+        slider.classList.toggle('is-loop', looping);
+
+        if (!looping) {
           slider.classList.remove('can-prev', 'can-next');
           return;
         }
-        var x = track.scrollLeft;
-        slider.classList.toggle('can-prev', x > 4);
-        slider.classList.toggle('can-next', x < slack - 4);
-        if (prev) prev.disabled = x <= 4;
-        if (next) next.disabled = x >= slack - 4;
+
+        var needed = viewport * 2 + setWidth;
+        var total = setWidth;
+        while (total < needed) {
+          originals.forEach(function (item) {
+            var clone = item.cloneNode(true);
+            clone.setAttribute('data-sd-clone', '');
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+          });
+          total += setWidth;
+        }
+
+        slider.classList.add('can-prev', 'can-next');
       }
 
-      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      /* Keep the offset inside [0, setWidth) — the visual result is identical. */
+      function wrap() {
+        if (!looping || !setWidth) return;
+        if (track.scrollLeft >= setWidth) track.scrollLeft -= setWidth;
+        else if (track.scrollLeft < 0) track.scrollLeft += setWidth;
+      }
 
-      var ticking = false;
-      track.addEventListener('scroll', function () {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(function () { sync(); ticking = false; });
-      }, { passive: true });
+      function frame(now) {
+        rafId = window.requestAnimationFrame(frame);
+        if (!looping || paused || dragging) { lastFrame = now; return; }
+        if (!lastFrame) { lastFrame = now; return; }
+        var dt = Math.min(now - lastFrame, 64) / 1000;
+        lastFrame = now;
 
-      window.addEventListener('resize', sync);
+        /* scrollLeft is integral in most engines, so bank the remainder */
+        carry += PPL_SPEED * dt;
+        var whole = Math.floor(carry);
+        if (whole > 0) {
+          carry -= whole;
+          track.scrollLeft += whole;
+          wrap();
+        }
+      }
 
-      /* Pointer drag, for mouse users who expect to be able to throw the row */
-      var down = false, startX = 0, startScroll = 0, moved = false;
+      function pause() { paused = true; }
+      function resume() { paused = false; lastFrame = 0; }
+
+      function nudge(dir) {
+        var item = track.querySelector('.sd-ppl__item');
+        var stepPx = item ? item.getBoundingClientRect().width + gap() : track.clientWidth;
+        pause();
+        track.style.scrollBehavior = 'smooth';
+        track.scrollLeft += dir * stepPx;
+        window.setTimeout(function () {
+          track.style.scrollBehavior = '';
+          wrap();
+          scheduleResume();
+        }, 420);
+      }
+
+      function scheduleResume() {
+        if (resumeTimer) window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(resume, 1200);
+      }
+
+      if (prev) prev.addEventListener('click', function () { nudge(-1); });
+      if (next) next.addEventListener('click', function () { nudge(1); });
+
+      /* Hovering to read should not fight the drift */
+      slider.addEventListener('mouseenter', pause);
+      slider.addEventListener('mouseleave', resume);
+      slider.addEventListener('focusin', pause);
+      slider.addEventListener('focusout', resume);
+
+      track.addEventListener('scroll', function () { wrap(); }, { passive: true });
+
+      /* Drag / swipe: hand the row to the user, then drift again */
+      var startX = 0, startScroll = 0, moved = false;
       track.addEventListener('pointerdown', function (e) {
-        if (e.pointerType !== 'mouse') return;
-        down = true; moved = false;
+        dragging = true;
+        moved = false;
         startX = e.clientX;
         startScroll = track.scrollLeft;
-        track.style.scrollBehavior = 'auto';
+        slider.classList.add('is-dragging');
+        if (e.pointerType === 'mouse') e.preventDefault();
       });
       track.addEventListener('pointermove', function (e) {
-        if (!down) return;
+        if (!dragging) return;
         var dx = e.clientX - startX;
         if (Math.abs(dx) > 3) moved = true;
-        track.scrollLeft = startScroll - dx;
+        if (e.pointerType === 'mouse') {
+          track.scrollLeft = startScroll - dx;
+          wrap();
+        }
       });
       function endDrag() {
-        if (!down) return;
-        down = false;
-        track.style.scrollBehavior = '';
+        if (!dragging) return;
+        dragging = false;
+        slider.classList.remove('is-dragging');
+        scheduleResume();
       }
       track.addEventListener('pointerup', endDrag);
       track.addEventListener('pointercancel', endDrag);
@@ -260,9 +356,24 @@
         if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
       }, true);
 
-      sync();
-      /* Images settle late and change scrollWidth, so re-check once loaded. */
-      window.addEventListener('load', sync);
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) pause();
+        else resume();
+      });
+
+      var resizeTimer = null;
+      window.addEventListener('resize', function () {
+        if (resizeTimer) window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(build, 200);
+      });
+
+      build();
+      /* Images settle late and change the measured width, so measure again. */
+      window.addEventListener('load', build);
+
+      if (!reduceMotion) {
+        rafId = window.requestAnimationFrame(frame);
+      }
     });
   }
 

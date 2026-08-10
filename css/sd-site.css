@@ -595,8 +595,8 @@ body.sd-mnav-open { overflow: hidden; }
   gap: 20px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  cursor: grab;
   padding: 6px 2px 16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -608,15 +608,19 @@ body.sd-mnav-open { overflow: hidden; }
   flex: 0 0 auto;
   width: 76%;
   max-width: 290px;
-  scroll-snap-align: start;
 }
 
 /* When everything already fits, centre the row instead of leaving a gap */
 .sd-ppl.is-static .sd-ppl__track {
   justify-content: center;
-  scroll-snap-type: none;
   flex-wrap: nowrap;
+  cursor: default;
 }
+
+.sd-ppl.is-dragging .sd-ppl__track { cursor: grabbing; }
+
+/* Clones that make the row wrap seamlessly are decorative only */
+.sd-ppl__item[data-sd-clone] { pointer-events: none; }
 
 .sd-ppl__nav {
   position: absolute;
@@ -679,6 +683,5 @@ body.sd-mnav-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sd-ppl__track { scroll-behavior: auto; }
   .sd-ppl__nav { transition: none; }
 }
