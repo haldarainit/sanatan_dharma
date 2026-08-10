@@ -822,3 +822,76 @@ body.sd-mnav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .sd-pay-panel.is-active, .sd-qr-pane.is-active { animation: none; }
 }
+
+/* --------------------------------------------------------------------------
+   12. Donate — three-step Payment Confirmation form
+   -------------------------------------------------------------------------- */
+/* an author display rule beats the UA stylesheet for [hidden], so restate it */
+.sd-pcf [hidden] { display: none !important; }
+
+.sd-pcf { margin-top: 18px; border-radius: 16px; border: 1px solid rgba(13, 27, 42, .1); background: #fff; padding: 18px; }
+.sd-pcf-head { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: #0D1B2A; margin-bottom: 14px; }
+.sd-pcf-head svg { width: 20px; height: 20px; color: #FF6F00; flex: 0 0 auto; }
+
+.sd-pcf-steps { list-style: none; margin: 0 0 18px; padding: 0; display: flex; align-items: center; gap: 6px; }
+.sd-pcf-step { display: flex; align-items: center; gap: 7px; flex: 1 1 0; min-width: 0; }
+.sd-pcf-step + .sd-pcf-step::before { content: ""; flex: 1 1 auto; height: 2px; border-radius: 2px; background: #F0E4D4; }
+.sd-pcf-dot { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px; display: grid; place-items: center; font-size: 11.5px; font-weight: 800; background: #F1F2F5; color: #94a3b8; transition: background .2s ease, color .2s ease; }
+.sd-pcf-steplabel { font-size: 11px; font-weight: 700; color: #94a3b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sd-pcf-step.is-active .sd-pcf-dot { background: #FF6F00; color: #fff; }
+.sd-pcf-step.is-active .sd-pcf-steplabel { color: #0D1B2A; }
+.sd-pcf-step.is-done .sd-pcf-dot { background: #16A34A; color: #fff; }
+
+.sd-pcf-pane { display: none; }
+.sd-pcf-pane.is-active { display: block; animation: sdPayIn .25s ease-out both; }
+
+.sd-pcf-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.sd-pcf-field { display: flex; flex-direction: column; }
+.sd-pcf-field label { font-size: 12px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; }
+.sd-pcf-field input,
+.sd-pcf-field select,
+.sd-pcf-field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(13, 27, 42, .18); border-radius: 10px; background: #fff; font: inherit; font-size: 13.5px; color: #0D1B2A; transition: border-color .2s ease, box-shadow .2s ease; }
+.sd-pcf-field textarea { min-height: 66px; resize: vertical; }
+.sd-pcf-field input:focus,
+.sd-pcf-field select:focus,
+.sd-pcf-field textarea:focus { outline: none; border-color: #FF6F00; box-shadow: 0 0 0 3px rgba(255, 111, 0, .15); }
+.sd-pcf-field.has-error input,
+.sd-pcf-field.has-error select { border-color: #B91C1C; }
+.sd-pcf-upper { text-transform: uppercase; }
+
+.sd-pcf-err { margin: 5px 0 0; font-size: 11.5px; font-weight: 600; color: #B91C1C; display: none; }
+.sd-pcf-field.has-error .sd-pcf-err { display: block; }
+.sd-pcf-err--block.is-shown { display: block; margin-top: 12px; }
+
+.sd-pcf-drop { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 2px dashed rgba(255, 111, 0, .4); border-radius: 12px; background: #FFF8EC; cursor: pointer; font-size: 12.5px; color: rgba(13, 27, 42, .8); transition: background .2s ease; }
+.sd-pcf-drop:hover { background: #FFF4E6; }
+.sd-pcf-drop svg { width: 20px; height: 20px; color: #FF6F00; flex: 0 0 auto; }
+
+.sd-pcf-check { display: flex; align-items: flex-start; gap: 12px; margin-top: 14px; font-size: 12.5px; line-height: 1.65; color: rgba(13, 27, 42, .8); cursor: pointer; }
+.sd-pcf-check input { width: 18px; height: 18px; margin-top: 1px; flex: 0 0 auto; accent-color: #FF6F00; cursor: pointer; }
+.sd-pcf-check--box { padding: 12px; border-radius: 12px; background: #FFFDF9; border: 1px solid rgba(13, 27, 42, .1); font-size: 13px; font-weight: 600; color: #0D1B2A; }
+
+.sd-pcf-80g { margin-top: 12px; padding: 14px; border-radius: 12px; background: #FFF8EC; border: 1px solid rgba(255, 111, 0, .2); }
+
+.sd-pcf-actions { display: flex; gap: 10px; margin-top: 18px; }
+.sd-pcf-back { flex: 0 0 auto; min-height: 46px; padding: 12px 22px; border: 1px solid rgba(13, 27, 42, .18); border-radius: 12px; background: #fff; font: inherit; font-size: 13px; font-weight: 700; color: #0D1B2A; cursor: pointer; transition: background .2s ease; }
+.sd-pcf-back:hover { background: #F7F8FB; }
+.sd-pcf-next,
+.sd-pcf-submit { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 20px; border: 0; border-radius: 12px; font: inherit; font-size: 14px; font-weight: 700 !important; color: #fff !important; cursor: pointer; }
+
+.sd-pcf-done { text-align: center; padding: 22px 16px; }
+.sd-pcf-done-icon { width: 52px; height: 52px; margin: 0 auto 12px; border-radius: 999px; background: #DCFCE7; color: #15803D; display: grid; place-items: center; }
+.sd-pcf-done-icon svg { width: 26px; height: 26px; }
+.sd-pcf-done-title { font-size: 15px; font-weight: 700; color: #0D1B2A; margin: 0 0 8px; line-height: 1.6; }
+.sd-pcf-done-text { font-size: 12.5px; line-height: 1.75; color: rgba(13, 27, 42, .7); margin: 0; }
+
+@media (min-width: 560px) {
+  .sd-pcf-grid { grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+  .sd-pcf-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .sd-pcf-full { grid-column: 1 / -1; }
+  .sd-pcf-steplabel { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-pcf-pane.is-active { animation: none; }
+}

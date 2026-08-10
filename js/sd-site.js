@@ -480,12 +480,146 @@
     });
   }
 
+  /* Payment Confirmation — three steps: details, payment, proof + 80G. */
+  function initPaymentForm() {
+    var form = document.querySelector('[data-sd-pcf]');
+    if (!form || form.dataset.sdInit === '1') return;
+    form.dataset.sdInit = '1';
+
+    var panes = form.querySelectorAll('[data-sd-step]');
+    var dots = form.querySelectorAll('[data-sd-dot]');
+    var backBtn = form.querySelector('[data-sd-back]');
+    var nextBtn = form.querySelector('[data-sd-next]');
+    var submitBtn = form.querySelector('[data-sd-submit]');
+    var formErr = form.querySelector('[data-sd-formerr]');
+    var claim80g = form.querySelector('[data-sd-80g]');
+    var fields80g = form.querySelector('[data-sd-80gfields]');
+    var fileInput = form.querySelector('[data-sd-file]');
+    var fileName = form.querySelector('[data-sd-filename]');
+    var decl = form.querySelector('[data-sd-decl]');
+    var done = form.querySelector('[data-sd-done]');
+    var steps = form.querySelector('.sd-pcf-steps');
+    var total = panes.length;
+    var current = 1;
+
+    function setError(input, message) {
+      var field = input.closest('.sd-pcf-field');
+      if (!field) return;
+      field.classList.toggle('has-error', !!message);
+      var slot = field.querySelector('[data-sd-err]');
+      if (slot) slot.textContent = message || '';
+    }
+
+    function validate(input) {
+      var value = (input.value || '').trim();
+      if (!value) return 'यह जानकारी आवश्यक है / This field is required';
+      if (input.type === 'tel' && !/^[0-9+\-\s]{10,15}$/.test(value)) return 'Enter a valid mobile number';
+      if (input.type === 'email' && value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value)) return 'Enter a valid email address';
+      if (input.type === 'number' && (isNaN(Number(value)) || Number(value) <= 0)) return 'Enter a valid amount';
+      return '';
+    }
+
+    function checkStep(step) {
+      var pane = form.querySelector('[data-sd-step="' + step + '"]');
+      var inputs = pane.querySelectorAll('[data-sd-req]');
+      var firstBad = null;
+
+      Array.prototype.forEach.call(inputs, function (input) {
+        var msg = validate(input);
+        setError(input, msg);
+        if (msg && !firstBad) firstBad = input;
+      });
+
+      /* the optional email still has to be well formed if filled in */
+      var email = pane.querySelector('input[type="email"]');
+      if (email && email.value.trim()) {
+        var emsg = validate(email);
+        setError(email, emsg);
+        if (emsg && !firstBad) firstBad = email;
+      }
+
+      if (firstBad) { firstBad.focus(); return false; }
+      return true;
+    }
+
+    function show(step) {
+      current = step;
+      Array.prototype.forEach.call(panes, function (p) {
+        p.classList.toggle('is-active', p.getAttribute('data-sd-step') === String(step));
+      });
+      Array.prototype.forEach.call(dots, function (d) {
+        var n = Number(d.getAttribute('data-sd-dot'));
+        d.classList.toggle('is-active', n === step);
+        d.classList.toggle('is-done', n < step);
+      });
+      backBtn.hidden = step === 1;
+      nextBtn.hidden = step === total;
+      submitBtn.hidden = step !== total;
+      if (formErr) { formErr.textContent = ''; formErr.classList.remove('is-shown'); }
+    }
+
+    nextBtn.addEventListener('click', function () {
+      if (!checkStep(current)) return;
+      if (current < total) show(current + 1);
+    });
+
+    backBtn.addEventListener('click', function () {
+      if (current > 1) show(current - 1);
+    });
+
+    if (claim80g && fields80g) {
+      claim80g.addEventListener('change', function () {
+        fields80g.hidden = !claim80g.checked;
+      });
+    }
+
+    if (fileInput && fileName) {
+      fileInput.addEventListener('change', function () {
+        var f = fileInput.files && fileInput.files[0];
+        fileName.textContent = f ? f.name : 'Click to upload screenshot (PNG / JPG / PDF)';
+      });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!checkStep(current)) return;
+
+      if (claim80g && claim80g.checked) {
+        var missing = null;
+        Array.prototype.forEach.call(fields80g.querySelectorAll('input'), function (input) {
+          var msg = input.value.trim() ? '' : 'यह जानकारी आवश्यक है / This field is required';
+          setError(input, msg);
+          if (msg && !missing) missing = input;
+        });
+        if (missing) { missing.focus(); return; }
+      }
+
+      if (decl && !decl.checked) {
+        if (formErr) {
+          formErr.textContent = 'कृपया घोषणा स्वीकार करें / Please accept the declaration';
+          formErr.classList.add('is-shown');
+        }
+        decl.focus();
+        return;
+      }
+
+      Array.prototype.forEach.call(panes, function (p) { p.classList.remove('is-active'); });
+      if (steps) steps.hidden = true;
+      form.querySelector('.sd-pcf-actions').hidden = true;
+      if (done) done.hidden = false;
+      done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    show(1);
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
     initPeopleSliders();
     initPeopleFilter();
     initPayPanel();
+    initPaymentForm();
   }
 
   if (document.readyState === 'loading') {
