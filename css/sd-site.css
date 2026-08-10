@@ -581,3 +581,104 @@ body.sd-mnav-open { overflow: hidden; }
   .sd-mnav__sub,
   .sd-mnav__caret { transition: none !important; }
 }
+
+/* --------------------------------------------------------------------------
+   8. Inspirations — one-row sliders
+   Every figure sits on the same single row, so the layout never implies a
+   ranking by putting some names above others. Native scroll-snap does the
+   smoothing; the arrows are progressive enhancement.
+   -------------------------------------------------------------------------- */
+.sd-ppl { position: relative; }
+
+.sd-ppl__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 6px 2px 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sd-ppl__track::-webkit-scrollbar { display: none; }
+
+.sd-ppl__item {
+  flex: 0 0 auto;
+  width: 76%;
+  max-width: 290px;
+  scroll-snap-align: start;
+}
+
+/* When everything already fits, centre the row instead of leaving a gap */
+.sd-ppl.is-static .sd-ppl__track {
+  justify-content: center;
+  scroll-snap-type: none;
+  flex-wrap: nowrap;
+}
+
+.sd-ppl__nav {
+  position: absolute;
+  top: 42%;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f0e6d8;
+  border-radius: 9999px;
+  background: #fff;
+  color: #7c4a12;
+  box-shadow: 0 6px 18px rgba(124, 74, 18, .16);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, opacity .2s ease, transform .2s ease;
+}
+
+.sd-ppl__nav svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sd-ppl__nav:hover { background: #e35300; color: #fff; border-color: #e35300; }
+.sd-ppl__nav:active { transform: scale(.94); }
+.sd-ppl__nav[disabled] { opacity: .3; cursor: default; pointer-events: none; }
+.sd-ppl__nav--prev { left: -10px; }
+.sd-ppl__nav--next { right: -10px; }
+.sd-ppl.is-static .sd-ppl__nav { display: none !important; }
+
+/* Soft edge hints so a partially scrolled row reads as continuing */
+.sd-ppl::before,
+.sd-ppl::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 16px;
+  width: 34px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.sd-ppl::before { left: 0; background: linear-gradient(90deg, #fffdf9, rgba(255, 253, 249, 0)); }
+.sd-ppl::after { right: 0; background: linear-gradient(270deg, #fffdf9, rgba(255, 253, 249, 0)); }
+.sd-ppl.can-prev::before { opacity: 1; }
+.sd-ppl.can-next::after { opacity: 1; }
+
+@media (min-width: 640px) {
+  .sd-ppl__item { width: calc((100% - 20px) / 2); max-width: none; }
+  .sd-ppl__nav { display: flex; }
+}
+
+@media (min-width: 768px) {
+  .sd-ppl__item { width: calc((100% - 40px) / 3); }
+}
+
+@media (min-width: 1024px) {
+  .sd-ppl__item { width: calc((100% - 60px) / 4); }
+  .sd-ppl__nav--prev { left: -18px; }
+  .sd-ppl__nav--next { right: -18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-ppl__track { scroll-behavior: auto; }
+  .sd-ppl__nav { transition: none; }
+}

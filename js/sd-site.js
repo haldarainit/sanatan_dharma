@@ -184,9 +184,92 @@
     });
   }
 
+  /* Inspiration sliders: one row per group, arrows scroll by a whole card.
+     The scrolling itself is native scroll-snap, so touch and trackpad already
+     feel right without JS; this only adds the buttons and their state. */
+  function initPeopleSliders() {
+    var sliders = document.querySelectorAll('[data-sd-ppl]');
+
+    Array.prototype.forEach.call(sliders, function (slider) {
+      if (slider.dataset.sdInit === '1') return;
+      slider.dataset.sdInit = '1';
+
+      var track = slider.querySelector('.sd-ppl__track');
+      var prev = slider.querySelector('.sd-ppl__nav--prev');
+      var next = slider.querySelector('.sd-ppl__nav--next');
+      if (!track) return;
+
+      function step() {
+        var item = track.querySelector('.sd-ppl__item');
+        if (!item) return track.clientWidth;
+        var gap = parseFloat(getComputedStyle(track).columnGap || '20') || 20;
+        return item.getBoundingClientRect().width + gap;
+      }
+
+      function sync() {
+        var slack = track.scrollWidth - track.clientWidth;
+        var isStatic = slack < 8;
+        slider.classList.toggle('is-static', isStatic);
+        if (isStatic) {
+          slider.classList.remove('can-prev', 'can-next');
+          return;
+        }
+        var x = track.scrollLeft;
+        slider.classList.toggle('can-prev', x > 4);
+        slider.classList.toggle('can-next', x < slack - 4);
+        if (prev) prev.disabled = x <= 4;
+        if (next) next.disabled = x >= slack - 4;
+      }
+
+      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+
+      var ticking = false;
+      track.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () { sync(); ticking = false; });
+      }, { passive: true });
+
+      window.addEventListener('resize', sync);
+
+      /* Pointer drag, for mouse users who expect to be able to throw the row */
+      var down = false, startX = 0, startScroll = 0, moved = false;
+      track.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        down = true; moved = false;
+        startX = e.clientX;
+        startScroll = track.scrollLeft;
+        track.style.scrollBehavior = 'auto';
+      });
+      track.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (Math.abs(dx) > 3) moved = true;
+        track.scrollLeft = startScroll - dx;
+      });
+      function endDrag() {
+        if (!down) return;
+        down = false;
+        track.style.scrollBehavior = '';
+      }
+      track.addEventListener('pointerup', endDrag);
+      track.addEventListener('pointercancel', endDrag);
+      track.addEventListener('pointerleave', endDrag);
+      track.addEventListener('click', function (e) {
+        if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+      }, true);
+
+      sync();
+      /* Images settle late and change scrollWidth, so re-check once loaded. */
+      window.addEventListener('load', sync);
+    });
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
+    initPeopleSliders();
   }
 
   if (document.readyState === 'loading') {
