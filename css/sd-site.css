@@ -685,3 +685,26 @@ body.sd-mnav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .sd-ppl__nav { transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   9. Mission anchors on the Activities page
+   Links from the homepage's Active Missions list land on a card, so keep it
+   clear of the sticky header and flash it briefly so it is obvious which one.
+   -------------------------------------------------------------------------- */
+[id^="mission-"] {
+  scroll-margin-top: 118px;
+}
+
+[id^="mission-"]:target {
+  box-shadow: 0 0 0 3px #FF9933, 0 14px 30px rgba(227, 83, 0, .16) !important;
+  animation: sdMissionFlash 1.6s ease-out 1;
+}
+
+@keyframes sdMissionFlash {
+  0%   { box-shadow: 0 0 0 3px #FF9933, 0 0 0 12px rgba(255, 153, 51, .28); }
+  100% { box-shadow: 0 0 0 3px #FF9933, 0 0 0 0 rgba(255, 153, 51, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [id^="mission-"]:target { animation: none; }
+}
