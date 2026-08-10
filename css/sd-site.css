@@ -708,3 +708,26 @@ body.sd-mnav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   [id^="mission-"]:target { animation: none; }
 }
+
+/* --------------------------------------------------------------------------
+   10. CSR partner logos — larger tiles so the marks are legible
+   -------------------------------------------------------------------------- */
+.sd-partner-logos .shrink-0 > div {
+  height: 88px !important;
+  width: 176px !important;
+}
+
+.sd-partner-logos .shrink-0 > div > img {
+  max-height: 62px !important;
+  max-width: 90% !important;
+}
+
+@media (min-width: 640px) {
+  .sd-partner-logos .shrink-0 > div {
+    height: 108px !important;
+    width: 216px !important;
+  }
+  .sd-partner-logos .shrink-0 > div > img {
+    max-height: 78px !important;
+  }
+}
