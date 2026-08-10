@@ -423,11 +423,69 @@
     });
   }
 
+  /* Donate page — Scan & Pay tabs, QR sub-tabs and copy-to-clipboard. */
+  function initPayPanel() {
+    var root = document.querySelector('[data-sd-pay]');
+    if (!root || root.dataset.sdInit === '1') return;
+    root.dataset.sdInit = '1';
+
+    function switchGroup(buttons, panels, key, attr) {
+      Array.prototype.forEach.call(buttons, function (b) {
+        var on = b.getAttribute(attr) === key;
+        b.classList.toggle('is-active', on);
+        if (b.hasAttribute('role')) b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      Array.prototype.forEach.call(panels, function (p) {
+        p.classList.toggle('is-active', p.getAttribute(p.hasAttribute('data-sd-panel') ? 'data-sd-panel' : 'data-sd-qrpane') === key);
+      });
+    }
+
+    var tabs = root.querySelectorAll('[data-sd-tab]');
+    var panels = root.querySelectorAll('[data-sd-panel]');
+    Array.prototype.forEach.call(tabs, function (tab) {
+      tab.addEventListener('click', function () {
+        switchGroup(tabs, panels, tab.getAttribute('data-sd-tab'), 'data-sd-tab');
+      });
+    });
+
+    var subs = root.querySelectorAll('[data-sd-qr]');
+    var panes = root.querySelectorAll('[data-sd-qrpane]');
+    Array.prototype.forEach.call(subs, function (sub) {
+      sub.addEventListener('click', function () {
+        switchGroup(subs, panes, sub.getAttribute('data-sd-qr'), 'data-sd-qr');
+      });
+    });
+
+    Array.prototype.forEach.call(root.querySelectorAll('[data-sd-copy]'), function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-sd-copy');
+        function done() {
+          btn.classList.add('is-copied');
+          window.setTimeout(function () { btn.classList.remove('is-copied'); }, 1400);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () {});
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
+    });
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
     initPeopleSliders();
     initPeopleFilter();
+    initPayPanel();
   }
 
   if (document.readyState === 'loading') {
