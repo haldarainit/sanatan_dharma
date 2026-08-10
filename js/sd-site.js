@@ -222,10 +222,14 @@
         return parseFloat(getComputedStyle(track).columnGap || '20') || 20;
       }
 
+      function shown() {
+        return originals.filter(function (it) { return !it.hasAttribute("data-sd-hidden"); });
+      }
+
       function measureSet() {
         var g = gap();
         var w = 0;
-        originals.forEach(function (item) { w += item.getBoundingClientRect().width + g; });
+        shown().forEach(function (item) { w += item.getBoundingClientRect().width + g; });
         return w;
       }
 
@@ -256,7 +260,7 @@
         var needed = viewport * 2 + setWidth;
         var total = setWidth;
         while (total < needed) {
-          originals.forEach(function (item) {
+          shown().forEach(function (item) {
             var clone = item.cloneNode(true);
             clone.setAttribute('data-sd-clone', '');
             clone.setAttribute('aria-hidden', 'true');
@@ -367,6 +371,7 @@
         resizeTimer = window.setTimeout(build, 200);
       });
 
+      slider.sdRebuild = build;
       build();
       /* Images settle late and change the measured width, so measure again. */
       window.addEventListener('load', build);
@@ -377,10 +382,52 @@
     });
   }
 
+  /* Category pills above the inspirations row. Choosing one hides the cards
+     from other categories and rebuilds the loop from what is left, so the
+     endless row only ever cycles the selected category. */
+  var PILL_ON = 'px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-[#e35300] text-white shadow-md';
+  var PILL_OFF = 'px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-saffron-50';
+
+  function initPeopleFilter() {
+    var pills = document.querySelectorAll('[data-sd-filter]');
+    if (!pills.length) return;
+
+    var slider = document.querySelector('[data-sd-ppl]');
+    var track = slider && slider.querySelector('.sd-ppl__track');
+    var countEl = document.querySelector('[data-sd-count]');
+    if (!slider || !track) return;
+
+    function apply(cat) {
+      var items = track.querySelectorAll('.sd-ppl__item:not([data-sd-clone])');
+      var visible = 0;
+
+      Array.prototype.forEach.call(items, function (item) {
+        var match = cat === 'all' || item.getAttribute('data-sd-cat') === cat;
+        if (match) { item.removeAttribute('data-sd-hidden'); visible++; }
+        else { item.setAttribute('data-sd-hidden', ''); }
+      });
+
+      if (countEl) countEl.textContent = visible + ' प्रेरणा स्रोत';
+      if (typeof slider.sdRebuild === 'function') slider.sdRebuild();
+    }
+
+    Array.prototype.forEach.call(pills, function (pill) {
+      pill.addEventListener('click', function () {
+        Array.prototype.forEach.call(pills, function (other) {
+          var on = other === pill;
+          other.className = on ? PILL_ON : PILL_OFF;
+          other.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        apply(pill.getAttribute('data-sd-filter'));
+      });
+    });
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
     initPeopleSliders();
+    initPeopleFilter();
   }
 
   if (document.readyState === 'loading') {
