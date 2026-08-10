@@ -791,11 +791,13 @@ body.sd-mnav-open { overflow: hidden; }
 .sd-bank { margin-top: 18px; border-radius: 16px; border: 1px solid rgba(13, 27, 42, .1); background: #F7F8FB; padding: 18px; }
 .sd-bank-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 16px; font-weight: 700; color: #0D1B2A; }
 .sd-bank-head svg { width: 20px; height: 20px; color: #FF6F00; flex: 0 0 auto; }
-.sd-bank-rows { display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: #0D1B2A; }
-.sd-bank-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sd-bank-rows { display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #0D1B2A; }
+/* one line per row once there is room for it; wrap only on very narrow screens */
+@media (min-width: 440px) { .sd-bank-v { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } }
+.sd-bank-row { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
 .sd-bank-k { font-weight: 700; flex: 0 0 auto; }
-.sd-bank-v { font-weight: 500; color: rgba(13, 27, 42, .85); word-break: break-word; }
-.sd-bank-copy { margin-left: auto; width: 32px; height: 32px; flex: 0 0 auto; display: grid; place-items: center; border: 0; border-radius: 8px; background: none; color: rgba(13, 27, 42, .55); cursor: pointer; transition: background .2s ease, color .2s ease; }
+.sd-bank-v { flex: 0 1 auto; min-width: 0; font-weight: 500; color: rgba(13, 27, 42, .85); word-break: break-word; }
+.sd-bank-copy { margin-left: 2px; width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border: 0; border-radius: 8px; background: none; color: rgba(13, 27, 42, .55); cursor: pointer; transition: background .2s ease, color .2s ease; }
 .sd-bank-copy svg { width: 15px; height: 15px; }
 .sd-bank-copy:hover { background: #fff; color: #FF6F00; }
 .sd-bank-copy.is-copied { color: #16A34A; }
