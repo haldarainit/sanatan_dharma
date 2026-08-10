@@ -895,3 +895,22 @@ body.sd-mnav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .sd-pcf-pane.is-active { animation: none; }
 }
+
+/* Section leads and closing line on the donate page */
+.sd-pay-lead { margin-bottom: 16px; }
+.sd-pay-lead h3 { font-size: 15px; font-weight: 800; color: #0D1B2A; margin: 0 0 6px; }
+.sd-pay-lead p { font-size: 12.5px; line-height: 1.8; color: rgba(13, 27, 42, .7); margin: 0; }
+
+.sd-ow { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.sd-ow-card { display: flex; gap: 14px; padding: 16px; border-radius: 14px; border: 1px solid rgba(13, 27, 42, .1); background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
+.sd-ow-card:hover { border-color: rgba(255, 111, 0, .35); box-shadow: 0 8px 20px rgba(255, 111, 0, .08); }
+.sd-ow-icon { flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px; background: #FFF4E6; color: #FF6F00; display: grid; place-items: center; }
+.sd-ow-icon svg { width: 20px; height: 20px; }
+.sd-ow-body { min-width: 0; }
+.sd-ow-title { font-size: 14px; font-weight: 700; color: #0D1B2A; margin: 0 0 5px; }
+.sd-ow-text { font-size: 12.5px; line-height: 1.8; color: rgba(13, 27, 42, .75); margin: 0; }
+.sd-ow-note { font-size: 11.5px; line-height: 1.7; color: rgba(13, 27, 42, .55); margin: 7px 0 0; }
+.sd-ow-tag { display: inline-block; margin-top: 8px; font-size: 10.5px; font-weight: 800; letter-spacing: .06em; padding: 3px 10px; border-radius: 999px; background: #FFF4E6; color: #c2410c; }
+.sd-ow-foot { margin: 16px 0 0; font-size: 12.5px; line-height: 1.8; text-align: center; color: rgba(13, 27, 42, .7); font-weight: 600; }
+
+.sd-pay-closing { margin-top: 32px; text-align: center; font-size: 14.5px; font-weight: 700; line-height: 1.8; color: #FF6F00; max-width: 46rem; margin-left: auto; margin-right: auto; }
