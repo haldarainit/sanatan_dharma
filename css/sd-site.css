@@ -921,3 +921,135 @@ body.sd-mnav-open { overflow: hidden; }
    The card carries .flex, whose display rule beats the UA style for [hidden],
    so the attribute has to be restated here. */
 .sd-mis-more[hidden] { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   13. Donation Hub — four-step donation flow
+   -------------------------------------------------------------------------- */
+.sd-dn-step[hidden] { display: none !important; }
+
+.sd-dn-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.sd-dn-back { border: 0; background: none; font: inherit; font-size: 12.5px; font-weight: 700; color: #FF6F00; cursor: pointer; padding: 6px 0; min-height: 32px; }
+.sd-dn-back:hover { text-decoration: underline; }
+.sd-dn-stepno { font-size: 11px; font-weight: 700; color: rgba(13, 27, 42, .45); }
+.sd-dn-title { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; font-size: 21px; font-weight: 700; color: #0D1B2A; margin: 0 0 4px; }
+.sd-dn-sub { font-size: 12.5px; line-height: 1.75; color: rgba(13, 27, 42, .6); margin: 0 0 16px; }
+
+.sd-dn-amountline { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 14px; border-radius: 12px; background: #FFF4E6; border: 1px solid rgba(255, 111, 0, .25); font-size: 12.5px; color: #0D1B2A; }
+.sd-dn-amountline strong { color: #FF6F00; font-size: 14px; }
+.sd-dn-changeamt { margin-left: auto; border: 0; background: none; font: inherit; font-size: 11.5px; font-weight: 700; color: #FF6F00; cursor: pointer; text-decoration: underline; }
+
+.sd-dn-customwrap { margin-top: 10px; }
+.sd-dn-customwrap[hidden] { display: none !important; }
+.sd-dn-customwrap label { display: block; font-size: 12px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; }
+.sd-dn-custominput { display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid rgba(13, 27, 42, .18); border-radius: 10px; background: #fff; }
+.sd-dn-custominput:focus-within { border-color: #FF6F00; box-shadow: 0 0 0 3px rgba(255, 111, 0, .15); }
+.sd-dn-custominput span { font-size: 15px; font-weight: 700; color: #FF6F00; }
+.sd-dn-custominput input { flex: 1 1 auto; min-height: 44px; border: 0; outline: none; background: none; font: inherit; font-size: 15px; font-weight: 700; color: #0D1B2A; }
+[data-sd-customerr] { display: block; margin-top: 6px; font-size: 11.5px; font-weight: 600; color: #B91C1C; }
+
+.sd-80g { margin-top: 16px; padding: 16px; border-radius: 14px; background: #FFF8EC; border: 1px solid rgba(255, 111, 0, .22); }
+.sd-80g-head { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: #0D1B2A; margin-bottom: 8px; }
+.sd-80g-head svg { width: 18px; height: 18px; color: #FF6F00; flex: 0 0 auto; }
+.sd-80g-text { font-size: 12.5px; line-height: 1.8; color: rgba(13, 27, 42, .75); margin: 0 0 8px; }
+.sd-80g-reg { font-size: 11.5px; color: rgba(13, 27, 42, .6); margin: 0; }
+.sd-dn-pan { margin-top: 12px; }
+.sd-dn-pan[hidden] { display: none !important; }
+.sd-dn-hint { font-size: 11px; color: rgba(13, 27, 42, .5); margin: 5px 0 0; }
+
+.sd-dn-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 18px; padding: 13px 20px; border: 0; border-radius: 12px; background: #FF6F00; font: inherit; font-size: 14.5px; font-weight: 700; color: #fff; text-decoration: none; cursor: pointer; transition: opacity .2s ease; }
+.sd-dn-cta:hover { opacity: .94; }
+.sd-dn-cta[disabled] { opacity: .6; cursor: default; }
+.sd-dn-cta--ghost { background: #fff; color: #FF6F00; border: 1px solid rgba(255, 111, 0, .45); }
+
+.sd-dn-summary { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border-radius: 14px; background: #FFFDF9; border: 1px solid rgba(13, 27, 42, .1); margin-bottom: 16px; }
+.sd-dn-summary > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 12.5px; }
+.sd-dn-summary span { color: rgba(13, 27, 42, .55); flex: 0 0 auto; }
+.sd-dn-summary strong { color: #0D1B2A; text-align: right; }
+
+.sd-gw { padding: 16px; border-radius: 14px; border: 1px solid rgba(13, 27, 42, .12); background: #fff; }
+.sd-gw-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.sd-gw-logo { font-size: 16px; font-weight: 800; color: #0D1B2A; letter-spacing: -.01em; }
+.sd-gw-badge { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #15803D; background: #DCFCE7; padding: 3px 9px; border-radius: 999px; }
+.sd-gw-text { font-size: 12.5px; color: rgba(13, 27, 42, .7); margin: 0 0 10px; }
+.sd-gw-modes { display: flex; flex-wrap: wrap; gap: 6px; }
+.sd-gw-mode { font-size: 11.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: #F1F2F5; color: #0D1B2A; }
+
+.sd-dn-demo { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; padding: 12px 14px; border-radius: 12px; border-left: 4px solid #FF6F00; background: #FFF8EC; }
+.sd-dn-demo svg { width: 18px; height: 18px; color: #FF6F00; flex: 0 0 auto; margin-top: 1px; }
+.sd-dn-demo p { margin: 0; font-size: 12px; line-height: 1.7; color: rgba(13, 27, 42, .8); }
+
+.sd-dn-success { text-align: center; }
+.sd-dn-tick { width: 56px; height: 56px; margin: 4px auto 14px; border-radius: 999px; background: #DCFCE7; color: #15803D; display: grid; place-items: center; }
+.sd-dn-tick svg { width: 28px; height: 28px; }
+.sd-dn-receipt { display: flex; flex-direction: column; gap: 9px; margin: 18px 0; padding: 16px; border-radius: 14px; background: #FFFDF9; border: 1px dashed rgba(255, 111, 0, .4); text-align: left; }
+.sd-dn-receipt > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 12.5px; }
+.sd-dn-receipt > div[hidden] { display: none !important; }
+.sd-dn-receipt span { color: rgba(13, 27, 42, .55); }
+.sd-dn-receipt strong { color: #0D1B2A; text-align: right; }
+.sd-dn-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.sd-dn-actions .sd-dn-cta { margin-top: 0; }
+.sd-dn-note { font-size: 11.5px; line-height: 1.7; color: rgba(13, 27, 42, .55); margin: 14px 0 0; }
+
+@media (min-width: 560px) {
+  .sd-dn-actions { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Security note + closing quote on the donate page */
+.sd-secnote { display: flex; align-items: flex-start; gap: 12px; max-width: 52rem; margin: 30px auto 0; padding: 14px 16px; border-radius: 12px; border-left: 4px solid #B91C1C; background: #FEF2F2; }
+.sd-secnote svg { width: 20px; height: 20px; color: #B91C1C; flex: 0 0 auto; margin-top: 1px; }
+.sd-secnote-title { font-size: 12.5px; font-weight: 800; color: #7F1D1D; margin-bottom: 4px; }
+.sd-secnote p { margin: 0; font-size: 12.5px; line-height: 1.75; color: #7F1D1D; }
+.sd-pay-quote2 { max-width: 52rem; margin: 20px auto 0; text-align: center; font-size: 13.5px; font-style: italic; line-height: 1.8; color: rgba(13, 27, 42, .75); }
+
+
+/* Amount cards: sd-buttons.css force-paints any button carrying
+   bg-[#FF6F00] with !important, which outlives the class swap when a card is
+   deselected. These explicit state classes settle it — sd-site.css is loaded
+   after sd-buttons.css, so equal specificity resolves in our favour. */
+button[data-sd-amount].is-amt-off {
+  background-color: #ffffff !important;
+  border-color: rgba(13, 27, 42, .1) !important;
+  color: #0D1B2A !important;
+}
+
+button[data-sd-amount].is-amt-on {
+  background-color: #FF6B00 !important;
+  border-color: #FF6B00 !important;
+  color: #ffffff !important;
+}
+
+/* Online Payment Gateway — subheader inside the Donation Details card */
+.sd-opg-sub { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #FFF8EC; border: 1px solid rgba(255, 111, 0, .22); }
+.sd-opg-sub-head { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 800; color: #0D1B2A; margin-bottom: 5px; }
+.sd-opg-sub-head svg { width: 17px; height: 17px; color: #FF6F00; flex: 0 0 auto; }
+.sd-opg-sub p { margin: 0; font-size: 12px; line-height: 1.8; color: rgba(13, 27, 42, .72); }
+
+/* --------------------------------------------------------------------------
+   14. Donate page — mobile running order
+   On a phone the two columns stack, which used to bury Scan & Pay below the
+   three text cards. Reorder so a donor moves: choose amount -> scan & pay
+   (payment confirmation lives inside its Bank Transfer tab) -> how the flow is
+   verified -> the explanatory text last.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .sd-donate-grid { display: flex; flex-direction: column; gap: 24px; }
+  /* let the column wrappers dissolve so their cards can be ordered directly */
+  .sd-donate-col { display: contents; }
+  /* the wrappers' space-y margins would double up against the flex gap */
+  .sd-donate-col > * { margin-top: 0 !important; }
+
+  .sd-donate-details { order: 1; }
+  .sd-donate-scan    { order: 2; }
+  .sd-donate-confirm { order: 3; }
+  .sd-donate-flow    { order: 4; }
+  .sd-donate-info    { order: 5; }
+}
+
+/* Scan & Pay tabs: keep all three readable and equal height on small screens */
+@media (max-width: 480px) {
+  .sd-pay-tab { font-size: 11px; padding: 9px 4px; min-height: 40px; }
+  .sd-pay-subtab { font-size: 10px; padding: 8px 3px; min-height: 42px; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .sd-phone { max-width: 100%; }
+  .sd-phone-qrimg { width: 100%; max-width: 175px; height: auto; aspect-ratio: 1 / 1; }
+  .sd-bank-rows { font-size: 12px; }
+}

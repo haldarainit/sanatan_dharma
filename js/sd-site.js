@@ -635,6 +635,244 @@
     });
   }
 
+  /* Donation Hub — amount -> donor details -> payment -> receipt.
+     No Razorpay key is connected yet, so the payment step completes the flow
+     without charging anything; the notice on that step says so plainly. */
+  function initDonateFlow() {
+    var form = document.querySelector('[data-sd-donate]');
+    if (!form || form.dataset.sdInit === '1') return;
+    form.dataset.sdInit = '1';
+
+    var steps = form.querySelectorAll('[data-sd-dstep]');
+    var amountBtns = form.querySelectorAll('[data-sd-amount]');
+    var typeBtns = form.querySelectorAll('[data-sd-ctype]');
+    var customBtn = form.querySelector('[data-sd-custom]');
+    var customWrap = form.querySelector('[data-sd-customwrap]');
+    var customInput = form.querySelector('[data-sd-customamt]');
+    var customErr = form.querySelector('[data-sd-customerr]');
+    var currentEl = form.querySelector('[data-sd-current]');
+    var claim80g = form.querySelector('[data-sd-d80g]');
+    var panWrap = form.querySelector('[data-sd-panwrap]');
+    var formErr = form.querySelector('[data-sd-dformerr]');
+
+    var state = { amount: 501, type: 'Monthly', txn: '' };
+
+    var ON = 'px-2 py-3 text-center transition-all bg-[#FF6F00] text-white border-[#FF6F00] shadow-[0_6px_18px_-6px_rgba(255,111,0,0.55)]';
+    var OFF = 'px-2 py-3 text-center transition-all bg-white border-[#0D1B2A]/10 text-[#0D1B2A] hover:border-[#FF6F00]/40';
+
+    function fmt(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+
+    function paintAmounts(active) {
+      Array.prototype.forEach.call(amountBtns, function (b) {
+        var on = Number(b.getAttribute('data-sd-amount')) === Number(active);
+        b.className = 'relative rounded-xl border ' + (on ? ON : OFF) + (on ? ' is-amt-on' : ' is-amt-off');
+        /* the sub-label carries its own colour, so it has to follow the state
+           or it ends up white-on-white when the card is deselected */
+        var sub = b.querySelector('div:last-of-type');
+        if (sub && !sub.classList.contains('font-bold')) {
+          sub.className = 'text-[10px] mt-0.5 leading-tight ' + (on ? 'text-white/90' : 'text-[#0D1B2A]/60');
+        }
+      });
+    }
+
+    function setAmount(v) {
+      state.amount = Number(v) || 0;
+      if (currentEl) currentEl.textContent = fmt(state.amount);
+      var echo = form.querySelector('[data-sd-amtecho]');
+      if (echo) echo.textContent = fmt(state.amount);
+    }
+
+    Array.prototype.forEach.call(amountBtns, function (b) {
+      b.addEventListener('click', function () {
+        if (customWrap) customWrap.hidden = true;
+        if (customErr) customErr.textContent = '';
+        paintAmounts(b.getAttribute('data-sd-amount'));
+        setAmount(b.getAttribute('data-sd-amount'));
+      });
+    });
+
+    Array.prototype.forEach.call(typeBtns, function (b) {
+      b.addEventListener('click', function () {
+        state.type = b.getAttribute('data-sd-ctype');
+        Array.prototype.forEach.call(typeBtns, function (o) {
+          var on = o === b;
+          o.className = 'px-4 py-2 rounded-full text-[12.5px] font-semibold border transition-all ' +
+            (on ? 'bg-[#FF6F00] text-white border-[#FF6F00] shadow-[0_6px_18px_-6px_rgba(255,111,0,0.55)]'
+                : 'bg-white text-[#0D1B2A] border-[#0D1B2A]/15 hover:border-[#FF6F00]/40');
+        });
+      });
+    });
+
+    if (customBtn && customWrap && customInput) {
+      customBtn.addEventListener('click', function () {
+        customWrap.hidden = false;
+        paintAmounts(null);
+        customInput.focus();
+      });
+      customInput.addEventListener('input', function () {
+        var v = Number(customInput.value);
+        if (customErr) customErr.textContent = '';
+        if (v > 0) setAmount(v);
+      });
+    }
+
+    function show(n) {
+      Array.prototype.forEach.call(steps, function (s) {
+        s.hidden = s.getAttribute('data-sd-dstep') !== String(n);
+      });
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function setErr(input, msg) {
+      var field = input.closest('.sd-pcf-field');
+      if (!field) return;
+      field.classList.toggle('has-error', !!msg);
+      var slot = field.querySelector('[data-sd-err]');
+      if (slot) slot.textContent = msg || '';
+    }
+
+    /* step 1 -> 2 */
+    var proceed = form.querySelector('[data-sd-proceed]');
+    if (proceed) {
+      proceed.addEventListener('click', function () {
+        if (!(state.amount > 0)) {
+          if (customErr) customErr.textContent = 'कृपया राशि दर्ज करें / Please enter an amount';
+          if (customInput) customInput.focus();
+          return;
+        }
+        show(2);
+      });
+    }
+
+    /* back links */
+    Array.prototype.forEach.call(form.querySelectorAll('[data-sd-dback]'), function (b) {
+      b.addEventListener('click', function () { show(Number(b.getAttribute('data-sd-dback'))); });
+    });
+
+    if (claim80g && panWrap) {
+      claim80g.addEventListener('change', function () { panWrap.hidden = !claim80g.checked; });
+    }
+
+    /* step 2 -> 3 */
+    var toPay = form.querySelector('[data-sd-dnext]');
+    if (toPay) {
+      toPay.addEventListener('click', function () {
+        var firstBad = null;
+        Array.prototype.forEach.call(form.querySelectorAll('[data-sd-dreq]'), function (input) {
+          var v = (input.value || '').trim();
+          var msg = v ? '' : 'यह जानकारी आवश्यक है / This field is required';
+          if (!msg && input.type === 'tel' && !/^[0-9+\-\s]{10,15}$/.test(v)) msg = 'Enter a valid mobile number';
+          setErr(input, msg);
+          if (msg && !firstBad) firstBad = input;
+        });
+        var email = form.querySelector('#dn-email');
+        if (email && email.value.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
+          setErr(email, 'Enter a valid email address');
+          if (!firstBad) firstBad = email;
+        }
+        var pan = form.querySelector('#dn-pan');
+        if (claim80g && claim80g.checked && pan) {
+          var pmsg = pan.value.trim() ? '' : 'PAN is required for the 80G benefit';
+          setErr(pan, pmsg);
+          if (pmsg && !firstBad) firstBad = pan;
+        }
+        if (firstBad) { firstBad.focus(); return; }
+
+        var decl = form.querySelector('[data-sd-ddecl]');
+        if (decl && !decl.checked) {
+          if (formErr) { formErr.textContent = 'कृपया पुष्टि करें / Please confirm the declaration'; formErr.classList.add('is-shown'); }
+          decl.focus();
+          return;
+        }
+        if (formErr) { formErr.textContent = ''; formErr.classList.remove('is-shown'); }
+
+        var name = form.querySelector('#dn-name').value.trim();
+        var purpose = form.querySelector('#dn-purpose').value;
+        var set = function (sel, val) { var el = form.querySelector(sel); if (el) el.textContent = val; };
+        set('[data-sd-sumname]', name);
+        set('[data-sd-sumpurpose]', purpose);
+        set('[data-sd-sumamount]', fmt(state.amount) + ' · ' + state.type);
+        show(3);
+      });
+    }
+
+    /* step 3 -> 4 */
+    var payBtn = form.querySelector('[data-sd-dpay]');
+    if (payBtn) {
+      payBtn.addEventListener('click', function () {
+        payBtn.disabled = true;
+        payBtn.querySelector('span').textContent = 'Processing…';
+        window.setTimeout(function () {
+          state.txn = 'SDMKF' + Date.now().toString().slice(-8);
+          var name = form.querySelector('#dn-name').value.trim();
+          var purpose = form.querySelector('#dn-purpose').value;
+          var set = function (sel, val) { var el = form.querySelector(sel); if (el) el.textContent = val; };
+          set('[data-sd-txn]', state.txn);
+          set('[data-sd-rcptamount]', fmt(state.amount) + ' · ' + state.type);
+          set('[data-sd-rcptname]', name);
+          set('[data-sd-rcptpurpose]', purpose);
+          var row = form.querySelector('[data-sd-rcpt80grow]');
+          if (row && claim80g && claim80g.checked) {
+            row.hidden = false;
+            set('[data-sd-rcpt80g]', 'Yes — PAN ' + (form.querySelector('#dn-pan').value.trim() || '—'));
+          }
+          payBtn.disabled = false;
+          payBtn.querySelector('span').textContent = 'Pay Now';
+          show(4);
+        }, 900);
+      });
+    }
+
+    /* receipt download — built in the browser, no server needed */
+    var dl = form.querySelector('[data-sd-download]');
+    if (dl) {
+      dl.addEventListener('click', function () {
+        var name = form.querySelector('#dn-name').value.trim();
+        var lines = [
+          'SANATAN DHARM MANAV KALYAN FOUNDATION',
+          'Donation Acknowledgement',
+          '',
+          'Transaction ID : ' + state.txn,
+          'Donor          : ' + name,
+          'Mobile         : ' + form.querySelector('#dn-mobile').value.trim(),
+          'Amount         : ' + fmt(state.amount) + ' (' + state.type + ')',
+          'Purpose        : ' + form.querySelector('#dn-purpose').value,
+          'City / State   : ' + form.querySelector('#dn-city').value.trim() + ', ' + form.querySelector('#dn-state').value.trim(),
+          '80G Claim      : ' + (claim80g && claim80g.checked ? 'Yes (PAN ' + form.querySelector('#dn-pan').value.trim() + ')' : 'No'),
+          '80G Reg. No.   : ABTCS1749KF20261',
+          '',
+          'This acknowledgement is generated from the website. The stamped 80G',
+          'receipt is issued by the foundation after verification.'
+        ].join('\n');
+        var blob = new Blob([lines], { type: 'text/plain;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'donation-' + state.txn + '.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      });
+    }
+
+    var share = form.querySelector('[data-sd-share]');
+    if (share) {
+      share.addEventListener('click', function () {
+        var text = 'मैंने सनातन धर्म मानव कल्याण फाउंडेशन के सेवा कार्यों में सहयोग किया है।';
+        if (navigator.share) {
+          navigator.share({ title: 'Sanatan Dharm Manav Kalyan Foundation', text: text, url: window.location.origin }).catch(function () {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(text + ' ' + window.location.origin).then(function () {
+            share.querySelector('span').textContent = 'Link Copied';
+            window.setTimeout(function () { share.querySelector('span').textContent = 'Share'; }, 1600);
+          }, function () {});
+        }
+      });
+    }
+
+    setAmount(state.amount);
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
@@ -643,6 +881,7 @@
     initPayPanel();
     initPaymentForm();
     initMissionsToggle();
+    initDonateFlow();
   }
 
   if (document.readyState === 'loading') {
