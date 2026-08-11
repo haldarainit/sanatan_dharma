@@ -916,3 +916,8 @@ body.sd-mnav-open { overflow: hidden; }
 .sd-ow-foot { margin: 16px 0 0; font-size: 12.5px; line-height: 1.8; text-align: center; color: rgba(13, 27, 42, .7); font-weight: 600; }
 
 .sd-pay-closing { margin-top: 32px; text-align: center; font-size: 14.5px; font-weight: 700; line-height: 1.8; color: #FF6F00; max-width: 46rem; margin-left: auto; margin-right: auto; }
+
+/* Our Missions — cards behind "View All".
+   The card carries .flex, whose display rule beats the UA style for [hidden],
+   so the attribute has to be restated here. */
+.sd-mis-more[hidden] { display: none !important; }

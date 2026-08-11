@@ -613,6 +613,28 @@
     show(1);
   }
 
+  /* Our Missions — View All reveals the rest of the campaigns in place. */
+  function initMissionsToggle() {
+    var btn = document.querySelector('[data-sd-missions-toggle]');
+    if (!btn || btn.dataset.sdInit === '1') return;
+    btn.dataset.sdInit = '1';
+
+    var extra = document.querySelectorAll('.sd-mis-more');
+    if (!extra.length) return;
+
+    var label = btn.querySelector('span');
+    var open = false;
+
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function () {
+      open = !open;
+      Array.prototype.forEach.call(extra, function (card) { card.hidden = !open; });
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (label) label.textContent = open ? 'Show Less' : 'View All';
+      if (!open) btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
   function init() {
     initCommitmentBox();
     initMobileNav();
@@ -620,6 +642,7 @@
     initPeopleFilter();
     initPayPanel();
     initPaymentForm();
+    initMissionsToggle();
   }
 
   if (document.readyState === 'loading') {
