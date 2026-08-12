@@ -2,167 +2,190 @@
 
 import { useEffect, useRef, useState } from 'react'
 import {
-  BASIC, CATEGORIES, NETWORK_RULE, NOTICE, PLEDGE, TIME_OPTIONS,
-  type Category,
+  BASIC_FIELDS, CATEGORIES, PAYMENT_NOTE, PAYMENT_OPTIONS, PLEDGE,
+  SERVICE_LEVELS, TERMS, THANK_YOU, TIME_OPTIONS,
+  gendered, inr, memberId, type Category,
 } from '@/lib/membership'
-import { checkRequired } from '@/components/portals/fields'
 
-const STEPS = ['श्रेणी चयन', 'विवरण', 'पंजीकरण', 'भुगतान']
-const LEVELS = ['Local', 'District', 'State', 'National'] as const
+type Gender = 'male' | 'female' | ''
+type Screen = 'cards' | 'form' | 'service' | 'payment' | 'success'
 
-function money(n: number) {
-  return '₹' + n.toLocaleString('en-IN')
-}
-
-/* SDMKF-<STATE2>-<6 digits> */
-function applicationId(state: string) {
-  const code = (state || 'IN').replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase() || 'IN'
-  return 'SDMKF-' + code + '-' + String(Math.floor(Math.random() * 900000) + 100000)
-}
+const OTHER = 'अन्य'
 
 export default function MembershipWizard() {
-  const [step, setStep] = useState(1)
+  const [screen, setScreen] = useState<Screen>('cards')
   const [cat, setCat] = useState<Category | null>(null)
-  const [level, setLevel] = useState<string>('')
-  const [amount, setAmount] = useState<number | null>(null)
-  const [values, setValues] = useState<Record<string, string>>({})
+  const [gender, setGender] = useState<Gender>('')
+  const [basic, setBasic] = useState<Record<string, string>>({})
   const [interests, setInterests] = useState<string[]>([])
+  const [interestOther, setInterestOther] = useState('')
+  const [time, setTime] = useState<string[]>([])
   const [skills, setSkills] = useState<string[]>([])
-  const [time, setTime] = useState('')
-  const [decl, setDecl] = useState(false)
-  const [pledge, setPledge] = useState(false)
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  const [formErr, setFormErr] = useState('')
-  const [appId, setAppId] = useState('')
+  const [skillOther, setSkillOther] = useState('')
+  const [declared, setDeclared] = useState(false)
 
-  /* the first paint must not drag the visitor past the page intro */
-  const mounted = useRef(false)
+  const [level, setLevel] = useState('')
+  const [wantsIdCard, setWantsIdCard] = useState(false)
+  const [photo, setPhoto] = useState('')
+  const [idProof, setIdProof] = useState('')
+  const [reason, setReason] = useState('')
+  const [pledged, setPledged] = useState(false)
+  const [agreed, setAgreed] = useState(false)
+  const [err, setErr] = useState('')
+  const [appNo, setAppNo] = useState('')
+
   const topRef = useRef<HTMLDivElement>(null)
+  const mounted = useRef(false)
   useEffect(() => {
     if (mounted.current) topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     mounted.current = true
-  }, [step])
+  }, [screen])
 
-  const set = (k: string) => (v: string) => setValues((p) => ({ ...p, [k]: v }))
-  const toggle = (list: string[], setList: (v: string[]) => void, v: string) =>
-    setList(list.includes(v) ? list.filter((x) => x !== v) : [...list, v])
+  const g = (t: string) => gendered(t, gender)
+  const toggle = (list: string[], set: (v: string[]) => void, v: string) =>
+    set(list.includes(v) ? list.filter((x) => x !== v) : [...list, v])
+
+  const fee = cat?.fees.find((f) => f.level === level)
+  const amount = fee ? (wantsIdCard ? fee.withId : fee.base) : null
+
+  function openCategory(c: Category) {
+    setCat(c)
+    setGender('')
+    setBasic({})
+    setInterests([])
+    setInterestOther('')
+    setTime([])
+    setSkills([])
+    setSkillOther('')
+    setDeclared(false)
+    setLevel('')
+    setWantsIdCard(false)
+    setPhoto('')
+    setIdProof('')
+    setReason('')
+    setPledged(false)
+    setAgreed(false)
+    setErr('')
+    setAppNo('')
+    setScreen('form')
+  }
+
+  function next() {
+    const missing = BASIC_FIELDS.filter(
+      (f) => f !== 'ईमेल (वैकल्पिक)' && !(basic[f] || '').trim()
+    )
+    if (!gender) return setErr('कृपया पुरुष / महिला चुनें।')
+    if (missing.length) return setErr('कृपया मूल जानकारी पूरी भरें — ' + missing[0])
+    if (!declared) return setErr('कृपया घोषणा स्वीकार करें।')
+    setErr('')
+    setScreen('service')
+  }
+
+  function payNow() {
+    if (!level) return setErr('कृपया सेवा स्तर चुनें।')
+    if (cat?.pledge && !pledged) return setErr('कृपया संकल्प स्वीकार करें।')
+    if (!agreed) return setErr('कृपया Terms & Conditions स्वीकार करें।')
+    setErr('')
+    setScreen('payment')
+  }
 
   return (
-    <div className="sd-mem" ref={topRef}>
-      <div className="sd-mem-steps">
-        {STEPS.map((label, i) => {
-          const n = i + 1
-          return (
-            <div
-              key={label}
-              className={'sd-mem-step' + (n === step ? ' is-active' : n < step ? ' is-done' : '')}
-            >
-              <span className="sd-mem-step-dot">{n}</span>
-              <span className="sd-mem-step-label deva">
-                {n}. {label}
-              </span>
-            </div>
-          )
-        })}
-      </div>
-
-      {/* ---------- 1. choose a category ---------- */}
-      {step === 1 && (
-        <div>
-          <div className="sd-mem-notice deva">{NOTICE}</div>
-          <div className="sd-mem-grid">
-            {CATEGORIES.map((c) => (
-              <article className="sd-mem-card" key={c.id}>
-                <div className="sd-mem-card-img">
+    <div className="sd-jm" ref={topRef}>
+      {/* ---------------- category cards ---------------- */}
+      {screen === 'cards' && (
+        <>
+          <div className="sd-jm-grid">
+            {CATEGORIES.map((c, i) => (
+              <article className="sd-jm-card" key={c.id}>
+                <div className="sd-jm-card-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.hi} />
+                  <img src={c.img} alt={c.cardTitle} />
+                  <span className="sd-jm-num">{i + 1}</span>
                 </div>
-                <span className="sd-mem-badge">{c.badge}</span>
-                <h3 className="sd-mem-card-en">{c.en}</h3>
-                <p className="sd-mem-card-hi deva">{c.hi}</p>
-                <p className="sd-mem-card-text deva">{c.card}</p>
-                <button
-                  type="button"
-                  className="sd-mem-cta sd-mem-cta--wide"
-                  onClick={() => {
-                    setCat(c)
-                    setStep(2)
-                  }}
-                >
+                <h3 className="sd-jm-card-title">{c.cardTitle}</h3>
+                <p className="sd-jm-card-text deva">{c.cardText}</p>
+                <button type="button" className="sd-jm-btn" onClick={() => openCategory(c)}>
                   View Details
                 </button>
               </article>
             ))}
           </div>
-        </div>
+        </>
       )}
 
-      {/* ---------- 2. category detail ---------- */}
-      {step === 2 && cat && (
-        <div className="sd-mem-panel">
-          <span className="sd-mem-badge">{cat.badge}</span>
-          <h3 className="sd-mem-title">{cat.en}</h3>
-          <p className="sd-mem-sub deva">{cat.hi}</p>
+      {/* ---------------- step 1: registration form ---------------- */}
+      {screen === 'form' && cat && (
+        <div className="sd-jm-panel">
+          <h3 className="sd-jm-formtitle deva">{cat.formTitle}</h3>
+
+          <div className="sd-jm-notice">
+            <strong>महत्वपूर्ण सूचना</strong>
+            <p className="deva">{cat.notice}</p>
+          </div>
+
+          {/* category name in caps; gender sits top-right per the brief */}
+          <div className="sd-jm-formtop">
+            <div>
+              <p className="sd-jm-caps">{cat.headingEn}</p>
+              <p className="sd-jm-caps-hi deva">{cat.headingHi}</p>
+            </div>
+            <div className="sd-jm-gender">
+              <label>
+                <input
+                  type="radio"
+                  name="gender"
+                  checked={gender === 'male'}
+                  onChange={() => setGender('male')}
+                />
+                <span className="deva">पुरुष (Male)</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="gender"
+                  checked={gender === 'female'}
+                  onChange={() => setGender('female')}
+                />
+                <span className="deva">महिला (Female)</span>
+              </label>
+            </div>
+          </div>
+
+          <h4 className="sd-jm-h">Basic Information | मूल जानकारी</h4>
+          <div className="sd-jm-fields">
+            {BASIC_FIELDS.map((f) => (
+              <div className="sd-jm-field" key={f}>
+                <label htmlFor={'jm-' + f}>{f}</label>
+                <input
+                  id={'jm-' + f}
+                  type={f === 'जन्मतिथि' ? 'date' : f.includes('ईमेल') ? 'email' : 'text'}
+                  value={basic[f] || ''}
+                  onChange={(e) => setBasic((p) => ({ ...p, [f]: e.target.value }))}
+                />
+              </div>
+            ))}
+          </div>
 
           {cat.about && (
             <>
-              <h4 className="sd-mem-h deva">{cat.aboutTitle || 'परिचय'}</h4>
-              <p className="sd-mem-p deva">{cat.about}</p>
-            </>
-          )}
-
-          {cat.roles.length > 0 && (
-            <>
-              <h4 className="sd-mem-h deva">भूमिका एवं दायित्व</h4>
-              <ul className="sd-mem-list deva">
-                {cat.roles.map((r) => (
+              <h4 className="sd-jm-h">{cat.aboutTitle}</h4>
+              <p className="sd-jm-p deva">{cat.about}</p>
+              <p className="sd-jm-sub deva">संभावित भूमिका एवं दायित्व</p>
+              <ul className="sd-jm-list deva">
+                {cat.roles?.map((r) => (
                   <li key={r}>{r}</li>
                 ))}
               </ul>
             </>
           )}
 
-          {cat.networkRule && <div className="sd-mem-notice deva">{NETWORK_RULE}</div>}
-
-          <div className="sd-mem-actions">
-            <button type="button" className="sd-mem-cta sd-mem-back sd-mem-back--btn" onClick={() => setStep(1)}>
-              ← श्रेणी बदलें
-            </button>
-            <button type="button" className="sd-mem-cta sd-mem-cta--wide" onClick={() => setStep(3)}>
-              पंजीकरण करें | Register
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* ---------- 3. registration form ---------- */}
-      {step === 3 && cat && (
-        <div className="sd-mem-panel">
-          <h3 className="sd-mem-title deva">{cat.formTitle}</h3>
-
-          <div className="sd-mem-form">
-            {BASIC.map((f) => (
-              <div className={'sd-mem-field' + (errors[f.id] ? ' has-error' : '')} key={f.id}>
-                <label htmlFor={'mem-' + f.id}>
-                  {f.label}
-                  {f.req ? ' *' : ''}
-                  {f.en && <em>{f.en}</em>}
-                </label>
-                <input
-                  id={'mem-' + f.id}
-                  type={f.type || 'text'}
-                  value={values[f.id] || ''}
-                  onChange={(e) => set(f.id)(e.target.value)}
-                />
-                <p className="sd-mem-err">{errors[f.id] || ''}</p>
-              </div>
-            ))}
-          </div>
-
-          <h4 className="sd-mem-h deva">सेवा रुचि</h4>
-          <div className="sd-mem-checks">
+          <h4 className="sd-jm-h">Service Interest | सेवा रुचि</h4>
+          <p className="sd-jm-sub deva">
+            आप किस प्रकार की सेवा में सहयोग देना चाहते हैं? (एक या अधिक चुनें)
+          </p>
+          <div className="sd-jm-checks">
             {cat.interests.map((i) => (
-              <label key={i} className={'sd-mem-check sd-mem-check--box' + (interests.includes(i) ? ' is-on' : '')}>
+              <label className="sd-jm-check" key={i}>
                 <input
                   type="checkbox"
                   checked={interests.includes(i)}
@@ -171,12 +194,41 @@ export default function MembershipWizard() {
                 <span className="deva">{i}</span>
               </label>
             ))}
+            <label className="sd-jm-check sd-jm-check--other">
+              <input
+                type="checkbox"
+                checked={interests.includes(OTHER)}
+                onChange={() => toggle(interests, setInterests, OTHER)}
+              />
+              <span className="deva">{OTHER}</span>
+              <input
+                type="text"
+                className="sd-jm-otherinput"
+                value={interestOther}
+                onChange={(e) => setInterestOther(e.target.value)}
+                disabled={!interests.includes(OTHER)}
+              />
+            </label>
           </div>
 
-          <h4 className="sd-mem-h deva">कौशल</h4>
-          <div className="sd-mem-checks">
+          <h4 className="sd-jm-h deva">उपलब्ध समय</h4>
+          <div className="sd-jm-checks">
+            {TIME_OPTIONS.map((t) => (
+              <label className="sd-jm-check" key={t}>
+                <input
+                  type="checkbox"
+                  checked={time.includes(t)}
+                  onChange={() => toggle(time, setTime, t)}
+                />
+                <span className="deva">{t}</span>
+              </label>
+            ))}
+          </div>
+
+          <h4 className="sd-jm-h deva">विशेष कौशल / अनुभव (यदि कोई हो)</h4>
+          <div className="sd-jm-checks">
             {cat.skills.map((s) => (
-              <label key={s} className={'sd-mem-check sd-mem-check--box' + (skills.includes(s) ? ' is-on' : '')}>
+              <label className="sd-jm-check" key={s}>
                 <input
                   type="checkbox"
                   checked={skills.includes(s)}
@@ -185,161 +237,216 @@ export default function MembershipWizard() {
                 <span className="deva">{s}</span>
               </label>
             ))}
+            <label className="sd-jm-check sd-jm-check--other">
+              <input
+                type="checkbox"
+                checked={skills.includes(OTHER)}
+                onChange={() => toggle(skills, setSkills, OTHER)}
+              />
+              <span className="deva">{OTHER}</span>
+              <input
+                type="text"
+                className="sd-jm-otherinput"
+                value={skillOther}
+                onChange={(e) => setSkillOther(e.target.value)}
+                disabled={!skills.includes(OTHER)}
+              />
+            </label>
           </div>
 
-          <div className="sd-mem-field">
-            <label htmlFor="mem-time">उपलब्ध समय<em>Available Time</em></label>
-            <select id="mem-time" value={time} onChange={(e) => setTime(e.target.value)}>
-              <option value="">चयन करें</option>
-              {TIME_OPTIONS.map((t) => (
-                <option key={t} value={t}>
-                  {t}
+          <h4 className="sd-jm-h">Declaration | घोषणा</h4>
+          <label className="sd-jm-check sd-jm-check--decl">
+            <input
+              type="checkbox"
+              checked={declared}
+              onChange={(e) => setDeclared(e.target.checked)}
+            />
+            <span className="deva">{g(cat.declaration)}</span>
+          </label>
+
+          {err && <p className="sd-jm-err deva">{err}</p>}
+
+          <div className="sd-jm-actions">
+            <button type="button" className="sd-jm-back" onClick={() => setScreen('cards')}>
+              ← श्रेणी बदलें
+            </button>
+            <button type="button" className="sd-jm-btn sd-jm-btn--wide" onClick={next}>
+              Next | आगे बढ़ें
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ---------------- step 2: service selection ---------------- */}
+      {screen === 'service' && cat && (
+        <div className="sd-jm-panel">
+          <h3 className="sd-jm-formtitle deva">Step 2 — Service Selection | सेवा चयन</h3>
+
+          <div className="sd-jm-field">
+            <label htmlFor="jm-level" className="deva">सेवा स्तर चुनें</label>
+            <select id="jm-level" value={level} onChange={(e) => setLevel(e.target.value)}>
+              <option value="">— चयन करें —</option>
+              {SERVICE_LEVELS.map((l) => (
+                <option key={l} value={l}>
+                  {l}
                 </option>
               ))}
             </select>
           </div>
+          <p className="sd-jm-note deva">{cat.levelNote}</p>
 
-          <h4 className="sd-mem-h deva">सेवा स्तर एवं सहयोग राशि</h4>
-          <div className="sd-mem-checks">
-            {LEVELS.map((lv) => (
-              <div key={lv} className={'' + (level === lv ? ' is-on' : '')}>
-                <p className="sd-mem-h">{lv}</p>
-                <div className="sd-mem-fees">
-                  {cat.fees[lv].map((a) => (
-                    <button
-                      type="button"
-                      key={a}
-                      className={'sd-mem-fee' + (level === lv && amount === a ? ' is-on' : '')}
-                      onClick={() => {
-                        setLevel(lv)
-                        setAmount(a)
-                      }}
-                    >
-                      {money(a)}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <h4 className="sd-jm-h deva">पहचान पत्र (ID Card)</h4>
+          <label className="sd-jm-check">
+            <input
+              type="checkbox"
+              checked={wantsIdCard}
+              onChange={(e) => setWantsIdCard(e.target.checked)}
+            />
+            <span className="deva">मुझे संगठन का पहचान पत्र (ID Card) चाहिए।</span>
+          </label>
+          {cat.idCardNote && <p className="sd-jm-note deva">{cat.idCardNote}</p>}
+
+          <div className="sd-jm-fields">
+            <div className="sd-jm-field">
+              <label htmlFor="jm-photo">Upload Photo</label>
+              <input
+                id="jm-photo"
+                type="file"
+                accept="image/*"
+                onChange={(e) => setPhoto(e.target.files?.[0]?.name || '')}
+              />
+              {photo && <p className="sd-jm-note">{photo}</p>}
+            </div>
+            <div className="sd-jm-field">
+              <label htmlFor="jm-idproof">Upload ID Proof</label>
+              <input
+                id="jm-idproof"
+                type="file"
+                accept="image/*,.pdf"
+                onChange={(e) => setIdProof(e.target.files?.[0]?.name || '')}
+              />
+              {idProof && <p className="sd-jm-note">{idProof}</p>}
+            </div>
           </div>
 
-          <label className="sd-mem-check sd-mem-check--decl">
-            <input type="checkbox" checked={decl} onChange={(e) => setDecl(e.target.checked)} />
-            <span className="deva">{cat.declaration}</span>
-          </label>
+          <div className="sd-jm-field">
+            <label htmlFor="jm-reason">Message / Reason for Joining</label>
+            <textarea
+              id="jm-reason"
+              rows={3}
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+            />
+          </div>
+
+          <h4 className="sd-jm-h">Service Contribution | सेवा सहयोग राशि</h4>
+          <p className="sd-jm-amount">{amount === null ? '₹ XXXX' : inr(amount)}</p>
+          <p className="sd-jm-note deva">{cat.feeLine}</p>
+          {cat.autoUpdateNote && (
+            <p className="sd-jm-note deva">
+              (यह राशि चयनित सेवा स्तर एवं ID Card विकल्प के अनुसार स्वतः बदलती रहेगी।)
+            </p>
+          )}
 
           {cat.pledge && (
-            <label className="sd-mem-check sd-mem-check--decl">
-              <input type="checkbox" checked={pledge} onChange={(e) => setPledge(e.target.checked)} />
-              <span className="deva">{PLEDGE}</span>
+            <label className="sd-jm-check sd-jm-check--decl">
+              <input
+                type="checkbox"
+                checked={pledged}
+                onChange={(e) => setPledged(e.target.checked)}
+              />
+              <span className="deva">{g(PLEDGE)}</span>
             </label>
           )}
 
-          {formErr && <p className="sd-mem-err sd-mem-err--block">{formErr}</p>}
+          <label className="sd-jm-check sd-jm-check--decl">
+            <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+            <span>{TERMS}</span>
+          </label>
 
-          <div className="sd-mem-actions">
-            <button type="button" className="sd-mem-cta sd-mem-back sd-mem-back--btn" onClick={() => setStep(2)}>
+          {err && <p className="sd-jm-err deva">{err}</p>}
+
+          <div className="sd-jm-actions">
+            <button type="button" className="sd-jm-back" onClick={() => setScreen('form')}>
               ← पीछे
             </button>
-            <button
-              type="button"
-              className="sd-mem-cta sd-mem-cta--wide"
-              onClick={() => {
-                const e = checkRequired(
-                  BASIC.map((f) => ({
-                    key: f.id,
-                    value: values[f.id] || '',
-                    type: f.type,
-                    required: f.req,
-                  }))
-                )
-                setErrors(e)
-                if (Object.keys(e).length) {
-                  setFormErr('कृपया आवश्यक जानकारी पूरी करें।')
-                  return
-                }
-                if (!amount) {
-                  setFormErr('कृपया सेवा स्तर एवं सहयोग राशि चुनें।')
-                  return
-                }
-                if (!decl || (cat.pledge && !pledge)) {
-                  setFormErr('कृपया घोषणा स्वीकार करें।')
-                  return
-                }
-                setFormErr('')
-                setStep(4)
-              }}
-            >
-              आगे बढ़ें | Continue
+            <button type="button" className="sd-jm-btn sd-jm-btn--wide" onClick={payNow}>
+              Pay Now
             </button>
           </div>
         </div>
       )}
 
-      {/* ---------- 4. payment ---------- */}
-      {step === 4 && cat && !appId && (
-        <div className="sd-mem-panel">
-          <h3 className="sd-mem-title deva">भुगतान | Contribution</h3>
-          <ul className="sd-mem-list">
-            <li>
-              <span>श्रेणी</span>
-              <strong>{cat.en}</strong>
-            </li>
-            <li>
-              <span>नाम</span>
-              <strong>{values.name}</strong>
-            </li>
-            <li>
-              <span>सेवा स्तर</span>
-              <strong>{level}</strong>
-            </li>
-            <li>
-              <span>सहयोग राशि</span>
-              <strong>{amount ? money(amount) : '—'}</strong>
-            </li>
-          </ul>
+      {/* ---------------- payment ---------------- */}
+      {screen === 'payment' && cat && (
+        <div className="sd-jm-panel">
+          <h3 className="sd-jm-formtitle">Payment</h3>
+          <p className="sd-jm-amount">{amount === null ? '₹ XXXX' : inr(amount)}</p>
 
-          <div className="sd-mem-notice deva">
-            भुगतान गेटवे अभी सक्रिय नहीं है। नीचे &ldquo;पंजीकरण पूर्ण करें&rdquo; दबाने पर आपका
-            आवेदन क्रमांक बन जाएगा, किंतु राशि अभी नहीं ली जाएगी।
+          <div className="sd-jm-pay">
+            {PAYMENT_OPTIONS.map((o) => (
+              <button
+                type="button"
+                key={o}
+                className="sd-jm-payopt"
+                onClick={() => {
+                  setAppNo(memberId(basic['राज्य'] || ''))
+                  setScreen('success')
+                }}
+              >
+                {o}
+              </button>
+            ))}
           </div>
 
-          <div className="sd-mem-actions">
-            <button type="button" className="sd-mem-cta sd-mem-back sd-mem-back--btn" onClick={() => setStep(3)}>
-              ← पीछे
-            </button>
-            <button
-              type="button"
-              className="sd-mem-cta sd-mem-cta--wide"
-              onClick={() => setAppId(applicationId(values.state || ''))}
-            >
-              पंजीकरण पूर्ण करें
-            </button>
+          <div className="sd-jm-notice">
+            <strong>Payment Note</strong>
+            <p className="deva">{PAYMENT_NOTE}</p>
           </div>
-        </div>
-      )}
 
-      {/* ---------- done ---------- */}
-      {appId && cat && (
-        <div className="sd-mem-panel sd-mem-success">
-          <div className="sd-mem-tick">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-          </div>
-          <h3 className="sd-mem-title deva">आपका आवेदन दर्ज हो गया</h3>
-          <div className="sd-fx-ref">{appId}</div>
-          <p className="sd-mem-sub deva">
-            कृपया यह आवेदन क्रमांक सुरक्षित रखें। सत्यापन के पश्चात आपसे संपर्क किया जाएगा।
+          <p className="sd-jm-note deva">
+            भुगतान गेटवे अभी जुड़ा नहीं है — कोई राशि नहीं ली जाएगी। ऊपर कोई विकल्प चुनने पर आवेदन
+            संख्या बन जाएगी।
           </p>
+
+          <div className="sd-jm-actions">
+            <button type="button" className="sd-jm-back" onClick={() => setScreen('service')}>
+              ← पीछे
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ---------------- payment success ---------------- */}
+      {screen === 'success' && cat && (
+        <div className="sd-jm-panel sd-jm-success">
+          <h3 className="sd-jm-formtitle deva">आवेदन सफल हुआ</h3>
+
+          <p className="sd-jm-sub deva">आवेदन संख्या</p>
+          <p className="sd-jm-appno">{appNo}</p>
+
+          <div className="sd-jm-actions sd-jm-actions--center">
+            <button type="button" className="sd-jm-btn" onClick={() => window.print()}>
+              डाउनलोड रसीद
+            </button>
+          </div>
+
+          <h4 className="sd-jm-h">{THANK_YOU.title}</h4>
+          {THANK_YOU.lines.map((l) => (
+            <p className="sd-jm-p deva" key={l}>
+              {l}
+            </p>
+          ))}
+
+          <p className="sd-jm-note deva">
+            आगे की सूचना SMS / Email / WhatsApp द्वारा भेजी जाएगी।
+          </p>
+
+          <div className="sd-jm-actions sd-jm-actions--center">
+            <button type="button" className="sd-jm-back" onClick={() => setScreen('cards')}>
+              ← Join The Mission
+            </button>
+          </div>
         </div>
       )}
     </div>

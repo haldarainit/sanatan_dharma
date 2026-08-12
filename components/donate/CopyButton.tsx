@@ -8,7 +8,7 @@ export default function CopyButton({ value }: { value: string }) {
   return (
     <button
       type="button"
-      className={'sd-pay-copy' + (done ? ' is-done' : '')}
+      className={'sd-bank-copy' + (done ? ' is-done' : '')}
       aria-label={`Copy ${value}`}
       onClick={async () => {
         try {

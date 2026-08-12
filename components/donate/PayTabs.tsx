@@ -12,7 +12,7 @@ const TABS = [
 export default function PayTabs() {
   const [tab, setTab] = useState<string>('qr')
   return (
-    <div className="sd-pay">
+    <>
       <div className="sd-pay-tabs" role="tablist">
         {TABS.map((t) => (
           <button
@@ -33,6 +33,6 @@ export default function PayTabs() {
         {tab === 'bank' && <BankPanel />}
         {tab === 'other' && <OtherPanel />}
       </div>
-    </div>
+    </>
   )
 }

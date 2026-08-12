@@ -3,6 +3,8 @@
 @import './sd-buttons.css';
 @import './sd-site.css';
 @import './page-sections.css';
+@import './mission-detail.css';
+@import './join-mission.css';
 
 @tailwind base;
 @tailwind components;

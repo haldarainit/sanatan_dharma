@@ -54,7 +54,13 @@ export function StatusTable({ rows }: { rows: StatusRow[] }) {
 }
 
 /* ---------- request/complaint status lookup ---------- */
-export function StatusTracker({ idLabel, placeholder }: { idLabel: string; placeholder: string }) {
+export function StatusTracker({
+  idLabel, placeholder, action = 'Check Status',
+}: {
+  idLabel: string
+  placeholder: string
+  action?: string
+}) {
   const [ref, setRef] = useState('')
   const [mobile, setMobile] = useState('')
   const [result, setResult] = useState<{ warn: boolean; text: string; ref?: string } | null>(null)
@@ -105,7 +111,7 @@ export function StatusTracker({ idLabel, placeholder }: { idLabel: string; place
             })
           }}
         >
-          Check Status
+          {action}
         </button>
       </div>
 

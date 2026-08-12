@@ -1,0 +1,193 @@
+/* --------------------------------------------------------------------------
+   Join The Mission — Membership Ecosystem
+   Styling for the flow described in the client's brief: five category cards,
+   a registration form, service selection, payment and the success screen.
+   The brief asks that the whole thing read as seva participation rather than
+   a membership sale, so the treatment stays calm -- no price-led cards, no
+   badges competing for attention.
+   -------------------------------------------------------------------------- */
+.sd-jm { max-width: 1080px; margin: 0 auto; }
+
+/* ---------- page heading ---------- */
+.sd-jm-head { text-align: center; max-width: 54rem; margin: 0 auto 34px; }
+.sd-jm-head h2 {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 34px; line-height: 1.1; font-weight: 800; color: #0D1B2A; margin: 0;
+}
+.sd-jm-hi { font-size: 17px; font-weight: 700; color: #e35300; margin: 6px 0 0; }
+.sd-jm-eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase;
+  color: #94a3b8; margin: 10px 0 16px;
+}
+.sd-jm-lead { font-size: 14px; line-height: 1.9; color: #4b5563; margin: 0 0 8px; }
+
+/* ---------- category cards ---------- */
+.sd-jm-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.sd-jm-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: #fff; border: 1px solid #eee6da; border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(17, 24, 39, .04);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.sd-jm-card:hover { transform: translateY(-3px); border-color: #ffd6ad; box-shadow: 0 14px 30px rgba(255, 111, 0, .12); }
+/* the poster sits in a fixed band so all five cards line up */
+.sd-jm-card-img {
+  position: relative; height: 210px; overflow: hidden;
+  background: #f6f1ea; flex: 0 0 auto;
+}
+.sd-jm-card-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; max-width: 100%; max-height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.sd-jm-num {
+  position: absolute; top: 12px; right: 12px;
+  width: 26px; height: 26px; border-radius: 999px;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, .92); color: #c2410c;
+  font-size: 12px; font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+.sd-jm-card-title {
+  font-size: 17px; font-weight: 800; color: #0D1B2A; margin: 0 0 8px; padding: 18px 20px 0;
+}
+.sd-jm-card-text { font-size: 13.5px; line-height: 1.85; color: #5b6472; margin: 0 0 18px; padding: 0 20px; flex: 1; min-height: 76px; }
+.sd-jm-card .sd-jm-btn { margin: 0 20px 20px; }
+
+/* ---------- panels ---------- */
+.sd-jm-panel {
+  background: #fff; border: 1px solid #eee6da; border-radius: 20px;
+  padding: 22px 20px; box-shadow: 0 2px 12px rgba(17, 24, 39, .04);
+}
+.sd-jm-formtitle {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 22px; line-height: 1.3; font-weight: 800; color: #0D1B2A; margin: 0 0 16px;
+}
+
+.sd-jm-notice {
+  border-left: 4px solid #B91C1C; background: #FEF2F2; border-radius: 12px;
+  padding: 14px 16px; margin: 0 0 20px;
+}
+.sd-jm-notice strong { display: block; font-size: 12.5px; font-weight: 800; color: #7F1D1D; margin-bottom: 4px; }
+.sd-jm-notice p { margin: 0; font-size: 12.5px; line-height: 1.85; color: #7F1D1D; }
+
+/* category name left, gender top-right, as the brief specifies */
+.sd-jm-formtop {
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;
+  gap: 14px; padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid #f1ece4;
+}
+.sd-jm-caps {
+  font-size: 19px; font-weight: 800; letter-spacing: .06em; color: #0D1B2A; margin: 0;
+}
+.sd-jm-caps-hi { font-size: 14px; font-weight: 700; color: #e35300; margin: 3px 0 0; }
+.sd-jm-gender { display: flex; flex-wrap: wrap; gap: 14px; }
+.sd-jm-gender label { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #0D1B2A; cursor: pointer; }
+.sd-jm-gender input { width: 16px; height: 16px; accent-color: #e35300; }
+
+/* ---------- headings and text ---------- */
+.sd-jm-h {
+  font-size: 14px; font-weight: 800; color: #0D1B2A;
+  margin: 26px 0 10px; padding-bottom: 7px; border-bottom: 1px solid #f1ece4;
+}
+.sd-jm-sub { font-size: 13px; font-weight: 600; color: #5b6472; margin: 0 0 10px; }
+.sd-jm-p { font-size: 13.5px; line-height: 1.9; color: #4b5563; margin: 0 0 12px; }
+.sd-jm-note { font-size: 12.5px; line-height: 1.8; color: #7c6f5c; margin: 8px 0 0; }
+.sd-jm-list { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 8px; }
+.sd-jm-list li { position: relative; padding-left: 18px; font-size: 13px; line-height: 1.8; color: #4b5563; }
+.sd-jm-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 999px; background: #e35300; }
+
+/* ---------- fields ---------- */
+.sd-jm-fields { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.sd-jm-field { display: flex; flex-direction: column; }
+.sd-jm-field label { font-size: 12.5px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; }
+.sd-jm-field input[type="text"],
+.sd-jm-field input[type="email"],
+.sd-jm-field input[type="date"],
+.sd-jm-field select,
+.sd-jm-field textarea {
+  width: 100%; border: 1px solid #dcd5ca; border-radius: 10px;
+  padding: 11px 13px; font: inherit; font-size: 13.5px; color: #0D1B2A;
+  background: #fff; outline: none; transition: border-color .15s ease;
+}
+.sd-jm-field input:focus, .sd-jm-field select:focus, .sd-jm-field textarea:focus { border-color: #e35300; }
+.sd-jm-field input[type="file"] { font-size: 12.5px; }
+
+/* ---------- checkbox groups ---------- */
+.sd-jm-checks { display: grid; grid-template-columns: 1fr; gap: 9px; }
+.sd-jm-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; line-height: 1.7; color: #334155; cursor: pointer;
+}
+.sd-jm-check input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex: 0 0 auto; accent-color: #e35300; }
+.sd-jm-check--decl {
+  background: #FFFBF4; border: 1px solid #f0e4d2; border-radius: 12px;
+  padding: 13px 15px; margin-top: 16px;
+}
+.sd-jm-check--other { flex-wrap: wrap; }
+.sd-jm-otherinput {
+  flex: 1 1 180px; min-width: 140px; border: 0; border-bottom: 1px solid #cfc7ba;
+  padding: 2px 4px; font: inherit; font-size: 13px; outline: none; background: transparent;
+}
+.sd-jm-otherinput:focus { border-bottom-color: #e35300; }
+.sd-jm-otherinput:disabled { border-bottom-style: dotted; background: transparent; }
+
+/* ---------- contribution ---------- */
+.sd-jm-amount {
+  font-size: 30px; font-weight: 800; color: #e35300; margin: 4px 0 6px; letter-spacing: -.01em;
+}
+
+/* ---------- payment ---------- */
+.sd-jm-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+.sd-jm-payopt {
+  border: 1px solid #dcd5ca; border-radius: 12px; background: #fff;
+  padding: 15px 12px; font: inherit; font-size: 13.5px; font-weight: 700; color: #0D1B2A;
+  cursor: pointer; transition: border-color .15s ease, background .15s ease;
+}
+.sd-jm-payopt:hover { border-color: #e35300; background: #FFF8EC; color: #c2410c; }
+
+/* ---------- success ---------- */
+.sd-jm-success { text-align: center; }
+.sd-jm-appno {
+  display: inline-block; margin: 6px 0 4px; padding: 11px 20px;
+  border-radius: 999px; background: #FFF3E6; border: 1px dashed #FFC98A;
+  font-size: 16px; font-weight: 800; letter-spacing: .04em; color: #c2410c;
+}
+
+/* ---------- buttons ---------- */
+.sd-jm-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.sd-jm-actions--center { justify-content: center; }
+.sd-jm-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 12px 24px; border: 0; border-radius: 12px;
+  background: #e35300; font: inherit; font-size: 13.5px; font-weight: 700; color: #fff;
+  cursor: pointer; transition: background .2s ease;
+}
+.sd-jm-btn:hover { background: #c2410c; }
+.sd-jm-btn--wide { flex: 1 1 auto; }
+.sd-jm-back {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 12px 20px; border: 1px solid rgba(13, 27, 42, .18);
+  border-radius: 12px; background: #fff; font: inherit; font-size: 13.5px; font-weight: 700;
+  color: #0D1B2A; cursor: pointer;
+}
+.sd-jm-back:hover { background: #f7f8fb; }
+
+.sd-jm-err {
+  margin: 16px 0 0; padding: 11px 14px; border-radius: 10px;
+  background: #FEF2F2; border: 1px solid #FCA5A5;
+  font-size: 12.5px; font-weight: 600; color: #7F1D1D;
+}
+
+@media (min-width: 640px) {
+  .sd-jm-head h2 { font-size: 40px; }
+  .sd-jm-panel { padding: 28px 30px; }
+  .sd-jm-grid { grid-template-columns: 1fr 1fr; }
+  .sd-jm-fields { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .sd-jm-checks { grid-template-columns: 1fr 1fr; }
+  .sd-jm-pay { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .sd-jm-grid { grid-template-columns: repeat(3, 1fr); }
+  .sd-jm-fields { grid-template-columns: repeat(3, 1fr); }
+}

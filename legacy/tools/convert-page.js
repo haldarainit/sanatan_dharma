@@ -10,10 +10,17 @@ const ROOT = path.join(__dirname, '..', '..');
 const SRC = path.join(ROOT, 'legacy', 'html');
 
 function readPage(route) {
-  const file = route === '' ? 'index.html' : route + '.html';
-  const p = path.join(SRC, file);
-  if (!fs.existsSync(p)) throw new Error('no such page: ' + p);
-  return fs.readFileSync(p, 'utf8');
+  /* the scrape stores some routes as <route>.html and others as
+     <route>/index.html -- try both */
+  const candidates =
+    route === ''
+      ? ['index.html']
+      : [route + '.html', path.join(route, 'index.html')];
+  for (const c of candidates) {
+    const p = path.join(SRC, c);
+    if (fs.existsSync(p)) return fs.readFileSync(p, 'utf8');
+  }
+  throw new Error('no such page: ' + route);
 }
 
 function meta(html) {
@@ -27,8 +34,16 @@ function meta(html) {
 
 function mainOf(html) {
   const hdr = html.indexOf('</header>');
-  const ftr = html.lastIndexOf('<footer');
-  if (hdr === -1 || ftr === -1) throw new Error('header/footer boundary missing');
+  if (hdr === -1) throw new Error('header boundary missing');
+  /* the mission detail pages ship without a footer; fall back to the end of
+     the body and drop any trailing scripts */
+  let ftr = html.lastIndexOf('<footer');
+  if (ftr === -1) {
+    ftr = html.indexOf('</body>');
+    if (ftr === -1) ftr = html.length;
+    const lastScript = html.lastIndexOf('<script', ftr);
+    if (lastScript > hdr) ftr = lastScript;
+  }
   let body = html.slice(hdr + 9, ftr);
   /* The scrape wraps content in <main> -- the homepage nests two of them,
      which is invalid anyway. app/layout.tsx supplies the real one, so peel

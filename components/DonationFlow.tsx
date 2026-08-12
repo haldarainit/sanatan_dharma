@@ -171,7 +171,7 @@ export default function DonationFlow() {
               चयनित राशि: <strong className="text-[#FF6F00]">{custom ? (customAmt ? inr(Number(customAmt)) : '—') : inr(amount)}</strong>
               <span className="text-[#0D1B2A]/50"> / {freq}</span>
             </p>
-            <button type="button" onClick={proceed} className="sd-btn sd-btn--proceed rounded-full px-7 py-3 text-sm font-bold text-white">
+            <button type="button" onClick={proceed} className="sd-btn sd-btn--next rounded-full px-7 py-3 text-sm font-bold text-white">
               Proceed
             </button>
           </div>

@@ -45,7 +45,7 @@ export default function FutureMissions() {
       <div
         className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3.5 mb-8 sm:mb-10"
         role="tablist"
-        aria-label="Future missions"
+        aria-label="Upcoming service missions"
       >
         {FUTURE_MISSIONS.map((m, i) => (
           <button
@@ -57,7 +57,7 @@ export default function FutureMissions() {
               setIndex(i)
               restart()
             }}
-            className={`deva px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer ${
+            className={`fm-tab-btn deva px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer ${
               i === index ? TAB_ON : TAB_OFF
             }`}
           >
@@ -66,49 +66,53 @@ export default function FutureMissions() {
         ))}
       </div>
 
-      <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative h-56 sm:h-72 md:h-auto md:min-h-[420px] overflow-hidden">
-            {FUTURE_MISSIONS.map((m, i) => (
+      <div className="flex flex-col lg:flex-row items-stretch gap-6 sm:gap-8 max-w-5xl mx-auto">
+        {/* image column — the track slides horizontally */}
+        <div className="w-full lg:w-[440px] shrink-0 h-[300px] sm:h-[420px] lg:h-auto rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white relative">
+          <div className="fm-track" style={{ transform: `translateX(-${index * 100}%)` }}>
+            {FUTURE_MISSIONS.map((m) => (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                key={m.image}
-                src={m.image}
-                alt={m.title}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                  i === index ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
+              <img key={m.image} className="fm-slide" src={m.image} alt={m.title} />
             ))}
           </div>
+        </div>
 
-          <div key={index} className="fm-anim flex flex-col p-6 sm:p-8 md:p-10">
-            <h3 className="deva text-xl sm:text-2xl md:text-[26px] font-bold text-[#0D1B2A]">
+        {/* text column */}
+        <div className="w-full lg:flex-1 bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-slate-100 flex flex-col lg:h-[560px]">
+          <div className="shrink-0 fm-anim" key={index}>
+            <h3 className="deva text-xl sm:text-2xl font-bold text-slate-900 mb-1 relative after:content-[''] after:block after:w-10 after:h-1 after:bg-orange-600 after:mt-2 after:rounded-full">
               {active.title}
             </h3>
-            <p className="deva mt-1.5 text-sm font-semibold text-[#FF6F00]">{active.tagline}</p>
             {active.note && (
-              <p className="deva mt-2 inline-block rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
+              <p className="deva text-slate-500 font-semibold text-[11px] sm:text-xs mt-3">
                 {active.note}
               </p>
             )}
+            <p className="deva text-[#e35300] font-semibold text-xs tracking-widest uppercase mb-1 mt-3">
+              {active.tagline}
+            </p>
+          </div>
 
-            <div ref={descRef} className="mt-4 space-y-3 md:max-h-[240px] md:overflow-y-auto md:pr-2">
-              {active.paras.map((p, i) => (
-                <p
-                  key={i}
-                  className="deva text-slate-600 text-sm sm:text-[15px] leading-relaxed text-justify"
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
+          <div
+            ref={descRef}
+            className="flex-1 min-h-0 lg:overflow-y-auto my-4 pr-0 lg:pr-2 space-y-3"
+          >
+            {active.paras.map((p, i) => (
+              <p
+                key={i}
+                className="deva text-slate-600 text-sm sm:text-[15px] leading-relaxed text-justify"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
 
+          <div className="pt-4 border-t border-slate-100 shrink-0">
             <Link
               href={active.href}
-              className="mt-6 inline-flex w-fit items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-white sd-btn sd-btn--details"
+              className="w-full flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold text-sm sm:text-base py-3 px-6 rounded-full shadow-md shadow-blue-600/20 transition-all sd-btn sd-btn--view-details"
             >
-              View Details
+              Read More ›
             </Link>
           </div>
         </div>

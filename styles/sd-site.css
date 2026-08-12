@@ -1336,6 +1336,13 @@ button[data-sd-amount].is-amt-on {
   animation-iteration-count: infinite;
 }
 
+/* percentage widths cannot resolve inside a max-content track -- they blow
+   up to fill the viewport, so the cards get explicit widths here */
+.sd-ppl .sd-ppl__item { flex: 0 0 auto; width: 232px; max-width: none; }
+
+@media (min-width: 640px) { .sd-ppl .sd-ppl__item { width: 256px; } }
+@media (min-width: 1024px) { .sd-ppl .sd-ppl__item { width: 272px; } }
+
 /* two identical copies separated by the same gap: shifting by half the track
    plus half a gap lands exactly on the start of the second copy */
 @keyframes pplMarquee {
@@ -1375,4 +1382,61 @@ button[data-sd-amount].is-amt-on {
 @media (prefers-reduced-motion: reduce) {
   .sd-ppl .sd-ppl__track { animation: none; }
   .sd-ppl__viewport { overflow-x: auto; }
+}
+
+
+/* --------------------------------------------------------------------------
+   18. Donation flow step rail
+   The scraped flow showed no progress indicator. The React version adds one,
+   so it needs real rules rather than class names that resolve to nothing.
+   -------------------------------------------------------------------------- */
+.sd-dn-dots { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; position: relative; margin: 0 0 22px; }
+.sd-dn-dots::before { content: ""; position: absolute; top: 15px; left: 8%; right: 8%; height: 3px; background: #EFE7DC; border-radius: 2px; }
+.sd-dn-dot { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1 1 0; min-width: 0; text-align: center; }
+.sd-dn-dot-num { width: 30px; height: 30px; border-radius: 999px; display: grid; place-items: center; background: #fff; border: 3px solid #EFE7DC; color: #94a3b8; font-size: 12px; font-weight: 800; }
+.sd-dn-dot span:last-child { font-size: 10.5px; font-weight: 700; color: #94a3b8; line-height: 1.3; }
+.sd-dn-dot.is-active .sd-dn-dot-num { background: #FF6F00; border-color: #FF6F00; color: #fff; }
+.sd-dn-dot.is-active span:last-child { color: #0D1B2A; }
+.sd-dn-dot.is-done .sd-dn-dot-num { background: #16A34A; border-color: #16A34A; color: #fff; }
+@media (min-width: 640px) { .sd-dn-dot span:last-child { font-size: 11.5px; } }
+
+/* --------------------------------------------------------------------------
+   19. Contact / Inquiry Portal additions
+   The client's brief lists Quick Actions, helplines and emails as plain link
+   lists, and puts a captcha above Submit Inquiry.
+   -------------------------------------------------------------------------- */
+.sd-fx-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sd-fx-links li { position: relative; padding-left: 20px; }
+.sd-fx-links li::before {
+  content: "";
+  position: absolute; left: 0; top: 8px;
+  width: 8px; height: 8px; border-radius: 999px; background: #e35300;
+}
+.sd-fx-links a {
+  font-size: 13.5px; font-weight: 700; color: #0D1B2A;
+  text-decoration: none; transition: color .15s ease;
+}
+.sd-fx-links a:hover { color: #e35300; text-decoration: underline; }
+
+.sd-fx-inlink { color: #e35300; font-weight: 700; text-decoration: underline; }
+.sd-fx-inlink:hover { color: #c2410c; }
+
+.sd-fx-captcha {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-top: 18px; padding: 14px 16px;
+  border: 1px dashed #d7cec1; border-radius: 12px; background: #FAF7F2;
+}
+.sd-fx-captcha label { font-size: 13px; font-weight: 700; color: #0D1B2A; }
+.sd-fx-captcha input {
+  width: 96px; min-height: 42px;
+  border: 1px solid #dcd5ca; border-radius: 10px;
+  padding: 9px 12px; font: inherit; font-size: 14px; font-weight: 700;
+  color: #0D1B2A; background: #fff; outline: none;
+}
+.sd-fx-captcha input:focus { border-color: #e35300; }
+
+/* the Need Help brief labels its form "STEP 1 OF 5" above the rail */
+.sd-fx-stepcount {
+  font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  color: #e35300; margin: 0 0 14px;
 }

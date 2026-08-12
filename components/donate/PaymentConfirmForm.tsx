@@ -27,7 +27,7 @@ export default function PaymentConfirmForm() {
 
   if (ref) {
     return (
-      <div className="sd-pcf sd-pcf--done">
+      <div className="sd-pcf sd-pcf-done">
         <div className="sd-mem-tick">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M20 6 9 17l-5-5" />
@@ -82,12 +82,12 @@ export default function PaymentConfirmForm() {
 
   return (
     <div className="sd-donate-confirm sd-pcf">
-      <div className="sd-pcf-dots">
+      <div className="sd-pcf-steps">
         {DOTS.map((label, i) => {
           const n = i + 1
           return (
-            <div key={label} className={'sd-pcf-dot' + (n === step ? ' is-active' : n < step ? ' is-done' : '')}>
-              <span className="sd-pcf-dot-num">{n}</span>
+            <div key={label} className={'sd-pcf-step' + (n === step ? ' is-active' : n < step ? ' is-done' : '')}>
+              <span className="sd-pcf-steplabel">{n}</span>
               <span className="deva">{label}</span>
             </div>
           )
@@ -103,7 +103,7 @@ export default function PaymentConfirmForm() {
             <F id="pcf-amount" label="Donation Amount" type="number" required value={f.amount} onChange={set('amount')} error={errors.amount} />
           </div>
           <div className="sd-pcf-actions">
-            <button type="button" className="sd-pcf-btn" onClick={step1}>Continue</button>
+            <button type="button" className="sd-pcf-next sd-btn sd-btn--pay-now" onClick={step1}>Continue</button>
           </div>
         </div>
       )}
@@ -127,8 +127,8 @@ export default function PaymentConfirmForm() {
             <textarea id="pcf-message" rows={3} value={f.message} onChange={(e) => set('message')(e.target.value)} />
           </div>
           <div className="sd-pcf-actions">
-            <button type="button" className="sd-pcf-btn sd-pcf-btn--ghost" onClick={() => setStep(1)}>← Back</button>
-            <button type="button" className="sd-pcf-btn" onClick={step2}>Continue</button>
+            <button type="button" className="sd-pcf-back" onClick={() => setStep(1)}>← Back</button>
+            <button type="button" className="sd-pcf-next sd-btn sd-btn--pay-now" onClick={step2}>Continue</button>
           </div>
         </div>
       )}
@@ -143,7 +143,7 @@ export default function PaymentConfirmForm() {
               accept="image/*,.pdf"
               onChange={(e) => setFile(e.target.files?.[0]?.name || '')}
             />
-            <p className="sd-pcf-hint">{file || 'Click to upload screenshot (PNG / JPG / PDF)'}</p>
+            <p className="sd-pcf-drop">{file || 'Click to upload screenshot (PNG / JPG / PDF)'}</p>
           </div>
 
           <label className="sd-pcf-check">
@@ -173,8 +173,8 @@ export default function PaymentConfirmForm() {
           {formErr && <p className="sd-pcf-err sd-pcf-err--block">{formErr}</p>}
 
           <div className="sd-pcf-actions">
-            <button type="button" className="sd-pcf-btn sd-pcf-btn--ghost" onClick={() => setStep(2)}>← Back</button>
-            <button type="button" className="sd-pcf-btn" onClick={submit}>Submit</button>
+            <button type="button" className="sd-pcf-back" onClick={() => setStep(2)}>← Back</button>
+            <button type="button" className="sd-pcf-submit sd-btn sd-btn--submit" onClick={submit}>Submit</button>
           </div>
         </div>
       )}

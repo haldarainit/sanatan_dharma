@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 
 export type FieldError = string | undefined
 
@@ -75,12 +75,13 @@ export function SelectField({
 }
 
 export function TextAreaField({
-  label, en, required, error, value, onChange, rows = 4,
+  label, en, required, error, hint, value, onChange, rows = 4,
 }: Common & { value: string; onChange: (v: string) => void; rows?: number }) {
   const id = useId()
   return (
     <div className={'sd-mem-field' + (error ? ' has-error' : '')}>
       <Label id={id} label={label} en={en} required={required} />
+      {hint ? <p className="sd-mem-hint deva">{hint}</p> : null}
       <textarea id={id} rows={rows} value={value} onChange={(e) => onChange(e.target.value)} />
       <p className="sd-mem-err">{error ?? ''}</p>
     </div>
@@ -90,7 +91,8 @@ export function TextAreaField({
 /* OTP is a stub until a gateway exists; it says so rather than pretending. */
 export function OtpField({
   label, en, required, error, value, onChange, type = 'tel',
-}: Common & { value: string; onChange: (v: string) => void; type?: string }) {
+  verb = 'Send',
+}: Common & { value: string; onChange: (v: string) => void; type?: string; verb?: string }) {
   const [sent, setSent] = useState(false)
   const [note, setNote] = useState('')
 
@@ -122,7 +124,7 @@ export function OtpField({
           window.setTimeout(() => setSent(false), 4000)
         }}
       >
-        {sent ? 'OTP Sent' : 'Send OTP'}
+        {sent ? 'OTP Sent' : verb + ' OTP'}
       </button>
       {note ? <p className="sd-fx-otpnote">{note}</p> : null}
     </div>
@@ -171,4 +173,42 @@ export function checkRequired(
 
 export function makeRef(prefix: string) {
   return `${prefix}-${new Date().getFullYear()}-${Math.floor(Math.random() * 90000 + 10000)}`
+}
+
+/* The briefs ask for captcha protection. A hosted provider (reCAPTCHA /
+   hCaptcha) needs a site key the foundation does not have yet, so this is an
+   arithmetic challenge that still blocks a naive automated post. The numbers
+   are drawn after mount -- drawing them during render makes the server and
+   client disagree and React bails out of hydration. */
+export function useCaptcha() {
+  const [sum, setSum] = useState<{ a: number; b: number } | null>(null)
+  const [answer, setAnswer] = useState('')
+  useEffect(() => {
+    setSum({ a: Math.floor(Math.random() * 8) + 2, b: Math.floor(Math.random() * 8) + 2 })
+  }, [])
+  return {
+    sum,
+    answer,
+    setAnswer,
+    solved: !!sum && Number(answer) === sum.a + sum.b,
+  }
+}
+
+export function CaptchaBox({
+  sum, answer, setAnswer, id = 'captcha', label = 'Captcha',
+}: {
+  sum: { a: number; b: number } | null
+  answer: string
+  setAnswer: (v: string) => void
+  id?: string
+  label?: string
+}) {
+  return (
+    <div className="sd-fx-captcha">
+      <label htmlFor={id}>
+        {label} — {sum ? `${sum.a} + ${sum.b}` : '…'} = ?
+      </label>
+      <input id={id} inputMode="numeric" value={answer} onChange={(e) => setAnswer(e.target.value)} />
+    </div>
+  )
 }
