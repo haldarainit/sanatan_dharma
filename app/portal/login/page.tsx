@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function PortalLoginPage() {
+export default async function PortalLoginPage() {
+  const { text, images } = await getPageContent("/portal/login")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function PortalLoginPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function PortalLoginPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Official Portal Sign In</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Official Portal Sign In")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Official Portal Sign{' '}
-          <span className="text-[#e35300]">In</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "In")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 सदस्य एवं स्वयंसेवक लॉगिन पोर्टल</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 सदस्य एवं स्वयंसेवक लॉगिन पोर्टल")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Sign in to access your digital member ID card, membership certificate, Seva logbook, and directives.
+          {t(text, 'k5', "Sign in to access your digital member ID card, membership certificate, Seva logbook, and directives.")}
         </p>
       </div>
     </section>
@@ -67,8 +69,8 @@ export default function PortalLoginPage() {
               <path d="m9 12 2 2 4-4"></path>
             </svg>
             <div>
-              <p className="text-xs font-bold text-saffron-900">Demo Instant Login</p>
-              <p className="text-[11px] text-slate-500">Test login as Volunteer or Patron</p>
+              <p className="text-xs font-bold text-saffron-900">{t(text, 'k6', "Demo Instant Login")}</p>
+              <p className="text-[11px] text-slate-500">{t(text, 'k7', "Test login as Volunteer or Patron")}</p>
             </div>
           </div>
           <div className="flex gap-2">
@@ -86,19 +88,19 @@ export default function PortalLoginPage() {
           <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
             <div>
               <h2 className="text-xl font-bold text-slate-900">Sign In to Your Account</h2>
-              <p className="text-xs text-slate-500">Enter essential login details</p>
+              <p className="text-xs text-slate-500">{t(text, 'k8', "Enter essential login details")}</p>
             </div>
             <div className="flex rounded-lg bg-slate-100 p-1 text-xs font-bold">
               <button
                 type="button"
                 className="px-3 py-1.5 rounded-md transition-colors bg-white text-saffron-700 shadow-sm"
               >Mobile OTP</button>
-              <button type="button" className="px-3 py-1.5 rounded-md transition-colors text-slate-500">Password</button>
+              <button type="button" className="px-3 py-1.5 rounded-md transition-colors text-slate-500">{t(text, 'k9', "Password")}</button>
             </div>
           </div>
           <form className="space-y-5">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Registered Mobile Number *</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">{t(text, 'k10', "Registered Mobile Number *")}</label>
               <div className="flex gap-2">
                 <div className="relative flex-1">
                   <svg
@@ -151,11 +153,11 @@ export default function PortalLoginPage() {
                 <circle cx="9" cy="7" r="4"></circle>
                 <polyline points="16 11 18 13 22 9"></polyline>
               </svg>
-              <span>Sign In to Portal</span>
+              <span>{t(text, 'k11', "Sign In to Portal")}</span>
             </button>
           </form>
           <div className="mt-8 pt-6 border-t border-slate-100 text-center">
-            <p className="text-xs text-slate-600 mb-3">Don&#x27;t have an official Sanatan member account yet?</p>
+            <p className="text-xs text-slate-600 mb-3">{t(text, 'k12', "Don&#x27;t have an official Sanatan member account yet?")}</p>
             <Link
               className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-saffron-500 bg-saffron-50 px-6 py-2.5 text-xs font-bold text-saffron-800 hover:bg-saffron-100 transition-colors sd-btn sd-btn--join-mission"
               href="/membership"
@@ -177,7 +179,7 @@ export default function PortalLoginPage() {
                 <line x1="19" x2="19" y1="8" y2="14"></line>
                 <line x1="22" x2="16" y1="11" y2="11"></line>
               </svg>
-              <span>Join Us &amp; Create New Profile (Free Registration)</span>
+              <span>{t(text, 'k13', "Join Us &amp; Create New Profile (Free Registration)")}</span>
             </Link>
           </div>
         </div>
@@ -189,10 +191,10 @@ export default function PortalLoginPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k14', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k15', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -218,7 +220,7 @@ export default function PortalLoginPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k16', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -244,7 +246,7 @@ export default function PortalLoginPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k17', "Join the Mission")}
           </Link>
         </div>
       </div>

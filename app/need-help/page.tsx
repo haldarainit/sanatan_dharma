@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { HelpRequestForm } from '@/components/portals/forms'
@@ -27,6 +28,7 @@ function Lead({ en, hi }: { en: string; hi?: string }) {
 }
 
 export default async function NeedHelpPage() {
+  const { text, images } = await getPageContent("/need-help")
   const [faq, statusRows] = await Promise.all([getFaq('need-help'), getStatusRows('need-help')])
 
   return (
@@ -47,15 +49,15 @@ export default async function NeedHelpPage() {
             <Lead en="Sanatan Seva Assistance Cell" />
             <div className="sd-fx-panel">
               <p className="sd-mem-p deva">
-                यदि आपको या आपके किसी परिचित को किसी प्रकार की सहायता, मार्गदर्शन या सहयोग की
-                आवश्यकता है, तो कृपया नीचे दिए गए चरणों के अनुसार आवेदन करें। हमारी टीम उपलब्धता,
-                पात्रता, सत्यापन एवं उपलब्ध संसाधनों के आधार पर प्रत्येक अनुरोध की समीक्षा कर
-                यथासंभव सहायता एवं मार्गदर्शन प्रदान करने का प्रयास करेगी।
+                {t(text, 'k1', "यदि आपको या आपके किसी परिचित को किसी प्रकार की सहायता, मार्गदर्शन या सहयोग की")}
+                {t(text, 'k2', "आवश्यकता है, तो कृपया नीचे दिए गए चरणों के अनुसार आवेदन करें। हमारी टीम उपलब्धता,")}
+                {t(text, 'k3', "पात्रता, सत्यापन एवं उपलब्ध संसाधनों के आधार पर प्रत्येक अनुरोध की समीक्षा कर")}
+                {t(text, 'k4', "यथासंभव सहायता एवं मार्गदर्शन प्रदान करने का प्रयास करेगी।")}
               </p>
               <div className="sd-fx-notice" style={{ marginTop: 16 }}>
-                <strong>महत्वपूर्ण सूचना</strong>
+                <strong>{t(text, 'k5', "महत्वपूर्ण सूचना")}</strong>
                 <p className="deva">
-                  आवेदन जमा करने से सहायता की स्वीकृति या गारंटी नहीं मानी जाएगी।
+                  {t(text, 'k6', "आवेदन जमा करने से सहायता की स्वीकृति या गारंटी नहीं मानी जाएगी।")}
                 </p>
               </div>
             </div>
@@ -84,8 +86,8 @@ export default async function NeedHelpPage() {
             <Lead en="आवेदन स्थिति देखें" hi="Application Tracking | आवेदन स्थिति देखें" />
             <div className="sd-fx-lead">
               <p className="deva">
-                अपना Auto Generated Request ID (उदाहरण: SHK-HELP-2026-89483) अथवा पंजीकृत मोबाइल
-                नंबर दर्ज करके आवेदन की वर्तमान स्थिति देखें।
+                {t(text, 'k7', "अपना Auto Generated Request ID (उदाहरण: SHK-HELP-2026-89483) अथवा पंजीकृत मोबाइल")}
+                {t(text, 'k8', "नंबर दर्ज करके आवेदन की वर्तमान स्थिति देखें।")}
               </p>
             </div>
             <StatusTracker
@@ -106,13 +108,13 @@ export default async function NeedHelpPage() {
             />
             <div className="sd-fx-panel">
               <p className="sd-mem-p deva">
-                यदि आपकी आवश्यकता के लिए सामाजिक सहयोग की भी आवश्यकता है, तो आप Start Fundraiser के
-                माध्यम से अपना अभियान प्रारंभ कर सकते हैं। चल रहे अभियानों को View Fundraisers में
-                देखा जा सकता है।
+                {t(text, 'k9', "यदि आपकी आवश्यकता के लिए सामाजिक सहयोग की भी आवश्यकता है, तो आप Start Fundraiser के")}
+                {t(text, 'k10', "माध्यम से अपना अभियान प्रारंभ कर सकते हैं। चल रहे अभियानों को View Fundraisers में")}
+                {t(text, 'k11', "देखा जा सकता है।")}
               </p>
               <div className="sd-fx-actions">
-                <Link className="sd-fx-btn" href="/start-fundraiser">Start Fundraiser</Link>
-                <Link className="sd-fx-btn sd-fx-btn--ghost" href="/view-fundraisers">View Fundraisers</Link>
+                <Link className="sd-fx-btn" href="/start-fundraiser">{t(text, 'k12', "Start Fundraiser")}</Link>
+                <Link className="sd-fx-btn sd-fx-btn--ghost" href="/view-fundraisers">{t(text, 'k13', "View Fundraisers")}</Link>
               </div>
             </div>
           </div>
@@ -122,29 +124,29 @@ export default async function NeedHelpPage() {
             <Lead en="अत्यावश्यक सहायता" hi="Urgent Assistance" />
             <div className="sd-fx-panel">
               <p className="sd-mem-p deva">
-                यदि मामला अत्यंत गंभीर है, तो हमारी आपातकालीन सहायता टीम से सीधे संपर्क करें।
+                {t(text, 'k14', "यदि मामला अत्यंत गंभीर है, तो हमारी आपातकालीन सहायता टीम से सीधे संपर्क करें।")}
               </p>
               <div className="sd-fx-actions">
-                <a className="sd-fx-btn" href={`tel:+${CONTACT.whatsapp}`}>Emergency Call</a>
+                <a className="sd-fx-btn" href={`tel:+${CONTACT.whatsapp}`}>{t(text, 'k15', "Emergency Call")}</a>
                 <a className="sd-fx-btn sd-fx-btn--ghost" href={`https://wa.me/${CONTACT.whatsapp}`}>
-                  Emergency WhatsApp
+                  {t(text, 'k16', "Emergency WhatsApp")}
                 </a>
               </div>
               <div className="sd-fx-notice" style={{ marginTop: 18 }}>
-                <strong>IMPORTANT EMERGENCY NOTICE</strong>
+                <strong>{t(text, 'k17', "IMPORTANT EMERGENCY NOTICE")}</strong>
                 <p className="deva">
-                  यदि मामला जीवन-रक्षक चिकित्सा आपातकाल, अपराध, सड़क दुर्घटना, आग, प्राकृतिक आपदा,
-                  महिला या बाल सुरक्षा से संबंधित तत्काल खतरे से जुड़ा है, तो कृपया सबसे पहले निम्न
-                  सरकारी सेवाओं से संपर्क करें:
+                  {t(text, 'k18', "यदि मामला जीवन-रक्षक चिकित्सा आपातकाल, अपराध, सड़क दुर्घटना, आग, प्राकृतिक आपदा,")}
+                  {t(text, 'k19', "महिला या बाल सुरक्षा से संबंधित तत्काल खतरे से जुड़ा है, तो कृपया सबसे पहले निम्न")}
+                  {t(text, 'k20', "सरकारी सेवाओं से संपर्क करें:")}
                 </p>
                 <ul className="deva">
-                  <li>एम्बुलेंस — 108</li>
-                  <li>अग्निशमन — 101</li>
-                  <li>पुलिस — 112 / स्थानीय पुलिस</li>
+                  <li>{t(text, 'k21', "एम्बुलेंस — 108")}</li>
+                  <li>{t(text, 'k22', "अग्निशमन — 101")}</li>
+                  <li>{t(text, 'k23', "पुलिस — 112 / स्थानीय पुलिस")}</li>
                 </ul>
                 <p className="deva" style={{ marginTop: 8 }}>
-                  संस्था उपलब्ध संसाधनों एवं परिस्थितियों के अनुसार सहायता एवं मार्गदर्शन प्रदान करने
-                  का प्रयास करेगी।
+                  {t(text, 'k24', "संस्था उपलब्ध संसाधनों एवं परिस्थितियों के अनुसार सहायता एवं मार्गदर्शन प्रदान करने")}
+                  {t(text, 'k25', "का प्रयास करेगी।")}
                 </p>
               </div>
             </div>
@@ -166,8 +168,8 @@ export default async function NeedHelpPage() {
           <div className="sd-fx-section">
             <Lead en="हमारा आश्वासन" hi="We Are Here to Listen" />
             <div className="sd-fx-quote deva">
-              &ldquo;कोई भी व्यक्ति अकेला नहीं है। यदि आपको सहायता की आवश्यकता है, तो हम आपकी बात
-              सुनने, समझने और उपलब्ध संसाधनों के अनुसार सहयोग करने का पूरा प्रयास करेंगे।&rdquo;
+              {t(text, 'k26', "&ldquo;कोई भी व्यक्ति अकेला नहीं है। यदि आपको सहायता की आवश्यकता है, तो हम आपकी बात")}
+              {t(text, 'k27', "सुनने, समझने और उपलब्ध संसाधनों के अनुसार सहयोग करने का पूरा प्रयास करेंगे।&rdquo;")}
             </div>
           </div>
 
@@ -184,14 +186,14 @@ export default async function NeedHelpPage() {
                 Didn&rsquo;t Find Your <span>Answer?</span>
               </h2>
               <p className="deva">
-                यदि आपके प्रश्न का उत्तर ऊपर नहीं मिला — हमारी सहायता टीम से संपर्क करें। हम आपकी
-                सहायता हेतु सदैव उपलब्ध हैं।
+                {t(text, 'k28', "यदि आपके प्रश्न का उत्तर ऊपर नहीं मिला — हमारी सहायता टीम से संपर्क करें। हम आपकी")}
+                {t(text, 'k29', "सहायता हेतु सदैव उपलब्ध हैं।")}
               </p>
             </div>
             <div className="sd-fx-actions" style={{ justifyContent: 'center' }}>
-              <Link className="sd-fx-btn" href="/contact">Contact Us</Link>
+              <Link className="sd-fx-btn" href="/contact">{t(text, 'k30', "Contact Us")}</Link>
               <a className="sd-fx-btn sd-fx-btn--ghost" href={`https://wa.me/${CONTACT.whatsapp}`}>
-                WhatsApp Support
+                {t(text, 'k31', "WhatsApp Support")}
               </a>
             </div>
           </div>
@@ -199,11 +201,11 @@ export default async function NeedHelpPage() {
           {/* ---------- Disclaimer ---------- */}
           <div className="sd-fx-section">
             <div className="sd-fx-notice">
-              <strong>Disclaimer</strong>
+              <strong>{t(text, 'k32', "Disclaimer")}</strong>
               <p className="deva">
-                सहायता की उपलब्धता संस्था के संसाधनों, पात्रता, सत्यापन एवं परिस्थितियों पर निर्भर
-                करेगी। आवेदन जमा करने से सहायता की स्वीकृति या गारंटी नहीं मानी जाएगी। आवश्यकता होने
-                पर अतिरिक्त जानकारी या दस्तावेज़ मांगे जा सकते हैं।
+                {t(text, 'k33', "सहायता की उपलब्धता संस्था के संसाधनों, पात्रता, सत्यापन एवं परिस्थितियों पर निर्भर")}
+                {t(text, 'k34', "करेगी। आवेदन जमा करने से सहायता की स्वीकृति या गारंटी नहीं मानी जाएगी। आवश्यकता होने")}
+                {t(text, 'k35', "पर अतिरिक्त जानकारी या दस्तावेज़ मांगे जा सकते हैं।")}
               </p>
             </div>
           </div>

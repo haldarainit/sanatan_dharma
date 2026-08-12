@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import DonationFlow from '@/components/DonationFlow'
 import { getDonationTiers } from '@/lib/sanity/data'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function DonatePage() {
+  const { text, images } = await getPageContent("/donate")
   const tiers = await getDonationTiers()
 
   return (
@@ -24,17 +26,17 @@ export default async function DonatePage() {
           <div className="text-center mb-8">
             <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
               Donation{' '}
-              <span className="text-[#e35300]">Hub</span>
+              <span className="text-[#e35300]">{t(text, 'k1', "Hub")}</span>
             </h1>
-            <p className="deva text-[15px] sm:text-lg font-bold text-[#0D1B2A] mb-1">दान केंद्र</p>
-            <p className="deva text-[#e35300] font-bold text-[13px] sm:text-sm tracking-wide mb-4">सनातन सेवा में आपका स्वागत है</p>
+            <p className="deva text-[15px] sm:text-lg font-bold text-[#0D1B2A] mb-1">{t(text, 'k2', "दान केंद्र")}</p>
+            <p className="deva text-[#e35300] font-bold text-[13px] sm:text-sm tracking-wide mb-4">{t(text, 'k3', "सनातन सेवा में आपका स्वागत है")}</p>
             <p
               className="mt-4 max-w-3xl mx-auto text-[14.5px] leading-relaxed text-[#0D1B2A]/80 bg-white/60 border border-[#FF6F00]/15 rounded-2xl px-5 py-4"
             >
-              आपका प्रत्येक सहयोग सनातन धर्म मानव कल्याण फाउंडेशन के सेवा कार्यों को आगे बढ़ाने में महत्वपूर्ण योगदान देता है। इस Donation Hub के माध्यम से आप सुरक्षित, पारदर्शी एवं सुविधाजनक तरीके से दान कर सकते हैं।
+              {t(text, 'k4', "आपका प्रत्येक सहयोग सनातन धर्म मानव कल्याण फाउंडेशन के सेवा कार्यों को आगे बढ़ाने में महत्वपूर्ण योगदान देता है। इस Donation Hub के माध्यम से आप सुरक्षित, पारदर्शी एवं सुविधाजनक तरीके से दान कर सकते हैं।")}
               <br />
               <span className="font-bold text-[#FF6F00]">
-                दान करने हेतु अनेक माध्यम उपलब्ध हैं। कृपया अपनी सुविधा अनुसार किसी भी माध्यम का उपयोग करें।
+                {t(text, 'k5', "दान करने हेतु अनेक माध्यम उपलब्ध हैं। कृपया अपनी सुविधा अनुसार किसी भी माध्यम का उपयोग करें।")}
               </span>
             </p>
           </div>
@@ -46,7 +48,7 @@ export default async function DonatePage() {
                 <div className="flex items-start justify-between gap-4 flex-wrap">
                   <div>
                     <h2 className="font-serif text-2xl font-bold text-[#0D1B2A]">Donation Details</h2>
-                    <p className="text-[13px] text-[#0D1B2A]/60 mt-1">Fill in your details and choose how you want to contribute.</p>
+                    <p className="text-[13px] text-[#0D1B2A]/60 mt-1">{t(text, 'k6', "Fill in your details and choose how you want to contribute.")}</p>
                     <div className="sd-opg-sub">
                       <div className="sd-opg-sub-head">
                         <svg
@@ -62,10 +64,10 @@ export default async function DonatePage() {
                           <rect width="20" height="14" x="2" y="5" rx="2"></rect>
                           <line x1="2" x2="22" y1="10" y2="10"></line>
                         </svg>
-                        <span>Online Payment Gateway</span>
+                        <span>{t(text, 'k7', "Online Payment Gateway")}</span>
                       </div>
                       <p className="deva">
-                        आप सुरक्षित Online Payment Gateway के माध्यम से Debit Card अथवा Credit Card द्वारा भी दान कर सकते हैं। यह सुविधा पूर्णतः सुरक्षित एवं विश्वसनीय है।
+                        {t(text, 'k8', "आप सुरक्षित Online Payment Gateway के माध्यम से Debit Card अथवा Credit Card द्वारा भी दान कर सकते हैं। यह सुविधा पूर्णतः सुरक्षित एवं विश्वसनीय है।")}
                       </p>
                     </div>
                   </div>
@@ -77,10 +79,10 @@ export default async function DonatePage() {
                   className="rounded-2xl bg-white border border-[#0D1B2A]/10 p-5 shadow-xs flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">Why Donate</div>
+                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">{t(text, 'k9', "Why Donate")}</div>
                     <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mt-0.5">क्यों सहयोग करें?</h3>
                     <p className="deva mt-2.5 text-[12.5px] leading-[1.85] text-[#0D1B2A]/80">
-                      आपका सहयोग केवल दान नहीं, बल्कि सेवा, सुरक्षा, संस्कार एवं धर्म आधारित समाज निर्माण के इस अभियान को आगे बढ़ाने में आपकी सक्रिय सहभागिता है। आपका सहयोग जरूरतमंदों के जीवन में सकारात्मक परिवर्तन लाने के साथ-साथ सनातन मूल्यों एवं मानव कल्याण के कार्यों को भी सशक्त बनाता है।
+                      {t(text, 'k10', "आपका सहयोग केवल दान नहीं, बल्कि सेवा, सुरक्षा, संस्कार एवं धर्म आधारित समाज निर्माण के इस अभियान को आगे बढ़ाने में आपकी सक्रिय सहभागिता है। आपका सहयोग जरूरतमंदों के जीवन में सकारात्मक परिवर्तन लाने के साथ-साथ सनातन मूल्यों एवं मानव कल्याण के कार्यों को भी सशक्त बनाता है।")}
                     </p>
                   </div>
                 </div>
@@ -88,10 +90,10 @@ export default async function DonatePage() {
                   className="rounded-2xl bg-white border border-[#0D1B2A]/10 p-5 shadow-xs flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">Trust &amp; Transparency</div>
+                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">{t(text, 'k11', "Trust &amp; Transparency")}</div>
                     <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mt-0.5">Verified &amp; Compliant</h3>
                     <p className="deva mt-2.5 text-[12px] leading-[1.8] text-[#0D1B2A]/75">
-                      हम आपकी सहयोग राशि का पूर्ण पारदर्शिता एवं जिम्मेदारी के साथ उपयोग करते हैं। यह राशि वर्तमान गतिविधियों, भावी योजनाओं, संस्था के संचालन, प्रशासनिक आवश्यकताओं, टीम प्रबंधन एवं विभिन्न समाज सेवा कार्यों में उपयोग की जाती है। संस्था द्वारा समय-समय पर गतिविधियों एवं उपयोग संबंधी जानकारी वेबसाइट पर प्रकाशित की जाती है।
+                      {t(text, 'k12', "हम आपकी सहयोग राशि का पूर्ण पारदर्शिता एवं जिम्मेदारी के साथ उपयोग करते हैं। यह राशि वर्तमान गतिविधियों, भावी योजनाओं, संस्था के संचालन, प्रशासनिक आवश्यकताओं, टीम प्रबंधन एवं विभिन्न समाज सेवा कार्यों में उपयोग की जाती है। संस्था द्वारा समय-समय पर गतिविधियों एवं उपयोग संबंधी जानकारी वेबसाइट पर प्रकाशित की जाती है।")}
                     </p>
                     <ul className="mt-2.5 space-y-2 text-[13px] text-[#0D1B2A]/85">
                       <li className="flex items-center gap-2">
@@ -110,7 +112,7 @@ export default async function DonatePage() {
                           <circle cx="12" cy="12" r="10"></circle>
                           <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span className="font-medium">Verified NGO</span>
+                        <span className="font-medium">{t(text, 'k13', "Verified NGO")}</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg
@@ -128,7 +130,7 @@ export default async function DonatePage() {
                           <circle cx="12" cy="12" r="10"></circle>
                           <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span className="font-medium">Proper Fund Utilization</span>
+                        <span className="font-medium">{t(text, 'k14', "Proper Fund Utilization")}</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg
@@ -146,7 +148,7 @@ export default async function DonatePage() {
                           <circle cx="12" cy="12" r="10"></circle>
                           <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span className="font-medium">Regular Updates &amp; Reports</span>
+                        <span className="font-medium">{t(text, 'k15', "Regular Updates &amp; Reports")}</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg
@@ -164,7 +166,7 @@ export default async function DonatePage() {
                           <circle cx="12" cy="12" r="10"></circle>
                           <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span className="font-medium">CSR Compliance</span>
+                        <span className="font-medium">{t(text, 'k16', "CSR Compliance")}</span>
                       </li>
                     </ul>
                   </div>
@@ -173,7 +175,7 @@ export default async function DonatePage() {
                   className="rounded-2xl bg-white border border-[#0D1B2A]/10 p-5 shadow-xs flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">Where Your Donation Goes</div>
+                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">{t(text, 'k17', "Where Your Donation Goes")}</div>
                     <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mt-0.5">Active Programs</h3>
                     <div className="mt-2.5 flex flex-wrap gap-1.5">
                       <Link
@@ -211,7 +213,7 @@ export default async function DonatePage() {
               >
                 <div>
                   <h2 className="font-serif text-xl font-bold text-[#0D1B2A]">Scan &amp; Pay</h2>
-                  <p className="text-[12px] text-[#0D1B2A]/60 mt-1">Use QR or bank transfer for instant payments.</p>
+                  <p className="text-[12px] text-[#0D1B2A]/60 mt-1">{t(text, 'k18', "Use QR or bank transfer for instant payments.")}</p>
                 </div>
                 <PayTabs />
               </div>
@@ -241,8 +243,8 @@ export default async function DonatePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-serif text-lg font-bold leading-tight">Verified Donation Flow</div>
-                    <div className="text-[12px] text-white/85">Designed to keep your payment and receipt records in sync.</div>
+                    <div className="font-serif text-lg font-bold leading-tight">{t(text, 'k19', "Verified Donation Flow")}</div>
+                    <div className="text-[12px] text-white/85">{t(text, 'k20', "Designed to keep your payment and receipt records in sync.")}</div>
                   </div>
                 </div>
                 <ol className="mt-4 space-y-2.5 text-[13px]">
@@ -250,20 +252,20 @@ export default async function DonatePage() {
                     <span
                       className="shrink-0 h-5 w-5 rounded-full bg-white text-[#FF6F00] grid place-items-center text-[11px] font-bold"
                     >1</span>
-                    <span className="text-white/95">Choose an amount and project.</span>
+                    <span className="text-white/95">{t(text, 'k21', "Choose an amount and project.")}</span>
                   </li>
                   <li className="flex gap-2.5">
                     <span
                       className="shrink-0 h-5 w-5 rounded-full bg-white text-[#FF6F00] grid place-items-center text-[11px] font-bold"
                     >2</span>
-                    <span className="text-white/95">Pay online with Razorpay or scan the QR and transfer manually.</span>
+                    <span className="text-white/95">{t(text, 'k22', "Pay online with Razorpay or scan the QR and transfer manually.")}</span>
                   </li>
                   <li className="flex gap-2.5">
                     <span
                       className="shrink-0 h-5 w-5 rounded-full bg-white text-[#FF6F00] grid place-items-center text-[11px] font-bold"
                     >3</span>
                     <span className="text-white/95">
-                      Online payments are verified automatically and manual payments are reviewed by the team.
+                      {t(text, 'k23', "Online payments are verified automatically and manual payments are reviewed by the team.")}
                     </span>
                   </li>
                 </ol>
@@ -286,19 +288,19 @@ export default async function DonatePage() {
               <path d="M12 17h.01"></path>
             </svg>
             <div>
-              <div className="sd-secnote-title">Security Note</div>
+              <div className="sd-secnote-title">{t(text, 'k24', "Security Note")}</div>
               <p className="deva">
                 भुगतान करते समय कृपया सुनिश्चित करें कि स्क्रीन पर{' '}
-                <strong>"SANATAN DHARM MANAV KALYAN FOUNDATION"</strong>
+                <strong>{t(text, 'k25', "\"SANATAN DHARM MANAV KALYAN FOUNDATION\"")}</strong>
                 {' '}नाम प्रदर्शित हो रहा हो। नाम सत्यापित करने के बाद ही भुगतान करें।
               </p>
             </div>
           </div>
           <p className="sd-pay-quote2 deva">
-            आपका सहयोग हमारे लिए केवल राशि नहीं, बल्कि समाज सेवा के इस अभियान को आगे बढ़ाने की शक्ति है।
+            {t(text, 'k26', "आपका सहयोग हमारे लिए केवल राशि नहीं, बल्कि समाज सेवा के इस अभियान को आगे बढ़ाने की शक्ति है।")}
           </p>
           <div className="sd-pay-closing deva">
-            “दशांश” अपनाइए, नेक कार्य की शुरुआत कीजिए और अपने जीवन को सुख, शांति एवं समृद्धि से भरिए।
+            {t(text, 'k27', "“दशांश” अपनाइए, नेक कार्य की शुरुआत कीजिए और अपने जीवन को सुख, शांति एवं समृद्धि से भरिए।")}
           </div>
         </div>
       </main>

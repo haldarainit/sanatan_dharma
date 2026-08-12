@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { InquiryForm } from '@/components/portals/forms'
@@ -26,7 +27,8 @@ const IMPORTANT = [
   'सामान्यतः अनुरोधों का उत्तर 24–72 कार्य घंटों के भीतर देने का प्रयास किया जाता है।',
 ]
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { text, images } = await getPageContent("/contact")
   return (
     <>
       {/* CONTACT US / संपर्क एवं सहयोग केंद्र / INQUIRY PORTAL */}
@@ -36,7 +38,7 @@ export default function ContactPage() {
         <div className="container-x relative py-12 sm:py-16">
           <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
             <Link className="hover:text-saffron-700 transition-colors" href="/">
-              Home
+              {t(text, 'k1', "Home")}
             </Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,16 +55,16 @@ export default function ContactPage() {
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
-            <span className="text-[#e35300]">Contact Us</span>
+            <span className="text-[#e35300]">{t(text, 'k2', "Contact Us")}</span>
           </nav>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Contact <span className="text-[#e35300]">Us</span>
           </h1>
           <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">
-            संपर्क एवं सहयोग केंद्र
+            {t(text, 'k3', "संपर्क एवं सहयोग केंद्र")}
           </p>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-slate-400">
-            Inquiry Portal
+            {t(text, 'k4', "Inquiry Portal")}
           </p>
         </div>
       </section>
@@ -76,9 +78,9 @@ export default function ContactPage() {
             </div>
             <div className="sd-fx-panel">
               <p className="sd-mem-p deva">
-                Sanatan Dharm Manav Kalyan Foundation में आपका स्वागत है। कृपया अपनी आवश्यकता के
-                अनुसार उपयुक्त सेवा का चयन करें। हमारी टीम उपलब्धता एवं अनुरोध की प्रकृति के अनुसार
-                आपसे संपर्क करने का प्रयास करेगी।
+                {t(text, 'k5', "Sanatan Dharm Manav Kalyan Foundation में आपका स्वागत है। कृपया अपनी आवश्यकता के")}
+                {t(text, 'k6', "अनुसार उपयुक्त सेवा का चयन करें। हमारी टीम उपलब्धता एवं अनुरोध की प्रकृति के अनुसार")}
+                {t(text, 'k7', "आपसे संपर्क करने का प्रयास करेगी।")}
               </p>
             </div>
           </div>
@@ -89,22 +91,22 @@ export default function ContactPage() {
               <h2>
                 How Can We <span>Help You?</span>
               </h2>
-              <p className="deva">हम आपकी किस प्रकार सहायता कर सकते हैं?</p>
+              <p className="deva">{t(text, 'k8', "हम आपकी किस प्रकार सहायता कर सकते हैं?")}</p>
             </div>
             <div className="sd-fx-panel">
               <h3 className="sd-mem-h3">Before Applying | आवेदन करने से पूर्व</h3>
               <p className="sd-mem-p deva">
-                सामान्य प्रश्नों के उत्तर के लिए कृपया पहले FAQ देखें। संभव है कि आपके प्रश्न का उत्तर
-                पहले से उपलब्ध हो।
+                {t(text, 'k9', "सामान्य प्रश्नों के उत्तर के लिए कृपया पहले FAQ देखें। संभव है कि आपके प्रश्न का उत्तर")}
+                {t(text, 'k10', "पहले से उपलब्ध हो।")}
               </p>
               <div className="sd-fx-actions">
                 <Link className="sd-fx-btn sd-fx-btn--ghost" href="/need-help#faq">
-                  View FAQ / सामान्य प्रश्न देखें
+                  {t(text, 'k11', "View FAQ / सामान्य प्रश्न देखें")}
                 </Link>
               </div>
               <p className="sd-mem-p deva" style={{ marginTop: 16 }}>
-                यदि आपको अपने प्रश्न का उत्तर FAQ में नहीं मिला है, तो कृपया नीचे दिया गया अनुरोध
-                फ़ॉर्म भरें।
+                {t(text, 'k12', "यदि आपको अपने प्रश्न का उत्तर FAQ में नहीं मिला है, तो कृपया नीचे दिया गया अनुरोध")}
+                {t(text, 'k13', "फ़ॉर्म भरें।")}
               </p>
             </div>
           </div>
@@ -122,10 +124,10 @@ export default function ContactPage() {
           {/* ---------- Disclaimer ---------- */}
           <div className="sd-fx-section">
             <div className="sd-fx-notice">
-              <strong>Disclaimer | अस्वीकरण</strong>
+              <strong>{t(text, 'k14', "Disclaimer | अस्वीकरण")}</strong>
               <p className="deva">
-                उत्तर देने का समय अनुरोध की प्रकृति, सत्यापन प्रक्रिया एवं उपलब्ध संसाधनों पर निर्भर
-                करेगा। आवश्यकता होने पर संस्था अतिरिक्त जानकारी या दस्तावेज़ का अनुरोध कर सकती है।
+                {t(text, 'k15', "उत्तर देने का समय अनुरोध की प्रकृति, सत्यापन प्रक्रिया एवं उपलब्ध संसाधनों पर निर्भर")}
+                {t(text, 'k16', "करेगा। आवश्यकता होने पर संस्था अतिरिक्त जानकारी या दस्तावेज़ का अनुरोध कर सकती है।")}
               </p>
             </div>
           </div>
@@ -201,13 +203,13 @@ export default function ContactPage() {
               </ul>
               <div className="sd-fx-notice" style={{ marginTop: 18 }}>
                 <p className="deva">
-                  आपातकालीन चिकित्सा, पुलिस, अग्निशमन या सुरक्षा संबंधी स्थिति में तुरंत सरकारी
-                  हेल्पलाइन से संपर्क करें:
+                  {t(text, 'k17', "आपातकालीन चिकित्सा, पुलिस, अग्निशमन या सुरक्षा संबंधी स्थिति में तुरंत सरकारी")}
+                  {t(text, 'k18', "हेल्पलाइन से संपर्क करें:")}
                 </p>
                 <ul className="deva">
-                  <li>पुलिस: 112 / 100</li>
-                  <li>एम्बुलेंस: 108</li>
-                  <li>अग्निशमन: 101</li>
+                  <li>{t(text, 'k19', "पुलिस: 112 / 100")}</li>
+                  <li>{t(text, 'k20', "एम्बुलेंस: 108")}</li>
+                  <li>{t(text, 'k21', "अग्निशमन: 101")}</li>
                 </ul>
               </div>
             </div>
@@ -221,8 +223,8 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="sd-fx-quote deva">
-              आपका विश्वास एवं सहयोग हमारे लिए महत्वपूर्ण है। हम सेवा, पारदर्शिता एवं उत्तरदायित्व के
-              साथ कार्य करने के लिए प्रतिबद्ध हैं।
+              {t(text, 'k22', "आपका विश्वास एवं सहयोग हमारे लिए महत्वपूर्ण है। हम सेवा, पारदर्शिता एवं उत्तरदायित्व के")}
+              {t(text, 'k23', "साथ कार्य करने के लिए प्रतिबद्ध हैं।")}
             </div>
           </div>
         </div>

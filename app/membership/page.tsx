@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MembershipWizard from '@/components/MembershipWizard'
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default async function MembershipPage() {
+  const { text, images } = await getPageContent("/membership")
   const categories = await getMembershipCategories()
 
   return (
@@ -21,7 +23,7 @@ export default async function MembershipPage() {
         <div className="container-x relative py-12 sm:py-16">
           <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
             <Link className="hover:text-saffron-700 transition-colors" href="/">
-              Home
+              {t(text, 'k1', "Home")}
             </Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,24 +40,24 @@ export default async function MembershipPage() {
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
-            <span className="text-[#e35300]">Join The Mission</span>
+            <span className="text-[#e35300]">{t(text, 'k2', "Join The Mission")}</span>
           </nav>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Join The <span className="text-[#e35300]">Mission</span>
           </h1>
           <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">
-            सनातन सेवा अभियान से जुड़ें
+            {t(text, 'k3', "सनातन सेवा अभियान से जुड़ें")}
           </p>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-slate-400 mb-3">
-            Membership Ecosystem
+            {t(text, 'k4', "Membership Ecosystem")}
           </p>
           <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700 deva">
-            सनातन धर्म मानव कल्याण फाउंडेशन के साथ जुड़कर आप सेवा, सुरक्षा, संस्कार, धर्म एवं मानव
-            कल्याण के विभिन्न अभियानों का हिस्सा बन सकते हैं।
+            {t(text, 'k5', "सनातन धर्म मानव कल्याण फाउंडेशन के साथ जुड़कर आप सेवा, सुरक्षा, संस्कार, धर्म एवं मानव")}
+            {t(text, 'k6', "कल्याण के विभिन्न अभियानों का हिस्सा बन सकते हैं।")}
           </p>
           <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700 deva mt-2">
-            अपनी रुचि, योग्यता, स्थान और उपलब्ध समय के अनुसार सही Category चुनें और आगे की प्रक्रिया
-            पूरी करें।
+            {t(text, 'k7', "अपनी रुचि, योग्यता, स्थान और उपलब्ध समय के अनुसार सही Category चुनें और आगे की प्रक्रिया")}
+            {t(text, 'k8', "पूरी करें।")}
           </p>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function PortalAnnouncementsPage() {
+export default async function PortalAnnouncementsPage() {
+  const { text, images } = await getPageContent("/portal/announcements")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function PortalAnnouncementsPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function PortalAnnouncementsPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Portal Announcements &amp; Circulars</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Portal Announcements &amp; Circulars")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Portal Announcements &amp;{' '}
-          <span className="text-[#e35300]">Circulars</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Circulars")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 Official Directives &amp; Foundation Bulletins</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Official Directives &amp; Foundation Bulletins")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Stay updated with official notices, disaster relief directives, volunteer circulars, and transparent financial audit statements.
+          {t(text, 'k5', "Stay updated with official notices, disaster relief directives, volunteer circulars, and transparent financial audit statements.")}
         </p>
       </div>
     </section>
@@ -145,25 +147,25 @@ export default function PortalAnnouncementsPage() {
                   {' '}28 July 2026
                 </span>
                 <span>•</span>
-                <span className="font-mono text-slate-400">ANN-2026-09</span>
+                <span className="font-mono text-slate-400">{t(text, 'k6', "ANN-2026-09")}</span>
               </div>
             </div>
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >Urgent Monsoon Flood Relief Operational Directives for Sena Cadre</h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              All district coordinators and volunteer teams in coastal and riverbank zones are instructed to activate emergency command stations for immediate food &amp; medical kit distribution.
+              {t(text, 'k7', "All district coordinators and volunteer teams in coastal and riverbank zones are instructed to activate emergency command stations for immediate food &amp; medical kit distribution.")}
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">Central Disaster Response Cell</strong>
+                <strong className="text-slate-700">{t(text, 'k8', "Central Disaster Response Cell")}</strong>
               </span>
               <button
                 type="button"
                 className="rounded-xl bg-saffron-50 border border-saffron-200 px-4 py-2 text-xs font-bold text-saffron-800 hover:bg-saffron-600 hover:text-white transition-all flex items-center gap-1.5 sd-btn sd-btn--view-details"
               >
-                <span>Read Full Directive</span>
+                <span>{t(text, 'k9', "Read Full Directive")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -186,7 +188,7 @@ export default function PortalAnnouncementsPage() {
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">Event Alerts</span>
+                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">{t(text, 'k10', "Event Alerts")}</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-500">
                 <span className="flex items-center gap-1">
@@ -210,27 +212,27 @@ export default function PortalAnnouncementsPage() {
                   {' '}15 July 2026
                 </span>
                 <span>•</span>
-                <span className="font-mono text-slate-400">ANN-2026-08</span>
+                <span className="font-mono text-slate-400">{t(text, 'k11', "ANN-2026-08")}</span>
               </div>
             </div>
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >
-              Annual Sanatan Samskriti &amp; Gau Seva Sammelan 2026 Registration Open
+              {t(text, 'k12', "Annual Sanatan Samskriti &amp; Gau Seva Sammelan 2026 Registration Open")}
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              Join over 5,000 delegates, scholars, and volunteers at our annual flagship conference in New Delhi. Registration links and delegate passes are now active on portal.
+              {t(text, 'k13', "Join over 5,000 delegates, scholars, and volunteers at our annual flagship conference in New Delhi. Registration links and delegate passes are now active on portal.")}
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">Cultural &amp; Event Planning Board</strong>
+                <strong className="text-slate-700">{t(text, 'k14', "Cultural &amp; Event Planning Board")}</strong>
               </span>
               <button
                 type="button"
                 className="rounded-xl bg-saffron-50 border border-saffron-200 px-4 py-2 text-xs font-bold text-saffron-800 hover:bg-saffron-600 hover:text-white transition-all flex items-center gap-1.5 sd-btn sd-btn--view-details"
               >
-                <span>Read Full Directive</span>
+                <span>{t(text, 'k15', "Read Full Directive")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -253,7 +255,7 @@ export default function PortalAnnouncementsPage() {
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">Annual Reports</span>
+                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">{t(text, 'k16', "Annual Reports")}</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-500">
                 <span className="flex items-center gap-1">
@@ -277,27 +279,27 @@ export default function PortalAnnouncementsPage() {
                   {' '}30 June 2026
                 </span>
                 <span>•</span>
-                <span className="font-mono text-slate-400">ANN-2026-07</span>
+                <span className="font-mono text-slate-400">{t(text, 'k17', "ANN-2026-07")}</span>
               </div>
             </div>
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >
-              Quarterly Audit Report &amp; Transparent Financial Utilization Statement Q1 2026
+              {t(text, 'k18', "Quarterly Audit Report &amp; Transparent Financial Utilization Statement Q1 2026")}
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              In accordance with our 100% financial transparency promise, the detailed income, expenditure, and project-wise audit report for Q1 2026 has been published.
+              {t(text, 'k19', "In accordance with our 100% financial transparency promise, the detailed income, expenditure, and project-wise audit report for Q1 2026 has been published.")}
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">Finance &amp; Compliance Board</strong>
+                <strong className="text-slate-700">{t(text, 'k20', "Finance &amp; Compliance Board")}</strong>
               </span>
               <button
                 type="button"
                 className="rounded-xl bg-saffron-50 border border-saffron-200 px-4 py-2 text-xs font-bold text-saffron-800 hover:bg-saffron-600 hover:text-white transition-all flex items-center gap-1.5 sd-btn sd-btn--view-details"
               >
-                <span>Read Full Directive</span>
+                <span>{t(text, 'k21', "Read Full Directive")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -320,7 +322,7 @@ export default function PortalAnnouncementsPage() {
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">Volunteer Notices</span>
+                <span className="rounded-full px-3 py-0.5 text-xs font-bold bg-saffron-100 text-saffron-800">{t(text, 'k22', "Volunteer Notices")}</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-500">
                 <span className="flex items-center gap-1">
@@ -344,25 +346,25 @@ export default function PortalAnnouncementsPage() {
                   {' '}10 June 2026
                 </span>
                 <span>•</span>
-                <span className="font-mono text-slate-400">ANN-2026-06</span>
+                <span className="font-mono text-slate-400">{t(text, 'k23', "ANN-2026-06")}</span>
               </div>
             </div>
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >Update on Digital Volunteer Verification &amp; ID Renewal Drive</h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              All registered general members and Sena volunteers are requested to update their profile details and re-verify mobile OTP for QR code ID card renewal.
+              {t(text, 'k24', "All registered general members and Sena volunteers are requested to update their profile details and re-verify mobile OTP for QR code ID card renewal.")}
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">Volunteer Administration Cell</strong>
+                <strong className="text-slate-700">{t(text, 'k25', "Volunteer Administration Cell")}</strong>
               </span>
               <button
                 type="button"
                 className="rounded-xl bg-saffron-50 border border-saffron-200 px-4 py-2 text-xs font-bold text-saffron-800 hover:bg-saffron-600 hover:text-white transition-all flex items-center gap-1.5 sd-btn sd-btn--view-details"
               >
-                <span>Read Full Directive</span>
+                <span>{t(text, 'k26', "Read Full Directive")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -409,7 +411,7 @@ export default function PortalAnnouncementsPage() {
             <div>
               <h4 className="text-lg font-bold text-white">Subscribe to WhatsApp Circulars</h4>
               <p className="text-xs text-slate-300">
-                Get urgent volunteer directives &amp; emergency alerts directly on your phone.
+                {t(text, 'k27', "Get urgent volunteer directives &amp; emergency alerts directly on your phone.")}
               </p>
             </div>
           </div>
@@ -434,10 +436,10 @@ export default function PortalAnnouncementsPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k28', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k29', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -463,7 +465,7 @@ export default function PortalAnnouncementsPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k30', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -489,7 +491,7 @@ export default function PortalAnnouncementsPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k31', "Join the Mission")}
           </Link>
         </div>
       </div>

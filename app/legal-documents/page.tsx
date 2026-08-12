@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function LegalDocumentsPage() {
+export default async function LegalDocumentsPage() {
+  const { text, images } = await getPageContent("/legal-documents")
   return (
     <>
     <div
@@ -19,7 +21,7 @@ export default function LegalDocumentsPage() {
         <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
         <div className="container-x relative py-12 sm:py-16">
           <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-            <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+            <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -34,15 +36,15 @@ export default function LegalDocumentsPage() {
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
-            <span className="text-[#e35300]">Legal &amp; Governance Portal</span>
+            <span className="text-[#e35300]">{t(text, 'k2', "Legal &amp; Governance Portal")}</span>
           </nav>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Legal &amp; Governance{' '}
-            <span className="text-[#e35300]">Portal</span>
+            <span className="text-[#e35300]">{t(text, 'k3', "Portal")}</span>
           </h1>
-          <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">📜 पारदर्शिता, वैधानिक पंजीकरण एवं ऑडिट रिपोर्ट</p>
+          <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "📜 पारदर्शिता, वैधानिक पंजीकरण एवं ऑडिट रिपोर्ट")}</p>
           <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-            सनातन धर्म मानव कल्याण फाउंडेशन की वैधानिक प्रामाणिकता, 12A &amp; 80G पंजीकरण, वार्षिक सी.ए. ऑडिट रिपोर्ट एवं नीतियां।
+            {t(text, 'k5', "सनातन धर्म मानव कल्याण फाउंडेशन की वैधानिक प्रामाणिकता, 12A &amp; 80G पंजीकरण, वार्षिक सी.ए. ऑडिट रिपोर्ट एवं नीतियां।")}
           </p>
         </div>
       </section>
@@ -227,14 +229,14 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
-                TRUST &amp; TRANSPARENCY · पारदर्शिता एवं विश्वास
+                {t(text, 'k6', "TRUST &amp; TRANSPARENCY · पारदर्शिता एवं विश्वास")}
               </div>
               <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white leading-tight">
                 विश्वास हमारी सबसे{' '}
-                <span className="text-saffron-400">बड़ी पूंजी है।</span>
+                <span className="text-saffron-400">{t(text, 'k7', "बड़ी पूंजी है।")}</span>
               </h2>
               <p className="deva text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-                सनातन धर्म मानव कल्याण फाउंडेशन पारदर्शिता, जवाबदेही, नैतिक कार्यप्रणाली एवं उत्तरदायित्व के सिद्धांतों पर कार्य करने के लिए प्रतिबद्ध है। हमारा प्रयास है कि संस्था की गतिविधियों, वित्तीय उपयोग एवं प्रमुख दस्तावेजों से संबंधित आवश्यक जानकारी समय-समय पर सार्वजनिक रूप से उपलब्ध कराई जाए।
+                {t(text, 'k8', "सनातन धर्म मानव कल्याण फाउंडेशन पारदर्शिता, जवाबदेही, नैतिक कार्यप्रणाली एवं उत्तरदायित्व के सिद्धांतों पर कार्य करने के लिए प्रतिबद्ध है। हमारा प्रयास है कि संस्था की गतिविधियों, वित्तीय उपयोग एवं प्रमुख दस्तावेजों से संबंधित आवश्यक जानकारी समय-समय पर सार्वजनिक रूप से उपलब्ध कराई जाए।")}
               </p>
               <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-slate-300">
                 <span
@@ -347,16 +349,16 @@ export default function LegalDocumentsPage() {
                 </svg>
               </div>
               <div>
-                <span className="text-[11px] font-bold text-amber-300 uppercase tracking-widest block">Corporate Identification</span>
-                <span className="font-mono text-sm font-bold text-white block mt-0.5">U88900MR2026NPL47439</span>
+                <span className="text-[11px] font-bold text-amber-300 uppercase tracking-widest block">{t(text, 'k9', "Corporate Identification")}</span>
+                <span className="font-mono text-sm font-bold text-white block mt-0.5">{t(text, 'k10', "U88900MR2026NPL47439")}</span>
               </div>
               <div className="pt-3 border-t border-white/10 text-xs text-slate-300 space-y-1">
                 <p>
-                  <strong>पंजीकरण संस्था:</strong>
+                  <strong>{t(text, 'k11', "पंजीकरण संस्था:")}</strong>
                   {' '}कॉर्पोरेट कार्य मंत्रालय (MCA)
                 </p>
                 <p>
-                  <strong>स्थापना वर्ष:</strong>
+                  <strong>{t(text, 'k12', "स्थापना वर्ष:")}</strong>
                   {' '}2024 · नई दिल्ली
                 </p>
               </div>
@@ -390,14 +392,14 @@ export default function LegalDocumentsPage() {
                 ></path>
                 <circle cx="12" cy="8" r="6"></circle>
               </svg>
-              REGISTRATIONS &amp; CERTIFICATES · पंजीकरण एवं प्रमाणपत्र
+              {t(text, 'k13', "REGISTRATIONS &amp; CERTIFICATES · पंजीकरण एवं प्रमाणपत्र")}
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
               हमारी संस्था के{' '}
-              <span className="text-saffron-600">वैधानिक प्रमाणपत्र</span>
+              <span className="text-saffron-600">{t(text, 'k14', "वैधानिक प्रमाणपत्र")}</span>
             </h2>
             <p className="deva text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
-              हमारी संस्था विभिन्न वैधानिक एवं नियामकीय पंजीकरणों के अंतर्गत कार्यरत है। सभी प्रमाणपत्र नीचे कार्ड ग्रिड में उपलब्ध हैं।
+              {t(text, 'k15', "हमारी संस्था विभिन्न वैधानिक एवं नियामकीय पंजीकरणों के अंतर्गत कार्यरत है। सभी प्रमाणपत्र नीचे कार्ड ग्रिड में उपलब्ध हैं।")}
             </p>
           </div>
           <div className="relative w-full md:w-64 shrink-0">
@@ -456,15 +458,15 @@ export default function LegalDocumentsPage() {
                     <path d="M16 13H8"></path>
                     <path d="M16 17H8"></path>
                   </svg>
-                  <span className="text-xs font-mono font-bold">PDF DOC</span>
+                  <span className="text-xs font-mono font-bold">{t(text, 'k16', "PDF DOC")}</span>
                 </div>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >Certificate of Incorporation &amp; Section 8 Licence</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">निगमन एवं धारा 8 लाइसेंस प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Ministry of Corporate Affairs (MCA), Govt. of India</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k17', "निगमन एवं धारा 8 लाइसेंस प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k18', "Ministry of Corporate Affairs (MCA), Govt. of India")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -489,7 +491,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k19', "View Certificate")}
               </button>
             </div>
           </div>
@@ -506,7 +508,7 @@ export default function LegalDocumentsPage() {
                 className="h-16 w-full bg-gradient-to-br from-saffron-50/80 to-amber-50/50 rounded-xl border border-saffron-100 flex items-center justify-center p-2 group-hover:scale-102 transition-transform"
               >
                 <img
-                  src="/certificates/pan_card.jpeg"
+                  src={img(images, 'i20', "/certificates/pan_card.jpeg")}
                   alt="PAN Card Registration"
                   className="h-full object-contain max-w-full rounded"
                 />
@@ -515,8 +517,8 @@ export default function LegalDocumentsPage() {
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >PAN Card Registration</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">स्थायी खाता संख्या (PAN)</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Income Tax Department, Government of India</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k21', "स्थायी खाता संख्या (PAN)")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k22', "Income Tax Department, Government of India")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -541,7 +543,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k23', "View Certificate")}
               </button>
             </div>
           </div>
@@ -558,7 +560,7 @@ export default function LegalDocumentsPage() {
                 className="h-16 w-full bg-gradient-to-br from-saffron-50/80 to-amber-50/50 rounded-xl border border-saffron-100 flex items-center justify-center p-2 group-hover:scale-102 transition-transform"
               >
                 <img
-                  src="/certificates/sanatan_dharma_kalyan_foundation.jpeg"
+                  src={img(images, 'i24', "/certificates/sanatan_dharma_kalyan_foundation.jpeg")}
                   alt="NGO Darpan Registration"
                   className="h-full object-contain max-w-full rounded"
                 />
@@ -567,8 +569,8 @@ export default function LegalDocumentsPage() {
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >NGO Darpan Registration</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">नीति आयोग एनजीओ दर्पण पंजीकरण</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">NITI Aayog Portal Unique Identifier</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k25', "नीति आयोग एनजीओ दर्पण पंजीकरण")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k26', "NITI Aayog Portal Unique Identifier")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -593,7 +595,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k27', "View Certificate")}
               </button>
             </div>
           </div>
@@ -628,15 +630,15 @@ export default function LegalDocumentsPage() {
                     <path d="M16 13H8"></path>
                     <path d="M16 17H8"></path>
                   </svg>
-                  <span className="text-xs font-mono font-bold">PDF DOC</span>
+                  <span className="text-xs font-mono font-bold">{t(text, 'k28', "PDF DOC")}</span>
                 </div>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >CSR Registration (Form CSR-1)</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">सीएसआर पंजीकरण प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">MCA Certification for Corporate Social Responsibility</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k29', "सीएसआर पंजीकरण प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k30', "MCA Certification for Corporate Social Responsibility")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -661,7 +663,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k31', "View Certificate")}
               </button>
             </div>
           </div>
@@ -696,15 +698,15 @@ export default function LegalDocumentsPage() {
                     <path d="M16 13H8"></path>
                     <path d="M16 17H8"></path>
                   </svg>
-                  <span className="text-xs font-mono font-bold">PDF DOC</span>
+                  <span className="text-xs font-mono font-bold">{t(text, 'k32', "PDF DOC")}</span>
                 </div>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >12A Approval Certificate</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">12A आयकर छूट स्वीकृति</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Income Tax Exemption for Non-Profit Organization</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k33', "12A आयकर छूट स्वीकृति")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k34', "Income Tax Exemption for Non-Profit Organization")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -729,7 +731,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k35', "View Certificate")}
               </button>
             </div>
           </div>
@@ -764,15 +766,15 @@ export default function LegalDocumentsPage() {
                     <path d="M16 13H8"></path>
                     <path d="M16 17H8"></path>
                   </svg>
-                  <span className="text-xs font-mono font-bold">PDF DOC</span>
+                  <span className="text-xs font-mono font-bold">{t(text, 'k36', "PDF DOC")}</span>
                 </div>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >80G Tax Deduction Certificate</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">80G दान कर छूट प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">50% Tax Deduction Benefit for Donors</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k37', "80G दान कर छूट प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k38', "50% Tax Deduction Benefit for Donors")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -797,7 +799,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k39', "View Certificate")}
               </button>
             </div>
           </div>
@@ -814,7 +816,7 @@ export default function LegalDocumentsPage() {
                 className="h-16 w-full bg-gradient-to-br from-saffron-50/80 to-amber-50/50 rounded-xl border border-saffron-100 flex items-center justify-center p-2 group-hover:scale-102 transition-transform"
               >
                 <img
-                  src="/certificates/9001_2015_certificate.jpeg"
+                  src={img(images, 'i40', "/certificates/9001_2015_certificate.jpeg")}
                   alt="ISO 9001:2015 Certification"
                   className="h-full object-contain max-w-full rounded"
                 />
@@ -823,8 +825,8 @@ export default function LegalDocumentsPage() {
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >ISO 9001:2015 Certification</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">ISO 9001:2015 गुणवत्ता प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Quality Management Systems Standard Certificate</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k41', "ISO 9001:2015 गुणवत्ता प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k42', "Quality Management Systems Standard Certificate")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -849,7 +851,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k43', "View Certificate")}
               </button>
             </div>
           </div>
@@ -866,7 +868,7 @@ export default function LegalDocumentsPage() {
                 className="h-16 w-full bg-gradient-to-br from-saffron-50/80 to-amber-50/50 rounded-xl border border-saffron-100 flex items-center justify-center p-2 group-hover:scale-102 transition-transform"
               >
                 <img
-                  src="/certificates/msme_certifciate.jpeg"
+                  src={img(images, 'i44', "/certificates/msme_certifciate.jpeg")}
                   alt="MSME Certificate"
                   className="h-full object-contain max-w-full rounded"
                 />
@@ -875,8 +877,8 @@ export default function LegalDocumentsPage() {
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >MSME Certificate</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">एमएसएमई प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Ministry of Micro, Small and Medium Enterprises</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k45', "एमएसएमई प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k46', "Ministry of Micro, Small and Medium Enterprises")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -901,7 +903,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k47', "View Certificate")}
               </button>
             </div>
           </div>
@@ -918,7 +920,7 @@ export default function LegalDocumentsPage() {
                 className="h-16 w-full bg-gradient-to-br from-saffron-50/80 to-amber-50/50 rounded-xl border border-saffron-100 flex items-center justify-center p-2 group-hover:scale-102 transition-transform"
               >
                 <img
-                  src="/certificates/udyam_registraion_certificate.jpeg"
+                  src={img(images, 'i48', "/certificates/udyam_registraion_certificate.jpeg")}
                   alt="Udyam Registration Certificate"
                   className="h-full object-contain max-w-full rounded"
                 />
@@ -927,8 +929,8 @@ export default function LegalDocumentsPage() {
                 <h3
                   className="font-serif font-bold text-sm text-slate-900 group-hover:text-saffron-600 transition-colors leading-snug"
                 >Udyam Registration Certificate</h3>
-                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">उद्यम पंजीकरण प्रमाणपत्र</p>
-                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">Govt of India Udyam Registration Portal</p>
+                <p className="deva text-xs font-semibold text-saffron-700 mt-0.5">{t(text, 'k49', "उद्यम पंजीकरण प्रमाणपत्र")}</p>
+                <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">{t(text, 'k50', "Govt of India Udyam Registration Portal")}</p>
               </div>
             </div>
             <div className="mt-4 pt-3 border-t border-slate-100">
@@ -953,7 +955,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Certificate
+                {t(text, 'k51', "View Certificate")}
               </button>
             </div>
           </div>
@@ -987,14 +989,14 @@ export default function LegalDocumentsPage() {
                 ></path>
                 <path d="m9 12 2 2 4-4"></path>
               </svg>
-              VERIFICATION SERVICES · सत्यापन सेवाएँ
+              {t(text, 'k52', "VERIFICATION SERVICES · सत्यापन सेवाएँ")}
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
               सुरक्षित डिजिटल{' '}
-              <span className="text-saffron-600">सत्यापन पोर्टल</span>
+              <span className="text-saffron-600">{t(text, 'k53', "सत्यापन पोर्टल")}</span>
             </h2>
             <p className="deva text-xs sm:text-sm text-slate-700 leading-relaxed">
-              Website पर उपलब्ध सभी संस्थागत प्रमाणपत्र, सदस्य आईडी, स्वयंसेवक पहचान पत्र एवं सतर्कता अधिकारी कार्डों का सत्यापन नीचे दिए गए सुरक्षित पोर्टल के माध्यम से किया जाता है।
+              {t(text, 'k54', "Website पर उपलब्ध सभी संस्थागत प्रमाणपत्र, सदस्य आईडी, स्वयंसेवक पहचान पत्र एवं सतर्कता अधिकारी कार्डों का सत्यापन नीचे दिए गए सुरक्षित पोर्टल के माध्यम से किया जाता है।")}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -1030,9 +1032,9 @@ export default function LegalDocumentsPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-base text-slate-900">Certificate Verification</h3>
-                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">प्रमाणपत्र सत्यापन</p>
+                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k55', "प्रमाणपत्र सत्यापन")}</p>
                   <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                    संस्था द्वारा जारी किए गए सभी वैधानिक एवं CSR सेवा प्रमाणपत्रों की प्रामाणिकता जांचें।
+                    {t(text, 'k56', "संस्था द्वारा जारी किए गए सभी वैधानिक एवं CSR सेवा प्रमाणपत्रों की प्रामाणिकता जांचें।")}
                   </p>
                 </div>
               </div>
@@ -1055,7 +1057,7 @@ export default function LegalDocumentsPage() {
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.3-4.3"></path>
                 </svg>
-                Verify Online Now
+                {t(text, 'k57', "Verify Online Now")}
               </Link>
             </div>
             <div
@@ -1090,9 +1092,9 @@ export default function LegalDocumentsPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-base text-slate-900">Member Verification</h3>
-                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">सदस्यता पहचान सत्यापन</p>
+                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k58', "सदस्यता पहचान सत्यापन")}</p>
                   <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                    संस्था के पंजीकृत आजीवन सदस्यों, पदाधिकारियों एवं संयोजकों के विवरण का सत्यापन।
+                    {t(text, 'k59', "संस्था के पंजीकृत आजीवन सदस्यों, पदाधिकारियों एवं संयोजकों के विवरण का सत्यापन।")}
                   </p>
                 </div>
               </div>
@@ -1115,7 +1117,7 @@ export default function LegalDocumentsPage() {
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.3-4.3"></path>
                 </svg>
-                Verify Online Now
+                {t(text, 'k60', "Verify Online Now")}
               </Link>
             </div>
             <div
@@ -1150,9 +1152,9 @@ export default function LegalDocumentsPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-base text-slate-900">Volunteer ID Verification</h3>
-                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">स्वयंसेवक पहचान सत्यापन</p>
+                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k61', "स्वयंसेवक पहचान सत्यापन")}</p>
                   <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                    क्षेत्रीय अभियानों में कार्यरत स्वयंसेवकों एवं सनातन सेना सदस्यों के डिजिटल बैज का सत्यापन।
+                    {t(text, 'k62', "क्षेत्रीय अभियानों में कार्यरत स्वयंसेवकों एवं सनातन सेना सदस्यों के डिजिटल बैज का सत्यापन।")}
                   </p>
                 </div>
               </div>
@@ -1175,7 +1177,7 @@ export default function LegalDocumentsPage() {
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.3-4.3"></path>
                 </svg>
-                Verify Online Now
+                {t(text, 'k63', "Verify Online Now")}
               </Link>
             </div>
             <div
@@ -1210,9 +1212,9 @@ export default function LegalDocumentsPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-base text-slate-900">Vigilance ID Verification</h3>
-                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">सतर्कता एवं सतर्क अधिकारी सत्यापन</p>
+                  <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k64', "सतर्कता एवं सतर्क अधिकारी सत्यापन")}</p>
                   <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                    संस्था के सतर्कता प्रकोष्ठ एवं प्राधिकृत जांच अधिकारियों की प्रामाणिकता की तत्काल जांच।
+                    {t(text, 'k65', "संस्था के सतर्कता प्रकोष्ठ एवं प्राधिकृत जांच अधिकारियों की प्रामाणिकता की तत्काल जांच।")}
                   </p>
                 </div>
               </div>
@@ -1235,7 +1237,7 @@ export default function LegalDocumentsPage() {
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.3-4.3"></path>
                 </svg>
-                Verify Online Now
+                {t(text, 'k66', "Verify Online Now")}
               </Link>
             </div>
           </div>
@@ -1259,7 +1261,7 @@ export default function LegalDocumentsPage() {
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg>
               <span>
-                <strong>सुरक्षा सूचना:</strong>
+                <strong>{t(text, 'k67', "सुरक्षा सूचना:")}</strong>
                 {' '}सभी Verification सुरक्षित Portal (Encryption Protocol) के माध्यम से किए जाएंगे।
               </span>
             </div>
@@ -1313,14 +1315,14 @@ export default function LegalDocumentsPage() {
                 <path d="M12 3v18"></path>
                 <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
               </svg>
-              FINANCIAL TRANSPARENCY · वित्तीय पारदर्शिता
+              {t(text, 'k68', "FINANCIAL TRANSPARENCY · वित्तीय पारदर्शिता")}
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
               ऑडिट रिपोर्ट एवं{' '}
-              <span className="text-saffron-600">वित्तीय विवरण</span>
+              <span className="text-saffron-600">{t(text, 'k69', "वित्तीय विवरण")}</span>
             </h2>
             <p className="deva text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
-              संस्था समय-समय पर सी.ए. प्रमाणित वार्षिक वित्तीय रिपोर्ट, आय-व्यय खाता, बैलेंस शीट एवं फंड उपयोग सारांश सार्वजनिक रूप से उपलब्ध कराने का प्रयास करती है।
+              {t(text, 'k70', "संस्था समय-समय पर सी.ए. प्रमाणित वार्षिक वित्तीय रिपोर्ट, आय-व्यय खाता, बैलेंस शीट एवं फंड उपयोग सारांश सार्वजनिक रूप से उपलब्ध कराने का प्रयास करती है।")}
             </p>
           </div>
           <div
@@ -1363,12 +1365,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Audit Report</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2025–26</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k71', "FY 2025–26")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Annual Audit Report 2025–26</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">वार्षिक सी.ए. ऑडिट रिपोर्ट 2025–26</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k72', "वार्षिक सी.ए. ऑडिट रिपोर्ट 2025–26")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                संस्था का सी.ए. द्वारा सत्यापित पूर्ण लेखा परीक्षा प्रतिवेद, बैलेंस शीट एवं आय-व्यय खाता।
+                {t(text, 'k73', "संस्था का सी.ए. द्वारा सत्यापित पूर्ण लेखा परीक्षा प्रतिवेद, बैलेंस शीट एवं आय-व्यय खाता।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1393,7 +1395,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k74', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1405,12 +1407,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Annual Financial Report</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2025–26</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k75', "FY 2025–26")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Annual Financial Report 2025–26</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">वार्षिक वित्तीय विवरण 2025–26</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k76', "वार्षिक वित्तीय विवरण 2025–26")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                संपूर्ण वित्त वर्ष में प्राप्त कुल अनुदान, दान एवं विभिन्न सामाजिक सेवा प्रकल्पों में व्यय विवरण।
+                {t(text, 'k77', "संपूर्ण वित्त वर्ष में प्राप्त कुल अनुदान, दान एवं विभिन्न सामाजिक सेवा प्रकल्पों में व्यय विवरण।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1435,7 +1437,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k78', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1447,12 +1449,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Income &amp; Expenditure Statement</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2025–26</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k79', "FY 2025–26")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Income &amp; Expenditure Statement 2025–26</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">आय एवं व्यय विवरण 2025–26</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k80', "आय एवं व्यय विवरण 2025–26")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                मद-वार आय (दान, सीएसआर, अनुदान) एवं व्यय (अन्न सेवा, चिकित्सा, शिक्षा, गौ सेवा) का लेखा-जोखा।
+                {t(text, 'k81', "मद-वार आय (दान, सीएसआर, अनुदान) एवं व्यय (अन्न सेवा, चिकित्सा, शिक्षा, गौ सेवा) का लेखा-जोखा।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1477,7 +1479,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k82', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1489,12 +1491,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Balance Sheet</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2025–26</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k83', "FY 2025–26")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Balance Sheet 2025–26</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">बैलेंस शीट 2025–26</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k84', "बैलेंस शीट 2025–26")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                संस्था की परिसंपत्तियों (Assets), देनदारियों (Liabilities) एवं आरक्षित कोष का सत्यापित स्थिति पत्रक।
+                {t(text, 'k85', "संस्था की परिसंपत्तियों (Assets), देनदारियों (Liabilities) एवं आरक्षित कोष का सत्यापित स्थिति पत्रक।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1519,7 +1521,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k86', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1531,12 +1533,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Fund Utilization Summary</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2025–26</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k87', "FY 2025–26")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Fund Utilization Summary 2025–26</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">फंड उपयोग सारांश 2025–26</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k88', "फंड उपयोग सारांश 2025–26")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                दानदाताओं द्वारा प्रदान की गई प्रत्येक धनराशि के शत-प्रतिशत पारदर्शी उपयोग का परियोजना-वार विश्लेषण।
+                {t(text, 'k89', "दानदाताओं द्वारा प्रदान की गई प्रत्येक धनराशि के शत-प्रतिशत पारदर्शी उपयोग का परियोजना-वार विश्लेषण।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1561,7 +1563,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k90', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1573,12 +1575,12 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Audit Report</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2024–25</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k91', "FY 2024–25")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Annual Audit Report 2024–25</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">वार्षिक सी.ए. ऑडिट रिपोर्ट 2024–25</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k92', "वार्षिक सी.ए. ऑडिट रिपोर्ट 2024–25")}</p>
               <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">
-                वित्तीय वर्ष 2024–25 का ऑडिट रिपोर्ट — आयकर विभाग एवं एमसीए पोर्टल पर दाखिल।
+                {t(text, 'k93', "वित्तीय वर्ष 2024–25 का ऑडिट रिपोर्ट — आयकर विभाग एवं एमसीए पोर्टल पर दाखिल।")}
               </p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
@@ -1603,7 +1605,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k94', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1615,11 +1617,11 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
                 >Income &amp; Expenditure Statement</span>
-                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">FY 2024–25</span>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t(text, 'k95', "FY 2024–25")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Income &amp; Expenditure Statement 2024–25</h3>
-              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">आय एवं व्यय विवरण 2024–25</p>
-              <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">पूर्व वित्त वर्ष की स्वीकृत आय एवं व्यय विवरणी।</p>
+              <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k96', "आय एवं व्यय विवरण 2024–25")}</p>
+              <p className="deva text-xs text-slate-600 mt-2 leading-relaxed">{t(text, 'k97', "पूर्व वित्त वर्ष की स्वीकृत आय एवं व्यय विवरणी।")}</p>
             </div>
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
               <button
@@ -1643,7 +1645,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                   <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                View Financial Summary
+                {t(text, 'k98', "View Financial Summary")}
               </button>
             </div>
           </div>
@@ -1674,37 +1676,37 @@ export default function LegalDocumentsPage() {
                 <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
                 <path d="m3 15 2 2 4-4"></path>
               </svg>
-              ACTIVITY REPORTS · गतिविधि रिपोर्ट
+              {t(text, 'k99', "ACTIVITY REPORTS · गतिविधि रिपोर्ट")}
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
               सेवा अभियानों की{' '}
-              <span className="text-saffron-600">वार्षिक एवं मासिक रिपोर्ट</span>
+              <span className="text-saffron-600">{t(text, 'k100', "वार्षिक एवं मासिक रिपोर्ट")}</span>
             </h2>
             <p className="deva text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
-              हमारे प्रमुख सेवा अभियानों (अन्न सेवा, चिकित्सा शिविर, शिक्षा, गौ सेवा, महिला स्वावलंबन) की विस्तृत आख्या, आंकड़े, तस्वीरें एवं वीडियो रिपोर्ट उपलब्ध हैं।
+              {t(text, 'k101', "हमारे प्रमुख सेवा अभियानों (अन्न सेवा, चिकित्सा शिविर, शिक्षा, गौ सेवा, महिला स्वावलंबन) की विस्तृत आख्या, आंकड़े, तस्वीरें एवं वीडियो रिपोर्ट उपलब्ध हैं।")}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <select
               className="px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-saffron-500 cursor-pointer"
             >
-              <option defaultValue="All" selected>All Years (सभी वर्ष)</option>
-              <option defaultValue="2026">Year 2026</option>
-              <option defaultValue="2025">Year 2025</option>
-              <option defaultValue="2024">Year 2024</option>
+              <option defaultValue="All" selected>{t(text, 'k102', "All Years (सभी वर्ष)")}</option>
+              <option defaultValue="2026">{t(text, 'k103', "Year 2026")}</option>
+              <option defaultValue="2025">{t(text, 'k104', "Year 2025")}</option>
+              <option defaultValue="2024">{t(text, 'k105', "Year 2024")}</option>
             </select>
             <select
               className="px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-saffron-500 cursor-pointer"
             >
-              <option defaultValue="All" selected>All Categories (सभी अभियान)</option>
-              <option defaultValue="Ann Seva">Ann Seva (अन्न सेवा)</option>
-              <option defaultValue="Medical Camps">Medical Camps (चिकित्सा)</option>
-              <option defaultValue="Education Support">Education Support (शिक्षा)</option>
-              <option defaultValue="Women Support">Women Support (महिला स्वावलंबन)</option>
-              <option defaultValue="Disaster Relief">Disaster Relief (आपदा राहत)</option>
-              <option defaultValue="Plantation Drives">Plantation Drives (पर्यावरण)</option>
-              <option defaultValue="Gau Seva">Gau Seva (गौ सेवा)</option>
-              <option defaultValue="Awareness Campaigns">Awareness (संस्कृति जागरण)</option>
+              <option defaultValue="All" selected>{t(text, 'k106', "All Categories (सभी अभियान)")}</option>
+              <option defaultValue="Ann Seva">{t(text, 'k107', "Ann Seva (अन्न सेवा)")}</option>
+              <option defaultValue="Medical Camps">{t(text, 'k108', "Medical Camps (चिकित्सा)")}</option>
+              <option defaultValue="Education Support">{t(text, 'k109', "Education Support (शिक्षा)")}</option>
+              <option defaultValue="Women Support">{t(text, 'k110', "Women Support (महिला स्वावलंबन)")}</option>
+              <option defaultValue="Disaster Relief">{t(text, 'k111', "Disaster Relief (आपदा राहत)")}</option>
+              <option defaultValue="Plantation Drives">{t(text, 'k112', "Plantation Drives (पर्यावरण)")}</option>
+              <option defaultValue="Gau Seva">{t(text, 'k113', "Gau Seva (गौ सेवा)")}</option>
+              <option defaultValue="Awareness Campaigns">{t(text, 'k114', "Awareness (संस्कृति जागरण)")}</option>
             </select>
           </div>
         </div>
@@ -1717,18 +1719,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Ann Seva</span>
-                <span className="text-xs text-slate-500 font-semibold">जून 2026</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k115', "जून 2026")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Maha Ann Seva Campaign 2026</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">महा अन्न सेवा अभियान रिपोर्ट 2026</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k116', "महा अन्न सेवा अभियान रिपोर्ट 2026")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                तीर्थ क्षेत्रों एवं निर्धन बस्तियों में 50,000+ जरूरतमंदों को निःशुल्क पौष्टिक भोजन वितरण की व्यापक रिपोर्ट।
+                {t(text, 'k117', "तीर्थ क्षेत्रों एवं निर्धन बस्तियों में 50,000+ जरूरतमंदों को निःशुल्क पौष्टिक भोजन वितरण की व्यापक रिपोर्ट।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 50,000+ व्यक्ति</span>
-                <span className="text-slate-500">📷 24 Photos</span>
+                <span className="text-slate-500">{t(text, 'k118', "📷 24 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -1765,18 +1767,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Medical Camps</span>
-                <span className="text-xs text-slate-500 font-semibold">मई 2026</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k119', "मई 2026")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Free Rural Health &amp; Eye Camp</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">निःशुल्क ग्रामीण स्वास्थ्य एवं नेत्र जांच शिविर</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k120', "निःशुल्क ग्रामीण स्वास्थ्य एवं नेत्र जांच शिविर")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                दूरस्थ ग्रामीण अंचलों में विशेषज्ञ डॉक्टरों द्वारा निःशुल्क स्वास्थ्य जांच, औषधि वितरण एवं मोतियाबिंद ऑपरेशन।
+                {t(text, 'k121', "दूरस्थ ग्रामीण अंचलों में विशेषज्ञ डॉक्टरों द्वारा निःशुल्क स्वास्थ्य जांच, औषधि वितरण एवं मोतियाबिंद ऑपरेशन।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 12,500+ ग्रामीण</span>
-                <span className="text-slate-500">📷 18 Photos</span>
+                <span className="text-slate-500">{t(text, 'k122', "📷 18 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -1813,18 +1815,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Education Support</span>
-                <span className="text-xs text-slate-500 font-semibold">अप्रैल 2026</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k123', "अप्रैल 2026")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Shiksha Seva &amp; Scholarship Drive</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">शिक्षा सेवा एवं छात्रवृत्ति वितरण 2026</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k124', "शिक्षा सेवा एवं छात्रवृत्ति वितरण 2026")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                प्रतिभावान निर्धन विद्यार्थियों को पाठ्य सामग्री, गणवेश एवं वार्षिक छात्रवृत्ति सहायता प्रदान करने की विस्तृत आख्या।
+                {t(text, 'k125', "प्रतिभावान निर्धन विद्यार्थियों को पाठ्य सामग्री, गणवेश एवं वार्षिक छात्रवृत्ति सहायता प्रदान करने की विस्तृत आख्या।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 3,200+ छात्र</span>
-                <span className="text-slate-500">📷 15 Photos</span>
+                <span className="text-slate-500">{t(text, 'k126', "📷 15 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -1861,18 +1863,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Women Support</span>
-                <span className="text-xs text-slate-500 font-semibold">दिसंबर 2025</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k127', "दिसंबर 2025")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Nari Swavalamban Skill Program</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">नारी स्वावलंबन एवं सिलाई केंद्र रिपोर्ट</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k128', "नारी स्वावलंबन एवं सिलाई केंद्र रिपोर्ट")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                महिलाओं को सिलाई, कढ़ाई एवं हस्तशिल्प का निःशुल्क प्रशिक्षण तथा सिलाई मशीन वितरण की प्रभाव रिपोर्ट।
+                {t(text, 'k129', "महिलाओं को सिलाई, कढ़ाई एवं हस्तशिल्प का निःशुल्क प्रशिक्षण तथा सिलाई मशीन वितरण की प्रभाव रिपोर्ट।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 1,800+ महिलाएं</span>
-                <span className="text-slate-500">📷 20 Photos</span>
+                <span className="text-slate-500">{t(text, 'k130', "📷 20 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -1909,18 +1911,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Plantation Drives</span>
-                <span className="text-xs text-slate-500 font-semibold">अगस्त 2025</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k131', "अगस्त 2025")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Vriksharopan Pavitra Van Drive</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">वृक्षारोपण एवं पवित्र वन अभियान 2025</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k132', "वृक्षारोपण एवं पवित्र वन अभियान 2025")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                पर्यावरण संरक्षण हेतु 25,000 औषधीय एवं छायादार फलदार पौधों का रोपण तथा उनके संरक्षण की जिम्मेदारी रिपोर्ट।
+                {t(text, 'k133', "पर्यावरण संरक्षण हेतु 25,000 औषधीय एवं छायादार फलदार पौधों का रोपण तथा उनके संरक्षण की जिम्मेदारी रिपोर्ट।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 25,000+ पौधे</span>
-                <span className="text-slate-500">📷 30 Photos</span>
+                <span className="text-slate-500">{t(text, 'k134', "📷 30 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -1957,18 +1959,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Gau Seva</span>
-                <span className="text-xs text-slate-500 font-semibold">नवंबर 2025</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k135', "नवंबर 2025")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Gau Seva &amp; Shelter Support Project</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">गौ सेवा एवं संवर्धन परियोजना रिपोर्ट</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k136', "गौ सेवा एवं संवर्धन परियोजना रिपोर्ट")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                निराश्रित गौवंश हेतु हरा चारा, गुड़, औषधि सेवा तथा गौशाला निर्माण सहायता गतिविधियों का ब्योरा।
+                {t(text, 'k137', "निराश्रित गौवंश हेतु हरा चारा, गुड़, औषधि सेवा तथा गौशाला निर्माण सहायता गतिविधियों का ब्योरा।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 5,000+ गौवंश</span>
-                <span className="text-slate-500">📷 22 Photos</span>
+                <span className="text-slate-500">{t(text, 'k138', "📷 22 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -2005,18 +2007,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Disaster Relief</span>
-                <span className="text-xs text-slate-500 font-semibold">सितंबर 2024</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k139', "सितंबर 2024")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Flood Relief Operations 2024</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">आपदा राहत एवं पुनर्वास सेवा 2024</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k140', "आपदा राहत एवं पुनर्वास सेवा 2024")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                बाढ़ प्रभावित क्षेत्रों में सूखा राशन पैकेट, तिरपाल, पेयजल एवं दवाइयों के तत्काल वितरण की विस्तृत रिपोर्ट।
+                {t(text, 'k141', "बाढ़ प्रभावित क्षेत्रों में सूखा राशन पैकेट, तिरपाल, पेयजल एवं दवाइयों के तत्काल वितरण की विस्तृत रिपोर्ट।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 40,000+ प्रभावित</span>
-                <span className="text-slate-500">📷 35 Photos</span>
+                <span className="text-slate-500">{t(text, 'k142', "📷 35 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -2053,18 +2055,18 @@ export default function LegalDocumentsPage() {
                 <span
                   className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
                 >Awareness Campaigns</span>
-                <span className="text-xs text-slate-500 font-semibold">अक्टूबर 2024</span>
+                <span className="text-xs text-slate-500 font-semibold">{t(text, 'k143', "अक्टूबर 2024")}</span>
               </div>
               <h3 className="font-serif font-bold text-base text-slate-900 leading-snug">Sanatan Culture &amp; Ethics Awareness</h3>
-              <p className="deva text-xs font-semibold text-saffron-700">सनातन संस्कृति एवं नैतिक जागरण अभियान</p>
+              <p className="deva text-xs font-semibold text-saffron-700">{t(text, 'k144', "सनातन संस्कृति एवं नैतिक जागरण अभियान")}</p>
               <p className="deva text-xs text-slate-600 leading-relaxed">
-                युवाओं में नैतिक मूल्यों, सांस्कृतिक धरोहर एवं सामाजिक समरसता संवर्धन हेतु आयोजित सम्मेलनों की रिपोर्ट।
+                {t(text, 'k145', "युवाओं में नैतिक मूल्यों, सांस्कृतिक धरोहर एवं सामाजिक समरसता संवर्धन हेतु आयोजित सम्मेलनों की रिपोर्ट।")}
               </p>
               <div className="pt-2 flex items-center gap-3 text-[11px] font-bold text-slate-700">
                 <span
                   className="bg-saffron-50 text-saffron-800 px-2.5 py-1 rounded-lg border border-saffron-100"
                 >🎯 लाभार्थी: 1,00,000+ श्रोता</span>
-                <span className="text-slate-500">📷 16 Photos</span>
+                <span className="text-slate-500">{t(text, 'k146', "📷 16 Photos")}</span>
               </div>
             </div>
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center">
@@ -2121,14 +2123,14 @@ export default function LegalDocumentsPage() {
               <path d="M16 13H8"></path>
               <path d="M16 17H8"></path>
             </svg>
-            POLICIES &amp; COMPLIANCE · नीतियाँ एवं अनुपालन
+            {t(text, 'k147', "POLICIES &amp; COMPLIANCE · नीतियाँ एवं अनुपालन")}
           </div>
           <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
             संस्थागत नीति एवं{' '}
-            <span className="text-saffron-600">अनुपालन दिशानिर्देश</span>
+            <span className="text-saffron-600">{t(text, 'k148', "अनुपालन दिशानिर्देश")}</span>
           </h2>
           <p className="deva text-xs sm:text-sm text-slate-600">
-            संस्था के दानकर्ताओं, सदस्यों एवं जनसामान्य के अधिकारों तथा डेटा सुरक्षा हेतु निर्धारित नीतियां।
+            {t(text, 'k149', "संस्था के दानकर्ताओं, सदस्यों एवं जनसामान्य के अधिकारों तथा डेटा सुरक्षा हेतु निर्धारित नीतियां।")}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -2159,22 +2161,22 @@ export default function LegalDocumentsPage() {
                     <path d="M16 17H8"></path>
                   </svg>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono">अद्यतन: 01 जनवरी 2026</span>
+                <span className="text-[10px] text-slate-400 font-mono">{t(text, 'k150', "अद्यतन: 01 जनवरी 2026")}</span>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-base text-slate-900 group-hover:text-saffron-600 transition-colors"
                 >Privacy Policy</h3>
-                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">गोपनीयता नीति</p>
+                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k151', "गोपनीयता नीति")}</p>
                 <p className="deva text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                  सनातन धर्म मानव कल्याण फाउंडेशन आपके व्यक्तिगत डेटा, भुगतान संबंधी जानकारी एवं गोपनीयता की सुरक्षा के लिए पूर्णतः वचनबद्ध है।
+                  {t(text, 'k152', "सनातन धर्म मानव कल्याण फाउंडेशन आपके व्यक्तिगत डेटा, भुगतान संबंधी जानकारी एवं गोपनीयता की सुरक्षा के लिए पूर्णतः वचनबद्ध है।")}
                 </p>
               </div>
             </div>
             <div
               className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-saffron-600 group-hover:text-saffron-700"
             >
-              <span>Read Full Policy</span>
+              <span>{t(text, 'k153', "Read Full Policy")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -2218,22 +2220,22 @@ export default function LegalDocumentsPage() {
                     <path d="M16 17H8"></path>
                   </svg>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono">अद्यतन: 01 जनवरी 2026</span>
+                <span className="text-[10px] text-slate-400 font-mono">{t(text, 'k154', "अद्यतन: 01 जनवरी 2026")}</span>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-base text-slate-900 group-hover:text-saffron-600 transition-colors"
                 >Terms &amp; Conditions</h3>
-                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">नियम एवं शर्तें</p>
+                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k155', "नियम एवं शर्तें")}</p>
                 <p className="deva text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                  हमारी वेबसाइट, पोर्टल एवं सेवाओं का उपयोग करने हेतु नियम, शर्तें एवं वैधानिक अनुपालन दिशानिर्देश।
+                  {t(text, 'k156', "हमारी वेबसाइट, पोर्टल एवं सेवाओं का उपयोग करने हेतु नियम, शर्तें एवं वैधानिक अनुपालन दिशानिर्देश।")}
                 </p>
               </div>
             </div>
             <div
               className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-saffron-600 group-hover:text-saffron-700"
             >
-              <span>Read Full Policy</span>
+              <span>{t(text, 'k157', "Read Full Policy")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -2277,22 +2279,22 @@ export default function LegalDocumentsPage() {
                     <path d="M16 17H8"></path>
                   </svg>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono">अद्यतन: 01 जनवरी 2026</span>
+                <span className="text-[10px] text-slate-400 font-mono">{t(text, 'k158', "अद्यतन: 01 जनवरी 2026")}</span>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-base text-slate-900 group-hover:text-saffron-600 transition-colors"
                 >Refund &amp; Cancellation Policy</h3>
-                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">रिफंड एवं निरस्तीकरण नीति</p>
+                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k159', "रिफंड एवं निरस्तीकरण नीति")}</p>
                 <p className="deva text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                  दान निरस्तीकरण एवं तकनीकी त्रुटिवश हुए दोहरे भुगतानों के रिफंड से संबंधित स्पष्ट दिशानिर्देश।
+                  {t(text, 'k160', "दान निरस्तीकरण एवं तकनीकी त्रुटिवश हुए दोहरे भुगतानों के रिफंड से संबंधित स्पष्ट दिशानिर्देश।")}
                 </p>
               </div>
             </div>
             <div
               className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-saffron-600 group-hover:text-saffron-700"
             >
-              <span>Read Full Policy</span>
+              <span>{t(text, 'k161', "Read Full Policy")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -2336,22 +2338,22 @@ export default function LegalDocumentsPage() {
                     <path d="M16 17H8"></path>
                   </svg>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono">अद्यतन: 01 जनवरी 2026</span>
+                <span className="text-[10px] text-slate-400 font-mono">{t(text, 'k162', "अद्यतन: 01 जनवरी 2026")}</span>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-base text-slate-900 group-hover:text-saffron-600 transition-colors"
                 >Donation Policy</h3>
-                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">दान एवं निधि उपयोग नीति</p>
+                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k163', "दान एवं निधि उपयोग नीति")}</p>
                 <p className="deva text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                  दान स्वीकार्यता, 80G आयकर छूट तथा प्राप्त निधियों के शत-प्रतिशत नैतिक उपयोग के सिद्धांत।
+                  {t(text, 'k164', "दान स्वीकार्यता, 80G आयकर छूट तथा प्राप्त निधियों के शत-प्रतिशत नैतिक उपयोग के सिद्धांत।")}
                 </p>
               </div>
             </div>
             <div
               className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-saffron-600 group-hover:text-saffron-700"
             >
-              <span>Read Full Policy</span>
+              <span>{t(text, 'k165', "Read Full Policy")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -2395,22 +2397,22 @@ export default function LegalDocumentsPage() {
                     <path d="M16 17H8"></path>
                   </svg>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono">अद्यतन: 01 जनवरी 2026</span>
+                <span className="text-[10px] text-slate-400 font-mono">{t(text, 'k166', "अद्यतन: 01 जनवरी 2026")}</span>
               </div>
               <div>
                 <h3
                   className="font-serif font-bold text-base text-slate-900 group-hover:text-saffron-600 transition-colors"
                 >Grievance Redressal Policy</h3>
-                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">शिकायत निवारण नीति</p>
+                <p className="deva text-xs font-semibold text-saffron-600 mt-0.5">{t(text, 'k167', "शिकायत निवारण नीति")}</p>
                 <p className="deva text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                  जनसामान्य, दानदाताओं एवं स्वयंसेवकों की शिकायतों के समयबद्ध एवं निष्पक्ष निवारण की व्यवस्था।
+                  {t(text, 'k168', "जनसामान्य, दानदाताओं एवं स्वयंसेवकों की शिकायतों के समयबद्ध एवं निष्पक्ष निवारण की व्यवस्था।")}
                 </p>
               </div>
             </div>
             <div
               className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-saffron-600 group-hover:text-saffron-700"
             >
-              <span>Read Full Policy</span>
+              <span>{t(text, 'k169', "Read Full Policy")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -2455,13 +2457,13 @@ export default function LegalDocumentsPage() {
           </div>
           <div className="space-y-2 flex-1">
             <div className="flex items-center gap-2">
-              <span className="font-serif font-bold text-slate-900 text-base sm:text-lg">DISCLAIMER &amp; NOTICE · अस्वीकरण सूचना</span>
+              <span className="font-serif font-bold text-slate-900 text-base sm:text-lg">{t(text, 'k170', "DISCLAIMER &amp; NOTICE · अस्वीकरण सूचना")}</span>
               <span
                 className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-200 text-amber-900"
               >Official Notice</span>
             </div>
             <p className="deva text-xs sm:text-sm text-amber-950 leading-relaxed font-normal">
-              हमारी संस्था पारदर्शिता एवं उत्तरदायित्व के सिद्धांतों का पालन करने के लिए प्रतिबद्ध है। उपलब्ध कराई गई जानकारी समय-समय पर अद्यतन की जा सकती है। कुछ दस्तावेज़ सुरक्षा, गोपनीयता अथवा सत्यापन प्रक्रिया के अंतर्गत Login / OTP Verification के पश्चात ही उपलब्ध कराए जा सकते हैं।
+              {t(text, 'k171', "हमारी संस्था पारदर्शिता एवं उत्तरदायित्व के सिद्धांतों का पालन करने के लिए प्रतिबद्ध है। उपलब्ध कराई गई जानकारी समय-समय पर अद्यतन की जा सकती है। कुछ दस्तावेज़ सुरक्षा, गोपनीयता अथवा सत्यापन प्रक्रिया के अंतर्गत Login / OTP Verification के पश्चात ही उपलब्ध कराए जा सकते हैं।")}
             </p>
           </div>
         </div>
@@ -2472,10 +2474,10 @@ export default function LegalDocumentsPage() {
         >
           <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
           <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-          <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+          <p className="deva eyebrow text-saffron-100">{t(text, 'k172', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
           <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-            Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+            {t(text, 'k173', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
@@ -2501,7 +2503,7 @@ export default function LegalDocumentsPage() {
                   ></path>
                 </svg>
               </span>
-              Donate Now
+              {t(text, 'k174', "Donate Now")}
             </Link>
             <Link
               className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -2527,7 +2529,7 @@ export default function LegalDocumentsPage() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </span>
-              Join the Mission
+              {t(text, 'k175', "Join the Mission")}
             </Link>
           </div>
         </div>
@@ -2543,13 +2545,13 @@ export default function LegalDocumentsPage() {
               >Newsletter</div>
               <h3 className="deva mt-4 font-display text-2xl font-bold sm:text-3xl">सेवा, संस्कार और समाज से जुड़े रहें</h3>
               <p className="deva mt-3 text-sm text-white/85">
-                सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।
+                {t(text, 'k176', "सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।")}
               </p>
             </div>
             <div className="flex flex-col justify-center p-8 sm:p-10">
               <form className="space-y-4">
                 <div>
-                  <label className="field-label">Email Address</label>
+                  <label className="field-label">{t(text, 'k177', "Email Address")}</label>
                   <div className="relative">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2599,9 +2601,9 @@ export default function LegalDocumentsPage() {
                       <path d="m21.854 2.147-10.94 10.939"></path>
                     </svg>
                   </span>
-                  Subscribe Now
+                  {t(text, 'k178', "Subscribe Now")}
                 </button>
-                <p className="text-center text-xs text-ink/50">We respect your privacy. Unsubscribe anytime.</p>
+                <p className="text-center text-xs text-ink/50">{t(text, 'k179', "We respect your privacy. Unsubscribe anytime.")}</p>
               </form>
             </div>
           </div>

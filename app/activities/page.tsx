@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function ActivitiesPage() {
+export default async function ActivitiesPage() {
+  const { text, images } = await getPageContent("/activities")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function ActivitiesPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,14 +33,14 @@ export default function ActivitiesPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Current Activities</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Current Activities")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Current{' '}
-          <span className="text-[#e35300]">Activities</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Activities")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 वर्तमान गतिविधियाँ</p>
-        <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">सनातन धर्म मानव कल्याण फाउंडेशन के प्रमुख सेवा अभियान एवं गतिविधियाँ।</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 वर्तमान गतिविधियाँ")}</p>
+        <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">{t(text, 'k5', "सनातन धर्म मानव कल्याण फाउंडेशन के प्रमुख सेवा अभियान एवं गतिविधियाँ।")}</p>
       </div>
     </section>
     <section className="bg-[#fdfbf7] py-12 px-4 sm:px-6 lg:px-8 font-sans sd-gap">
@@ -77,7 +79,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-2 leading-tight">सनातन बोर्ड</h3>
-              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">हमारा प्रथम एवं प्रमुख मिशन।</p>
+              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">{t(text, 'k6', "हमारा प्रथम एवं प्रमुख मिशन।")}</p>
               <button
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 border border-saffron-500 text-saffron-700 font-semibold text-sm rounded-full hover:bg-saffron-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
               >
@@ -105,7 +107,7 @@ export default function ActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/act-women.jpg"
+                src={img(images, 'i7', "/img/act-women.jpg")}
                 alt="महिला सुरक्षा एवं सम्मान अभियान"
                 className="w-full h-full object-cover"
               />
@@ -134,7 +136,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-2 leading-tight">महिला सुरक्षा एवं सम्मान अभियान</h3>
-              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">हर माँ, बहन और बेटी सुरक्षित रहे।</p>
+              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">{t(text, 'k8', "हर माँ, बहन और बेटी सुरक्षित रहे।")}</p>
               <button
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 border border-saffron-500 text-saffron-700 font-semibold text-sm rounded-full hover:bg-saffron-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
               >
@@ -186,7 +188,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-2 leading-tight">अन्न सेवा अभियान</h3>
-              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">कोई भूखा न रहे — यही हमारा संकल्प है।</p>
+              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">{t(text, 'k9', "कोई भूखा न रहे — यही हमारा संकल्प है।")}</p>
               <button
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 border border-saffron-500 text-saffron-700 font-semibold text-sm rounded-full hover:bg-saffron-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
               >
@@ -214,7 +216,7 @@ export default function ActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/campaign-gurukul.jpg"
+                src={img(images, 'i10', "/img/campaign-gurukul.jpg")}
                 alt="शिक्षा एवं संस्कार सहायता अभियान"
                 className="w-full h-full object-cover"
               />
@@ -244,7 +246,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-2 leading-tight">शिक्षा एवं संस्कार सहायता अभियान</h3>
-              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">कोई भी बच्चा शिक्षा से वंचित न रहे।</p>
+              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">{t(text, 'k11', "कोई भी बच्चा शिक्षा से वंचित न रहे।")}</p>
               <button
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 border border-saffron-500 text-saffron-700 font-semibold text-sm rounded-full hover:bg-saffron-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
               >
@@ -272,7 +274,7 @@ export default function ActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-help.jpeg"
+                src={img(images, 'i12', "/img/future-help.jpeg")}
                 alt="धोखाधड़ी जागरूकता एवं सहायता अभियान"
                 className="w-full h-full object-cover"
               />
@@ -301,7 +303,7 @@ export default function ActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-2 leading-tight">धोखाधड़ी जागरूकता एवं सहायता अभियान</h3>
-              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">सतर्क रहें • सुरक्षित रहें।</p>
+              <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1">{t(text, 'k13', "सतर्क रहें • सुरक्षित रहें।")}</p>
               <button
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 border border-saffron-500 text-saffron-700 font-semibold text-sm rounded-full hover:bg-saffron-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
               >
@@ -332,9 +334,9 @@ export default function ActivitiesPage() {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           हमारा दीर्घकालिक{' '}
-          <span className="text-[#e35300]">संकल्प</span>
+          <span className="text-[#e35300]">{t(text, 'k14', "संकल्प")}</span>
         </h2>
-        <p className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-8">Long-Term Commitment</p>
+        <p className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-8">{t(text, 'k15', "Long-Term Commitment")}</p>
         <div className="bg-saffron-50/60 rounded-2xl border border-saffron-100 p-8 sm:p-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -358,24 +360,24 @@ export default function ActivitiesPage() {
           <p
             className="deva text-lg sm:text-xl font-bold text-slate-800 leading-relaxed max-w-3xl mx-auto"
           >
-            &quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;
+            {t(text, 'k16', "&quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;")}
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 text-left">
           <div className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm">
             <h4 className="deva font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
-              <span className="text-red-600">🚩</span>
+              <span className="text-red-600">{t(text, 'k17', "🚩")}</span>
               {' '}वर्तमान में
             </h4>
-            <p className="deva text-sm text-slate-600 leading-relaxed">सेवा, जनकल्याण, जागरूकता एवं सामाजिक सहयोग संबंधी गतिविधियाँ।</p>
+            <p className="deva text-sm text-slate-600 leading-relaxed">{t(text, 'k18', "सेवा, जनकल्याण, जागरूकता एवं सामाजिक सहयोग संबंधी गतिविधियाँ।")}</p>
           </div>
           <div className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm">
             <h4 className="deva font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
-              <span className="text-red-600">🚩</span>
+              <span className="text-red-600">{t(text, 'k19', "🚩")}</span>
               {' '}भविष्य में
             </h4>
             <p className="deva text-sm text-slate-600 leading-relaxed">
-              सनातन हेल्प सेंटर, सनातन भोजनालय, सनातन शेल्टर हाउस, रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र तथा सनातन गुरुकुल एवं संस्कार केंद्र की स्थापना एवं विस्तार।
+              {t(text, 'k20', "सनातन हेल्प सेंटर, सनातन भोजनालय, सनातन शेल्टर हाउस, रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र तथा सनातन गुरुकुल एवं संस्कार केंद्र की स्थापना एवं विस्तार।")}
             </p>
           </div>
         </div>
@@ -397,10 +399,10 @@ export default function ActivitiesPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k21', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k22', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -426,7 +428,7 @@ export default function ActivitiesPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k23', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -452,7 +454,7 @@ export default function ActivitiesPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k24', "Join the Mission")}
           </Link>
         </div>
       </div>
@@ -468,13 +470,13 @@ export default function ActivitiesPage() {
             >Newsletter</div>
             <h3 className="deva mt-4 font-display text-2xl font-bold sm:text-3xl">सेवा, संस्कार और समाज से जुड़े रहें</h3>
             <p className="deva mt-3 text-sm text-white/85">
-              सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।
+              {t(text, 'k25', "सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।")}
             </p>
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-10">
             <form className="space-y-4">
               <div>
-                <label className="field-label">Email Address</label>
+                <label className="field-label">{t(text, 'k26', "Email Address")}</label>
                 <div className="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -524,9 +526,9 @@ export default function ActivitiesPage() {
                     <path d="m21.854 2.147-10.94 10.939"></path>
                   </svg>
                 </span>
-                Subscribe Now
+                {t(text, 'k27', "Subscribe Now")}
               </button>
-              <p className="text-center text-xs text-ink/50">We respect your privacy. Unsubscribe anytime.</p>
+              <p className="text-center text-xs text-ink/50">{t(text, 'k28', "We respect your privacy. Unsubscribe anytime.")}</p>
             </form>
           </div>
         </div>

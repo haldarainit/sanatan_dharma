@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function PortalProfilePage() {
+export default async function PortalProfilePage() {
+  const { text, images } = await getPageContent("/portal/profile")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function PortalProfilePage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function PortalProfilePage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Member Profile &amp; Dashboard</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Member Profile &amp; Dashboard")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Member Profile &amp;{' '}
-          <span className="text-[#e35300]">Dashboard</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Dashboard")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 Official Sanatan Member Credentials</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Official Sanatan Member Credentials")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Access your digital member ID card, official membership certificate, review Seva activity logs, and track your volunteer credentials.
+          {t(text, 'k5', "Access your digital member ID card, official membership certificate, review Seva activity logs, and track your volunteer credentials.")}
         </p>
       </div>
     </section>
@@ -90,10 +92,10 @@ export default function PortalProfilePage() {
               <p className="text-xs text-slate-300 flex items-center justify-center sm:justify-start gap-3">
                 <span>
                   ID:{' '}
-                  <strong className="text-amber-400 font-mono">SDMKF-2026-8942</strong>
+                  <strong className="text-amber-400 font-mono">{t(text, 'k6', "SDMKF-2026-8942")}</strong>
                 </span>
                 <span>•</span>
-                <span>Mumbai Suburban, Maharashtra</span>
+                <span>{t(text, 'k7', "Mumbai Suburban, Maharashtra")}</span>
               </p>
               <p
                 className="text-xs font-semibold mt-1 flex items-center justify-center sm:justify-start gap-1"
@@ -115,7 +117,7 @@ export default function PortalProfilePage() {
                   ></path>
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
-                <span className="text-emerald-400">Background Verified &amp; Active Member</span>
+                <span className="text-emerald-400">{t(text, 'k8', "Background Verified &amp; Active Member")}</span>
               </p>
             </div>
           </div>
@@ -186,7 +188,7 @@ export default function PortalProfilePage() {
             className="rounded-2xl border border-saffron-200/80 bg-gradient-to-br from-saffron-50/80 to-white p-4 shadow-sm"
           >
             <div className="flex items-center justify-between text-saffron-600 mb-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Seva Logged</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{t(text, 'k9', "Seva Logged")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -205,15 +207,15 @@ export default function PortalProfilePage() {
             </div>
             <p className="text-2xl font-bold text-saffron-900">
               148{' '}
-              <span className="text-xs font-semibold text-slate-600">Hrs</span>
+              <span className="text-xs font-semibold text-slate-600">{t(text, 'k10', "Hrs")}</span>
             </p>
-            <p className="text-[11px] text-slate-500 mt-0.5">Verified on-ground hours</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k11', "Verified on-ground hours")}</p>
           </div>
           <div
             className="rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50/80 to-white p-4 shadow-sm"
           >
             <div className="flex items-center justify-between text-amber-600 mb-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Campaigns</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{t(text, 'k12', "Campaigns")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -234,15 +236,15 @@ export default function PortalProfilePage() {
             </div>
             <p className="text-2xl font-bold text-amber-900">
               16{' '}
-              <span className="text-xs font-semibold text-slate-600">Drives</span>
+              <span className="text-xs font-semibold text-slate-600">{t(text, 'k13', "Drives")}</span>
             </p>
-            <p className="text-[11px] text-slate-500 mt-0.5">Relief &amp; Seva drives</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k14', "Relief &amp; Seva drives")}</p>
           </div>
           <div
             className="rounded-2xl border border-rose-200/80 bg-gradient-to-br from-rose-50/80 to-white p-4 shadow-sm"
           >
             <div className="flex items-center justify-between text-rose-600 mb-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Contributions</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{t(text, 'k15', "Contributions")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -260,14 +262,14 @@ export default function PortalProfilePage() {
                 ></path>
               </svg>
             </div>
-            <p className="text-2xl font-bold text-rose-900">₹18,500</p>
-            <p className="text-[11px] text-slate-500 mt-0.5">Total donation support</p>
+            <p className="text-2xl font-bold text-rose-900">{t(text, 'k16', "₹18,500")}</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k17', "Total donation support")}</p>
           </div>
           <div
             className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/80 to-white p-4 shadow-sm"
           >
             <div className="flex items-center justify-between text-emerald-600 mb-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Verification</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{t(text, 'k18', "Verification")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -286,8 +288,8 @@ export default function PortalProfilePage() {
                 <path d="m9 12 2 2 4-4"></path>
               </svg>
             </div>
-            <p className="text-lg font-bold text-emerald-900">Level 3 Active</p>
-            <p className="text-[11px] text-slate-500 mt-0.5">Identity &amp; Police verified</p>
+            <p className="text-lg font-bold text-emerald-900">{t(text, 'k19', "Level 3 Active")}</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k20', "Identity &amp; Police verified")}</p>
           </div>
         </div>
         <div
@@ -350,36 +352,36 @@ export default function PortalProfilePage() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Member ID</span>
-              <p className="text-sm font-bold text-slate-800 font-mono">SDMKF-2026-8942</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k21', "Member ID")}</span>
+              <p className="text-sm font-bold text-slate-800 font-mono">{t(text, 'k22', "SDMKF-2026-8942")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Assigned Track</span>
-              <p className="text-sm font-semibold text-slate-800">SANATANI SENA</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k23', "Assigned Track")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k24', "SANATANI SENA")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Joined Date</span>
-              <p className="text-sm font-semibold text-slate-800">12 Jan 2025</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k25', "Joined Date")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k26', "12 Jan 2025")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Mobile Number</span>
-              <p className="text-sm font-semibold text-slate-800">+91 98201 44321</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k27', "Mobile Number")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k28', "+91 98201 44321")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Email Address</span>
-              <p className="text-sm font-semibold text-slate-800">rahul.sharma@sanatandharma.org</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k29', "Email Address")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k30', "rahul.sharma@sanatandharma.org")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Blood Group</span>
-              <p className="text-sm font-semibold text-slate-800">O+</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k31', "Blood Group")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k32', "O+")}</p>
             </div>
             <div className="space-y-1 sm:col-span-2">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Residential Address</span>
-              <p className="text-sm font-semibold text-slate-800">402, Shiv Shanti Heights, Malad West, Mumbai - 400064</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k33', "Residential Address")}</span>
+              <p className="text-sm font-semibold text-slate-800">{t(text, 'k34', "402, Shiv Shanti Heights, Malad West, Mumbai - 400064")}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Emergency Helpline Contact</span>
-              <p className="text-sm font-semibold text-rose-700">+91 98201 99887</p>
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t(text, 'k35', "Emergency Helpline Contact")}</span>
+              <p className="text-sm font-semibold text-rose-700">{t(text, 'k36', "+91 98201 99887")}</p>
             </div>
           </div>
         </div>
@@ -391,10 +393,10 @@ export default function PortalProfilePage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k37', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k38', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -420,7 +422,7 @@ export default function PortalProfilePage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k39', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -446,7 +448,7 @@ export default function PortalProfilePage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k40', "Join the Mission")}
           </Link>
         </div>
       </div>

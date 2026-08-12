@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function SanataniSenaPage() {
+export default async function SanataniSenaPage() {
+  const { text, images } = await getPageContent("/sanatani-sena")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function SanataniSenaPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function SanataniSenaPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Membership Ecosystem - Join Sanatan Mission</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Membership Ecosystem - Join Sanatan Mission")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Membership Ecosystem - Join Sanatan{' '}
-          <span className="text-[#e35300]">Mission</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Mission")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 सनातनी सदस्यता एवं सेवा अभियान</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 सनातनी सदस्यता एवं सेवा अभियान")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          राष्ट्र, समाज एवं सनातन मूल्यों की रक्षा हेतु समर्पित स्वयंसेवक, सहयोगी सदस्य, विजिलेंस विभाग, सेवा नेटवर्क या संरक्षक सदस्य के रूप में जुड़े।
+          {t(text, 'k5', "राष्ट्र, समाज एवं सनातन मूल्यों की रक्षा हेतु समर्पित स्वयंसेवक, सहयोगी सदस्य, विजिलेंस विभाग, सेवा नेटवर्क या संरक्षक सदस्य के रूप में जुड़े।")}
         </p>
       </div>
     </section>
@@ -97,7 +99,7 @@ export default function SanataniSenaPage() {
           >Step 1 of 4: Category Selection</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">सदस्यता की 5 श्रेणियाँ (Membership Categories)</h2>
           <p className="text-sm text-slate-600 max-w-2xl mx-auto mt-2">
-            सनातन धर्म मानव कल्याण फाउंडेशन में जुड़ने हेतु अपनी योग्यता एवं रुचि अनुसार नीचे दी गई 5 श्रेणियों में से किसी एक का चयन करें:
+            {t(text, 'k6', "सनातन धर्म मानव कल्याण फाउंडेशन में जुड़ने हेतु अपनी योग्यता एवं रुचि अनुसार नीचे दी गई 5 श्रेणियों में से किसी एक का चयन करें:")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -109,7 +111,7 @@ export default function SanataniSenaPage() {
                 className="relative h-[240px] w-full overflow-hidden bg-[#180c06] p-2 flex items-center justify-center"
               >
                 <img
-                  src="/img/sanatani_sena.jpeg"
+                  src={img(images, 'i7', "/img/sanatani_sena.jpeg")}
                   alt="SANATANI SENA"
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -124,20 +126,20 @@ export default function SanataniSenaPage() {
                 <div>
                   <h3 className="font-serif text-xl font-bold text-saffron-900">SANATANI SENA</h3>
                   <h4 className="text-sm font-bold text-amber-700">सनातनी सेना</h4>
-                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">(Dedicated Volunteer Organization / समर्पित स्वयंसेवक संगठन)</p>
+                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">{t(text, 'k8', "(Dedicated Volunteer Organization / समर्पित स्वयंसेवक संगठन)")}</p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
                 >
-                  सनातनी सेना उन समर्पित स्वयंसेवकों का संगठन है जो सेवा, सुरक्षा, संस्कार, जनजागरण एवं सामाजिक सहयोग के माध्यम से राष्ट्र, समाज एवं सनातन मूल्यों के लिए सक्रिय रूप से कार्य करना चाहते हैं।
+                  {t(text, 'k9', "सनातनी सेना उन समर्पित स्वयंसेवकों का संगठन है जो सेवा, सुरक्षा, संस्कार, जनजागरण एवं सामाजिक सहयोग के माध्यम से राष्ट्र, समाज एवं सनातन मूल्यों के लिए सक्रिय रूप से कार्य करना चाहते हैं।")}
                 </p>
                 <div className="pt-1">
-                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">सहयोग राशि (Fee Structure):</span>
+                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">{t(text, 'k10', "सहयोग राशि (Fee Structure):")}</span>
                   <div className="flex flex-wrap gap-1 text-[11px] font-bold">
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">Local: ₹101</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">District: ₹1,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">State: ₹5,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">National: ₹21,000</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k11', "Local: ₹101")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k12', "District: ₹1,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k13', "State: ₹5,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k14', "National: ₹21,000")}</span>
                   </div>
                 </div>
               </div>
@@ -146,7 +148,7 @@ export default function SanataniSenaPage() {
               <button
                 className="w-full py-3 px-4 rounded-2xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-saffron-600 text-white shadow-md hover:bg-saffron-700 sd-btn sd-btn--join-mission"
               >
-                <span>Register Now / चुनें एवं आगे बढ़ें</span>
+                <span>{t(text, 'k15', "Register Now / चुनें एवं आगे बढ़ें")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -173,7 +175,7 @@ export default function SanataniSenaPage() {
                 className="relative h-[240px] w-full overflow-hidden bg-[#180c06] p-2 flex items-center justify-center"
               >
                 <img
-                  src="/img/active_member.jpeg"
+                  src={img(images, 'i16', "/img/active_member.jpeg")}
                   alt="GENERAL MEMBER"
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -188,20 +190,20 @@ export default function SanataniSenaPage() {
                 <div>
                   <h3 className="font-serif text-xl font-bold text-saffron-900">GENERAL MEMBER</h3>
                   <h4 className="text-sm font-bold text-amber-700">सामान्य सदस्य</h4>
-                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">(Associate Member &amp; Supporter / सहयोगी सदस्य)</p>
+                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">{t(text, 'k17', "(Associate Member &amp; Supporter / सहयोगी सदस्य)")}</p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
                 >
-                  General Member के रूप में कोई भी व्यक्ति सनातन सेवा अभियान से जुड़कर सामाजिक, सांस्कृतिक एवं मानव कल्याण गतिविधियों का “सहयोगी सदस्य बन सकता है”
+                  {t(text, 'k18', "General Member के रूप में कोई भी व्यक्ति सनातन सेवा अभियान से जुड़कर सामाजिक, सांस्कृतिक एवं मानव कल्याण गतिविधियों का “सहयोगी सदस्य बन सकता है”")}
                 </p>
                 <div className="pt-1">
-                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">सहयोग राशि (Fee Structure):</span>
+                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">{t(text, 'k19', "सहयोग राशि (Fee Structure):")}</span>
                   <div className="flex flex-wrap gap-1 text-[11px] font-bold">
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">Local: ₹101</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">District: ₹1,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">State: ₹5,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">National: ₹21,000</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k20', "Local: ₹101")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k21', "District: ₹1,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k22', "State: ₹5,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k23', "National: ₹21,000")}</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +212,7 @@ export default function SanataniSenaPage() {
               <button
                 className="w-full py-3 px-4 rounded-2xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-saffron-50 text-saffron-800 hover:bg-saffron-100 border border-saffron-200 sd-btn sd-btn--join-mission"
               >
-                <span>Register Now / चुनें एवं आगे बढ़ें</span>
+                <span>{t(text, 'k24', "Register Now / चुनें एवं आगे बढ़ें")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -237,7 +239,7 @@ export default function SanataniSenaPage() {
                 className="relative h-[240px] w-full overflow-hidden bg-[#180c06] p-2 flex items-center justify-center"
               >
                 <img
-                  src="/img/vigilance_department.jpeg"
+                  src={img(images, 'i25', "/img/vigilance_department.jpeg")}
                   alt="VIGILANCE DEPARTMENT"
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -253,21 +255,21 @@ export default function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">VIGILANCE DEPARTMENT</h3>
                   <h4 className="text-sm font-bold text-amber-700">विजिलेंस विभाग</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    (Transparency, Integrity &amp; Fraud Awareness Wing / सतर्कता एवं निगरानी विभाग)
+                    {t(text, 'k26', "(Transparency, Integrity &amp; Fraud Awareness Wing / सतर्कता एवं निगरानी विभाग)")}
                   </p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
                 >
-                  Vigilance Department का उद्देश्य संस्था की पारदर्शिता, विश्वसनीयता एवं अनुशासन बनाए रखने के साथ-साथ धोखाधड़ी, ठगी, साइबर फ्रॉड, संस्था के नाम के दुरुपयोग एवं अन्य गलत गतिविधियों के प्रति जागरूकता और सतर्कता को बढ़ावा देना है।
+                  {t(text, 'k27', "Vigilance Department का उद्देश्य संस्था की पारदर्शिता, विश्वसनीयता एवं अनुशासन बनाए रखने के साथ-साथ धोखाधड़ी, ठगी, साइबर फ्रॉड, संस्था के नाम के दुरुपयोग एवं अन्य गलत गतिविधियों के प्रति जागरूकता और सतर्कता को बढ़ावा देना है।")}
                 </p>
                 <div className="pt-1">
-                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">सहयोग राशि (Fee Structure):</span>
+                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">{t(text, 'k28', "सहयोग राशि (Fee Structure):")}</span>
                   <div className="flex flex-wrap gap-1 text-[11px] font-bold">
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">Local: ₹101</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">District: ₹1,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">State: ₹5,001</span>
-                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">National: ₹21,000</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k29', "Local: ₹101")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k30', "District: ₹1,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k31', "State: ₹5,001")}</span>
+                    <span className="bg-amber-100 text-amber-900 px-2 py-0.5 rounded-md">{t(text, 'k32', "National: ₹21,000")}</span>
                   </div>
                 </div>
               </div>
@@ -276,7 +278,7 @@ export default function SanataniSenaPage() {
               <button
                 className="w-full py-3 px-4 rounded-2xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-saffron-50 text-saffron-800 hover:bg-saffron-100 border border-saffron-200 sd-btn sd-btn--join-mission"
               >
-                <span>Register Now / चुनें एवं आगे बढ़ें</span>
+                <span>{t(text, 'k33', "Register Now / चुनें एवं आगे बढ़ें")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -303,7 +305,7 @@ export default function SanataniSenaPage() {
                 className="relative h-[240px] w-full overflow-hidden bg-[#180c06] p-2 flex items-center justify-center"
               >
                 <img
-                  src="/img/seva_network.jpeg"
+                  src={img(images, 'i34', "/img/seva_network.jpeg")}
                   alt="SANATAN SEVA NETWORK"
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -319,16 +321,16 @@ export default function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">SANATAN SEVA NETWORK</h3>
                   <h4 className="text-sm font-bold text-amber-700">सनातन सेवा नेटवर्क</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    (Professionals, Businessmen &amp; Service Providers Network / पेशेवर एवं सेवाप्रदाता मंच)
+                    {t(text, 'k35', "(Professionals, Businessmen &amp; Service Providers Network / पेशेवर एवं सेवाप्रदाता मंच)")}
                   </p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
                 >
-                  Sanatan Seva Network उन professionals, व्यवसायियों, सेवाप्रदाताओं एवं समाजसेवियों का सहयोग मंच है जो अपने ज्ञान, सेवा, अनुभव एवं नेटवर्क के माध्यम से समाज और सनातन परिवार की सहायता करना चाहते हैं।
+                  {t(text, 'k36', "Sanatan Seva Network उन professionals, व्यवसायियों, सेवाप्रदाताओं एवं समाजसेवियों का सहयोग मंच है जो अपने ज्ञान, सेवा, अनुभव एवं नेटवर्क के माध्यम से समाज और सनातन परिवार की सहायता करना चाहते हैं।")}
                 </p>
                 <div className="pt-1">
-                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">सहयोग राशि (Fee Structure):</span>
+                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">{t(text, 'k37', "सहयोग राशि (Fee Structure):")}</span>
                   <div
                     className="inline-block bg-emerald-100 text-emerald-900 px-3 py-1 rounded-lg text-xs font-black"
                   >सहयोग राशि ₹1,100</div>
@@ -339,7 +341,7 @@ export default function SanataniSenaPage() {
               <button
                 className="w-full py-3 px-4 rounded-2xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-saffron-50 text-saffron-800 hover:bg-saffron-100 border border-saffron-200 sd-btn sd-btn--join-mission"
               >
-                <span>Register Now / चुनें एवं आगे बढ़ें</span>
+                <span>{t(text, 'k38', "Register Now / चुनें एवं आगे बढ़ें")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -366,7 +368,7 @@ export default function SanataniSenaPage() {
                 className="relative h-[240px] w-full overflow-hidden bg-[#180c06] p-2 flex items-center justify-center"
               >
                 <img
-                  src="/img/supporting_member.jpeg"
+                  src={img(images, 'i39', "/img/supporting_member.jpeg")}
                   alt="SUPPORTING MEMBER / PATRON MEMBER"
                   className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -382,16 +384,16 @@ export default function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">SUPPORTING MEMBER / PATRON MEMBER</h3>
                   <h4 className="text-sm font-bold text-amber-700">संरक्षक / सहयोगी सदस्य</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    (Patrons, Donors &amp; Institutional Supporters / विशिष्ट संरक्षक सदस्य)
+                    {t(text, 'k40', "(Patrons, Donors &amp; Institutional Supporters / विशिष्ट संरक्षक सदस्य)")}
                   </p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
                 >
-                  Supporting Member / Patron Member उन व्यक्तियों, व्यवसायों, समाजसेवियों एवं शुभचिंतकों के लिए है जो संस्था के सेवा, समाज कल्याण एवं जनजागरण अभियानों को सहयोग एवं समर्थन देना चाहते हैं।
+                  {t(text, 'k41', "Supporting Member / Patron Member उन व्यक्तियों, व्यवसायों, समाजसेवियों एवं शुभचिंतकों के लिए है जो संस्था के सेवा, समाज कल्याण एवं जनजागरण अभियानों को सहयोग एवं समर्थन देना चाहते हैं।")}
                 </p>
                 <div className="pt-1">
-                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">सहयोग राशि (Fee Structure):</span>
+                  <span className="text-[11px] font-extrabold uppercase text-slate-500 block mb-1">{t(text, 'k42', "सहयोग राशि (Fee Structure):")}</span>
                   <div
                     className="inline-block bg-emerald-100 text-emerald-900 px-3 py-1 rounded-lg text-xs font-black"
                   >न्यूनतम सहयोग राशि ₹21,000</div>
@@ -402,7 +404,7 @@ export default function SanataniSenaPage() {
               <button
                 className="w-full py-3 px-4 rounded-2xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-saffron-50 text-saffron-800 hover:bg-saffron-100 border border-saffron-200 sd-btn sd-btn--join-mission"
               >
-                <span>Register Now / चुनें एवं आगे बढ़ें</span>
+                <span>{t(text, 'k43', "Register Now / चुनें एवं आगे बढ़ें")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -426,7 +428,7 @@ export default function SanataniSenaPage() {
           <button
             className="rounded-full bg-gradient-to-r from-saffron-600 to-amber-600 px-10 py-4 text-sm font-bold text-white shadow-xl shadow-saffron-500/25 hover:opacity-95 transition-all inline-flex items-center gap-2 cursor-pointer sd-btn sd-btn--next"
           >
-            <span>Proceed to Step 2: Category Details (सनातनी सेना)</span>
+            <span>{t(text, 'k44', "Proceed to Step 2: Category Details (सनातनी सेना)")}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -452,10 +454,10 @@ export default function SanataniSenaPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k45', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k46', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -481,7 +483,7 @@ export default function SanataniSenaPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k47', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -507,7 +509,7 @@ export default function SanataniSenaPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k48', "Join the Mission")}
           </Link>
         </div>
       </div>

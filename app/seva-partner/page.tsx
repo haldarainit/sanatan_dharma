@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function SevaPartnerPage() {
+export default async function SevaPartnerPage() {
+  const { text, images } = await getPageContent("/seva-partner")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function SevaPartnerPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function SevaPartnerPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Become a Seva Partner</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Become a Seva Partner")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Become a Seva{' '}
-          <span className="text-[#e35300]">Partner</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Partner")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">सेवा सहभागिता एवं पार्टनर नेटवर्क • Community Seva Alliance</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "सेवा सहभागिता एवं पार्टनर नेटवर्क • Community Seva Alliance")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          निःस्वार्थ सेवा, गौ रक्षा, अन्नदान एवं सामाजिक उत्थान के लिए हमारे राष्ट्रव्यापी सेवा नेटवर्क से जुड़ें।
+          {t(text, 'k5', "निःस्वार्थ सेवा, गौ रक्षा, अन्नदान एवं सामाजिक उत्थान के लिए हमारे राष्ट्रव्यापी सेवा नेटवर्क से जुड़ें।")}
         </p>
       </div>
     </section>
@@ -71,12 +73,12 @@ export default function SevaPartnerPage() {
               <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
               <path d="M3 4h8"></path>
             </svg>
-            <span>Seva Partner Network</span>
+            <span>{t(text, 'k6', "Seva Partner Network")}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">सेवा ही परम धर्म — समाज परिवर्तन में हमारे सहभागी बनें</h2>
           <p className="text-sm sm:text-base text-orange-100 leading-relaxed">
             सनातन धर्म मानव कल्याण फाउंडेशन स्थानीय संस्थाओं, गौशालाओं, धार्मिक व सामाजिक ट्रस्टों, युवा मंडलों एवं समर्पित सेवा भावी व्यक्तियों का{' '}
-            <strong>Seva Partner Network</strong>
+            <strong>{t(text, 'k7', "Seva Partner Network")}</strong>
             {' '}में हार्दिक स्वागत करता है।
           </p>
           <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -101,7 +103,7 @@ export default function SevaPartnerPage() {
                 ></path>
                 <path d="m21.854 2.147-10.94 10.939"></path>
               </svg>
-              <span>Register as Seva Partner</span>
+              <span>{t(text, 'k8', "Register as Seva Partner")}</span>
             </button>
             <a
               href="#seva-partner-form"
@@ -125,14 +127,14 @@ export default function SevaPartnerPage() {
                 <path d="M14.05 2a9 9 0 0 1 8 7.94"></path>
                 <path d="M14.05 6A5 5 0 0 1 18 10"></path>
               </svg>
-              <span>Request Collaboration Call</span>
+              <span>{t(text, 'k9', "Request Collaboration Call")}</span>
             </a>
           </div>
         </div>
       </div>
       <div className="mb-12">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">Synergy &amp; Empowerment</span>
+          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k10', "Synergy &amp; Empowerment")}</span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">BENEFITS OF SEVA PARTNERSHIP / सेवा सहभागिता के लाभ</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -160,7 +162,7 @@ export default function SevaPartnerPage() {
             </div>
             <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mb-2">Volunteering Network</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Access to thousands of dedicated Sanatani volunteers for local and national impact projects.
+              {t(text, 'k11', "Access to thousands of dedicated Sanatani volunteers for local and national impact projects.")}
             </p>
           </div>
           <div
@@ -194,7 +196,7 @@ export default function SevaPartnerPage() {
             </div>
             <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mb-2">Institutional Support</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Operational guidance, legal compliance aid, and resource coordination from central foundation.
+              {t(text, 'k12', "Operational guidance, legal compliance aid, and resource coordination from central foundation.")}
             </p>
           </div>
           <div
@@ -221,7 +223,7 @@ export default function SevaPartnerPage() {
             </div>
             <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mb-2">National Recognition</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Joint branding, official appreciation certificates, and showcase on foundation portals.
+              {t(text, 'k13', "Joint branding, official appreciation certificates, and showcase on foundation portals.")}
             </p>
           </div>
           <div
@@ -246,7 +248,7 @@ export default function SevaPartnerPage() {
             </div>
             <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mb-2">24/7 Co-ordination</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Dedicated project managers and ground coordinators to ensure seamless seva execution.
+              {t(text, 'k14', "Dedicated project managers and ground coordinators to ensure seamless seva execution.")}
             </p>
           </div>
         </div>
@@ -275,11 +277,11 @@ export default function SevaPartnerPage() {
                 d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
               ></path>
             </svg>
-            <span>Seva Partner Registration Form</span>
+            <span>{t(text, 'k15', "Seva Partner Registration Form")}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A]">Seva Partnership Interest Form / सेवा पार्टनर पंजीयन</h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            कृपया अपनी संस्था या समूह की जानकारी भरें, हमारी सेवा टीम आपसे शीघ्र संपर्क करेगी।
+            {t(text, 'k16', "कृपया अपनी संस्था या समूह की जानकारी भरें, हमारी सेवा टीम आपसे शीघ्र संपर्क करेगी।")}
           </p>
         </div>
         <form className="space-y-6">
@@ -287,7 +289,7 @@ export default function SevaPartnerPage() {
             <h3 className="text-xs font-bold text-[#FF6F00] uppercase tracking-wider">Basic Details / बुनियादी विवरण</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">Contact Person Name *</label>
+                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k17', "Contact Person Name *")}</label>
                 <input
                   type="text"
                   required
@@ -297,7 +299,7 @@ export default function SevaPartnerPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">Organization / Trust / Group Name (Optional)</label>
+                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k18', "Organization / Trust / Group Name (Optional)")}</label>
                 <input
                   type="text"
                   placeholder="संस्था, ट्रस्ट या समूह का नाम"
@@ -309,7 +311,7 @@ export default function SevaPartnerPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="block text-xs font-bold text-slate-800">Mobile Number *</label>
+                  <label className="block text-xs font-bold text-slate-800">{t(text, 'k19', "Mobile Number *")}</label>
                 </div>
                 <div className="flex gap-2">
                   <input
@@ -327,7 +329,7 @@ export default function SevaPartnerPage() {
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">Email ID (Optional)</label>
+                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k20', "Email ID (Optional)")}</label>
                 <input
                   type="email"
                   placeholder="email@example.com"
@@ -336,7 +338,7 @@ export default function SevaPartnerPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">City &amp; State *</label>
+                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k21', "City &amp; State *")}</label>
                 <input
                   type="text"
                   required
@@ -357,7 +359,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Gau Seva &amp; Animal Welfare (गौ सेवा व पशु कल्याण)</span>
+                <span>{t(text, 'k22', "Gau Seva &amp; Animal Welfare (गौ सेवा व पशु कल्याण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -366,7 +368,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Food &amp; Ration Relief / Annadaan (अन्नदान व भोजन वितरण)</span>
+                <span>{t(text, 'k23', "Food &amp; Ration Relief / Annadaan (अन्नदान व भोजन वितरण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -375,7 +377,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Healthcare &amp; Medical Camps (स्वास्थ्य शिविर)</span>
+                <span>{t(text, 'k24', "Healthcare &amp; Medical Camps (स्वास्थ्य शिविर)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -384,7 +386,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Education &amp; Skill Training (शिक्षा व कौशल विकास)</span>
+                <span>{t(text, 'k25', "Education &amp; Skill Training (शिक्षा व कौशल विकास)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -393,7 +395,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Cultural Preservation &amp; Temples (सांस्कृतिक व धार्मिक कार्य)</span>
+                <span>{t(text, 'k26', "Cultural Preservation &amp; Temples (सांस्कृतिक व धार्मिक कार्य)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -402,7 +404,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Disaster &amp; Emergency Relief (आपदा प्रबंधन व राहत कार्य)</span>
+                <span>{t(text, 'k27', "Disaster &amp; Emergency Relief (आपदा प्रबंधन व राहत कार्य)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -411,7 +413,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Youth &amp; Women Empowerment (युवा व महिला सशक्तिकरण)</span>
+                <span>{t(text, 'k28', "Youth &amp; Women Empowerment (युवा व महिला सशक्तिकरण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -420,7 +422,7 @@ export default function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>Other Seva Initiatives (अन्य सेवा कार्य)</span>
+                <span>{t(text, 'k29', "Other Seva Initiatives (अन्य सेवा कार्य)")}</span>
               </label>
             </div>
           </div>
@@ -443,7 +445,7 @@ export default function SevaPartnerPage() {
                   className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
                 <span className="text-xs text-slate-700 font-semibold leading-normal">
-                  I agree to be contacted by the foundation regarding Seva Partnership activities. *
+                  {t(text, 'k30', "I agree to be contacted by the foundation regarding Seva Partnership activities. *")}
                 </span>
               </label>
               <label className="flex items-start gap-2.5 cursor-pointer">
@@ -452,7 +454,7 @@ export default function SevaPartnerPage() {
                   required
                   className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span className="text-xs text-slate-700 font-semibold leading-normal">I confirm that all details provided above are true and correct. *</span>
+                <span className="text-xs text-slate-700 font-semibold leading-normal">{t(text, 'k31', "I confirm that all details provided above are true and correct. *")}</span>
               </label>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -477,7 +479,7 @@ export default function SevaPartnerPage() {
                   ></path>
                   <path d="m21.854 2.147-10.94 10.939"></path>
                 </svg>
-                <span>Submit Seva Partnership Application</span>
+                <span>{t(text, 'k32', "Submit Seva Partnership Application")}</span>
               </button>
             </div>
           </div>
@@ -508,7 +510,7 @@ export default function SevaPartnerPage() {
           </svg>
         </div>
         <h3 className="font-serif text-lg sm:text-2xl font-bold tracking-wide">सेवा • सुरक्षा • संस्कार • धर्म — मानव कल्याण हमारा कर्म</h3>
-        <p className="text-sm font-semibold text-amber-100">सनातन धर्म मानव कल्याण फाउंडेशन</p>
+        <p className="text-sm font-semibold text-amber-100">{t(text, 'k33', "सनातन धर्म मानव कल्याण फाउंडेशन")}</p>
         <div
           className="text-xs text-white/90 font-medium tracking-widest pt-1 border-t border-white/20 max-w-xs mx-auto"
         >सेवा ही सनातन • समर्पण ही हमारा धर्म</div>
@@ -520,10 +522,10 @@ export default function SevaPartnerPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k34', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k35', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -549,7 +551,7 @@ export default function SevaPartnerPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k36', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -575,7 +577,7 @@ export default function SevaPartnerPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k37', "Join the Mission")}
           </Link>
         </div>
       </div>

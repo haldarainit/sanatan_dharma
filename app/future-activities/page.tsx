@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function FutureActivitiesPage() {
+export default async function FutureActivitiesPage() {
+  const { text, images } = await getPageContent("/future-activities")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function FutureActivitiesPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function FutureActivitiesPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Future Vision Projects</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Future Vision Projects")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
-          Future Vision
-          <span className="text-[#e35300]">Projects</span>
+          {t(text, 'k3', "Future Vision")}
+          <span className="text-[#e35300]">{t(text, 'k4', "Projects")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">हमारी भावी योजनाएँ</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k5', "हमारी भावी योजनाएँ")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          सनातन धर्म मानव कल्याण फाउंडेशन के भविष्य में आने वाले सेवा एवं जनकल्याण अभियानों की संपूर्ण रूपरेखा।
+          {t(text, 'k6', "सनातन धर्म मानव कल्याण फाउंडेशन के भविष्य में आने वाले सेवा एवं जनकल्याण अभियानों की संपूर्ण रूपरेखा।")}
         </p>
       </div>
     </section>
@@ -54,7 +56,7 @@ export default function FutureActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-sahayata.jpg"
+                src={img(images, 'i7', "/img/future-sahayata.jpg")}
                 alt="सनातन हेल्प सेंटर"
                 className="w-full h-full object-cover"
               />
@@ -88,9 +90,9 @@ export default function FutureActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-1 leading-tight">सनातन हेल्प सेंटर</h3>
-              <p className="deva text-xs text-saffron-600 font-semibold mb-2">निःशुल्क मार्गदर्शन, सहायता एवं सहयोग केंद्र</p>
+              <p className="deva text-xs text-saffron-600 font-semibold mb-2">{t(text, 'k8', "निःशुल्क मार्गदर्शन, सहायता एवं सहयोग केंद्र")}</p>
               <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-3">
-                सनातन हेल्प सेंटर का उद्देश्य सनातनी समाज के प्रत्येक जरूरतमंद व्यक्ति एवं परिवार को मार्गदर्शन, सहायता एवं सहयोग उपलब्ध कराना है। सामाजिक, कानूनी, प्रशासनिक, दस्तावेज़ी, रोजगार, स्वास्थ्य एवं अन्य आवश्यक सेवाओं से संबंधित सहायता प्रदान करने का प्रयास किया जाएगा। सेवाएँ पूर्णतः निःशुल्क (Free of Cost) होंगी।
+                {t(text, 'k9', "सनातन हेल्प सेंटर का उद्देश्य सनातनी समाज के प्रत्येक जरूरतमंद व्यक्ति एवं परिवार को मार्गदर्शन, सहायता एवं सहयोग उपलब्ध कराना है। सामाजिक, कानूनी, प्रशासनिक, दस्तावेज़ी, रोजगार, स्वास्थ्य एवं अन्य आवश्यक सेवाओं से संबंधित सहायता प्रदान करने का प्रयास किया जाएगा। सेवाएँ पूर्णतः निःशुल्क (Free of Cost) होंगी।")}
               </p>
               <Link
                 href="/future-activities/sanatan-help-center"
@@ -104,7 +106,7 @@ export default function FutureActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-bhojanalaya.jpg"
+                src={img(images, 'i10', "/img/future-bhojanalaya.jpg")}
                 alt="सनातन भोजनालय"
                 className="w-full h-full object-cover"
               />
@@ -135,9 +137,9 @@ export default function FutureActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-1 leading-tight">सनातन भोजनालय</h3>
-              <p className="deva text-xs text-saffron-600 font-semibold mb-2">पौष्टिक एवं सम्मानजनक भोजन सहायता सेवा</p>
+              <p className="deva text-xs text-saffron-600 font-semibold mb-2">{t(text, 'k11', "पौष्टिक एवं सम्मानजनक भोजन सहायता सेवा")}</p>
               <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-3">
-                अन्न सेवा के संकल्प को आगे बढ़ाते हुए जरूरतमंदों, अस्पताल के मरीजों के परिजनों, असहाय वृद्धों एवं विद्यार्थियों के लिए निःशुल्क अथवा न्यूनतम सहयोग राशि पर शुद्ध, सात्विक एवं पौष्टिक भोजन उपलब्ध कराने की योजना।
+                {t(text, 'k12', "अन्न सेवा के संकल्प को आगे बढ़ाते हुए जरूरतमंदों, अस्पताल के मरीजों के परिजनों, असहाय वृद्धों एवं विद्यार्थियों के लिए निःशुल्क अथवा न्यूनतम सहयोग राशि पर शुद्ध, सात्विक एवं पौष्टिक भोजन उपलब्ध कराने की योजना।")}
               </p>
               <Link
                 href="/future-activities/sanatan-bhojanalaya"
@@ -151,7 +153,7 @@ export default function FutureActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-skill.jpg"
+                src={img(images, 'i13', "/img/future-skill.jpg")}
                 alt="रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र"
                 className="w-full h-full object-cover"
               />
@@ -184,9 +186,9 @@ export default function FutureActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-1 leading-tight">रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र</h3>
-              <p className="deva text-xs text-saffron-600 font-semibold mb-2">मूलभूत आवश्यकताएँ एवं आत्मनिर्भरता</p>
+              <p className="deva text-xs text-saffron-600 font-semibold mb-2">{t(text, 'k14', "मूलभूत आवश्यकताएँ एवं आत्मनिर्भरता")}</p>
               <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-3">
-                समाज के अंतिम व्यक्ति तक भोजन, वस्त्र एवं आश्रय सहायता पहुँचाने के साथ-साथ युवाओं और महिलाओं को स्वरोजगार व कौशल विकास (Skill Development) का प्रशिक्षण देकर उन्हें आत्मनिर्भर बनाने की पहल।
+                {t(text, 'k15', "समाज के अंतिम व्यक्ति तक भोजन, वस्त्र एवं आश्रय सहायता पहुँचाने के साथ-साथ युवाओं और महिलाओं को स्वरोजगार व कौशल विकास (Skill Development) का प्रशिक्षण देकर उन्हें आत्मनिर्भर बनाने की पहल।")}
               </p>
               <Link
                 href="/future-activities/skill-development"
@@ -200,7 +202,7 @@ export default function FutureActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-ashray.jpg"
+                src={img(images, 'i16', "/img/future-ashray.jpg")}
                 alt="सनातन शेल्टर हाउस"
                 className="w-full h-full object-cover"
               />
@@ -232,9 +234,9 @@ export default function FutureActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-1 leading-tight">सनातन शेल्टर हाउस</h3>
-              <p className="deva text-xs text-saffron-600 font-semibold mb-2">अनाथ, असहाय एवं बुजुर्गों हेतु सुरक्षित आश्रय</p>
+              <p className="deva text-xs text-saffron-600 font-semibold mb-2">{t(text, 'k17', "अनाथ, असहाय एवं बुजुर्गों हेतु सुरक्षित आश्रय")}</p>
               <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-3">
-                निराश्रित वृद्धजनों, अनाथ बच्चों, पीड़ित महिलाओं एवं आपदा पीड़ितों के लिए एक सुरक्षित, स्नेहमय और सम्मानजनक आश्रय स्थल का निर्माण, जहाँ आवास के साथ-साथ चिकित्सा, भोजन एवं आध्यात्मिक वातावरण उपलब्ध कराया जाएगा।
+                {t(text, 'k18', "निराश्रित वृद्धजनों, अनाथ बच्चों, पीड़ित महिलाओं एवं आपदा पीड़ितों के लिए एक सुरक्षित, स्नेहमय और सम्मानजनक आश्रय स्थल का निर्माण, जहाँ आवास के साथ-साथ चिकित्सा, भोजन एवं आध्यात्मिक वातावरण उपलब्ध कराया जाएगा।")}
               </p>
               <Link
                 href="/future-activities/ashray-dham"
@@ -248,7 +250,7 @@ export default function FutureActivitiesPage() {
           >
             <div className="relative h-52 w-full overflow-hidden">
               <img
-                src="/img/future-gurukul.png"
+                src={img(images, 'i19', "/img/future-gurukul.png")}
                 alt="सनातन गुरुकुल एवं संस्कार केंद्र"
                 className="w-full h-full object-cover"
               />
@@ -282,9 +284,9 @@ export default function FutureActivitiesPage() {
             </div>
             <div className="p-5 flex flex-col flex-1">
               <h3 className="deva font-serif text-lg font-bold text-slate-900 mb-1 leading-tight">सनातन गुरुकुल एवं संस्कार केंद्र</h3>
-              <p className="deva text-xs text-saffron-600 font-semibold mb-2">वैदिक ज्ञान एवं आधुनिक शिक्षा का संगम</p>
+              <p className="deva text-xs text-saffron-600 font-semibold mb-2">{t(text, 'k20', "वैदिक ज्ञान एवं आधुनिक शिक्षा का संगम")}</p>
               <p className="deva text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-3">
-                भावी पीढ़ी को अपनी जड़ों, संस्कृति, संस्कृत भाषा एवं नैतिक मूल्यों से जोड़ने के लिए आधुनिक शिक्षा के साथ-साथ वैदिक संस्कार, योग एवं चरित्र निर्माण पर आधारित गुरुकुलों की स्थापना।
+                {t(text, 'k21', "भावी पीढ़ी को अपनी जड़ों, संस्कृति, संस्कृत भाषा एवं नैतिक मूल्यों से जोड़ने के लिए आधुनिक शिक्षा के साथ-साथ वैदिक संस्कार, योग एवं चरित्र निर्माण पर आधारित गुरुकुलों की स्थापना।")}
               </p>
               <Link
                 href="/future-activities/gurukul-sansar-kendra"
@@ -300,10 +302,10 @@ export default function FutureActivitiesPage() {
     >
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
-          हमारा दीर्घकालिक
-          <span className="text-[#e35300]">संकल्प</span>
+          {t(text, 'k22', "हमारा दीर्घकालिक")}
+          <span className="text-[#e35300]">{t(text, 'k23', "संकल्प")}</span>
         </h2>
-        <p className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-8">Long-Term Commitment</p>
+        <p className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-8">{t(text, 'k24', "Long-Term Commitment")}</p>
         <div className="bg-saffron-50/60 rounded-2xl border border-saffron-100 p-8 sm:p-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -327,24 +329,24 @@ export default function FutureActivitiesPage() {
           <p
             className="deva text-lg sm:text-xl font-bold text-slate-800 leading-relaxed max-w-3xl mx-auto"
           >
-            &quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;
+            {t(text, 'k25', "&quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;")}
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 text-left">
           <div className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm">
             <h4 className="deva font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
               <span className="text-red-600"></span>
-              वर्तमान में
+              {t(text, 'k26', "वर्तमान में")}
             </h4>
-            <p className="deva text-sm text-slate-600 leading-relaxed">सेवा, जनकल्याण, जागरूकता एवं सामाजिक सहयोग संबंधी गतिविधियाँ।</p>
+            <p className="deva text-sm text-slate-600 leading-relaxed">{t(text, 'k27', "सेवा, जनकल्याण, जागरूकता एवं सामाजिक सहयोग संबंधी गतिविधियाँ।")}</p>
           </div>
           <div className="bg-white rounded-xl border border-slate-100 p-5 shadow-sm">
             <h4 className="deva font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
               <span className="text-red-600"></span>
-              भविष्य में
+              {t(text, 'k28', "भविष्य में")}
             </h4>
             <p className="deva text-sm text-slate-600 leading-relaxed">
-              सनातन हेल्प सेंटर, सनातन भोजनालय, सनातन शेल्टर हाउस, रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र तथा सनातन गुरुकुल एवं संस्कार केंद्र की स्थापना एवं विस्तार।
+              {t(text, 'k29', "सनातन हेल्प सेंटर, सनातन भोजनालय, सनातन शेल्टर हाउस, रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र तथा सनातन गुरुकुल एवं संस्कार केंद्र की स्थापना एवं विस्तार।")}
             </p>
           </div>
         </div>
@@ -366,10 +368,10 @@ export default function FutureActivitiesPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k30', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k31', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -395,7 +397,7 @@ export default function FutureActivitiesPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k32', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -421,7 +423,7 @@ export default function FutureActivitiesPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k33', "Join the Mission")}
           </Link>
         </div>
       </div>
@@ -437,13 +439,13 @@ export default function FutureActivitiesPage() {
             >Newsletter</div>
             <h3 className="deva mt-4 font-display text-2xl font-bold sm:text-3xl">सेवा, संस्कार और समाज से जुड़े रहें</h3>
             <p className="deva mt-3 text-sm text-white/85">
-              सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।
+              {t(text, 'k34', "सनातन पर्व, सेवा अभियान, विशेष कार्यक्रमों एवं महत्वपूर्ण अपडेट्स की जानकारी प्राप्त करने के लिए Subscribe करें।")}
             </p>
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-10">
             <form className="space-y-4">
               <div>
-                <label className="field-label">Email Address</label>
+                <label className="field-label">{t(text, 'k35', "Email Address")}</label>
                 <div className="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -493,9 +495,9 @@ export default function FutureActivitiesPage() {
                     <path d="m21.854 2.147-10.94 10.939"></path>
                   </svg>
                 </span>
-                Subscribe Now
+                {t(text, 'k36', "Subscribe Now")}
               </button>
-              <p className="text-center text-xs text-ink/50">We respect your privacy. Unsubscribe anytime.</p>
+              <p className="text-center text-xs text-ink/50">{t(text, 'k37', "We respect your privacy. Unsubscribe anytime.")}</p>
             </form>
           </div>
         </div>

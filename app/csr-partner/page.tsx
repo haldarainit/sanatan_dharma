@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function CsrPartnerPage() {
+export default async function CsrPartnerPage() {
+  const { text, images } = await getPageContent("/csr-partner")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function CsrPartnerPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function CsrPartnerPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">CSR Contact &amp; Partnership</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "CSR Contact &amp; Partnership")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           CSR Contact &amp;{' '}
-          <span className="text-[#e35300]">Partnership</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Partnership")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">CSR संपर्क एवं सहभागिता • Corporate Social Responsibility</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "CSR संपर्क एवं सहभागिता • Corporate Social Responsibility")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          साथ मिलकर समाज में सकारात्मक परिवर्तन लाएँ — Empowering communities through transparent, impactful CSR initiatives.
+          {t(text, 'k5', "साथ मिलकर समाज में सकारात्मक परिवर्तन लाएँ — Empowering communities through transparent, impactful CSR initiatives.")}
         </p>
       </div>
     </section>
@@ -74,18 +76,18 @@ export default function CsrPartnerPage() {
               <path d="M10 14h4"></path>
               <path d="M10 18h4"></path>
             </svg>
-            <span>Sanatan CSR Hub</span>
+            <span>{t(text, 'k6', "Sanatan CSR Hub")}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">साथ मिलकर समाज में सकारात्मक परिवर्तन लाएँ</h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             सनातन धर्म मानव कल्याण फाउंडेशन विभिन्न सामाजिक, शैक्षिक, स्वास्थ्य, महिला सशक्तिकरण, पर्यावरण, गौ सेवा एवं सांस्कृतिक परियोजनाओं के लिए{' '}
-            <strong>Corporate Social Responsibility (CSR)</strong>
+            <strong>{t(text, 'k7', "Corporate Social Responsibility (CSR)")}</strong>
             {' '}सहयोग का स्वागत करता है।
           </p>
           <p
             className="text-xs sm:text-sm text-amber-200/90 leading-relaxed border-l-2 border-[#FF6F00] pl-4 py-1"
           >
-            यदि आपकी संस्था CSR Partnership, Project Sponsorship, Employee Volunteering, Cause Marketing या Long-Term Social Impact Initiatives में रुचि रखती है, तो कृपया नीचे दी गई जानकारी साझा करें।
+            {t(text, 'k8', "यदि आपकी संस्था CSR Partnership, Project Sponsorship, Employee Volunteering, Cause Marketing या Long-Term Social Impact Initiatives में रुचि रखती है, तो कृपया नीचे दी गई जानकारी साझा करें।")}
           </p>
           <div className="pt-4 flex flex-wrap items-center gap-4">
             <button
@@ -108,7 +110,7 @@ export default function CsrPartnerPage() {
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" x2="12" y1="15" y2="3"></line>
               </svg>
-              <span>Download CSR Profile</span>
+              <span>{t(text, 'k9', "Download CSR Profile")}</span>
             </button>
             <button
               type="button"
@@ -132,17 +134,17 @@ export default function CsrPartnerPage() {
                 <path d="M14.05 2a9 9 0 0 1 8 7.94"></path>
                 <path d="M14.05 6A5 5 0 0 1 18 10"></path>
               </svg>
-              <span>Request a Call Back</span>
+              <span>{t(text, 'k10', "Request a Call Back")}</span>
             </button>
           </div>
         </div>
       </div>
       <div className="mb-12">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">Institutional Strengths &amp; Trust</span>
+          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k11', "Institutional Strengths &amp; Trust")}</span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">WHY PARTNER WITH US? / हमारे साथ साझेदारी क्यों करें?</h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            पूर्ण पारदर्शिता, वैधानिक अनुपालन एवं समर्पित प्रभाव मूल्यांकन के साथ CSR निष्पादन।
+            {t(text, 'k12', "पूर्ण पारदर्शिता, वैधानिक अनुपालन एवं समर्पित प्रभाव मूल्यांकन के साथ CSR निष्पादन।")}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -409,7 +411,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/tata.jpeg"
+                    src={img(images, 'i13', "/img/tata.jpeg")}
                     alt="TATA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -419,7 +421,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/infosys.jpeg"
+                    src={img(images, 'i14', "/img/infosys.jpeg")}
                     alt="INFOSYS"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -429,7 +431,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/wipro.jpeg"
+                    src={img(images, 'i15', "/img/wipro.jpeg")}
                     alt="WIPRO"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -439,7 +441,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/reliance.jpeg"
+                    src={img(images, 'i16', "/img/reliance.jpeg")}
                     alt="RELIANCE"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -449,7 +451,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/icici.jpeg"
+                    src={img(images, 'i17', "/img/icici.jpeg")}
                     alt="ICICI BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -459,7 +461,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/indian.jpeg"
+                    src={img(images, 'i18', "/img/indian.jpeg")}
                     alt="INDIAN OIL"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -474,7 +476,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/tata.jpeg"
+                    src={img(images, 'i19', "/img/tata.jpeg")}
                     alt="TATA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -484,7 +486,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/infosys.jpeg"
+                    src={img(images, 'i20', "/img/infosys.jpeg")}
                     alt="INFOSYS"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -494,7 +496,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/wipro.jpeg"
+                    src={img(images, 'i21', "/img/wipro.jpeg")}
                     alt="WIPRO"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -504,7 +506,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/reliance.jpeg"
+                    src={img(images, 'i22', "/img/reliance.jpeg")}
                     alt="RELIANCE"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -514,7 +516,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/icici.jpeg"
+                    src={img(images, 'i23', "/img/icici.jpeg")}
                     alt="ICICI BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -524,7 +526,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/indian.jpeg"
+                    src={img(images, 'i24', "/img/indian.jpeg")}
                     alt="INDIAN OIL"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -546,7 +548,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/hdfc.jpeg"
+                    src={img(images, 'i25', "/img/hdfc.jpeg")}
                     alt="HDFC BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -556,7 +558,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/abg.jpeg"
+                    src={img(images, 'i26', "/img/abg.jpeg")}
                     alt="ADITYA BIRLA GROUP"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -566,7 +568,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/lnt.jpeg"
+                    src={img(images, 'i27', "/img/lnt.jpeg")}
                     alt="L&T"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -576,7 +578,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/mahindra.jpeg"
+                    src={img(images, 'i28', "/img/mahindra.jpeg")}
                     alt="MAHINDRA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -586,7 +588,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/ntpc.jpeg"
+                    src={img(images, 'i29', "/img/ntpc.jpeg")}
                     alt="NTPC"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -601,7 +603,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/hdfc.jpeg"
+                    src={img(images, 'i30', "/img/hdfc.jpeg")}
                     alt="HDFC BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -611,7 +613,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/abg.jpeg"
+                    src={img(images, 'i31', "/img/abg.jpeg")}
                     alt="ADITYA BIRLA GROUP"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -621,7 +623,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/lnt.jpeg"
+                    src={img(images, 'i32', "/img/lnt.jpeg")}
                     alt="L&T"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -631,7 +633,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/mahindra.jpeg"
+                    src={img(images, 'i33', "/img/mahindra.jpeg")}
                     alt="MAHINDRA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -641,7 +643,7 @@ export default function CsrPartnerPage() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/ntpc.jpeg"
+                    src={img(images, 'i34', "/img/ntpc.jpeg")}
                     alt="NTPC"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -675,18 +677,18 @@ export default function CsrPartnerPage() {
               <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
               <rect width="20" height="14" x="2" y="6" rx="2"></rect>
             </svg>
-            <span>Official Corporate CSR Enquiry Form</span>
+            <span>{t(text, 'k35', "Official Corporate CSR Enquiry Form")}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A]">Corporate CSR Enquiry &amp; Proposal Form</h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            चरणबद्ध तरीके से अपनी संस्था एवं CSR प्राथमिकताओं का विवरण दर्ज करें (Step 1 of 4)
+            {t(text, 'k36', "चरणबद्ध तरीके से अपनी संस्था एवं CSR प्राथमिकताओं का विवरण दर्ज करें (Step 1 of 4)")}
           </p>
         </div>
         <div className="space-y-8">
           <div className="mb-8 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
             <div className="flex items-center justify-between text-xs font-bold text-[#0D1B2A] mb-2">
-              <span>Application Progress</span>
-              <span className="text-[#FF6F00] font-extrabold">25% Completed</span>
+              <span>{t(text, 'k37', "Application Progress")}</span>
+              <span className="text-[#FF6F00] font-extrabold">{t(text, 'k38', "25% Completed")}</span>
             </div>
             <div
               className="h-3 w-full bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200"
@@ -705,9 +707,9 @@ export default function CsrPartnerPage() {
                   <span
                     className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-[#FF6F00] text-white"
                   >1</span>
-                  <span className="text-xs font-bold">Section 1</span>
+                  <span className="text-xs font-bold">{t(text, 'k39', "Section 1")}</span>
                 </div>
-                <div className="text-[11px] font-medium truncate">Basic Information</div>
+                <div className="text-[11px] font-medium truncate">{t(text, 'k40', "Basic Information")}</div>
               </button>
               <button
                 type="button"
@@ -718,9 +720,9 @@ export default function CsrPartnerPage() {
                   <span
                     className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                   >2</span>
-                  <span className="text-xs font-bold">Section 2</span>
+                  <span className="text-xs font-bold">{t(text, 'k41', "Section 2")}</span>
                 </div>
-                <div className="text-[11px] font-medium truncate">Contact Details</div>
+                <div className="text-[11px] font-medium truncate">{t(text, 'k42', "Contact Details")}</div>
               </button>
               <button
                 type="button"
@@ -731,9 +733,9 @@ export default function CsrPartnerPage() {
                   <span
                     className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                   >3</span>
-                  <span className="text-xs font-bold">Section 3</span>
+                  <span className="text-xs font-bold">{t(text, 'k43', "Section 3")}</span>
                 </div>
-                <div className="text-[11px] font-medium truncate">Company Details</div>
+                <div className="text-[11px] font-medium truncate">{t(text, 'k44', "Company Details")}</div>
               </button>
               <button
                 type="button"
@@ -744,9 +746,9 @@ export default function CsrPartnerPage() {
                   <span
                     className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                   >4</span>
-                  <span className="text-xs font-bold">Section 4</span>
+                  <span className="text-xs font-bold">{t(text, 'k45', "Section 4")}</span>
                 </div>
-                <div className="text-[11px] font-medium truncate">CSR Interest &amp; Submit</div>
+                <div className="text-[11px] font-medium truncate">{t(text, 'k46', "CSR Interest &amp; Submit")}</div>
               </button>
             </div>
           </div>
@@ -763,7 +765,7 @@ export default function CsrPartnerPage() {
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">Contact Person Name *</label>
+                  <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k47', "Contact Person Name *")}</label>
                   <input
                     type="text"
                     required
@@ -773,7 +775,7 @@ export default function CsrPartnerPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">Company / Organization Name *</label>
+                  <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k48', "Company / Organization Name *")}</label>
                   <input
                     type="text"
                     required
@@ -783,7 +785,7 @@ export default function CsrPartnerPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">Designation *</label>
+                  <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k49', "Designation *")}</label>
                   <input
                     type="text"
                     required
@@ -798,7 +800,7 @@ export default function CsrPartnerPage() {
                   type="button"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#FF6F00] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#e06200] shadow-md transition-all cursor-pointer sd-btn sd-btn--next"
                 >
-                  <span>Proceed to Section 2</span>
+                  <span>{t(text, 'k50', "Proceed to Section 2")}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -840,15 +842,15 @@ export default function CsrPartnerPage() {
               <path d="M12 8h.01"></path>
             </svg>
             <div>
-              <strong className="block font-bold text-amber-950 mb-0.5">IMPORTANT NOTE</strong>
-              CSR सहयोग एवं परियोजनाओं का अंतिम स्वरूप दोनों पक्षों की पारस्परिक सहमति, उपलब्ध संसाधनों, वैधानिक आवश्यकताओं एवं संस्था की नीति के अनुसार निर्धारित किया जाएगा।
+              <strong className="block font-bold text-amber-950 mb-0.5">{t(text, 'k51', "IMPORTANT NOTE")}</strong>
+              {t(text, 'k52', "CSR सहयोग एवं परियोजनाओं का अंतिम स्वरूप दोनों पक्षों की पारस्परिक सहमति, उपलब्ध संसाधनों, वैधानिक आवश्यकताओं एवं संस्था की नीति के अनुसार निर्धारित किया जाएगा।")}
             </div>
           </div>
           <div
             className="rounded-2xl bg-slate-100/80 border border-slate-200 p-4 text-[11px] text-slate-600 leading-relaxed"
           >
-            <strong className="block font-bold text-slate-700 mb-0.5">LOGO DISCLAIMER</strong>
-            यहाँ प्रदर्शित सभी कंपनियों के लोगो केवल CSR संपर्क, जागरूकता एवं सहभागिता के प्रतिनिधिक उद्देश्य से उपयोग किए गए हैं। किसी कंपनी का लोगो प्रदर्शित होना आवश्यक रूप से औपचारिक साझेदारी, समर्थन या अनुमोदन को प्रदर्शित नहीं करता।
+            <strong className="block font-bold text-slate-700 mb-0.5">{t(text, 'k53', "LOGO DISCLAIMER")}</strong>
+            {t(text, 'k54', "यहाँ प्रदर्शित सभी कंपनियों के लोगो केवल CSR संपर्क, जागरूकता एवं सहभागिता के प्रतिनिधिक उद्देश्य से उपयोग किए गए हैं। किसी कंपनी का लोगो प्रदर्शित होना आवश्यक रूप से औपचारिक साझेदारी, समर्थन या अनुमोदन को प्रदर्शित नहीं करता।")}
           </div>
         </div>
       </div>
@@ -877,7 +879,7 @@ export default function CsrPartnerPage() {
           </svg>
         </div>
         <h3 className="font-serif text-lg sm:text-2xl font-bold tracking-wide">सेवा • सुरक्षा • संस्कार • धर्म — मानव कल्याण हमारा कर्म</h3>
-        <p className="text-sm font-semibold text-amber-100">सनातन धर्म मानव कल्याण फाउंडेशन</p>
+        <p className="text-sm font-semibold text-amber-100">{t(text, 'k55', "सनातन धर्म मानव कल्याण फाउंडेशन")}</p>
         <div
           className="text-xs text-white/90 font-medium tracking-widest pt-1 border-t border-white/20 max-w-xs mx-auto"
         >सेवा ही सनातन • समर्पण ही हमारा धर्म</div>
@@ -889,10 +891,10 @@ export default function CsrPartnerPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k56', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k57', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -918,7 +920,7 @@ export default function CsrPartnerPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k58', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -944,7 +946,7 @@ export default function CsrPartnerPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k59', "Join the Mission")}
           </Link>
         </div>
       </div>

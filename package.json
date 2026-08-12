@@ -10,7 +10,8 @@
     "legacy": "node legacy-server.js",
     "sanity:seed": "node legacy/tools/sanity-seed.mjs",
     "sanity:deploy": "sanity deploy",
-    "sanity:dev": "sanity dev"
+    "sanity:dev": "sanity dev",
+    "sanity:seed:pages": "node legacy/tools/sanity-seed-pages.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

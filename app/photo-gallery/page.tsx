@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function PhotoGalleryPage() {
+export default async function PhotoGalleryPage() {
+  const { text, images } = await getPageContent("/photo-gallery")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function PhotoGalleryPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function PhotoGalleryPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Photo Gallery</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Photo Gallery")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Photo{' '}
-          <span className="text-[#e35300]">Gallery</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Gallery")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 चित्र दीर्घा — सेवा एवं संस्कृति</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 चित्र दीर्घा — सेवा एवं संस्कृति")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Visual highlights from our food relief drives, gaushalas, medical camps, tree plantation drives, and cultural celebrations.
+          {t(text, 'k5', "Visual highlights from our food relief drives, gaushalas, medical camps, tree plantation drives, and cultural celebrations.")}
         </p>
       </div>
     </section>
@@ -71,7 +73,7 @@ export default function PhotoGalleryPage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-slate-900">Seva Photo Highlights</h2>
-              <p className="text-xs text-slate-500">Click any photo to open full-resolution lightbox viewer</p>
+              <p className="text-xs text-slate-500">{t(text, 'k6', "Click any photo to open full-resolution lightbox viewer")}</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -807,10 +809,10 @@ export default function PhotoGalleryPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k7', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k8', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -836,7 +838,7 @@ export default function PhotoGalleryPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k9', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -862,7 +864,7 @@ export default function PhotoGalleryPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k10', "Join the Mission")}
           </Link>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function MediaNewsAndEventsPage() {
+export default async function MediaNewsAndEventsPage() {
+  const { text, images } = await getPageContent("/media/news-and-events")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function MediaNewsAndEventsPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function MediaNewsAndEventsPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">News &amp; Field Updates</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "News &amp; Field Updates")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           News &amp; Field{' '}
-          <span className="text-[#e35300]">Updates</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Updates")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 समाचार, कार्यक्रम एवं प्रेस विज्ञप्ति</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 समाचार, कार्यक्रम एवं प्रेस विज्ञप्ति")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Read real-time updates on our ground relief missions, press releases, medical camps, and upcoming community seva events.
+          {t(text, 'k5', "Read real-time updates on our ground relief missions, press releases, medical camps, and upcoming community seva events.")}
         </p>
       </div>
     </section>
@@ -71,15 +73,15 @@ export default function MediaNewsAndEventsPage() {
                   </svg>
                   {' '}Featured Story
                 </span>
-                <span className="text-xs text-saffron-300 font-semibold">28 July 2026</span>
+                <span className="text-xs text-saffron-300 font-semibold">{t(text, 'k6', "28 July 2026")}</span>
               </div>
               <h2
                 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-white hover:text-saffron-300 transition-colors"
               >
-                Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions
+                {t(text, 'k7', "Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions")}
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Sanatan Sena volunteer teams mobilized 14 mobile kitchens to deliver nutritious meals, clean drinking water, and essential medicines across flood-hit municipal zones.
+                {t(text, 'k8', "Sanatan Sena volunteer teams mobilized 14 mobile kitchens to deliver nutritious meals, clean drinking water, and essential medicines across flood-hit municipal zones.")}
               </p>
               <div className="pt-2 flex items-center justify-between">
                 <span className="text-xs text-slate-400 font-semibold flex items-center gap-1">
@@ -106,7 +108,7 @@ export default function MediaNewsAndEventsPage() {
                   type="button"
                   className="rounded-xl bg-gradient-to-r from-saffron-500 to-amber-500 px-5 py-2.5 text-xs font-bold text-white shadow-md hover:opacity-95 transition-all flex items-center gap-1.5 sd-btn sd-btn--view-details"
                 >
-                  <span>Read Full Story</span>
+                  <span>{t(text, 'k9', "Read Full Story")}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -155,7 +157,7 @@ export default function MediaNewsAndEventsPage() {
             >
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
             </svg>
-            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Filter News:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t(text, 'k10', "Filter News:")}</span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -239,10 +241,10 @@ export default function MediaNewsAndEventsPage() {
                 <h3
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions
+                  {t(text, 'k11', "Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions")}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                  Sanatan Sena volunteer teams mobilized 14 mobile kitchens to deliver nutritious meals, clean drinking water, and essential medicines across flood-hit municipal zones.
+                  {t(text, 'k12', "Sanatan Sena volunteer teams mobilized 14 mobile kitchens to deliver nutritious meals, clean drinking water, and essential medicines across flood-hit municipal zones.")}
                 </p>
               </div>
             </div>
@@ -271,7 +273,7 @@ export default function MediaNewsAndEventsPage() {
                 type="button"
                 className="text-xs font-bold text-saffron-700 hover:text-saffron-800 flex items-center gap-1"
               >
-                <span>Read Article</span>
+                <span>{t(text, 'k13', "Read Article")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -348,10 +350,10 @@ export default function MediaNewsAndEventsPage() {
                 <h3
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  Press Release: Foundation Expands Free Gaushala Medical &amp; Fodder Support Scheme
+                  {t(text, 'k14', "Press Release: Foundation Expands Free Gaushala Medical &amp; Fodder Support Scheme")}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                  Central Board announces ₹1.5 Crore grant allocation for 85 partner gaushalas in UP, Rajasthan, and MP to supply green fodder and veterinary care.
+                  {t(text, 'k15', "Central Board announces ₹1.5 Crore grant allocation for 85 partner gaushalas in UP, Rajasthan, and MP to supply green fodder and veterinary care.")}
                 </p>
               </div>
             </div>
@@ -380,7 +382,7 @@ export default function MediaNewsAndEventsPage() {
                 type="button"
                 className="text-xs font-bold text-saffron-700 hover:text-saffron-800 flex items-center gap-1"
               >
-                <span>Read Article</span>
+                <span>{t(text, 'k16', "Read Article")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -458,7 +460,7 @@ export default function MediaNewsAndEventsPage() {
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Upcoming: Mega Free Medical &amp; Eye Checkup Camp in Pune District</h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                  Partnering with super-specialty hospitals to offer free blood tests, eye cataract screenings, specs distribution, and general health checkups for 3,000+ residents.
+                  {t(text, 'k17', "Partnering with super-specialty hospitals to offer free blood tests, eye cataract screenings, specs distribution, and general health checkups for 3,000+ residents.")}
                 </p>
               </div>
             </div>
@@ -487,7 +489,7 @@ export default function MediaNewsAndEventsPage() {
                 type="button"
                 className="text-xs font-bold text-saffron-700 hover:text-saffron-800 flex items-center gap-1"
               >
-                <span>Read Article</span>
+                <span>{t(text, 'k18', "Read Article")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -564,10 +566,10 @@ export default function MediaNewsAndEventsPage() {
                 <h3
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  Prakriti Seva: 10,000 Sacred Neem &amp; Banyan Saplings Planted Across Rural Belts
+                  {t(text, 'k19', "Prakriti Seva: 10,000 Sacred Neem &amp; Banyan Saplings Planted Across Rural Belts")}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                  Community youth and school students joined hands to plant oxygen-rich indigenous trees along village roads and temple groves.
+                  {t(text, 'k20', "Community youth and school students joined hands to plant oxygen-rich indigenous trees along village roads and temple groves.")}
                 </p>
               </div>
             </div>
@@ -596,7 +598,7 @@ export default function MediaNewsAndEventsPage() {
                 type="button"
                 className="text-xs font-bold text-saffron-700 hover:text-saffron-800 flex items-center gap-1"
               >
-                <span>Read Article</span>
+                <span>{t(text, 'k21', "Read Article")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -624,10 +626,10 @@ export default function MediaNewsAndEventsPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k22', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k23', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -653,7 +655,7 @@ export default function MediaNewsAndEventsPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k24', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -679,7 +681,7 @@ export default function MediaNewsAndEventsPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k25', "Join the Mission")}
           </Link>
         </div>
       </div>

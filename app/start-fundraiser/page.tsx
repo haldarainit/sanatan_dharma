@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -5,7 +6,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function StartFundraiserPage() {
+export default async function StartFundraiserPage() {
+  const { text, images } = await getPageContent("/start-fundraiser")
   return (
     <>
     <div className="min-h-screen flex flex-col bg-[#FFFDF9] text-[#0D1B2A]">
@@ -21,32 +23,32 @@ export default function StartFundraiserPage() {
             <h1
               className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0D1B2A] tracking-tight leading-tight mb-2"
             >START FUNDRAISING</h1>
-            <p className="text-lg sm:text-xl font-bold text-[#FF6F00] mb-3">सेवा अभियान सहयोग सुविधा</p>
+            <p className="text-lg sm:text-xl font-bold text-[#FF6F00] mb-3">{t(text, 'k1', "सेवा अभियान सहयोग सुविधा")}</p>
             <p
               className="text-sm sm:text-base font-semibold text-slate-600 max-w-3xl mx-auto mb-5 leading-normal"
             >मिलकर बदलें किसी का जीवन — आपका सहयोग बन सकता है उम्मीद की किरण</p>
             <div
               className="max-w-3xl mx-auto bg-white border border-[#FF6F00]/20 rounded-3xl p-6 sm:p-7 shadow-sm text-sm sm:text-base leading-relaxed text-slate-700 space-y-3"
             >
-              <p>हर अभियान के पीछे एक सच्ची आवश्यकता, एक संघर्ष और एक उम्मीद होती है।</p>
+              <p>{t(text, 'k2', "हर अभियान के पीछे एक सच्ची आवश्यकता, एक संघर्ष और एक उम्मीद होती है।")}</p>
               <p className="font-medium text-[#0D1B2A]">
                 सनातन धर्म मानव कल्याण फाउंडेशन के माध्यम से आप{' '}
-                <span className="text-[#FF6F00] font-bold">Verified Missions, Social Causes एवं Genuine Need Cases</span>
+                <span className="text-[#FF6F00] font-bold">{t(text, 'k3', "Verified Missions, Social Causes एवं Genuine Need Cases")}</span>
                 {' '}के लिए Fundraising Request Submit कर सकते हैं।
               </p>
               <p
                 className="text-xs sm:text-sm text-slate-600 italic bg-[#FFF4E6]/50 p-3.5 rounded-2xl border border-[#FF6F00]/15"
               >
-                यह सुविधा संस्था की निगरानी एवं निर्धारित नीतियों के अनुसार संचालित की जाती है, ताकि सहयोग सही व्यक्ति, सही उद्देश्य और सही समय पर पहुँच सके।
+                {t(text, 'k4', "यह सुविधा संस्था की निगरानी एवं निर्धारित नीतियों के अनुसार संचालित की जाती है, ताकि सहयोग सही व्यक्ति, सही उद्देश्य और सही समय पर पहुँच सके।")}
               </p>
             </div>
           </div>
           <hr className="my-10 border-slate-200" />
           <div className="mb-14">
             <div className="text-center mb-8">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">Eligibility &amp; Scope</span>
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k5', "Eligibility &amp; Scope")}</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">WHO CAN APPLY FOR FUNDRAISING SUPPORT?</h2>
-              <p className="text-sm font-semibold text-[#FF6F00] mt-1">Fundraising सहायता हेतु कौन आवेदन कर सकता है?</p>
+              <p className="text-sm font-semibold text-[#FF6F00] mt-1">{t(text, 'k6', "Fundraising सहायता हेतु कौन आवेदन कर सकता है?")}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div
@@ -73,47 +75,47 @@ export default function StartFundraiserPage() {
                     </svg>
                   </div>
                   <h3 className="font-serif font-bold text-lg text-[#0D1B2A] leading-snug">Individual / Family Support</h3>
-                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">व्यक्तिगत एवं पारिवारिक सहायता</p>
+                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">{t(text, 'k7', "व्यक्तिगत एवं पारिवारिक सहायता")}</p>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Medical Emergency</span>
+                      <span>{t(text, 'k8', "Medical Emergency")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Education Support</span>
+                      <span>{t(text, 'k9', "Education Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Food &amp; Nutrition Support</span>
+                      <span>{t(text, 'k10', "Food &amp; Nutrition Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Women Support &amp; Safety</span>
+                      <span>{t(text, 'k11', "Women Support &amp; Safety")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Family Crisis / Financial Hardship</span>
+                      <span>{t(text, 'k12', "Family Crisis / Financial Hardship")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Disaster Relief Assistance</span>
+                      <span>{t(text, 'k13', "Disaster Relief Assistance")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Senior Citizen Support</span>
+                      <span>{t(text, 'k14', "Senior Citizen Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Child Welfare Support</span>
+                      <span>{t(text, 'k15', "Child Welfare Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Livelihood &amp; Skill Support</span>
+                      <span>{t(text, 'k16', "Livelihood &amp; Skill Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Other Genuine Humanitarian Needs</span>
+                      <span>{t(text, 'k17', "Other Genuine Humanitarian Needs")}</span>
                     </li>
                   </ul>
                 </div>
@@ -147,47 +149,47 @@ export default function StartFundraiserPage() {
                     </svg>
                   </div>
                   <h3 className="font-serif font-bold text-lg text-[#0D1B2A] leading-snug">NGO Missions &amp; Activities</h3>
-                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">एनजीओ मिशन एवं सेवा गतिविधियाँ</p>
+                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">{t(text, 'k18', "एनजीओ मिशन एवं सेवा गतिविधियाँ")}</p>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>अन्न सेवा एवं भोजन सहायता</span>
+                      <span>{t(text, 'k19', "अन्न सेवा एवं भोजन सहायता")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>चिकित्सा एवं स्वास्थ्य सहायता</span>
+                      <span>{t(text, 'k20', "चिकित्सा एवं स्वास्थ्य सहायता")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>शिक्षा एवं संस्कार सहायता</span>
+                      <span>{t(text, 'k21', "शिक्षा एवं संस्कार सहायता")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>महिला सुरक्षा एवं सम्मान अभियान</span>
+                      <span>{t(text, 'k22', "महिला सुरक्षा एवं सम्मान अभियान")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>आपदा राहत एवं मानव सेवा</span>
+                      <span>{t(text, 'k23', "आपदा राहत एवं मानव सेवा")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>गौ सेवा एवं संरक्षण</span>
+                      <span>{t(text, 'k24', "गौ सेवा एवं संरक्षण")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>पर्यावरण संरक्षण एवं वृक्षारोपण</span>
+                      <span>{t(text, 'k25', "पर्यावरण संरक्षण एवं वृक्षारोपण")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>सनातन संस्कृति संरक्षण एवं जनजागरण</span>
+                      <span>{t(text, 'k26', "सनातन संस्कृति संरक्षण एवं जनजागरण")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>फिल्म, वेब सीरीज़, संगीत एवं सांस्कृतिक जनजागरण</span>
+                      <span>{t(text, 'k27', "फिल्म, वेब सीरीज़, संगीत एवं सांस्कृतिक जनजागरण")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>Fraud Awareness &amp; Help Center</span>
+                      <span>{t(text, 'k28', "Fraud Awareness &amp; Help Center")}</span>
                     </li>
                   </ul>
                 </div>
@@ -218,27 +220,27 @@ export default function StartFundraiserPage() {
                     </svg>
                   </div>
                   <h3 className="font-serif font-bold text-lg text-[#0D1B2A] leading-snug">Future Missions &amp; Service Projects</h3>
-                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">भविष्य के मिशन एवं सेवा परियोजनाएं</p>
+                  <p className="text-xs text-[#FF6F00] font-semibold mb-4">{t(text, 'k29', "भविष्य के मिशन एवं सेवा परियोजनाएं")}</p>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>सनातन हेल्प सेंटर</span>
+                      <span>{t(text, 'k30', "सनातन हेल्प सेंटर")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>सनातन भोजनालय</span>
+                      <span>{t(text, 'k31', "सनातन भोजनालय")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र</span>
+                      <span>{t(text, 'k32', "रोटी • कपड़ा • मकान एवं कौशल विकास केंद्र")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>सनातन शेल्टर हाउस</span>
+                      <span>{t(text, 'k33', "सनातन शेल्टर हाउस")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>सनातन गुरुकुल एवं संस्कार केंद्र</span>
+                      <span>{t(text, 'k34', "सनातन गुरुकुल एवं संस्कार केंद्र")}</span>
                     </li>
                   </ul>
                 </div>
@@ -270,13 +272,13 @@ export default function StartFundraiserPage() {
                 className="space-y-2.5 text-xs sm:text-sm text-amber-900/90 font-medium list-disc list-inside"
               >
                 <li>
-                  केवल वास्तविक, सत्यापन योग्य एवं संस्था के उद्देश्यों के अनुरूप मामलों पर ही विचार किया जाएगा।
+                  {t(text, 'k35', "केवल वास्तविक, सत्यापन योग्य एवं संस्था के उद्देश्यों के अनुरूप मामलों पर ही विचार किया जाएगा।")}
                 </li>
                 <li>
-                  सहायता उपलब्धता, पात्रता, सत्यापन, संसाधनों एवं संस्था की नीतियों के आधार पर प्रदान की जा सकती है।
+                  {t(text, 'k36', "सहायता उपलब्धता, पात्रता, सत्यापन, संसाधनों एवं संस्था की नीतियों के आधार पर प्रदान की जा सकती है।")}
                 </li>
                 <li>
-                  संस्था द्वारा प्राप्त प्रत्येक अनुरोध पर Fundraising Approval प्रदान करना अनिवार्य नहीं होगा।
+                  {t(text, 'k37', "संस्था द्वारा प्राप्त प्रत्येक अनुरोध पर Fundraising Approval प्रदान करना अनिवार्य नहीं होगा।")}
                 </li>
               </ul>
             </div>
@@ -284,9 +286,9 @@ export default function StartFundraiserPage() {
           <hr className="my-10 border-slate-200" />
           <div className="mb-14">
             <div className="text-center mb-8">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">Process &amp; Workflow</span>
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k38', "Process &amp; Workflow")}</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">HOW FUNDRAISING WORKS?</h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1">6 सरल चरणों में जानिए अभियान की संपूर्ण प्रक्रिया</p>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">{t(text, 'k39', "6 सरल चरणों में जानिए अभियान की संपूर्ण प्रक्रिया")}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <div
@@ -299,7 +301,7 @@ export default function StartFundraiserPage() {
                   className="inline-block px-3 py-1 rounded-full bg-[#FFF4E6] text-[#FF6F00] text-[11px] font-bold uppercase mb-2"
                 >Step 1</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Request Submission</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Applicant Fundraising Request Submit करता है।</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{t(text, 'k40', "Applicant Fundraising Request Submit करता है।")}</p>
               </div>
               <div
                 className="bg-white rounded-2xl border border-slate-200 p-5 relative overflow-hidden shadow-sm hover:border-[#FF6F00]/50 transition-all"
@@ -312,7 +314,7 @@ export default function StartFundraiserPage() {
                 >Step 2</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Initial Review</h4>
                 <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                  NGO Team उपलब्ध जानकारी एवं दस्तावेज़ों की प्रारंभिक समीक्षा एवं सत्यापन करती है।
+                  {t(text, 'k41', "NGO Team उपलब्ध जानकारी एवं दस्तावेज़ों की प्रारंभिक समीक्षा एवं सत्यापन करती है।")}
                 </p>
               </div>
               <div
@@ -325,7 +327,7 @@ export default function StartFundraiserPage() {
                   className="inline-block px-3 py-1 rounded-full bg-[#FFF4E6] text-[#FF6F00] text-[11px] font-bold uppercase mb-2"
                 >Step 3</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Campaign Publishing</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Approved Case / Campaign Website पर Publish किया जाता है।</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{t(text, 'k42', "Approved Case / Campaign Website पर Publish किया जाता है।")}</p>
               </div>
               <div
                 className="bg-white rounded-2xl border border-slate-200 p-5 relative overflow-hidden shadow-sm hover:border-[#FF6F00]/50 transition-all"
@@ -337,7 +339,7 @@ export default function StartFundraiserPage() {
                   className="inline-block px-3 py-1 rounded-full bg-[#FFF4E6] text-[#FF6F00] text-[11px] font-bold uppercase mb-2"
                 >Step 4</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Supporter Engagement</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Supporters अपनी इच्छा एवं समझ के अनुसार सहयोग करते हैं।</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{t(text, 'k43', "Supporters अपनी इच्छा एवं समझ के अनुसार सहयोग करते हैं।")}</p>
               </div>
               <div
                 className="bg-white rounded-2xl border border-slate-200 p-5 relative overflow-hidden shadow-sm hover:border-[#FF6F00]/50 transition-all"
@@ -349,7 +351,7 @@ export default function StartFundraiserPage() {
                   className="inline-block px-3 py-1 rounded-full bg-[#FFF4E6] text-[#FF6F00] text-[11px] font-bold uppercase mb-2"
                 >Step 5</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Fund Utilization</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">सहयोग राशि Approved Purpose के अनुसार उपयोग की जाती है।</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{t(text, 'k44', "सहयोग राशि Approved Purpose के अनुसार उपयोग की जाती है।")}</p>
               </div>
               <div
                 className="bg-white rounded-2xl border border-slate-200 p-5 relative overflow-hidden shadow-sm hover:border-[#FF6F00]/50 transition-all"
@@ -361,22 +363,22 @@ export default function StartFundraiserPage() {
                   className="inline-block px-3 py-1 rounded-full bg-[#FFF4E6] text-[#FF6F00] text-[11px] font-bold uppercase mb-2"
                 >Step 6</div>
                 <h4 className="font-bold text-sm text-[#0D1B2A] mb-1">Updates &amp; Monitoring</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">NGO आवश्यकतानुसार Updates एवं Records Maintain करती है।</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{t(text, 'k45', "NGO आवश्यकतानुसार Updates एवं Records Maintain करती है।")}</p>
               </div>
             </div>
           </div>
           <hr className="my-10 border-slate-200" />
           <div className="mb-14">
             <div className="text-center mb-8">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">Interactive Application Form</span>
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k46', "Interactive Application Form")}</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">FUNDRAISING REQUEST FORM</h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1">चरणबद्ध तरीके से अपना आवेदन फॉर्म पूरा करें (Step 1 of 4)</p>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">{t(text, 'k47', "चरणबद्ध तरीके से अपना आवेदन फॉर्म पूरा करें (Step 1 of 4)")}</p>
             </div>
             <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-xl">
               <div className="mb-8">
                 <div className="flex items-center justify-between text-xs font-bold text-[#0D1B2A] mb-2">
-                  <span>Application Progress</span>
-                  <span className="text-[#FF6F00] font-extrabold">25% Completed</span>
+                  <span>{t(text, 'k48', "Application Progress")}</span>
+                  <span className="text-[#FF6F00] font-extrabold">{t(text, 'k49', "25% Completed")}</span>
                 </div>
                 <div
                   className="h-3 w-full bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200"
@@ -394,9 +396,9 @@ export default function StartFundraiserPage() {
                       <span
                         className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-[#FF6F00] text-white"
                       >1</span>
-                      <span className="text-xs font-bold">Section A</span>
+                      <span className="text-xs font-bold">{t(text, 'k50', "Section A")}</span>
                     </div>
-                    <div className="text-[11px] font-medium truncate">Applicant Details</div>
+                    <div className="text-[11px] font-medium truncate">{t(text, 'k51', "Applicant Details")}</div>
                   </div>
                   <div
                     className="p-3 rounded-2xl border text-center transition-all bg-slate-50 border-slate-200 text-slate-400"
@@ -405,9 +407,9 @@ export default function StartFundraiserPage() {
                       <span
                         className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                       >2</span>
-                      <span className="text-xs font-bold">Section B</span>
+                      <span className="text-xs font-bold">{t(text, 'k52', "Section B")}</span>
                     </div>
-                    <div className="text-[11px] font-medium truncate">Campaign Details</div>
+                    <div className="text-[11px] font-medium truncate">{t(text, 'k53', "Campaign Details")}</div>
                   </div>
                   <div
                     className="p-3 rounded-2xl border text-center transition-all bg-slate-50 border-slate-200 text-slate-400"
@@ -416,9 +418,9 @@ export default function StartFundraiserPage() {
                       <span
                         className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                       >3</span>
-                      <span className="text-xs font-bold">Section C</span>
+                      <span className="text-xs font-bold">{t(text, 'k54', "Section C")}</span>
                     </div>
-                    <div className="text-[11px] font-medium truncate">Supporting Information</div>
+                    <div className="text-[11px] font-medium truncate">{t(text, 'k55', "Supporting Information")}</div>
                   </div>
                   <div
                     className="p-3 rounded-2xl border text-center transition-all bg-slate-50 border-slate-200 text-slate-400"
@@ -427,9 +429,9 @@ export default function StartFundraiserPage() {
                       <span
                         className="h-5 w-5 rounded-full flex items-center justify-center text-[10px] font-bold bg-slate-200 text-slate-600"
                       >4</span>
-                      <span className="text-xs font-bold">Section D</span>
+                      <span className="text-xs font-bold">{t(text, 'k56', "Section D")}</span>
                     </div>
-                    <div className="text-[11px] font-medium truncate">Transfer &amp; Declaration</div>
+                    <div className="text-[11px] font-medium truncate">{t(text, 'k57', "Transfer &amp; Declaration")}</div>
                   </div>
                 </div>
               </div>
@@ -441,12 +443,12 @@ export default function StartFundraiserPage() {
                     >A</div>
                     <div>
                       <h3 className="font-serif text-xl font-bold text-[#0D1B2A]">Section A – Applicant Details</h3>
-                      <p className="text-xs text-slate-500">आवेदक के व्यक्तिगत एवं संपर्क विवरण</p>
+                      <p className="text-xs text-slate-500">{t(text, 'k58', "आवेदक के व्यक्तिगत एवं संपर्क विवरण")}</p>
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">Full Name *</label>
+                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">{t(text, 'k59', "Full Name *")}</label>
                       <input
                         type="text"
                         required
@@ -457,7 +459,7 @@ export default function StartFundraiserPage() {
                     </div>
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
-                        <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider">Mobile Number *</label>
+                        <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider">{t(text, 'k60', "Mobile Number *")}</label>
                       </div>
                       <div className="flex gap-2">
                         <input
@@ -474,7 +476,7 @@ export default function StartFundraiserPage() {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">Email ID</label>
+                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">{t(text, 'k61', "Email ID")}</label>
                       <input
                         type="email"
                         placeholder="example@mail.com"
@@ -483,7 +485,7 @@ export default function StartFundraiserPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">City / State *</label>
+                      <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-1.5">{t(text, 'k62', "City / State *")}</label>
                       <input
                         type="text"
                         required
@@ -494,7 +496,7 @@ export default function StartFundraiserPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-2">Applying As *</label>
+                    <label className="block text-xs font-bold text-[#0D1B2A] uppercase tracking-wider mb-2">{t(text, 'k63', "Applying As *")}</label>
                     <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
                       <button
                         type="button"
@@ -523,7 +525,7 @@ export default function StartFundraiserPage() {
                       type="button"
                       className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#FF6F00] text-white font-bold text-xs uppercase tracking-wider hover:opacity-95 shadow-md sd-btn sd-btn--next"
                     >
-                      <span>Proceed to Section B</span>
+                      <span>{t(text, 'k64', "Proceed to Section B")}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -584,7 +586,7 @@ export default function StartFundraiserPage() {
                 </p>
                 <p className="flex items-start gap-2.5 text-amber-200/95 font-semibold">
                   <span className="text-[#FF6F00] font-bold text-base leading-none mt-0.5">•</span>
-                  <span>कृपया किसी भी अन्य अनधिकृत अथवा व्यक्तिगत नाम पर भुगतान न करें।</span>
+                  <span>{t(text, 'k65', "कृपया किसी भी अन्य अनधिकृत अथवा व्यक्तिगत नाम पर भुगतान न करें।")}</span>
                 </p>
               </div>
             </div>
@@ -622,7 +624,7 @@ export default function StartFundraiserPage() {
                   </div>
                   <div>
                     <h3 className="font-serif text-base sm:text-lg font-bold text-amber-950 tracking-tight">OFFICIAL DISCLAIMER / कानूनी अस्वीकरण</h3>
-                    <p className="text-[11px] text-amber-800/80 font-medium">फंडरेजिंग सुविधा हेतु महत्वपूर्ण कानूनी एवं नीतिगत सूचना</p>
+                    <p className="text-[11px] text-amber-800/80 font-medium">{t(text, 'k66', "फंडरेजिंग सुविधा हेतु महत्वपूर्ण कानूनी एवं नीतिगत सूचना")}</p>
                   </div>
                 </div>
                 <span
@@ -633,21 +635,21 @@ export default function StartFundraiserPage() {
                 <li className="flex items-start gap-2.5">
                   <span className="h-2 w-2 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                   <span>
-                    <strong className="text-amber-900">मानवीय एवं गैर-व्यावसायिक उद्देश्य:</strong>
+                    <strong className="text-amber-900">{t(text, 'k67', "मानवीय एवं गैर-व्यावसायिक उद्देश्य:")}</strong>
                     {' '}यह Fundraising Support Facility पूर्णतः मानवीय, सामाजिक एवं गैर-व्यावसायिक उद्देश्यों के लिए संचालित की जाती है।
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="h-2 w-2 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                   <span>
-                    <strong className="text-amber-900">सुविधा एवं सत्यापन भूमिका:</strong>
+                    <strong className="text-amber-900">{t(text, 'k68', "सुविधा एवं सत्यापन भूमिका:")}</strong>
                     {' '}संस्था Facilitation, Verification एवं Monitoring की भूमिका में कार्य करती है तथा किसी भी प्रकार की व्यक्तिगत, कानूनी, वित्तीय अथवा परिणाम संबंधी गारंटी प्रदान नहीं करती।
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="h-2 w-2 rounded-full bg-amber-600 mt-2 shrink-0"></span>
                   <span>
-                    <strong className="text-amber-900">स्वैच्छिक योगदान:</strong>
+                    <strong className="text-amber-900">{t(text, 'k69', "स्वैच्छिक योगदान:")}</strong>
                     {' '}सभी सहयोग पूर्णतः स्वैच्छिक हैं तथा सहयोगकर्ता अपने स्वविवेक एवं पूर्ण संतुष्टि के पश्चात ही योगदान देने का निर्णय लें।
                   </span>
                 </li>
@@ -660,9 +662,9 @@ export default function StartFundraiserPage() {
             <blockquote
               className="font-serif text-base sm:text-xl font-bold text-[#0D1B2A] italic max-w-3xl mx-auto leading-relaxed mb-4"
             >
-              &quot;हमारा उद्देश्य केवल धन संग्रह करना नहीं, बल्कि सही व्यक्ति, सही उद्देश्य और सही आवश्यकता तक सहयोग पहुँचाना है — पूर्ण पारदर्शिता, उत्तरदायित्व एवं सेवा भावना के साथ।&quot;
+              {t(text, 'k70', "&quot;हमारा उद्देश्य केवल धन संग्रह करना नहीं, बल्कि सही व्यक्ति, सही उद्देश्य और सही आवश्यकता तक सहयोग पहुँचाना है — पूर्ण पारदर्शिता, उत्तरदायित्व एवं सेवा भावना के साथ।&quot;")}
             </blockquote>
-            <div className="text-[#FF6F00] font-extrabold text-sm sm:text-base tracking-widest uppercase">🚩 सेवा ही सनातन • समर्पण ही हमारा धर्म</div>
+            <div className="text-[#FF6F00] font-extrabold text-sm sm:text-base tracking-widest uppercase">{t(text, 'k71', "🚩 सेवा ही सनातन • समर्पण ही हमारा धर्म")}</div>
           </div>
         </div>
       </div>

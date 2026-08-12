@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function VerificationPage() {
+export default async function VerificationPage() {
+  const { text, images } = await getPageContent("/verification")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function VerificationPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function VerificationPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Official Verification Center</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Official Verification Center")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Official Verification{' '}
-          <span className="text-[#e35300]">Center</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Center")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 Authenticate Member Badges &amp; Certificates</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Authenticate Member Badges &amp; Certificates")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Verify the validity of Volunteer IDs, Seva Certificates, Patron Credentials, and CSR Compliance Records in real-time.
+          {t(text, 'k5', "Verify the validity of Volunteer IDs, Seva Certificates, Patron Credentials, and CSR Compliance Records in real-time.")}
         </p>
       </div>
     </section>
@@ -71,7 +73,7 @@ export default function VerificationPage() {
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Credential &amp; Badge Verification</h2>
           <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6">
-            Enter any Member ID, Volunteer Badge Number, or CSR Certificate Code below to check official authentication status.
+            {t(text, 'k6', "Enter any Member ID, Volunteer Badge Number, or CSR Certificate Code below to check official authentication status.")}
           </p>
           <form className="max-w-2xl mx-auto">
             <div className="relative flex flex-col sm:flex-row items-center gap-2">
@@ -126,7 +128,7 @@ export default function VerificationPage() {
           <div
             className="mt-6 pt-6 border-t border-saffron-100 flex flex-wrap items-center justify-center gap-2 text-xs"
           >
-            <span className="text-slate-500 font-semibold">Test Sample IDs:</span>
+            <span className="text-slate-500 font-semibold">{t(text, 'k7', "Test Sample IDs:")}</span>
             <button
               type="button"
               className="rounded-lg bg-saffron-100 border border-saffron-200 px-2.5 py-1 font-mono font-bold text-saffron-800 hover:bg-saffron-200 transition-colors"
@@ -174,7 +176,7 @@ export default function VerificationPage() {
             </div>
             <h4 className="text-sm font-bold text-slate-900">QR Code Encrypted</h4>
             <p className="text-xs text-slate-600">
-              Every physical and digital badge carries an encrypted QR hash that points directly to this live portal.
+              {t(text, 'k8', "Every physical and digital badge carries an encrypted QR hash that points directly to this live portal.")}
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm space-y-2">
@@ -201,7 +203,7 @@ export default function VerificationPage() {
             </div>
             <h4 className="text-sm font-bold text-slate-900">Anti-Fraud Safeguard</h4>
             <p className="text-xs text-slate-600">
-              Prevents unauthorized individuals from misrepresenting the foundation during public donation drives.
+              {t(text, 'k9', "Prevents unauthorized individuals from misrepresenting the foundation during public donation drives.")}
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm space-y-2">
@@ -227,7 +229,7 @@ export default function VerificationPage() {
             </div>
             <h4 className="text-sm font-bold text-slate-900">Report Fake ID</h4>
             <p className="text-xs text-slate-600">
-              Notice someone collecting unauthorized funds? Report unverified volunteer claims directly to our vigilance unit.
+              {t(text, 'k10', "Notice someone collecting unauthorized funds? Report unverified volunteer claims directly to our vigilance unit.")}
             </p>
           </div>
         </div>
@@ -239,10 +241,10 @@ export default function VerificationPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k11', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k12', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -268,7 +270,7 @@ export default function VerificationPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k13', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -294,7 +296,7 @@ export default function VerificationPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k14', "Join the Mission")}
           </Link>
         </div>
       </div>

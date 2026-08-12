@@ -7,7 +7,11 @@ import { pageQuery } from './queries'
    network failure degrades to the content already in the codebase rather
    than to an error page. That also means the site keeps working before the
    first edit is ever made in Sanity. */
-export async function safeFetch<T>(query: string, params: Record<string, unknown> = {}, fallback: T): Promise<T> {
+export async function safeFetch<T>(
+  query: string,
+  params: Record<string, unknown> = {},
+  fallback: T
+): Promise<T> {
   try {
     const data = await client.fetch<T>(query, params, {
       next: { revalidate: 60, tags: ['sanity'] },
@@ -31,48 +35,56 @@ type Block = {
   image?: Image
 }
 
+/* Plain objects, not functions: these cross the server/client boundary as
+   props, and functions are not serializable. */
+export type TextMap = Record<string, string>
+export type ImageMap = Record<string, { url: string | null; alt?: string }>
+
 export type PageContent = {
-  /* text for a key, or the built-in string when nothing is set */
-  t: (key: string, fallback: string) => string
-  /* image url for a key, or the file already in /public */
-  img: (key: string, fallbackSrc: string) => string
-  alt: (key: string, fallbackAlt: string) => string
+  text: TextMap
+  images: ImageMap
   seoTitle?: string
   seoDescription?: string
 }
 
-const EMPTY: PageContent = {
-  t: (_k, fallback) => fallback,
-  img: (_k, fallbackSrc) => fallbackSrc,
-  alt: (_k, fallbackAlt) => fallbackAlt,
+export const EMPTY_CONTENT: PageContent = { text: {}, images: {} }
+
+/* the two lookups every converted page uses */
+export function t(map: TextMap | undefined, key: string, fallback: string): string {
+  const v = map?.[key]
+  return typeof v === 'string' && v.trim() !== '' ? v : fallback
+}
+
+export function img(map: ImageMap | undefined, key: string, fallbackSrc: string): string {
+  return map?.[key]?.url || fallbackSrc
+}
+
+export function alt(map: ImageMap | undefined, key: string, fallbackAlt: string): string {
+  return map?.[key]?.alt || fallbackAlt
 }
 
 export async function getPageContent(path: string): Promise<PageContent> {
-  const doc = await safeFetch<{ blocks?: Block[]; seoTitle?: string; seoDescription?: string } | null>(
-    pageQuery,
-    { path },
-    null
-  )
-  if (!doc?.blocks?.length) return { ...EMPTY, seoTitle: doc?.seoTitle, seoDescription: doc?.seoDescription }
+  const doc = await safeFetch<{
+    blocks?: Block[]
+    seoTitle?: string
+    seoDescription?: string
+  } | null>(pageQuery, { path }, null)
 
-  const text = new Map<string, string>()
-  const images = new Map<string, { url: string | null; alt?: string }>()
+  if (!doc?.blocks?.length) {
+    return { ...EMPTY_CONTENT, seoTitle: doc?.seoTitle, seoDescription: doc?.seoDescription }
+  }
+
+  const text: TextMap = {}
+  const images: ImageMap = {}
 
   for (const b of doc.blocks) {
     if (!b.key) continue
     if (b._type === 'textBlock') {
-      /* an empty string is a deliberate "hide this", but undefined is not */
-      if (typeof b.text === 'string' && b.text.trim() !== '') text.set(b.key, b.text)
+      if (typeof b.text === 'string' && b.text.trim() !== '') text[b.key] = b.text
     } else {
-      images.set(b.key, { url: imageUrl(b.image, 1600), alt: b.alt })
+      images[b.key] = { url: imageUrl(b.image, 1600), alt: b.alt }
     }
   }
 
-  return {
-    t: (key, fallback) => text.get(key) ?? fallback,
-    img: (key, fallbackSrc) => images.get(key)?.url || fallbackSrc,
-    alt: (key, fallbackAlt) => images.get(key)?.alt || fallbackAlt,
-    seoTitle: doc.seoTitle,
-    seoDescription: doc.seoDescription,
-  }
+  return { text, images, seoTitle: doc.seoTitle, seoDescription: doc.seoDescription }
 }

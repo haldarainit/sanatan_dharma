@@ -1,3 +1,4 @@
+import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function MediaVideoGalleryPage() {
+export default async function MediaVideoGalleryPage() {
+  const { text, images } = await getPageContent("/media/video-gallery")
   return (
     <>
     <section
@@ -16,7 +18,7 @@ export default function MediaVideoGalleryPage() {
       <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-maroon-500/10 blur-3xl"></div>
       <div className="container-x relative py-12 sm:py-16">
         <nav className="flex items-center gap-1.5 text-xs font-semibold text-ink/50 mb-4">
-          <Link className="hover:text-saffron-700 transition-colors" href="/">Home</Link>
+          <Link className="hover:text-saffron-700 transition-colors" href="/">{t(text, 'k1', "Home")}</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,15 +33,15 @@ export default function MediaVideoGalleryPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">Video Gallery &amp; Documentaries</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Video Gallery &amp; Documentaries")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Video Gallery &amp;{' '}
-          <span className="text-[#e35300]">Documentaries</span>
+          <span className="text-[#e35300]">{t(text, 'k3', "Documentaries")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">🚩 वीडियो दीर्घा — सीधे धरातल से</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 वीडियो दीर्घा — सीधे धरातल से")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-          Watch ground coverage, volunteer documentaries, live event streams, and video stories of impact from across India.
+          {t(text, 'k5', "Watch ground coverage, volunteer documentaries, live event streams, and video stories of impact from across India.")}
         </p>
       </div>
     </section>
@@ -86,13 +88,13 @@ export default function MediaVideoGalleryPage() {
                 <span
                   className="rounded-full bg-saffron-500/30 border border-saffron-400/40 px-3 py-0.5 text-xs font-bold text-saffron-300"
                 >Featured Documentary</span>
-                <span className="text-xs text-slate-300 font-semibold">22 July 2026</span>
+                <span className="text-xs text-slate-300 font-semibold">{t(text, 'k6', "22 July 2026")}</span>
               </div>
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-white leading-snug">
-                Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones
+                {t(text, 'k7', "Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones")}
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                An inspiring 12-minute documentary capturing our volunteer cadres setting up food kitchens and emergency medical stations in rural flood regions.
+                {t(text, 'k8', "An inspiring 12-minute documentary capturing our volunteer cadres setting up food kitchens and emergency medical stations in rural flood regions.")}
               </p>
               <div className="pt-2 flex items-center justify-between">
                 <span className="text-xs text-slate-400 flex items-center gap-1">
@@ -164,7 +166,7 @@ export default function MediaVideoGalleryPage() {
               <path d="M17 7.5h4"></path>
               <path d="M17 16.5h4"></path>
             </svg>
-            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Browse Playlist:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t(text, 'k9', "Browse Playlist:")}</span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -251,15 +253,15 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}45,200 Views
                   </span>
-                  <span>22 July 2026</span>
+                  <span>{t(text, 'k10', "22 July 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones
+                  {t(text, 'k11', "Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones")}
                 </h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  An inspiring 12-minute documentary capturing our volunteer cadres setting up food kitchens and emergency medical stations in rural flood regions.
+                  {t(text, 'k12', "An inspiring 12-minute documentary capturing our volunteer cadres setting up food kitchens and emergency medical stations in rural flood regions.")}
                 </p>
               </div>
             </div>
@@ -344,13 +346,13 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}28,900 Views
                   </span>
-                  <span>10 June 2026</span>
+                  <span>{t(text, 'k13', "10 June 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Gau Seva Abhiyan 2026 — Protecting Indigenous Indian Cow Breeds</h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  Watch how our monthly green fodder subsidy and veterinary healthcare team supports over 85 registered Gaushalas.
+                  {t(text, 'k14', "Watch how our monthly green fodder subsidy and veterinary healthcare team supports over 85 registered Gaushalas.")}
                 </p>
               </div>
             </div>
@@ -435,13 +437,13 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}62,100 Views
                   </span>
-                  <span>15 May 2026</span>
+                  <span>{t(text, 'k15', "15 May 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Live Highlights: Maha Aarti &amp; Vedic Samskriti Convention</h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  Recap of the evening spiritual discourse, Vedic chanting, and mass prayer assembly held at Varanasi Ghats.
+                  {t(text, 'k16', "Recap of the evening spiritual discourse, Vedic chanting, and mass prayer assembly held at Varanasi Ghats.")}
                 </p>
               </div>
             </div>
@@ -526,13 +528,13 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}19,400 Views
                   </span>
-                  <span>02 June 2026</span>
+                  <span>{t(text, 'k17', "02 June 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Voices of Seva: Why I Joined the Sanatan Sena Volunteer Cadre</h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  Young professionals, doctors, and students share their personal experiences serving in community relief drives.
+                  {t(text, 'k18', "Young professionals, doctors, and students share their personal experiences serving in community relief drives.")}
                 </p>
               </div>
             </div>
@@ -617,13 +619,13 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}14,800 Views
                   </span>
-                  <span>28 April 2026</span>
+                  <span>{t(text, 'k19', "28 April 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Free Mobile Eye Surgery &amp; Glasses Distribution Camp</h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  Highlights from our cataract screening and free spectacle distribution drive in rural Maharashtra.
+                  {t(text, 'k20', "Highlights from our cataract screening and free spectacle distribution drive in rural Maharashtra.")}
                 </p>
               </div>
             </div>
@@ -708,13 +710,13 @@ export default function MediaVideoGalleryPage() {
                     </svg>
                     {' '}21,300 Views
                   </span>
-                  <span>14 March 2026</span>
+                  <span>{t(text, 'k21', "14 March 2026")}</span>
                 </div>
                 <h3
                   className="font-serif text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >Prakriti Seva: Planting 10,000 Oxygen Trees in Tribal Belts</h3>
                 <p className="text-xs text-slate-600 line-clamp-2">
-                  Short video film showing our environmental squad planting Neem, Peepal, and Banyan saplings.
+                  {t(text, 'k22', "Short video film showing our environmental squad planting Neem, Peepal, and Banyan saplings.")}
                 </p>
               </div>
             </div>
@@ -747,10 +749,10 @@ export default function MediaVideoGalleryPage() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'k23', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'k24', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -776,7 +778,7 @@ export default function MediaVideoGalleryPage() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'k25', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -802,7 +804,7 @@ export default function MediaVideoGalleryPage() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'k26', "Join the Mission")}
           </Link>
         </div>
       </div>
