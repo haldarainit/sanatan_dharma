@@ -12,7 +12,7 @@ type Screen = 'cards' | 'form' | 'service' | 'payment' | 'success'
 
 const OTHER = 'अन्य'
 
-export default function MembershipWizard() {
+export default function MembershipWizard({ categories = CATEGORIES }: { categories?: Category[] }) {
   const [screen, setScreen] = useState<Screen>('cards')
   const [cat, setCat] = useState<Category | null>(null)
   const [gender, setGender] = useState<Gender>('')
@@ -95,7 +95,7 @@ export default function MembershipWizard() {
       {screen === 'cards' && (
         <>
           <div className="sd-jm-grid">
-            {CATEGORIES.map((c, i) => (
+            {categories.map((c, i) => (
               <article className="sd-jm-card" key={c.id}>
                 <div className="sd-jm-card-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

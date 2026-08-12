@@ -1,19 +1,19 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { PEOPLE, PEOPLE_FILTERS } from '@/lib/people'
+import { PEOPLE, PEOPLE_FILTERS, type Person } from '@/lib/people'
 
 /* Continuous marquee of the inspiration figures.
    Everyone here is a peer, so there is no ranking: the row scrolls at a
    constant speed and no card is given a fixed first or last position.
    The list is rendered twice and the track translated by exactly half its
    width, which loops seamlessly without cloning nodes at runtime. */
-export default function PeopleSlider() {
+export default function PeopleSlider({ people = PEOPLE }: { people?: Person[] }) {
   const [filter, setFilter] = useState('all')
   const [paused, setPaused] = useState(false)
 
   const shown = useMemo(
-    () => (filter === 'all' ? PEOPLE : PEOPLE.filter((p) => p.category === filter)),
+    () => (filter === 'all' ? people : people.filter((p) => p.category === filter)),
     [filter]
   )
 

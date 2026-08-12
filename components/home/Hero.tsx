@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { HERO_SLIDES } from '@/lib/hero'
+import { HERO_SLIDES, type HeroSlide } from '@/lib/hero'
 
 const TYPE_MS = 28
 const SLIDE_MS = 6000
@@ -78,15 +78,15 @@ function useTypedSlide(index: number) {
   return { line1, line2, ctaIn }
 }
 
-export default function Hero() {
+export default function Hero({ slides = HERO_SLIDES }: { slides?: HeroSlide[] }) {
   const [index, setIndex] = useState(0)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
   const { line1, line2, ctaIn } = useTypedSlide(index)
-  const slide = HERO_SLIDES[index]
+  const slide = slides[index]
 
   function restart() {
     if (timer.current) clearInterval(timer.current)
-    timer.current = setInterval(() => setIndex((i) => (i + 1) % HERO_SLIDES.length), SLIDE_MS)
+    timer.current = setInterval(() => setIndex((i) => (i + 1) % slides.length), SLIDE_MS)
   }
 
   useEffect(() => {
@@ -151,7 +151,7 @@ export default function Hero() {
       </div>
 
       <div className="mt-4 flex justify-center gap-2">
-        {HERO_SLIDES.map((s, i) => (
+        {slides.map((s, i) => (
           <button
             key={s.img}
             type="button"

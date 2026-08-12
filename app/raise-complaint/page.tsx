@@ -5,6 +5,7 @@ import PortalHero from '@/components/portals/PortalHero'
 import { StatusTable, StatusTracker } from '@/components/portals/widgets'
 import { COMPLAINT_STATUS } from '@/lib/portal-content'
 import { CONTACT } from '@/lib/nav'
+import { getStatusRows } from '@/lib/sanity/data'
 import { Mail, MessageCircle, Phone } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -16,7 +17,9 @@ export const metadata: Metadata = {
 /* Sections, order and wording follow the client's brief
    "Raise a Complaint Page.docx". */
 
-export default function RaiseComplaintPage() {
+export default async function RaiseComplaintPage() {
+  const statusRows = await getStatusRows('complaint')
+
   return (
     <>
       <PortalHero
@@ -107,7 +110,7 @@ export default function RaiseComplaintPage() {
 
             <div className="sd-fx-panel" style={{ marginTop: 18 }}>
               <h3 className="sd-mem-h3 deva">स्थिति मार्गदर्शिका</h3>
-              <StatusTable rows={COMPLAINT_STATUS} />
+              <StatusTable rows={statusRows} />
               <p className="sd-mem-hint deva" style={{ marginTop: 14 }}>
                 यदि आपको शिकायत संख्या उपलब्ध नहीं है, तो पंजीकृत मोबाइल नंबर के माध्यम से स्थिति
                 खोजी जा सकती है।

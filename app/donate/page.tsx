@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import DonationFlow from '@/components/DonationFlow'
+import { getDonationTiers } from '@/lib/sanity/data'
 import PayTabs from '@/components/donate/PayTabs'
 import PaymentConfirmForm from '@/components/donate/PaymentConfirmForm'
 import type { Metadata } from 'next'
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const tiers = await getDonationTiers()
+
   return (
     <>
     <div className="min-h-screen flex flex-col bg-[#FFFDF9]">
@@ -67,7 +70,7 @@ export default function DonatePage() {
                     </div>
                   </div>
                 </div>
-                <DonationFlow />
+                <DonationFlow tiers={tiers} />
               </div>
               <div className="sd-donate-info grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div

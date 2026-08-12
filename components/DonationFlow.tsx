@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FREQUENCIES, PURPOSES, TIERS, inr } from '@/lib/donation'
+import { FREQUENCIES, PURPOSES, TIERS, inr, type Tier } from '@/lib/donation'
 import { checkRequired } from '@/components/portals/fields'
 
 const DOTS = ['आपका विवरण', 'भुगतान विवरण', 'प्रमाण एवं 80G']
@@ -10,7 +10,7 @@ const ON =
   'bg-[#FF6F00] text-white border-[#FF6F00] shadow-[0_6px_18px_-6px_rgba(255,111,0,0.55)]'
 const OFF = 'bg-white border-[#0D1B2A]/10 text-[#0D1B2A] hover:border-[#FF6F00]/40'
 
-export default function DonationFlow() {
+export default function DonationFlow({ tiers = TIERS }: { tiers?: Tier[] }) {
   const [step, setStep] = useState(1)
   const [amount, setAmount] = useState(501)
   const [freq, setFreq] = useState<string>('Monthly')
@@ -101,7 +101,7 @@ export default function DonationFlow() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-            {TIERS.map((t) => {
+            {tiers.map((t) => {
               const on = !custom && amount === t.amount
               return (
                 <button

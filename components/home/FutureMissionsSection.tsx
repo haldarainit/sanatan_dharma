@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import FutureMissions from '@/components/FutureMissions'
+import type { Mission } from '@/lib/missions'
 
-export default function FutureMissionsSection() {
+export default function FutureMissionsSection({ missions }: { missions?: Mission[] }) {
   return (
     <section className="bg-[#fdfbf7] py-12 px-4 sm:px-6 lg:px-8 font-sans sd-gap" id="future-missions">
       {/* Future Missions subtitle fixed */}
@@ -25,7 +26,7 @@ export default function FutureMissionsSection() {
             शीघ्र प्रारंभ होने वाले सेवा अभियान, जिनमें आप सहभागी बन सकते हैं। आपका सहयोग इन्हें वास्तविकता में बदल सकता है।
           </p>
         </div>
-        <FutureMissions />
+        <FutureMissions missions={missions} />
         <div className="text-center mt-16 sm:mt-20">
           <Link
             href="/future-activities"

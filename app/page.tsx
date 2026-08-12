@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { getHeroSlides, getMissions } from '@/lib/sanity/data'
 import Hero from '@/components/home/Hero'
 import ImpactTicker from '@/components/home/ImpactTicker'
 import TrustCredentials from '@/components/home/TrustCredentials'
@@ -29,15 +30,17 @@ export const metadata: Metadata = {
     'Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.',
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [slides, missions] = await Promise.all([getHeroSlides(), getMissions()])
+
   return (
     <>
-      <Hero />
+      <Hero slides={slides} />
       <ImpactTicker />
       <TrustCredentials />
       <WhoWeAre />
       <OurMissions />
-      <FutureMissionsSection />
+      <FutureMissionsSection missions={missions} />
       <LongTermCommitment />
       <SevaActivities />
       <StartFundraising />

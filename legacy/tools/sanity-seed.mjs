@@ -2,7 +2,7 @@
    Idempotent: every document has a deterministic _id, so re-running updates
    rather than duplicates. Images in /public are uploaded once and reused.
 
-   Run:  node legacy/tools/sanity-seed.mjs
+   Run:  npm run sanity:seed
    Needs SANITY_API_WRITE_TOKEN in .env.local (Editor role). */
 import { createClient } from '@sanity/client'
 import fs from 'node:fs'
@@ -22,15 +22,17 @@ if (!token) {
   console.error(
     '\nSANITY_API_WRITE_TOKEN is empty.\n' +
       'Create one with Editor rights at\n' +
-      '  https://sanity.io/manage/project/' + process.env.NEXT_PUBLIC_SANITY_PROJECT_ID + '/api#tokens\n' +
+      '  https://sanity.io/manage/project/' +
+      process.env.NEXT_PUBLIC_SANITY_PROJECT_ID +
+      '/api#tokens\n' +
       'then paste it into .env.local and run this again.\n'
   )
   process.exit(1)
 }
 
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'vxux2x60',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-10-01',
   token,
   useCdn: false,
@@ -43,7 +45,7 @@ async function upload(src) {
   if (uploaded.has(src)) return uploaded.get(src)
   const file = path.join(ROOT, 'public', src.replace(/^\//, ''))
   if (!fs.existsSync(file)) {
-    console.log('   ! missing image, skipped:', src)
+    console.log('\n   ! missing image, skipped:', src)
     uploaded.set(src, null)
     return null
   }
@@ -56,16 +58,34 @@ async function upload(src) {
   return ref
 }
 
-/* ---------- read the TypeScript data files without a build step ---------- */
-function readData(file, exportName) {
-  const src = fs.readFileSync(path.join(ROOT, 'lib', file), 'utf8')
-  const marker = new RegExp(`export const ${exportName}[^=]*=\\s*`)
-  const m = src.match(marker)
-  if (!m) throw new Error(`${exportName} not found in ${file}`)
-  const start = m.index + m[0].length
+/* ---------- read the data files without a build step ----------
+   They are plain literals, but they reference one another: a category's fees
+   point at STANDARD_FEES and its notice at NOTICE_A. So every top-level
+   declaration is pulled out and evaluated, retrying until the dependencies
+   resolve. */
+const QUOTES = ['"', "'", '`']
+
+function literalAt(src, start) {
   const open = src[start]
+
+  if (open !== '[' && open !== '{') {
+    let quote = null
+    for (let i = start; i < src.length; i++) {
+      const ch = src[i]
+      if (quote) {
+        if (ch === '\\') { i++; continue }
+        if (ch === quote) quote = null
+        continue
+      }
+      if (QUOTES.includes(ch)) { quote = ch; continue }
+      if (ch === '\n') return src.slice(start, i).replace(/;\s*$/, '')
+    }
+    return src.slice(start).replace(/;\s*$/, '')
+  }
+
   const close = open === '[' ? ']' : '}'
-  let depth = 0, quote = null, end = -1
+  let depth = 0
+  let quote = null
   for (let i = start; i < src.length; i++) {
     const ch = src[i]
     if (quote) {
@@ -73,29 +93,80 @@ function readData(file, exportName) {
       if (ch === quote) quote = null
       continue
     }
-    if (ch === '"' || ch === "'" || ch === '`') { quote = ch; continue }
+    if (QUOTES.includes(ch)) { quote = ch; continue }
     if (ch === open) depth++
-    else if (ch === close) { depth--; if (depth === 0) { end = i + 1; break } }
+    else if (ch === close) {
+      depth--
+      if (depth === 0) return src.slice(start, i + 1)
+    }
   }
-  const literal = src.slice(start, end)
-  /* the literals reference a few consts; resolve them by evaluating the file's
-     own declarations first */
-  const consts = [...src.matchAll(/^const ([A-Z_0-9]+)[^=]*=\s*([\s\S]*?)\n\n/gm)]
-    .map((c) => `const ${c[1]} = ${c[2].replace(/;$/, '')};`)
-    .join('\n')
-  // eslint-disable-next-line no-new-func
-  return Function(`${consts}\nreturn (${literal})`)()
+  throw new Error('unbalanced literal')
+}
+
+const scopeCache = new Map()
+function moduleScope(file) {
+  if (scopeCache.has(file)) return scopeCache.get(file)
+  const src = fs.readFileSync(path.join(ROOT, 'lib', file), 'utf8')
+
+  const decls = []
+  const re = /^(?:export )?const ([A-Za-z_][A-Za-z0-9_]*)[^=\n]*=/gm
+  let m
+  while ((m = re.exec(src))) {
+    /* the value often starts on the next line, so skip past any whitespace
+       rather than assuming it sits right after the equals sign */
+    let start = m.index + m[0].length
+    while (start < src.length && /\s/.test(src[start])) start++
+    try {
+      decls.push({ name: m[1], literal: literalAt(src, start) })
+    } catch {
+      /* unparseable declaration: only the data ones matter */
+    }
+  }
+
+  const scope = {}
+  let remaining = decls
+  for (let pass = 0; pass < 8 && remaining.length; pass++) {
+    const next = []
+    for (const d of remaining) {
+      try {
+        const names = Object.keys(scope)
+        // eslint-disable-next-line no-new-func
+        scope[d.name] = Function(...names, 'return (' + d.literal + ')')(
+          ...names.map((k) => scope[k])
+        )
+      } catch {
+        next.push(d)
+      }
+    }
+    if (next.length === remaining.length) break
+    remaining = next
+  }
+
+  scopeCache.set(file, scope)
+  return scope
+}
+
+function readData(file, exportName) {
+  const scope = moduleScope(file)
+  if (!(exportName in scope)) throw new Error(exportName + ' not resolved in ' + file)
+  return scope[exportName]
 }
 
 async function main() {
-  console.log('Seeding project', process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, '/', process.env.NEXT_PUBLIC_SANITY_DATASET)
+  console.log(
+    'Seeding project',
+    process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    '/',
+    process.env.NEXT_PUBLIC_SANITY_DATASET
+  )
 
   const docs = []
 
   /* ---- site settings ---- */
   const nav = fs.readFileSync(path.join(ROOT, 'lib/nav.ts'), 'utf8')
-  const helplines = [...nav.matchAll(/'(\+91[^']+)'/g)].map((m) => m[1])
-  const emails = [...nav.matchAll(/'([\w.]+@[\w.]+)'/g)].map((m) => m[1])
+  const helplines = [...nav.matchAll(/'(\+91[^']+)'/g)].map((x) => x[1])
+  const emails = [...nav.matchAll(/'([\w.]+@[\w.]+)'/g)].map((x) => x[1])
+  process.stdout.write('site settings ')
   docs.push({
     _id: 'siteSettings',
     _type: 'siteSettings',
@@ -106,12 +177,14 @@ async function main() {
     emails,
     whatsapp: (nav.match(/whatsapp: '(\d+)'/) || [])[1] || '918452003366',
     social: ['Facebook', 'Instagram', 'YouTube', 'Twitter', 'LinkedIn'].map((n) => ({
-      _key: n.toLowerCase(), network: n, url: '',
+      _key: n.toLowerCase(),
+      network: n,
+      url: '',
     })),
   })
 
   /* ---- hero slides ---- */
-  console.log('\nhero slides')
+  process.stdout.write('\nhero slides ')
   const slides = readData('hero.ts', 'HERO_SLIDES')
   for (const [i, s] of slides.entries()) {
     docs.push({
@@ -124,14 +197,14 @@ async function main() {
       alt: s.alt,
       line1: s.line1 || '',
       line2: s.line2 || '',
-      ctaLabel: s.cta?.label || '',
-      ctaHref: s.cta?.href || '',
+      ctaLabel: s.cta ? s.cta.label : '',
+      ctaHref: s.cta ? s.cta.href : '',
       noOverlay: !!s.noOverlay,
     })
   }
 
   /* ---- missions ---- */
-  console.log('\nmissions')
+  process.stdout.write('\nmissions ')
   const missions = readData('missions.ts', 'FUTURE_MISSIONS')
   for (const [i, m] of missions.entries()) {
     docs.push({
@@ -148,8 +221,8 @@ async function main() {
     })
   }
 
-  /* ---- people ---- */
-  console.log('\ninspiration figures')
+  /* ---- inspiration figures ---- */
+  process.stdout.write('\ninspiration figures ')
   const people = readData('people.ts', 'PEOPLE')
   for (const [i, p] of people.entries()) {
     docs.push({
@@ -165,7 +238,7 @@ async function main() {
   }
 
   /* ---- membership categories ---- */
-  console.log('\nmembership categories')
+  process.stdout.write('\nmembership categories ')
   const cats = readData('membership.ts', 'CATEGORIES')
   for (const [i, c] of cats.entries()) {
     docs.push({
@@ -196,7 +269,7 @@ async function main() {
     })
   }
 
-  /* ---- donation tiers ---- */
+  /* ---- donation amounts ---- */
   const tiers = readData('donation.ts', 'TIERS')
   tiers.forEach((t, i) => {
     docs.push({
@@ -209,29 +282,53 @@ async function main() {
     })
   })
 
-  /* ---- FAQ + status rows ---- */
+  /* ---- FAQ and status rows ---- */
   const faq = readData('portal-content.ts', 'NEED_HELP_FAQ')
   faq.forEach((f, i) =>
-    docs.push({ _id: `faq-need-help-${i + 1}`, _type: 'faqItem', order: i + 1, page: 'need-help', q: f.q, a: f.a })
+    docs.push({
+      _id: `faq-need-help-${i + 1}`,
+      _type: 'faqItem',
+      order: i + 1,
+      page: 'need-help',
+      q: f.q,
+      a: f.a,
+    })
   )
   const nhStatus = readData('portal-content.ts', 'NEED_HELP_STATUS')
   nhStatus.forEach((r, i) =>
-    docs.push({ _id: `status-need-help-${i + 1}`, _type: 'statusRow', order: i + 1, table: 'need-help', ...r })
+    docs.push({
+      _id: `status-need-help-${i + 1}`,
+      _type: 'statusRow',
+      order: i + 1,
+      table: 'need-help',
+      status: r.status,
+      meaning: r.meaning,
+    })
   )
   const cmpStatus = readData('portal-content.ts', 'COMPLAINT_STATUS')
   cmpStatus.forEach((r, i) =>
-    docs.push({ _id: `status-complaint-${i + 1}`, _type: 'statusRow', order: i + 1, table: 'complaint', ...r })
+    docs.push({
+      _id: `status-complaint-${i + 1}`,
+      _type: 'statusRow',
+      order: i + 1,
+      table: 'complaint',
+      status: r.status,
+      meaning: r.meaning,
+    })
   )
 
   /* ---- write ---- */
   console.log(`\n\nwriting ${docs.length} documents`)
   let tx = client.transaction()
   for (const d of docs) {
-    const clean = JSON.parse(JSON.stringify(d, (_k, v) => (v === undefined ? undefined : v)))
-    tx = tx.createOrReplace(clean)
+    tx = tx.createOrReplace(JSON.parse(JSON.stringify(d)))
   }
   await tx.commit()
-  console.log('done — open http://localhost:3100/studio')
+
+  const counts = {}
+  for (const d of docs) counts[d._type] = (counts[d._type] || 0) + 1
+  for (const [type, n] of Object.entries(counts)) console.log(`  ${type}: ${n}`)
+  console.log('\ndone.')
 }
 
 main().catch((e) => {

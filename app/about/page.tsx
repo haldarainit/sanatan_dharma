@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import PeopleSlider from '@/components/PeopleSlider'
+import { getPeople } from '@/lib/sanity/data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,7 +8,9 @@ export const metadata: Metadata = {
   description: "Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.",
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const people = await getPeople()
+
   return (
     <>
     <div className="min-h-screen bg-[#fdfbf7]">
@@ -600,7 +603,7 @@ export default function AboutPage() {
               वे महान संत, धर्माचार्य, राष्ट्रचिंतक, समाजसेवी, विधिवेत्ता एवं जननेता, जिनके विचार, तप, संघर्ष, नेतृत्व, सेवा और राष्ट्रधर्म के प्रति अटूट समर्पण ने हमें सनातन, समाज और संस्कृति के संरक्षण, संवर्धन एवं जनकल्याण के लिए निरंतर कार्य करने की प्रेरणा दी है। उनके आदर्श, त्याग और जीवन-मूल्य हमारे लिए केवल प्रेरणा ही नहीं, बल्कि सेवा, सुरक्षा, संस्कार एवं धर्म के मार्ग पर आगे बढ़ने का सतत मार्गदर्शन भी हैं।
             </p>
           </div>
-          <PeopleSlider />
+          <PeopleSlider people={people} />
           <div
             className="bg-amber-50/90 border border-amber-200 rounded-2xl p-5 sm:p-6 text-left shadow-xs mt-10"
           >

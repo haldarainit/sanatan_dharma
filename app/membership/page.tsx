@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import MembershipWizard from '@/components/MembershipWizard'
+import { getMembershipCategories } from '@/lib/sanity/data'
 
 export const metadata: Metadata = {
   title: 'Join The Mission — Membership Ecosystem',
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
     'सनातन सेवा अभियान से जुड़ें — Sanatan Dharm Manav Kalyan Foundation के सेवा, सुरक्षा, संस्कार एवं मानव कल्याण अभियानों का हिस्सा बनें।',
 }
 
-export default function MembershipPage() {
+export default async function MembershipPage() {
+  const categories = await getMembershipCategories()
+
   return (
     <>
       {/* same hero treatment as the other inner pages, with the brief's wording */}
@@ -58,7 +61,7 @@ export default function MembershipPage() {
       </section>
 
       <section className="container-x my-10 md:my-14 sd-gap">
-        <MembershipWizard />
+        <MembershipWizard categories={categories} />
       </section>
     </>
   )

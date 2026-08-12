@@ -7,6 +7,7 @@ import {
   NEED_HELP_FAQ, NEED_HELP_RULES, NEED_HELP_STATUS, NEED_HELP_STEPS,
 } from '@/lib/portal-content'
 import { CONTACT } from '@/lib/nav'
+import { getFaq, getStatusRows } from '@/lib/sanity/data'
 
 export const metadata: Metadata = {
   title: 'Need Help — सहायता केंद्र',
@@ -25,7 +26,9 @@ function Lead({ en, hi }: { en: string; hi?: string }) {
   )
 }
 
-export default function NeedHelpPage() {
+export default async function NeedHelpPage() {
+  const [faq, statusRows] = await Promise.all([getFaq('need-help'), getStatusRows('need-help')])
+
   return (
     <>
       <PortalHero
@@ -91,7 +94,7 @@ export default function NeedHelpPage() {
               action="Check Request Status"
             />
             <div className="sd-fx-panel" style={{ marginTop: 18 }}>
-              <StatusTable rows={NEED_HELP_STATUS} />
+              <StatusTable rows={statusRows} />
             </div>
           </div>
 
@@ -171,7 +174,7 @@ export default function NeedHelpPage() {
           {/* ---------- FAQ ---------- */}
           <div className="sd-fx-section" id="faq">
             <Lead en="Frequently Asked Questions (FAQ)" hi="अक्सर पूछे जाने वाले प्रश्न" />
-            <FaqAccordion items={NEED_HELP_FAQ} />
+            <FaqAccordion items={faq} />
           </div>
 
           {/* ---------- Didn't Find Your Answer? ---------- */}

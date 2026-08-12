@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { FUTURE_MISSIONS } from '@/lib/missions'
+import { FUTURE_MISSIONS, type Mission } from '@/lib/missions'
 
 const SLIDE_MS = 6000
 
@@ -11,7 +11,7 @@ const TAB_ON =
 const TAB_OFF =
   'bg-gradient-to-b from-white to-slate-50 text-slate-800 border-slate-200 hover:border-orange-300 hover:text-orange-600 shadow-sm'
 
-export default function FutureMissions() {
+export default function FutureMissions({ missions = FUTURE_MISSIONS }: { missions?: Mission[] }) {
   const [index, setIndex] = useState(0)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
   const descRef = useRef<HTMLDivElement>(null)
@@ -21,7 +21,7 @@ export default function FutureMissions() {
   const restart = useCallback(() => {
     if (timer.current) clearInterval(timer.current)
     timer.current = setInterval(
-      () => setIndex((i) => (i + 1) % FUTURE_MISSIONS.length),
+      () => setIndex((i) => (i + 1) % missions.length),
       SLIDE_MS
     )
   }, [])
@@ -38,7 +38,7 @@ export default function FutureMissions() {
     if (descRef.current) descRef.current.scrollTop = 0
   }, [index])
 
-  const active = FUTURE_MISSIONS[index]
+  const active = missions[index]
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function FutureMissions() {
         role="tablist"
         aria-label="Upcoming service missions"
       >
-        {FUTURE_MISSIONS.map((m, i) => (
+        {missions.map((m, i) => (
           <button
             key={m.href}
             type="button"
@@ -70,7 +70,7 @@ export default function FutureMissions() {
         {/* image column — the track slides horizontally */}
         <div className="w-full lg:w-[440px] shrink-0 h-[300px] sm:h-[420px] lg:h-auto rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white relative">
           <div className="fm-track" style={{ transform: `translateX(-${index * 100}%)` }}>
-            {FUTURE_MISSIONS.map((m) => (
+            {missions.map((m) => (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img key={m.image} className="fm-slide" src={m.image} alt={m.title} />
             ))}
