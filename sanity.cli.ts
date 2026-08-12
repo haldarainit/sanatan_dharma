@@ -1,6 +1,7 @@
 import { defineCliConfig } from 'sanity/cli'
 
-/* studioHost fixes the hosted address, so  publishes to
+/* studioHost fixes the hosted address and appId identifies the deployed
+   application, so `sanity deploy` publishes to
    https://sanatan-dharma.sanity.studio without prompting. */
 export default defineCliConfig({
   api: {
@@ -8,4 +9,7 @@ export default defineCliConfig({
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   },
   studioHost: 'sanatan-dharma',
+  deployment: {
+    appId: 'yu8xnormdg14en60o9hwjtu9',
+  },
 })

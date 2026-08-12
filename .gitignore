@@ -12,3 +12,6 @@ next-env.d.ts
 
 # sanity
 .sanity/
+
+# sanity studio build output
+dist/
