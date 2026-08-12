@@ -1314,3 +1314,65 @@ button[data-sd-amount].is-amt-on {
 @media (prefers-reduced-motion: reduce) {
   .sd-fx-faq-a { transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   17. Inspiration figures — marquee rebuilt for React
+   The vanilla version cloned nodes and drove scrollLeft from rAF. The React
+   component renders the list twice instead and lets CSS do the movement, so
+   there is nothing to clone and nothing to measure. These rules override the
+   scroll-based ones in §9.
+   -------------------------------------------------------------------------- */
+.sd-ppl__viewport { overflow: hidden; position: relative; padding: 6px 2px 16px; }
+
+.sd-ppl .sd-ppl__track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  overflow: visible;
+  padding: 0;
+  cursor: default;
+  animation-name: pplMarquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* two identical copies separated by the same gap: shifting by half the track
+   plus half a gap lands exactly on the start of the second copy */
+@keyframes pplMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 10px)); }
+}
+
+.sd-ppl__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+
+.sd-ppl__filter {
+  border: 1px solid rgba(13, 27, 42, .12);
+  background: #fff;
+  color: #0D1B2A;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.sd-ppl__filter:hover { border-color: rgba(255, 111, 0, .45); color: #c2410c; }
+
+.sd-ppl__filter.is-on {
+  background: #e35300;
+  border-color: #e35300;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-ppl .sd-ppl__track { animation: none; }
+  .sd-ppl__viewport { overflow-x: auto; }
+}

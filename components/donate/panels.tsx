@@ -1,8 +1,13 @@
+'use client'
+
+import { useState } from 'react'
 import CopyButton from './CopyButton'
 
 /* The three payment panels from the donate page, split out during the
    Next.js rebuild so PayTabs can switch between them. */
 export function QrPanel() {
+  const [qr, setQr] = useState<string>('gpay')
+
   return (
     <div className="sd-pay-panel">
       <div className="sd-pay-lead">
@@ -12,13 +17,28 @@ export function QrPanel() {
         </p>
       </div>
       <div className="sd-pay-subtabs">
-        <button type="button" className="sd-pay-subtab is-active" data-sd-qr="gpay">UPI QR — Google Pay</button>
+        <button
+          type="button"
+          className={'sd-pay-subtab' + (qr === 'gpay' ? ' is-active' : '')}
+          aria-selected={qr === 'gpay'}
+          onClick={() => setQr('gpay')}
+        >UPI QR — Google Pay</button>
         {' '}
-        <button type="button" className="sd-pay-subtab" data-sd-qr="indianbank">Indian Bank QR</button>
+        <button
+          type="button"
+          className={'sd-pay-subtab' + (qr === 'indianbank' ? ' is-active' : '')}
+          aria-selected={qr === 'indianbank'}
+          onClick={() => setQr('indianbank')}
+        >Indian Bank QR</button>
         {' '}
-        <button type="button" className="sd-pay-subtab" data-sd-qr="razorpay">Razorpay QR</button>
+        <button
+          type="button"
+          className={'sd-pay-subtab' + (qr === 'razorpay' ? ' is-active' : '')}
+          aria-selected={qr === 'razorpay'}
+          onClick={() => setQr('razorpay')}
+        >Razorpay QR</button>
       </div>
-      <div className="sd-qr-pane is-active" data-sd-qrpane="gpay">
+      <div className={'sd-qr-pane' + (qr === 'gpay' ? ' is-active' : '')}>
         <div className="sd-phone">
           <div className="sd-phone-inner">
             <div className="sd-phone-head">
@@ -59,7 +79,7 @@ export function QrPanel() {
           {' '}pre-filled.
         </p>
       </div>
-      <div className="sd-qr-pane" data-sd-qrpane="indianbank">
+      <div className={'sd-qr-pane' + (qr === 'indianbank' ? ' is-active' : '')}>
         <div className="sd-phone">
           <div className="sd-phone-inner">
             <div className="sd-phone-head">
@@ -104,7 +124,7 @@ export function QrPanel() {
           {' '}pre-filled.
         </p>
       </div>
-      <div className="sd-qr-pane" data-sd-qrpane="razorpay">
+      <div className={'sd-qr-pane' + (qr === 'razorpay' ? ' is-active' : '')}>
         <div className="sd-pay-pending">
           <div className="sd-pay-pending-icon">
             <svg
@@ -180,7 +200,7 @@ export function BankPanel() {
         <div className="sd-bank-rows">
           <div className="sd-bank-row">
             <span className="sd-bank-k">Account Name:</span>
-            <span className="sd-bank-v" data-sd-copyval="Sanatan Dharm Manav Kalyan Foundation">Sanatan Dharm Manav Kalyan Foundation</span>
+            <span className="sd-bank-v">Sanatan Dharm Manav Kalyan Foundation</span>
             <CopyButton value="" />
           </div>
           <div className="sd-bank-row">

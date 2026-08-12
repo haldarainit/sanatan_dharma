@@ -60,8 +60,26 @@ async function main() {
 
     await send('Page.enable');
     await send('Runtime.enable');
+    await send('Log.enable');
+
+    /* collect console + uncaught errors before anything on the page runs */
+    const logs = [];
+    ws.on('message', (m) => {
+      const msg = JSON.parse(m);
+      if (msg.method === 'Runtime.consoleAPICalled' && /error|warning/.test(msg.params.type)) {
+        logs.push(msg.params.type + ': ' + msg.params.args.map((a) => a.value || a.description || '').join(' ').slice(0, 300));
+      }
+      if (msg.method === 'Runtime.exceptionThrown') {
+        logs.push('EXCEPTION: ' + (msg.params.exceptionDetails.exception?.description || msg.params.exceptionDetails.text || '').slice(0, 300));
+      }
+      if (msg.method === 'Log.entryAdded' && msg.params.entry.level === 'error') {
+        logs.push('LOG: ' + msg.params.entry.text.slice(0, 300));
+      }
+    });
+
     await send('Page.navigate', { url });
-    await new Promise((r) => setTimeout(r, 3500));
+    await new Promise((r) => setTimeout(r, 6500)); /* the homepage is heavy; hydration lands well after load */
+    if (logs.length) console.log('--- console ---\n' + logs.slice(0, 6).join('\n') + '\n---------------');
 
     const out = await send('Runtime.evaluate', {
       expression: `(async () => { ${expr} })()`,

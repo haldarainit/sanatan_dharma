@@ -1,6 +1,11 @@
+'use client'
+
+import { useVolunteerCarousel } from './useVolunteerCarousel'
 import Link from 'next/link'
 
 export default function JoinTheMission() {
+  const { index, go, transform } = useVolunteerCarousel(5)
+
   return (
     <section
       className="w-full bg-[#fcfbfa] py-8 sm:py-12 border-y border-saffron-100 overflow-hidden sd-gap"
@@ -17,6 +22,7 @@ export default function JoinTheMission() {
         <div className="relative flex flex-col items-center px-0 sm:px-8">
           <button
             className="hidden sm:flex absolute -left-1 sm:-left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white border border-gray-200 shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-200 cursor-pointer"
+            onClick={() => go(index - 1)}
             aria-label="Previous"
           >
             <svg
@@ -36,6 +42,7 @@ export default function JoinTheMission() {
           </button>
           <button
             className="hidden sm:flex absolute -right-1 sm:-right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white border border-gray-200 shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-200 cursor-pointer"
+            onClick={() => go(index + 1)}
             aria-label="Next"
           >
             <svg
@@ -56,7 +63,7 @@ export default function JoinTheMission() {
           <div className="overflow-hidden w-full py-2 sm:py-4 rounded-none sm:rounded-2xl">
             <div
               className="flex gap-6 transition-transform duration-400 ease-out"
-              style={{ transform: "translateX(0px)" }}
+              style={{ transform }}
             >
               <div
                 className="flex-none w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] flex flex-col group cursor-pointer"
@@ -413,23 +420,33 @@ export default function JoinTheMission() {
             <div className="flex items-center gap-1.5">
               <button
                 aria-label="Go to slide 1"
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer w-6 bg-orange-600"
+                aria-current={index === 0}
+                onClick={() => go(0)}
+                className={'h-2 rounded-full transition-all duration-300 cursor-pointer ' + (index === 0 ? 'w-6 bg-orange-600' : 'w-2 bg-gray-300 hover:bg-gray-400')}
               ></button>
               <button
                 aria-label="Go to slide 2"
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer w-2 bg-gray-300"
+                aria-current={index === 1}
+                onClick={() => go(1)}
+                className={'h-2 rounded-full transition-all duration-300 cursor-pointer ' + (index === 1 ? 'w-6 bg-orange-600' : 'w-2 bg-gray-300 hover:bg-gray-400')}
               ></button>
               <button
                 aria-label="Go to slide 3"
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer w-2 bg-gray-300"
+                aria-current={index === 2}
+                onClick={() => go(2)}
+                className={'h-2 rounded-full transition-all duration-300 cursor-pointer ' + (index === 2 ? 'w-6 bg-orange-600' : 'w-2 bg-gray-300 hover:bg-gray-400')}
               ></button>
               <button
                 aria-label="Go to slide 4"
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer w-2 bg-gray-300"
+                aria-current={index === 3}
+                onClick={() => go(3)}
+                className={'h-2 rounded-full transition-all duration-300 cursor-pointer ' + (index === 3 ? 'w-6 bg-orange-600' : 'w-2 bg-gray-300 hover:bg-gray-400')}
               ></button>
               <button
                 aria-label="Go to slide 5"
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer w-2 bg-gray-300"
+                aria-current={index === 4}
+                onClick={() => go(4)}
+                className={'h-2 rounded-full transition-all duration-300 cursor-pointer ' + (index === 4 ? 'w-6 bg-orange-600' : 'w-2 bg-gray-300 hover:bg-gray-400')}
               ></button>
             </div>
             <button

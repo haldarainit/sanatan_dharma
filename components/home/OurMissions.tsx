@@ -1,4 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 export default function OurMissions() {
+  const [showAll, setShowAll] = useState(false)
+
   return (
     <section
       className="bg-[#fdfbf7] py-8 px-4 sm:px-6 lg:px-8 font-sans border-t border-saffron-100 sd-gap"
@@ -165,7 +170,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -213,7 +218,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -263,7 +268,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -311,7 +316,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -359,7 +364,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -409,7 +414,7 @@ export default function OurMissions() {
           </div>
           <div
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between sd-mis-more"
-            hidden
+            hidden={!showAll}
           >
             <div>
               <div className="relative h-56 w-full">
@@ -461,10 +466,11 @@ export default function OurMissions() {
         <div className="text-center mt-10">
           <button
             type="button"
-            data-sd-missions-toggle=""
             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium px-6 py-3 rounded-full shadow-lg hover:opacity-95 transition-all transform active:scale-95 cursor-pointer sd-btn sd-btn--view-details"
+            aria-expanded={showAll}
+            onClick={() => setShowAll((v) => !v)}
           >
-            <span>View All</span>
+            <span>{showAll ? 'View Less' : 'View All'}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

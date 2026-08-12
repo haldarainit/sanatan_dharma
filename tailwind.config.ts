@@ -48,10 +48,15 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        slideIn: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         marquee: 'marquee 22s linear infinite',
         'marquee-left': 'marqueeScrollLeft 30s linear infinite',
+        slideIn: 'slideIn .7s ease-out both',
       },
     },
   },

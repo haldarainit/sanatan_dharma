@@ -1,14 +1,19 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function LongTermCommitment() {
+  const [open, setOpen] = useState(false)
+
   return (
     <section
       className="w-full flex justify-center p-4 md:p-8 bg-gray-50 border-t border-saffron-100 font-sans sd-gap"
     >
       <div
-        className="rounded-3xl max-w-5xl w-full p-6 md:p-10 text-center shadow-sm sd-commitment-box"
+        className={'rounded-3xl max-w-5xl w-full p-6 md:p-10 text-center shadow-sm sd-commitment-box' + (open ? ' is-open' : '')}
       >
-        <button type="button" className="sd-commitment-close" aria-label="Close">&times;</button>
+        <button type="button" className="sd-commitment-close" aria-label="Close" onClick={() => setOpen(false)}>&times;</button>
         <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-white mb-1.5">
           Long-Term{' '}
           <span className="block sm:inline sd-cm-accent">Commitment</span>
@@ -21,11 +26,12 @@ export default function LongTermCommitment() {
         </h2>
         <button
           type="button"
-          aria-expanded="false"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
           className="sd-commitment-toggle inline-flex items-center gap-2 px-6 py-2.5 text-sm sd-btn sd-btn--view-details"
         >
-          <span data-sd-label="">Know More</span>
-          <span data-sd-caret="">▼</span>
+          <span>{open ? 'Show Less' : 'Know More'}</span>
+          <span>{open ? '▲' : '▼'}</span>
         </button>
         <div className="sd-commitment-panel">
           <p className="sd-cm-p">

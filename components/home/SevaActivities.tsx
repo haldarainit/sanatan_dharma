@@ -1,6 +1,12 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function SevaActivities() {
+  /* opening one card closes the others */
+  const [open, setOpen] = useState<number | null>(null)
+
   return (
     <section className="w-full bg-gray-50 py-12 px-4 border-t border-saffron-100 font-sans sd-gap">
       
@@ -17,12 +23,13 @@ export default function SevaActivities() {
         </p>
       </div>
       <div className="sd-mj-grid">
-        <article className="sd-mj-card sd-mj-card--green card-glow-green" data-sd-mj="">
+        <article className={'sd-mj-card sd-mj-card--green card-glow-green' + (open === 0 ? ' is-open' : '')}>
           <button
             type="button"
             className="sd-mj-toggle"
-            aria-expanded="false"
+            aria-expanded={open === 0}
             aria-controls="sd-mj-panel-active"
+            onClick={() => setOpen(open === 0 ? null : 0)}
           >
             <span className="sd-mj-toprow">
               <span className="sd-mj-dot glow-green"></span>
@@ -39,7 +46,7 @@ export default function SevaActivities() {
             </span>
             <span className="sd-mj-cta">
               <span className="sd-mj-count deva">5 सक्रिय अभियान</span>
-              <span className="sd-mj-clicklabel" data-sd-mj-label="">Click to View</span>
+              <span className="sd-mj-clicklabel">{open === 0 ? 'Click to Close' : 'Click to View'}</span>
             </span>
           </button>
           <div className="sd-mj-panel" id="sd-mj-panel-active">
@@ -98,12 +105,13 @@ export default function SevaActivities() {
             </div>
           </div>
         </article>
-        <article className="sd-mj-card sd-mj-card--orange card-glow-orange" data-sd-mj="">
+        <article className={'sd-mj-card sd-mj-card--orange card-glow-orange' + (open === 1 ? ' is-open' : '')}>
           <button
             type="button"
             className="sd-mj-toggle"
-            aria-expanded="false"
+            aria-expanded={open === 1}
             aria-controls="sd-mj-panel-upcoming"
+            onClick={() => setOpen(open === 1 ? null : 1)}
           >
             <span className="sd-mj-toprow">
               <span className="sd-mj-dot glow-orange"></span>
@@ -120,7 +128,7 @@ export default function SevaActivities() {
             </span>
             <span className="sd-mj-cta">
               <span className="sd-mj-count deva">5 प्रस्तावित परियोजनाएँ</span>
-              <span className="sd-mj-clicklabel" data-sd-mj-label="">Click to View</span>
+              <span className="sd-mj-clicklabel">{open === 1 ? 'Click to Close' : 'Click to View'}</span>
             </span>
           </button>
           <div className="sd-mj-panel" id="sd-mj-panel-upcoming">
@@ -173,12 +181,13 @@ export default function SevaActivities() {
             </div>
           </div>
         </article>
-        <article className="sd-mj-card sd-mj-card--blue card-glow-blue" data-sd-mj="">
+        <article className={'sd-mj-card sd-mj-card--blue card-glow-blue' + (open === 2 ? ' is-open' : '')}>
           <button
             type="button"
             className="sd-mj-toggle"
-            aria-expanded="false"
+            aria-expanded={open === 2}
             aria-controls="sd-mj-panel-completed"
+            onClick={() => setOpen(open === 2 ? null : 2)}
           >
             <span className="sd-mj-toprow">
               <span className="sd-mj-dot glow-blue"></span>
@@ -195,7 +204,7 @@ export default function SevaActivities() {
             </span>
             <span className="sd-mj-cta">
               <span className="sd-mj-count deva">5 पूर्ण अभियान</span>
-              <span className="sd-mj-clicklabel" data-sd-mj-label="">Click to View</span>
+              <span className="sd-mj-clicklabel">{open === 2 ? 'Click to Close' : 'Click to View'}</span>
             </span>
           </button>
           <div className="sd-mj-panel" id="sd-mj-panel-completed">
@@ -289,9 +298,7 @@ export default function SevaActivities() {
           </svg>
         </button>
       </div>
-      <script>
-        {"(function () {\r\n    function initMissionJourney() {\r\n      var cards = document.querySelectorAll('[data-sd-mj]');\r\n      if (!cards.length) return;\r\n      Array.prototype.forEach.call(cards, function (card) {\r\n        if (card.dataset.sdMjInit === '1') return;\r\n        card.dataset.sdMjInit = '1';\r\n        var toggle = card.querySelector('.sd-mj-toggle');\r\n        var label = card.querySelector('[data-sd-mj-label]');\r\n        if (!toggle) return;\r\n\r\n        function setOpen(open) {\r\n          card.classList.toggle('is-open', open);\r\n          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');\r\n          if (label) label.textContent = open ? 'Click to Close' : 'Click to View';\r\n        }\r\n\r\n        toggle.addEventListener('click', function () {\r\n          var willOpen = !card.classList.contains('is-open');\r\n          Array.prototype.forEach.call(cards, function (other) {\r\n            if (other !== card && other.classList.contains('is-open')) {\r\n              other.classList.remove('is-open');\r\n              var t = other.querySelector('.sd-mj-toggle');\r\n              var l = other.querySelector('[data-sd-mj-label]');\r\n              if (t) t.setAttribute('aria-expanded', 'false');\r\n              if (l) l.textContent = 'Click to View';\r\n            }\r\n          });\r\n          setOpen(willOpen);\r\n        });\r\n\r\n        setOpen(false);\r\n      });\r\n    }\r\n\r\n    if (document.readyState === 'loading') {\r\n      document.addEventListener('DOMContentLoaded', initMissionJourney);\r\n    } else {\r\n      initMissionJourney();\r\n    }\r\n  })();"}
-      </script>
+      
     </section>
   )
 }
