@@ -5,3 +5,10 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 ~$*
+
+# secrets
+.env.local
+.env*.local
+
+# sanity
+.sanity/

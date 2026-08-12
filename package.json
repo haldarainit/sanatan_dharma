@@ -7,12 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "legacy": "node legacy-server.js"
+    "legacy": "node legacy-server.js",
+    "sanity:seed": "node legacy/tools/sanity-seed.mjs",
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.31.1",
     "next": "15.1.6",
+    "next-sanity": "^11.6.13",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sanity": "^5.31.1",
+    "styled-components": "^6.5.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
