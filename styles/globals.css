@@ -1,0 +1,35 @@
+/* @import must precede every other rule, so these come first -- placing them
+   at the end silently dropped the whole custom layer. */
+@import './sd-buttons.css';
+@import './sd-site.css';
+@import './page-sections.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Project classes the old compiled bundle carried but Tailwind will not
+   generate on its own. */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .deva {
+    font-family: var(--font-deva), sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    background: #fffdf8;
+    color: #0d1b2a;
+  }
+  /* the sticky header must not hide anchor targets */
+  :target {
+    scroll-margin-top: 110px;
+  }
+}
