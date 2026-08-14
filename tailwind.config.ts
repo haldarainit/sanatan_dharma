@@ -44,9 +44,16 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        /* These two drive a strip built from two identical copies of the same
+           row, so a full copy's width is what has to scroll past before it can
+           start over -- 100%, not 50%. At 50% the strip jumped every cycle. */
         marqueeScrollLeft: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marqueeScrollRight: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
         },
         slideIn: {
           '0%': { transform: 'translateX(100%)' },
@@ -56,6 +63,7 @@ const config: Config = {
       animation: {
         marquee: 'marquee 22s linear infinite',
         'marquee-left': 'marqueeScrollLeft 30s linear infinite',
+        'marquee-right': 'marqueeScrollRight 30s linear infinite',
         slideIn: 'slideIn .7s ease-out both',
       },
     },

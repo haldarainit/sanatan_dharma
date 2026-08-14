@@ -320,9 +320,10 @@ header a.logo-shift img {
 }
 
 /* --------------------------------------------------------------------------
-   9. Mobile Marquee Animation — Right to Left Flow
-   Ensure all marquee streams (badges, announcements, partner logos)
-   scroll smoothly from Right to Left on mobile devices.
+   9. Mobile Marquee Animation
+   The streams run faster on a phone than on a laptop, because far less of
+   the strip is on screen at once. Direction stays the same as on desktop:
+   -left flows right-to-left, -right flows left-to-right.
    -------------------------------------------------------------------------- */
 @keyframes sdMarqueeRightToLeft {
   0%   { transform: translateX(0); }
@@ -332,6 +333,11 @@ header a.logo-shift img {
 @keyframes sdMarqueeRightToLeftFull {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+
+@keyframes sdMarqueeLeftToRightFull {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
 @media (max-width: 767px) {
@@ -344,7 +350,7 @@ header a.logo-shift img {
   }
 
   .animate-marquee-right {
-    animation: sdMarqueeRightToLeftFull 16s linear infinite !important;
+    animation: sdMarqueeLeftToRightFull 16s linear infinite !important;
   }
 
   .animate-marquee-right-half {
