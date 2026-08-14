@@ -10,8 +10,7 @@ const SLIDE_MS = 6000
 /* Types out line 1, then line 2, then fades the CTA in -- the same rhythm the
    old injected script used. Honours prefers-reduced-motion by skipping
    straight to the finished text. */
-function useTypedSlide(index: number) {
-  const slide = HERO_SLIDES[index]
+function useTypedSlide(index: number, slide: HeroSlide) {
   const [line1, setLine1] = useState('')
   const [line2, setLine2] = useState('')
   const [ctaIn, setCtaIn] = useState(false)
@@ -81,8 +80,8 @@ function useTypedSlide(index: number) {
 export default function Hero({ slides = HERO_SLIDES }: { slides?: HeroSlide[] }) {
   const [index, setIndex] = useState(0)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
-  const { line1, line2, ctaIn } = useTypedSlide(index)
   const slide = slides[index]
+  const { line1, line2, ctaIn } = useTypedSlide(index, slide)
 
   function restart() {
     if (timer.current) clearInterval(timer.current)
