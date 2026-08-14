@@ -1,0 +1,30 @@
+/* Google's translator ships its own toolbar, tooltip and highlight styling.
+   The site drives translation from its own switcher in the header, so all of
+   that is hidden -- most importantly the toolbar, which pushes <body> down by
+   40px and breaks the sticky header. */
+
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-banner-frame,
+.goog-tooltip {
+  display: none !important;
+}
+
+/* the toolbar sets these inline on <body>; without the override the whole
+   page sits 40px too low and position: sticky stops working */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+/* translated runs get a highlight and a text shadow by default */
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* the widget's own mount point is never shown -- our switcher replaces it */
+#google_translate_element {
+  display: none !important;
+}

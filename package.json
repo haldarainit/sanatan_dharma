@@ -14,7 +14,8 @@
     "sanity:seed:pages": "node legacy/tools/sanity-seed-pages.mjs",
     "cms:extract": "node legacy/tools/cms-extract.js --write && node legacy/tools/cms-extract-home.js --write && node legacy/tools/cms-extract-images.js --write",
     "cms:fix-entities": "node legacy/tools/fix-entities.js --write && node legacy/tools/fix-entities-sanity.mjs --write",
-    "cms:verify": "node legacy/tools/cms-verify.js"
+    "cms:verify": "node legacy/tools/cms-verify.js",
+    "check:translate": "node legacy/tools/probe-translate.js"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

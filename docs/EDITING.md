@@ -53,6 +53,30 @@ image fails to load. Worth filling in.
 
 ---
 
+## Languages
+
+The site is written in Hindi and that is what every visitor sees by default —
+exactly the wording published in the Studio, untouched.
+
+The globe in the header opens a list of 22 languages. Picking any of them
+hands the page to Google's translator, and the choice follows the visitor from
+page to page until they change it. Picking **हिंदी** again clears it and
+restores your wording.
+
+Two things worth knowing:
+
+- **You only ever write Hindi.** The other languages are produced on the fly,
+  so there is nothing extra to fill in when you add or edit text — a new
+  paragraph is translated the moment it is published.
+- **It is machine translation.** It reads well but it is not a human
+  translator, and it works down the page as the reader scrolls, so a section
+  far below the fold turns over a moment after they reach it.
+
+Amounts, the UPI ID, the QR codes and the bank details are left exactly as
+they are in every language.
+
+To change which languages are offered, edit `lib/languages.ts`.
+
 ## Things that live outside Pages
 
 Some content appears in many places at once, so it is edited in one place:

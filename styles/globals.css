@@ -5,6 +5,7 @@
 @import './page-sections.css';
 @import './mission-detail.css';
 @import './join-mission.css';
+@import './translate.css';
 
 @tailwind base;
 @tailwind components;

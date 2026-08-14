@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { NAV } from '@/lib/nav'
 import type { SiteSettings } from '@/lib/sanity/data'
-import { ChevronDown, Globe, Menu, X } from './icons'
+import { ChevronDown, Menu, X } from './icons'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const LINK_CLS =
   'group relative inline-flex items-center px-2 xl:px-2.5 py-2 text-[11px] font-semibold ' +
@@ -113,17 +114,7 @@ export default function SiteHeader({ settings }: { settings?: SiteSettings }) {
         </nav>
 
         <div className="flex items-center gap-2 shrink-0">
-          <div className="relative hidden sm:block">
-            <button
-              type="button"
-              aria-label="Select Language"
-              className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0D1B2A]/85 hover:text-[#FF6F00] transition-colors cursor-pointer outline-none whitespace-nowrap bg-transparent border-0 px-1.5 py-2"
-            >
-              <Globe className="h-3.5 w-3.5 text-[#FF6F00]" />
-              <span>Sanskrit (संस्कृत)</span>
-              <ChevronDown className="h-3 w-3 transition-transform duration-200" />
-            </button>
-          </div>
+          <LanguageSwitcher />
 
           <Link
             href="/donate"
@@ -194,6 +185,11 @@ export default function SiteHeader({ settings }: { settings?: SiteSettings }) {
                   </Link>
                 )
               )}
+              {/* a phone never sees the header switcher, so it lives here too */}
+              <div className="mt-3 border-t border-slate-100 pt-2">
+                <LanguageSwitcher inDrawer />
+              </div>
+
               <Link
                 href="/donate"
                 onClick={() => setDrawer(false)}
