@@ -33,7 +33,7 @@ export default async function CsrPartnerPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">{t(text, 'k2', "CSR Contact &amp; Partnership")}</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "CSR Contact & Partnership")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           CSR Contact &amp;{' '}
@@ -141,7 +141,7 @@ export default async function CsrPartnerPage() {
       </div>
       <div className="mb-12">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k11', "Institutional Strengths &amp; Trust")}</span>
+          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k11', "Institutional Strengths & Trust")}</span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">WHY PARTNER WITH US? / हमारे साथ साझेदारी क्यों करें?</h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
             {t(text, 'k12', "पूर्ण पारदर्शिता, वैधानिक अनुपालन एवं समर्पित प्रभाव मूल्यांकन के साथ CSR निष्पादन।")}
@@ -748,7 +748,7 @@ export default async function CsrPartnerPage() {
                   >4</span>
                   <span className="text-xs font-bold">{t(text, 'k45', "Section 4")}</span>
                 </div>
-                <div className="text-[11px] font-medium truncate">{t(text, 'k46', "CSR Interest &amp; Submit")}</div>
+                <div className="text-[11px] font-medium truncate">{t(text, 'k46', "CSR Interest & Submit")}</div>
               </button>
             </div>
           </div>

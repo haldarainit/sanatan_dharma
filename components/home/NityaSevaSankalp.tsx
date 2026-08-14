@@ -1,4 +1,5 @@
-export default function NityaSevaSankalp() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function NityaSevaSankalp({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="bg-[#faf9f5] min-h-screen py-8 px-6 lg:px-12 flex items-center justify-center font-sans text-gray-800 sd-gap"
@@ -7,11 +8,11 @@ export default function NityaSevaSankalp() {
         <div className="flex-1 lg:pr-4">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Monthly Giving •{' '}
-            <span className="block sm:inline text-[#e35300]">Daily Support</span>
+            <span className="block sm:inline text-[#e35300]">{t(text, 'nitya-seva-sankalp-k1', "Daily Support")}</span>
           </h1>
-          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">नियमित सेवा, स्थायी प्रभाव।</p>
+          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">{t(text, 'nitya-seva-sankalp-k2', "नियमित सेवा, स्थायी प्रभाव।")}</p>
           <p className="text-gray-600 text-sm leading-relaxed mb-6">
-            नित्य दानी बनकर हमारे सेवा अभियानों को निरंतर सहयोग दें। आपका मासिक सहयोग अन्न सेवा, स्वास्थ्य सहायता, शिक्षा सहायता, गौ सेवा, महिला सहायता एवं अन्य मानव कल्याण कार्यों को निरंतर गति प्रदान करता है।
+            {t(text, 'nitya-seva-sankalp-k3', "नित्य दानी बनकर हमारे सेवा अभियानों को निरंतर सहयोग दें। आपका मासिक सहयोग अन्न सेवा, स्वास्थ्य सहायता, शिक्षा सहायता, गौ सेवा, महिला सहायता एवं अन्य मानव कल्याण कार्यों को निरंतर गति प्रदान करता है।")}
           </p>
           <ul className="space-y-2.5">
             <li className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-gray-800">
@@ -33,7 +34,7 @@ export default function NityaSevaSankalp() {
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
               </span>
-              नियमित सहयोग, निरंतर सेवा
+              {t(text, 'nitya-seva-sankalp-k4', "नियमित सहयोग, निरंतर सेवा")}
             </li>
             <li className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-gray-800">
               <span
@@ -54,7 +55,7 @@ export default function NityaSevaSankalp() {
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
               </span>
-              80G Tax Benefit (लागू नियमों के अनुसार)
+              {t(text, 'nitya-seva-sankalp-k5', "80G Tax Benefit (लागू नियमों के अनुसार)")}
             </li>
             <li className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-gray-800">
               <span
@@ -75,7 +76,7 @@ export default function NityaSevaSankalp() {
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
               </span>
-              सेवा कार्यों एवं प्रभाव की समय-समय पर जानकारी
+              {t(text, 'nitya-seva-sankalp-k6', "सेवा कार्यों एवं प्रभाव की समय-समय पर जानकारी")}
             </li>
             <li className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-gray-800">
               <span
@@ -96,7 +97,7 @@ export default function NityaSevaSankalp() {
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
               </span>
-              पूर्ण पारदर्शिता एवं जवाबदेही
+              {t(text, 'nitya-seva-sankalp-k7', "पूर्ण पारदर्शिता एवं जवाबदेही")}
             </li>
           </ul>
         </div>
@@ -105,13 +106,13 @@ export default function NityaSevaSankalp() {
             className="bg-white border border-[#ebe6e0] rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm min-h-[290px]"
           >
             <div>
-              <span className="text-[#e35300] text-[11px] font-bold tracking-wider block mb-1">सेवक</span>
+              <span className="text-[#e35300] text-[11px] font-bold tracking-wider block mb-1">{t(text, 'nitya-seva-sankalp-k8', "सेवक")}</span>
               <div className="flex items-baseline gap-0.5 mb-2">
-                <span className="text-2xl font-extrabold text-gray-900">₹500</span>
-                <span className="text-xs text-gray-500">/ माह</span>
+                <span className="text-2xl font-extrabold text-gray-900">{t(text, 'nitya-seva-sankalp-k9', "₹500")}</span>
+                <span className="text-xs text-gray-500">{t(text, 'nitya-seva-sankalp-k10', "/ माह")}</span>
               </div>
               <p className="text-gray-600 text-[12px] leading-snug mb-4">
-                आपका मासिक सहयोग जरूरतमंद लोगों तक सहायता पहुँचाने और सेवा अभियानों को निरंतर रखने में योगदान देता है।
+                {t(text, 'nitya-seva-sankalp-k11', "आपका मासिक सहयोग जरूरतमंद लोगों तक सहायता पहुँचाने और सेवा अभियानों को निरंतर रखने में योगदान देता है।")}
               </p>
             </div>
             <button
@@ -122,13 +123,13 @@ export default function NityaSevaSankalp() {
             className="bg-gradient-to-b from-[#fff2eb] to-[#ffe3d3] border border-[#ffd1b8] rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm min-h-[290px]"
           >
             <div>
-              <span className="text-[#e35300] text-[11px] font-bold tracking-wider block mb-1">सहयोगी</span>
+              <span className="text-[#e35300] text-[11px] font-bold tracking-wider block mb-1">{t(text, 'nitya-seva-sankalp-k12', "सहयोगी")}</span>
               <div className="flex items-baseline gap-0.5 mb-2">
-                <span className="text-2xl font-extrabold text-gray-900">₹1100</span>
-                <span className="text-xs text-gray-500">/ माह</span>
+                <span className="text-2xl font-extrabold text-gray-900">{t(text, 'nitya-seva-sankalp-k13', "₹1100")}</span>
+                <span className="text-xs text-gray-500">{t(text, 'nitya-seva-sankalp-k14', "/ माह")}</span>
               </div>
               <p className="text-gray-600 text-[12px] leading-snug mb-4">
-                आपका मासिक सहयोग अन्न सेवा, शिक्षा सहायता, स्वास्थ्य सहायता एवं गौ सेवा जैसे अनेक मानव कल्याण अभियानों को निरंतर सहयोग प्रदान करने में सहायक होता है।
+                {t(text, 'nitya-seva-sankalp-k15', "आपका मासिक सहयोग अन्न सेवा, शिक्षा सहायता, स्वास्थ्य सहायता एवं गौ सेवा जैसे अनेक मानव कल्याण अभियानों को निरंतर सहयोग प्रदान करने में सहायक होता है।")}
               </p>
             </div>
             <button
@@ -142,13 +143,13 @@ export default function NityaSevaSankalp() {
               className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[#ad820a] text-white text-[9px] font-extrabold tracking-wider px-3 py-0.5 rounded-full whitespace-nowrap"
             >MOST CHOSEN</span>
             <div>
-              <span className="text-white text-[11px] font-bold tracking-wider block mb-1">धर्मवीर</span>
+              <span className="text-white text-[11px] font-bold tracking-wider block mb-1">{t(text, 'nitya-seva-sankalp-k16', "धर्मवीर")}</span>
               <div className="flex items-baseline gap-0.5 mb-2">
-                <span className="text-2xl font-extrabold">₹2100</span>
-                <span className="text-xs text-white/80">/ माह</span>
+                <span className="text-2xl font-extrabold">{t(text, 'nitya-seva-sankalp-k17', "₹2100")}</span>
+                <span className="text-xs text-white/80">{t(text, 'nitya-seva-sankalp-k18', "/ माह")}</span>
               </div>
               <p className="text-gray-100 text-[12px] leading-snug mb-4">
-                गौ सेवा, सनातन संस्कृति संरक्षण, स्वास्थ्य सहायता एवं समाज सेवा के विविध अभियानों को निरंतर सहयोग प्रदान करने हेतु समर्पित मासिक सहयोग।
+                {t(text, 'nitya-seva-sankalp-k19', "गौ सेवा, सनातन संस्कृति संरक्षण, स्वास्थ्य सहायता एवं समाज सेवा के विविध अभियानों को निरंतर सहयोग प्रदान करने हेतु समर्पित मासिक सहयोग।")}
               </p>
             </div>
             <button

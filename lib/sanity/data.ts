@@ -9,6 +9,7 @@ import {
 import { HERO_SLIDES, type HeroSlide } from '@/lib/hero'
 import { FUTURE_MISSIONS, type Mission } from '@/lib/missions'
 import { PEOPLE, type Person } from '@/lib/people'
+import { DEFAULT_UPI, type Upi } from '@/lib/upi'
 import { CATEGORIES, type Category } from '@/lib/membership'
 import { TIERS, type Tier } from '@/lib/donation'
 import { CONTACT } from '@/lib/nav'
@@ -137,6 +138,7 @@ export type SiteSettings = {
   whatsapp: string
   footerAbout?: string
   cin?: string
+  upi: Upi
   social: { network: string; url: string }[]
 }
 
@@ -147,6 +149,7 @@ const SETTINGS_FALLBACK: SiteSettings = {
   helplines: CONTACT.helplines,
   emails: CONTACT.emails,
   whatsapp: CONTACT.whatsapp,
+  upi: DEFAULT_UPI,
   social: [],
 }
 
@@ -162,6 +165,10 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     whatsapp: pick(r.whatsapp as string, SETTINGS_FALLBACK.whatsapp),
     footerAbout: r.footerAbout as string,
     cin: r.cin as string,
+    upi: {
+      id: pick(r.upiId as string, DEFAULT_UPI.id),
+      name: pick(r.upiName as string, DEFAULT_UPI.name),
+    },
     social: (r.social as SiteSettings['social']) || [],
   }
 }

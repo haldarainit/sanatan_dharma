@@ -153,7 +153,7 @@ export default async function AboutPage() {
                   </p>
                   <p>
                     हम अन्न सेवा के माध्यम से{' '}
-                    <strong className="text-saffron-700">{t(text, 'k9', "&quot;कोई भूखा न सोए&quot;")}</strong>
+                    <strong className="text-saffron-700">{t(text, 'k9', "\"कोई भूखा न सोए\"")}</strong>
                     {' '}के संकल्प, स्वास्थ्य सहायता, शिक्षा एवं संस्कार, महिला सुरक्षा एवं सम्मान, गौ सेवा, पर्यावरण संरक्षण, आपदा राहत तथा अन्य सामाजिक एवं मानवीय अभियानों के माध्यम से सकारात्मक परिवर्तन लाने हेतु कार्यरत हैं।
                   </p>
                   <p>
@@ -171,7 +171,7 @@ export default async function AboutPage() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <span className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-1 block">{t(text, 'k11', "VISION &amp; MISSION")}</span>
+            <span className="text-[#e35300] font-bold text-xs tracking-widest uppercase mb-1 block">{t(text, 'k11', "VISION & MISSION")}</span>
             <h2
               className="font-serif text-3xl sm:text-4xl lg:text-4xl font-bold leading-tight text-gray-900"
             >
@@ -304,7 +304,7 @@ export default async function AboutPage() {
             </h2>
             <div className="bg-amber-50 border border-amber-200/80 rounded-2xl p-4 sm:p-5 shadow-xs">
               <p className="deva text-xs sm:text-sm leading-relaxed text-slate-700 font-medium italic">
-                {t(text, 'k23', "&quot;हमारा नेतृत्व सेवा, पारदर्शिता, उत्तरदायित्व एवं जनसहभागिता के मूल्यों पर आधारित है। हमारा उद्देश्य केवल संस्था का संचालन करना नहीं, बल्कि समाज के साथ मिलकर सकारात्मक परिवर्तन की दिशा में कार्य करना है।&quot;")}
+                {t(text, 'k23', "\"हमारा नेतृत्व सेवा, पारदर्शिता, उत्तरदायित्व एवं जनसहभागिता के मूल्यों पर आधारित है। हमारा उद्देश्य केवल संस्था का संचालन करना नहीं, बल्कि समाज के साथ मिलकर सकारात्मक परिवर्तन की दिशा में कार्य करना है।\"")}
               </p>
             </div>
           </div>
@@ -359,7 +359,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k27', "&quot;सेवा केवल सहायता नहीं, बल्कि समाज के प्रति हमारी जिम्मेदारी है। जब हम संस्कार, सेवा और सामाजिक उत्तरदायित्व को अपनाते हैं, तभी एक सशक्त, जागरूक एवं संवेदनशील समाज का निर्माण संभव होता है।&quot;")}
+                    {t(text, 'k27', "\"सेवा केवल सहायता नहीं, बल्कि समाज के प्रति हमारी जिम्मेदारी है। जब हम संस्कार, सेवा और सामाजिक उत्तरदायित्व को अपनाते हैं, तभी एक सशक्त, जागरूक एवं संवेदनशील समाज का निर्माण संभव होता है।\"")}
                   </p>
                 </div>
                 <div
@@ -385,7 +385,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k28', "&quot;सनातन केवल आस्था नहीं, बल्कि जीवन जीने की एक संस्कृति, एक विचारधारा और मानव कल्याण का शाश्वत मार्ग है।&quot;")}
+                    {t(text, 'k28', "\"सनातन केवल आस्था नहीं, बल्कि जीवन जीने की एक संस्कृति, एक विचारधारा और मानव कल्याण का शाश्वत मार्ग है।\"")}
                   </p>
                 </div>
                 <div
@@ -411,7 +411,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k29', "&quot;हमारा विश्वास है कि समाज की वास्तविक शक्ति संगठन, सहयोग और जनसहभागिता में निहित है। जब अच्छे लोग एक उद्देश्य के लिए एकजुट होते हैं, तो सकारात्मक परिवर्तन अवश्य होता है।&quot;")}
+                    {t(text, 'k29', "\"हमारा विश्वास है कि समाज की वास्तविक शक्ति संगठन, सहयोग और जनसहभागिता में निहित है। जब अच्छे लोग एक उद्देश्य के लिए एकजुट होते हैं, तो सकारात्मक परिवर्तन अवश्य होता है।\"")}
                   </p>
                 </div>
                 <div
@@ -437,7 +437,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k30', "&quot;आइए, सेवा, संस्कार और सनातन मूल्यों के साथ मिलकर ऐसा समाज बनाएं, जहाँ सहायता, सम्मान और मानवता केवल शब्द नहीं, बल्कि प्रत्येक व्यक्ति के जीवन का हिस्सा बनें।&quot;")}
+                    {t(text, 'k30', "\"आइए, सेवा, संस्कार और सनातन मूल्यों के साथ मिलकर ऐसा समाज बनाएं, जहाँ सहायता, सम्मान और मानवता केवल शब्द नहीं, बल्कि प्रत्येक व्यक्ति के जीवन का हिस्सा बनें।\"")}
                   </p>
                 </div>
               </div>
@@ -462,7 +462,7 @@ export default async function AboutPage() {
                   className="px-3 py-1 rounded-full bg-saffron-100 text-saffron-800 text-xs font-bold uppercase tracking-wider"
                 >CO-FOUNDER &amp; DIRECTOR</span>
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mt-2">Krishnam Singh</h3>
-                <p className="text-sm font-semibold text-saffron-600">{t(text, 'k33', "Co-Founder &amp; Director")}</p>
+                <p className="text-sm font-semibold text-saffron-600">{t(text, 'k33', "Co-Founder & Director")}</p>
               </div>
               <div className="space-y-3">
                 <div
@@ -488,7 +488,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k34', "&quot;हम केवल बेहतर भविष्य की कल्पना नहीं करते, बल्कि उसे साकार करने का संकल्प भी लेते हैं। सनातन मूल्यों, युवा शक्ति और सेवा भाव के साथ समाज में सकारात्मक परिवर्तन लाना ही हमारा लक्ष्य है।&quot;")}
+                    {t(text, 'k34', "\"हम केवल बेहतर भविष्य की कल्पना नहीं करते, बल्कि उसे साकार करने का संकल्प भी लेते हैं। सनातन मूल्यों, युवा शक्ति और सेवा भाव के साथ समाज में सकारात्मक परिवर्तन लाना ही हमारा लक्ष्य है।\"")}
                   </p>
                 </div>
                 <div
@@ -514,7 +514,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k35', "&quot;जब युवा जागरूक होते हैं, तो समाज सशक्त बनता है; और जब समाज संगठित होता है, तो राष्ट्र प्रगति के नए आयाम स्थापित करता है।&quot;")}
+                    {t(text, 'k35', "\"जब युवा जागरूक होते हैं, तो समाज सशक्त बनता है; और जब समाज संगठित होता है, तो राष्ट्र प्रगति के नए आयाम स्थापित करता है।\"")}
                   </p>
                 </div>
                 <div
@@ -540,7 +540,7 @@ export default async function AboutPage() {
                     ></path>
                   </svg>
                   <p className="deva text-xs sm:text-sm font-medium text-slate-700 leading-relaxed">
-                    {t(text, 'k36', "&quot;आइए, हम सभी सेवा, समर्पण और सामाजिक उत्तरदायित्व के साथ मिलकर आने वाली पीढ़ियों के लिए एक सुरक्षित, संस्कारित और सशक्त भारत के निर्माण में अपना योगदान दें।&quot;")}
+                    {t(text, 'k36', "\"आइए, हम सभी सेवा, समर्पण और सामाजिक उत्तरदायित्व के साथ मिलकर आने वाली पीढ़ियों के लिए एक सुरक्षित, संस्कारित और सशक्त भारत के निर्माण में अपना योगदान दें।\"")}
                   </p>
                 </div>
               </div>
@@ -563,7 +563,7 @@ export default async function AboutPage() {
               ></div>
               <div className="absolute bottom-3 left-3 right-3 text-white md:hidden">
                 <h3 className="font-serif text-xl font-bold">Krishnam Singh</h3>
-                <p className="text-xs text-amber-200 font-medium">{t(text, 'k39', "Co-Founder &amp; Director")}</p>
+                <p className="text-xs text-amber-200 font-medium">{t(text, 'k39', "Co-Founder & Director")}</p>
               </div>
             </div>
           </div>

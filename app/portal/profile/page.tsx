@@ -33,7 +33,7 @@ export default async function PortalProfilePage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">{t(text, 'k2', "Member Profile &amp; Dashboard")}</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Member Profile & Dashboard")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Member Profile &amp;{' '}
@@ -57,7 +57,7 @@ export default async function PortalProfilePage() {
                 className="h-24 w-24 rounded-2xl bg-gradient-to-tr from-saffron-500 to-amber-400 p-1 shadow-lg overflow-hidden"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80"
+                  src={img(images, 'i41', "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80")}
                   alt="Rahul Sharma"
                   className="h-full w-full object-cover rounded-[14px]"
                 />
@@ -117,7 +117,7 @@ export default async function PortalProfilePage() {
                   ></path>
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
-                <span className="text-emerald-400">{t(text, 'k8', "Background Verified &amp; Active Member")}</span>
+                <span className="text-emerald-400">{t(text, 'k8', "Background Verified & Active Member")}</span>
               </p>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default async function PortalProfilePage() {
               16{' '}
               <span className="text-xs font-semibold text-slate-600">{t(text, 'k13', "Drives")}</span>
             </p>
-            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k14', "Relief &amp; Seva drives")}</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k14', "Relief & Seva drives")}</p>
           </div>
           <div
             className="rounded-2xl border border-rose-200/80 bg-gradient-to-br from-rose-50/80 to-white p-4 shadow-sm"
@@ -289,7 +289,7 @@ export default async function PortalProfilePage() {
               </svg>
             </div>
             <p className="text-lg font-bold text-emerald-900">{t(text, 'k19', "Level 3 Active")}</p>
-            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k20', "Identity &amp; Police verified")}</p>
+            <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k20', "Identity & Police verified")}</p>
           </div>
         </div>
         <div

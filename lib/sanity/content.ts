@@ -64,27 +64,35 @@ export function alt(map: ImageMap | undefined, key: string, fallbackAlt: string)
 }
 
 export async function getPageContent(path: string): Promise<PageContent> {
-  const doc = await safeFetch<{
-    blocks?: Block[]
-    seoTitle?: string
-    seoDescription?: string
-  } | null>(pageQuery, { path }, null)
+  /* One route can be several documents -- see pageQuery. Keys are unique
+     across a route, so merging them is just a matter of order. */
+  const docs = await safeFetch<
+    {
+      blocks?: Block[]
+      seoTitle?: string
+      seoDescription?: string
+    }[]
+  >(pageQuery, { path }, [])
 
-  if (!doc?.blocks?.length) {
-    return { ...EMPTY_CONTENT, seoTitle: doc?.seoTitle, seoDescription: doc?.seoDescription }
-  }
+  if (!docs.length) return EMPTY_CONTENT
 
   const text: TextMap = {}
   const images: ImageMap = {}
 
-  for (const b of doc.blocks) {
-    if (!b.key) continue
-    if (b._type === 'textBlock') {
-      if (typeof b.text === 'string' && b.text.trim() !== '') text[b.key] = b.text
-    } else {
-      images[b.key] = { url: imageUrl(b.image, 1600), alt: b.alt }
+  for (const doc of docs) {
+    for (const b of doc.blocks ?? []) {
+      if (!b.key) continue
+      if (b._type === 'textBlock') {
+        if (typeof b.text === 'string' && b.text.trim() !== '') text[b.key] = b.text
+      } else {
+        images[b.key] = { url: imageUrl(b.image, 1600), alt: b.alt }
+      }
     }
   }
 
-  return { text, images, seoTitle: doc.seoTitle, seoDescription: doc.seoDescription }
+  /* the SEO fields live on whichever document carries them */
+  const seoTitle = docs.find((d) => d.seoTitle)?.seoTitle
+  const seoDescription = docs.find((d) => d.seoDescription)?.seoDescription
+
+  return { text, images, seoTitle, seoDescription }
 }

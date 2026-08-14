@@ -1,6 +1,7 @@
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import Link from 'next/link'
 
-export default function CsrPartnerships() {
+export default function CsrPartnerships({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section className="bg-white border-t border-saffron-100 py-8 sm:py-12 sd-gap">
       <div className="container-x">
@@ -8,11 +9,11 @@ export default function CsrPartnerships() {
           <header className="mb-6 text-left">
             <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
               CSR &amp;{' '}
-              <span className="block sm:inline text-[#e35300]">Partnerships</span>
+              <span className="block sm:inline text-[#e35300]">{t(text, 'csr-partnerships-k1', "Partnerships")}</span>
             </h2>
-            <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">साझेदारी से सेवा, सहयोग से परिवर्तन।</p>
+            <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">{t(text, 'csr-partnerships-k2', "साझेदारी से सेवा, सहयोग से परिवर्तन।")}</p>
             <p className="deva text-[#615a53] text-sm sm:text-base leading-relaxed">
-              CSR, Sponsorship एवं Strategic Partnerships के माध्यम से समाज कल्याण एवं जनहित कार्यों में हमारे साथ जुड़ें।
+              {t(text, 'csr-partnerships-k3', "CSR, Sponsorship एवं Strategic Partnerships के माध्यम से समाज कल्याण एवं जनहित कार्यों में हमारे साथ जुड़ें।")}
             </p>
           </header>
           <div
@@ -32,7 +33,7 @@ export default function CsrPartnerships() {
             </svg>
             <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2.5">Become a CSR Partner</h2>
             <p className="text-orange-100 text-sm md:text-base max-w-3xl mb-6 leading-relaxed opacity-95">
-              From rural education to gaushala infrastructure — co-design and co-brand programs aligned to your CSR mandate.
+              {t(text, 'csr-partnerships-k4', "From rural education to gaushala infrastructure — co-design and co-brand programs aligned to your CSR mandate.")}
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -43,7 +44,7 @@ export default function CsrPartnerships() {
                   <rect x="5" y="5" width="14" height="14" rx="3"></rect>
                   <rect x="10" y="10" width="4" height="4" rx="1" fill="currentColor"></rect>
                 </svg>
-                CSR Partnership
+                {t(text, 'csr-partnerships-k5', "CSR Partnership")}
               </Link>
               <Link
                 className="border border-white/40 hover:border-white hover:bg-white/10 text-white text-xs md:text-sm font-medium px-5 py-2.5 rounded-full transition-all whitespace-nowrap sd-btn sd-btn--csr-partnership"
@@ -71,7 +72,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/tata.jpeg"
+                    src={img(images, 'csr-partnerships-i6', "/img/tata.jpeg")}
                     alt="TATA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -81,7 +82,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/infosys.jpeg"
+                    src={img(images, 'csr-partnerships-i7', "/img/infosys.jpeg")}
                     alt="INFOSYS"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -91,7 +92,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/wipro.jpeg"
+                    src={img(images, 'csr-partnerships-i8', "/img/wipro.jpeg")}
                     alt="WIPRO"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -101,7 +102,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/reliance.jpeg"
+                    src={img(images, 'csr-partnerships-i9', "/img/reliance.jpeg")}
                     alt="RELIANCE"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -111,7 +112,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/icici.jpeg"
+                    src={img(images, 'csr-partnerships-i10', "/img/icici.jpeg")}
                     alt="ICICI BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -121,7 +122,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/indian.jpeg"
+                    src={img(images, 'csr-partnerships-i11', "/img/indian.jpeg")}
                     alt="INDIAN OIL"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -136,7 +137,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/tata.jpeg"
+                    src={img(images, 'csr-partnerships-i12', "/img/tata.jpeg")}
                     alt="TATA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -146,7 +147,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/infosys.jpeg"
+                    src={img(images, 'csr-partnerships-i13', "/img/infosys.jpeg")}
                     alt="INFOSYS"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -156,7 +157,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/wipro.jpeg"
+                    src={img(images, 'csr-partnerships-i14', "/img/wipro.jpeg")}
                     alt="WIPRO"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -166,7 +167,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/reliance.jpeg"
+                    src={img(images, 'csr-partnerships-i15', "/img/reliance.jpeg")}
                     alt="RELIANCE"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -176,7 +177,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/icici.jpeg"
+                    src={img(images, 'csr-partnerships-i16', "/img/icici.jpeg")}
                     alt="ICICI BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -186,7 +187,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/indian.jpeg"
+                    src={img(images, 'csr-partnerships-i17', "/img/indian.jpeg")}
                     alt="INDIAN OIL"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -208,7 +209,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/hdfc.jpeg"
+                    src={img(images, 'csr-partnerships-i18', "/img/hdfc.jpeg")}
                     alt="HDFC BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -218,7 +219,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/abg.jpeg"
+                    src={img(images, 'csr-partnerships-i19', "/img/abg.jpeg")}
                     alt="ADITYA BIRLA GROUP"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -228,7 +229,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/lnt.jpeg"
+                    src={img(images, 'csr-partnerships-i20', "/img/lnt.jpeg")}
                     alt="L&T"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -238,7 +239,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/mahindra.jpeg"
+                    src={img(images, 'csr-partnerships-i21', "/img/mahindra.jpeg")}
                     alt="MAHINDRA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -248,7 +249,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/ntpc.jpeg"
+                    src={img(images, 'csr-partnerships-i22', "/img/ntpc.jpeg")}
                     alt="NTPC"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -263,7 +264,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/hdfc.jpeg"
+                    src={img(images, 'csr-partnerships-i23', "/img/hdfc.jpeg")}
                     alt="HDFC BANK"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -273,7 +274,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/abg.jpeg"
+                    src={img(images, 'csr-partnerships-i24', "/img/abg.jpeg")}
                     alt="ADITYA BIRLA GROUP"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -283,7 +284,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/lnt.jpeg"
+                    src={img(images, 'csr-partnerships-i25', "/img/lnt.jpeg")}
                     alt="L&T"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -293,7 +294,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/mahindra.jpeg"
+                    src={img(images, 'csr-partnerships-i26', "/img/mahindra.jpeg")}
                     alt="MAHINDRA"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"
@@ -303,7 +304,7 @@ export default function CsrPartnerships() {
                   className="flex h-16 sm:h-20 w-36 sm:w-44 shrink-0 items-center justify-center p-2 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-sm hover:border-orange-200 transition-all duration-300"
                 >
                   <img
-                    src="/img/ntpc.jpeg"
+                    src={img(images, 'csr-partnerships-i27', "/img/ntpc.jpeg")}
                     alt="NTPC"
                     loading="lazy"
                     className="max-h-12 sm:max-h-14 max-w-[85%] object-contain transition-transform duration-300 hover:scale-105"

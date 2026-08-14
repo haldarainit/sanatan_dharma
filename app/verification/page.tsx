@@ -39,7 +39,7 @@ export default async function VerificationPage() {
           Official Verification{' '}
           <span className="text-[#e35300]">{t(text, 'k3', "Center")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Authenticate Member Badges &amp; Certificates")}</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Authenticate Member Badges & Certificates")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
           {t(text, 'k5', "Verify the validity of Volunteer IDs, Seva Certificates, Patron Credentials, and CSR Compliance Records in real-time.")}
         </p>

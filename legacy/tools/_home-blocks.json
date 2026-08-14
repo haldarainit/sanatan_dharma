@@ -1,0 +1,4337 @@
+[
+ {
+  "_id": "page-home-impact-ticker",
+  "_type": "page",
+  "title": "Home — Impact Ticker",
+  "path": "/",
+  "order": 2,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k1",
+    "key": "impact-ticker-k1",
+    "section": "Impact Ticker",
+    "text": "सेवा ही सनातन, समर्पण ही हमारा धर्म"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k2",
+    "key": "impact-ticker-k2",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था भारत सरकार के अंतर्गत Section 8 Company के रूप में पंजीकृत है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k3",
+    "key": "impact-ticker-k3",
+    "section": "Impact Ticker",
+    "text": "सेवा • सुरक्षा • संस्कार • धर्म — मानव कल्याण हमारा कर्म"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k4",
+    "key": "impact-ticker-k4",
+    "section": "Impact Ticker",
+    "text": "Sanatani Sena सदस्यता एवं स्वयंसेवक पंजीकरण प्रारंभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k5",
+    "key": "impact-ticker-k5",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था 12A Registration के अंतर्गत पंजीकृत है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k6",
+    "key": "impact-ticker-k6",
+    "section": "Impact Ticker",
+    "text": "अन्न सेवा एवं भोजन सहायता अभियान जारी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k7",
+    "key": "impact-ticker-k7",
+    "section": "Impact Ticker",
+    "text": "चिकित्सा एवं स्वास्थ्य सहायता मिशन सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k8",
+    "key": "impact-ticker-k8",
+    "section": "Impact Ticker",
+    "text": "शिक्षा एवं संस्कार सहायता अभियान संचालित"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k9",
+    "key": "impact-ticker-k9",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था 80G Registration के अंतर्गत पंजीकृत है — पात्र दान पर Tax Exemption का लाभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k10",
+    "key": "impact-ticker-k10",
+    "section": "Impact Ticker",
+    "text": "महिला सुरक्षा एवं सम्मान अभियान सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k11",
+    "key": "impact-ticker-k11",
+    "section": "Impact Ticker",
+    "text": "गौ सेवा एवं संरक्षण अभियान में सहयोग करें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k12",
+    "key": "impact-ticker-k12",
+    "section": "Impact Ticker",
+    "text": "पर्यावरण संरक्षण एवं वृक्षारोपण अभियान जारी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k13",
+    "key": "impact-ticker-k13",
+    "section": "Impact Ticker",
+    "text": "Festival Calendar में आगामी सनातन पर्व, उत्सव एवं सेवा अभियानों की जानकारी देखें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k14",
+    "key": "impact-ticker-k14",
+    "section": "Impact Ticker",
+    "text": "Sanatan Seva Network के माध्यम से Professionals समाज सेवा में योगदान दे सकते हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k15",
+    "key": "impact-ticker-k15",
+    "section": "Impact Ticker",
+    "text": "Vigilance Department से जुड़कर जागरूकता एवं जनहित कार्यों में योगदान दें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k16",
+    "key": "impact-ticker-k16",
+    "section": "Impact Ticker",
+    "text": "Fraud Awareness & Help Center के माध्यम से जागरूकता एवं सहायता अभियान संचालित हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k17",
+    "key": "impact-ticker-k17",
+    "section": "Impact Ticker",
+    "text": "Certificate Verification एवं Volunteer ID Verification सुविधा उपलब्ध है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k18",
+    "key": "impact-ticker-k18",
+    "section": "Impact Ticker",
+    "text": "पारदर्शिता, जवाबदेही और विश्वास — हमारी कार्यप्रणाली की आधारशिला हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k19",
+    "key": "impact-ticker-k19",
+    "section": "Impact Ticker",
+    "text": "Other Ways to Support — वस्तु, सामग्री, वाहन, भवन, भूमि देकर सेवा अभियानों को मजबूत बनाएं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k20",
+    "key": "impact-ticker-k20",
+    "section": "Impact Ticker",
+    "text": "Join Us के माध्यम से Sanatani Sena, Vigilance Department एवं Membership Program से जुड़ें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k21",
+    "key": "impact-ticker-k21",
+    "section": "Impact Ticker",
+    "text": "CSR Partnership, Employee Volunteering एवं Cause Sponsorship हेतु संपर्क करें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k22",
+    "key": "impact-ticker-k22",
+    "section": "Impact Ticker",
+    "text": "सेवा ही सनातन, समर्पण ही हमारा धर्म"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k23",
+    "key": "impact-ticker-k23",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था भारत सरकार के अंतर्गत Section 8 Company के रूप में पंजीकृत है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k24",
+    "key": "impact-ticker-k24",
+    "section": "Impact Ticker",
+    "text": "सेवा • सुरक्षा • संस्कार • धर्म — मानव कल्याण हमारा कर्म"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k25",
+    "key": "impact-ticker-k25",
+    "section": "Impact Ticker",
+    "text": "Sanatani Sena सदस्यता एवं स्वयंसेवक पंजीकरण प्रारंभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k26",
+    "key": "impact-ticker-k26",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था 12A Registration के अंतर्गत पंजीकृत है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k27",
+    "key": "impact-ticker-k27",
+    "section": "Impact Ticker",
+    "text": "अन्न सेवा एवं भोजन सहायता अभियान जारी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k28",
+    "key": "impact-ticker-k28",
+    "section": "Impact Ticker",
+    "text": "चिकित्सा एवं स्वास्थ्य सहायता मिशन सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k29",
+    "key": "impact-ticker-k29",
+    "section": "Impact Ticker",
+    "text": "शिक्षा एवं संस्कार सहायता अभियान संचालित"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k30",
+    "key": "impact-ticker-k30",
+    "section": "Impact Ticker",
+    "text": "हमारी संस्था 80G Registration के अंतर्गत पंजीकृत है — पात्र दान पर Tax Exemption का लाभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k31",
+    "key": "impact-ticker-k31",
+    "section": "Impact Ticker",
+    "text": "महिला सुरक्षा एवं सम्मान अभियान सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k32",
+    "key": "impact-ticker-k32",
+    "section": "Impact Ticker",
+    "text": "गौ सेवा एवं संरक्षण अभियान में सहयोग करें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k33",
+    "key": "impact-ticker-k33",
+    "section": "Impact Ticker",
+    "text": "पर्यावरण संरक्षण एवं वृक्षारोपण अभियान जारी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k34",
+    "key": "impact-ticker-k34",
+    "section": "Impact Ticker",
+    "text": "Festival Calendar में आगामी सनातन पर्व, उत्सव एवं सेवा अभियानों की जानकारी देखें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k35",
+    "key": "impact-ticker-k35",
+    "section": "Impact Ticker",
+    "text": "Sanatan Seva Network के माध्यम से Professionals समाज सेवा में योगदान दे सकते हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k36",
+    "key": "impact-ticker-k36",
+    "section": "Impact Ticker",
+    "text": "Vigilance Department से जुड़कर जागरूकता एवं जनहित कार्यों में योगदान दें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k37",
+    "key": "impact-ticker-k37",
+    "section": "Impact Ticker",
+    "text": "Fraud Awareness & Help Center के माध्यम से जागरूकता एवं सहायता अभियान संचालित हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k38",
+    "key": "impact-ticker-k38",
+    "section": "Impact Ticker",
+    "text": "Certificate Verification एवं Volunteer ID Verification सुविधा उपलब्ध है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k39",
+    "key": "impact-ticker-k39",
+    "section": "Impact Ticker",
+    "text": "पारदर्शिता, जवाबदेही और विश्वास — हमारी कार्यप्रणाली की आधारशिला हैं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k40",
+    "key": "impact-ticker-k40",
+    "section": "Impact Ticker",
+    "text": "Other Ways to Support — वस्तु, सामग्री, वाहन, भवन, भूमि देकर सेवा अभियानों को मजबूत बनाएं"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k41",
+    "key": "impact-ticker-k41",
+    "section": "Impact Ticker",
+    "text": "Join Us के माध्यम से Sanatani Sena, Vigilance Department एवं Membership Program से जुड़ें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "impact-ticker-k42",
+    "key": "impact-ticker-k42",
+    "section": "Impact Ticker",
+    "text": "CSR Partnership, Employee Volunteering एवं Cause Sponsorship हेतु संपर्क करें"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-trust-credentials",
+  "_type": "page",
+  "title": "Home — Trust Credentials",
+  "path": "/",
+  "order": 3,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k1",
+    "key": "trust-credentials-k1",
+    "section": "Trust Credentials",
+    "text": "NGO"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i2",
+    "key": "trust-credentials-i2",
+    "section": "Trust Credentials",
+    "currentSrc": "/img/Screenshot 2026-07-30 122551.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k3",
+    "key": "trust-credentials-k3",
+    "section": "Trust Credentials — Section 8",
+    "text": "Company Registered"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i4",
+    "key": "trust-credentials-i4",
+    "section": "Trust Credentials — Section 8",
+    "currentSrc": "/img/Screenshot 2026-07-30 122605.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k5",
+    "key": "trust-credentials-k5",
+    "section": "Trust Credentials — 12A",
+    "text": "Income Tax Exempt"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i6",
+    "key": "trust-credentials-i6",
+    "section": "Trust Credentials — 12A",
+    "currentSrc": "/img/Screenshot 2026-07-30 122618.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k7",
+    "key": "trust-credentials-k7",
+    "section": "Trust Credentials — 80G",
+    "text": "50% Tax Deduction"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i8",
+    "key": "trust-credentials-i8",
+    "section": "Trust Credentials — 80G",
+    "currentSrc": "/img/Screenshot 2026-07-30 122631.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k9",
+    "key": "trust-credentials-k9",
+    "section": "Trust Credentials — CSR-1",
+    "text": "MCA Certified"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i10",
+    "key": "trust-credentials-i10",
+    "section": "Trust Credentials — CSR-1",
+    "currentSrc": "/img/Screenshot 2026-07-30 122642.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k11",
+    "key": "trust-credentials-k11",
+    "section": "Trust Credentials — NGO Darpan",
+    "text": "Niti Aayog Listed"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i12",
+    "key": "trust-credentials-i12",
+    "section": "Trust Credentials — NGO Darpan",
+    "currentSrc": "/img/Screenshot 2026-07-30 122655.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k13",
+    "key": "trust-credentials-k13",
+    "section": "Trust Credentials — ISO 9001:2015",
+    "text": "Certified Operations"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i14",
+    "key": "trust-credentials-i14",
+    "section": "Trust Credentials — ISO 9001:2015",
+    "currentSrc": "/img/Screenshot 2026-07-30 122551.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k15",
+    "key": "trust-credentials-k15",
+    "section": "Trust Credentials — Section 8",
+    "text": "Company Registered"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i16",
+    "key": "trust-credentials-i16",
+    "section": "Trust Credentials — Section 8",
+    "currentSrc": "/img/Screenshot 2026-07-30 122605.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k17",
+    "key": "trust-credentials-k17",
+    "section": "Trust Credentials — 12A",
+    "text": "Income Tax Exempt"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i18",
+    "key": "trust-credentials-i18",
+    "section": "Trust Credentials — 12A",
+    "currentSrc": "/img/Screenshot 2026-07-30 122618.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k19",
+    "key": "trust-credentials-k19",
+    "section": "Trust Credentials — 80G",
+    "text": "50% Tax Deduction"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i20",
+    "key": "trust-credentials-i20",
+    "section": "Trust Credentials — 80G",
+    "currentSrc": "/img/Screenshot 2026-07-30 122631.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k21",
+    "key": "trust-credentials-k21",
+    "section": "Trust Credentials — CSR-1",
+    "text": "MCA Certified"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i22",
+    "key": "trust-credentials-i22",
+    "section": "Trust Credentials — CSR-1",
+    "currentSrc": "/img/Screenshot 2026-07-30 122642.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k23",
+    "key": "trust-credentials-k23",
+    "section": "Trust Credentials — NGO Darpan",
+    "text": "Niti Aayog Listed"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i24",
+    "key": "trust-credentials-i24",
+    "section": "Trust Credentials — NGO Darpan",
+    "currentSrc": "/img/Screenshot 2026-07-30 122655.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k25",
+    "key": "trust-credentials-k25",
+    "section": "Trust Credentials — ISO 9001:2015",
+    "text": "Certified Operations"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i26",
+    "key": "trust-credentials-i26",
+    "section": "Trust Credentials — ISO 9001:2015",
+    "currentSrc": "/img/Screenshot 2026-07-30 122551.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k27",
+    "key": "trust-credentials-k27",
+    "section": "Trust Credentials — Section 8",
+    "text": "Company Registered"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i28",
+    "key": "trust-credentials-i28",
+    "section": "Trust Credentials — Section 8",
+    "currentSrc": "/img/Screenshot 2026-07-30 122605.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k29",
+    "key": "trust-credentials-k29",
+    "section": "Trust Credentials — 12A",
+    "text": "Income Tax Exempt"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i30",
+    "key": "trust-credentials-i30",
+    "section": "Trust Credentials — 12A",
+    "currentSrc": "/img/Screenshot 2026-07-30 122618.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k31",
+    "key": "trust-credentials-k31",
+    "section": "Trust Credentials — 80G",
+    "text": "50% Tax Deduction"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i32",
+    "key": "trust-credentials-i32",
+    "section": "Trust Credentials — 80G",
+    "currentSrc": "/img/Screenshot 2026-07-30 122631.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k33",
+    "key": "trust-credentials-k33",
+    "section": "Trust Credentials — CSR-1",
+    "text": "MCA Certified"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i34",
+    "key": "trust-credentials-i34",
+    "section": "Trust Credentials — CSR-1",
+    "currentSrc": "/img/Screenshot 2026-07-30 122642.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k35",
+    "key": "trust-credentials-k35",
+    "section": "Trust Credentials — NGO Darpan",
+    "text": "Niti Aayog Listed"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "trust-credentials-i36",
+    "key": "trust-credentials-i36",
+    "section": "Trust Credentials — NGO Darpan",
+    "currentSrc": "/img/Screenshot 2026-07-30 122655.png",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "trust-credentials-k37",
+    "key": "trust-credentials-k37",
+    "section": "Trust Credentials — ISO 9001:2015",
+    "text": "Certified Operations"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-who-we-are",
+  "_type": "page",
+  "title": "Home — Who We Are",
+  "path": "/",
+  "order": 4,
+  "blocks": [
+   {
+    "_type": "imageBlock",
+    "_key": "who-we-are-i1",
+    "key": "who-we-are-i1",
+    "section": "Who We Are",
+    "currentSrc": "/img/new_who_are_we.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k2",
+    "key": "who-we-are-k2",
+    "section": "Who We Are",
+    "text": "VERIFIED TRUST"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k3",
+    "key": "who-we-are-k3",
+    "section": "Who We Are",
+    "text": "हमारा परिचय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k4",
+    "key": "who-we-are-k4",
+    "section": "Who We Are",
+    "text": "सनातन धर्म मानव कल्याण फाउंडेशन।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k5",
+    "key": "who-we-are-k5",
+    "section": "Who We Are",
+    "text": "सनातन धर्म मानव कल्याण फाउंडेशन"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k6",
+    "key": "who-we-are-k6",
+    "section": "Who We Are",
+    "text": "धारा 8"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k7",
+    "key": "who-we-are-k7",
+    "section": "Who We Are",
+    "text": "Professionally Managed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k8",
+    "key": "who-we-are-k8",
+    "section": "Who We Are",
+    "text": "हमारा उद्देश्य सनातन संस्कृति एवं भारतीय मूल्यों का संरक्षण, मानव सेवा को प्रोत्साहन तथा समाज के अंतिम व्यक्ति तक सहायता, सम्मान और अवसर पहुंचाना है। संस्था समाज में सकारात्मक एवं स्थायी परिवर्तन लाने के लिए सेवा, जागरूकता, सहयोग और जनभागीदारी को एक सशक्त माध्यम मानती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k9",
+    "key": "who-we-are-k9",
+    "section": "Who We Are",
+    "text": "फाउंडेशन अन्न सेवा, चिकित्सा एवं स्वास्थ्य सहायता, शिक्षा एवं संस्कार सहयोग, महिला सुरक्षा एवं सम्मान, आपदा राहत, गौ सेवा, पर्यावरण संरक्षण, सांस्कृतिक जनजागरण तथा विभिन्न मानव कल्याण परियोजनाओं के माध्यम से जरूरतमंद व्यक्तियों, परिवारों एवं समुदायों तक सहायता पहुंचाने का प्रयास कर रहा है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "who-we-are-k10",
+    "key": "who-we-are-k10",
+    "section": "Who We Are",
+    "text": "पारदर्शिता, उत्तरदायित्व, सत्यापन एवं सेवा भावना"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-our-missions",
+  "_type": "page",
+  "title": "Home — Our Missions",
+  "path": "/",
+  "order": 5,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k1",
+    "key": "our-missions-k1",
+    "section": "Our Missions",
+    "text": "Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k2",
+    "key": "our-missions-k2",
+    "section": "Our Missions",
+    "text": "हमारे सेवा मिशन"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k3",
+    "key": "our-missions-k3",
+    "section": "Our Missions",
+    "text": "सनातन धर्म मानव कल्याण फाउंडेशन सेवा, संस्कार, संस्कृति और मानव कल्याण के विभिन्न क्षेत्रों में समर्पित भाव से कार्यरत है। हमारा उद्देश्य जनजागरण, सेवा भावना और सनातन मूल्यों के संरक्षण के माध्यम से समाज में सकारात्मक परिवर्तन लाना है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k4",
+    "key": "our-missions-k4",
+    "section": "Our Missions",
+    "text": "हम अपने सेवा अभियानों के माध्यम से अधिक से अधिक लोगों तक सहयोग पहुँचाने का सतत प्रयास करते हैं। आइए, सेवा और मानव कल्याण की इस पवित्र यात्रा में सहभागी बनें और मानव कल्याण के कार्यों को नई शक्ति प्रदान करें।🚩"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i5",
+    "key": "our-missions-i5",
+    "section": "Our Missions",
+    "currentSrc": "/img/yogi-flag.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k6",
+    "key": "our-missions-k6",
+    "section": "Our Missions — सनातन संस्कृति संरक्षण एवं जनजागरण अभियान",
+    "text": "सनातन मूल्यों, भारतीय परंपराओं एवं सामाजिक जागरूकता के संरक्षण का सतत अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k7",
+    "key": "our-missions-k7",
+    "section": "Our Missions — सनातन संस्कृति संरक्षण एवं जनजागरण अभियान",
+    "text": "₹2,60,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k8",
+    "key": "our-missions-k8",
+    "section": "Our Missions — सनातन संस्कृति संरक्षण एवं जनजागरण अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i9",
+    "key": "our-missions-i9",
+    "section": "Our Missions — सनातन संस्कृति संरक्षण एवं जनजागरण अभियान",
+    "currentSrc": "/img/act-women.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k10",
+    "key": "our-missions-k10",
+    "section": "Our Missions — महिला सुरक्षा एवं सम्मान अभियान",
+    "text": "सुरक्षा, सम्मान, जागरूकता एवं सहयोग के लिए समर्पित अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k11",
+    "key": "our-missions-k11",
+    "section": "Our Missions — महिला सुरक्षा एवं सम्मान अभियान",
+    "text": "₹2,45,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k12",
+    "key": "our-missions-k12",
+    "section": "Our Missions — महिला सुरक्षा एवं सम्मान अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i13",
+    "key": "our-missions-i13",
+    "section": "Our Missions — महिला सुरक्षा एवं सम्मान अभियान",
+    "currentSrc": "/img/act-child.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k14",
+    "key": "our-missions-k14",
+    "section": "Our Missions — अन्न सेवा अभियान",
+    "text": "जरूरतमंद एवं असहाय लोगों तक भोजन एवं सहायता पहुँचाने का सेवा अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k15",
+    "key": "our-missions-k15",
+    "section": "Our Missions — अन्न सेवा अभियान",
+    "text": "₹2,85,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k16",
+    "key": "our-missions-k16",
+    "section": "Our Missions — अन्न सेवा अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i17",
+    "key": "our-missions-i17",
+    "section": "Our Missions — अन्न सेवा अभियान",
+    "currentSrc": "/img/campaign-gurukul.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k18",
+    "key": "our-missions-k18",
+    "section": "Our Missions — शिक्षा एवं संस्कार सहायता अभियान",
+    "text": "शिक्षा, संस्कार एवं उज्ज्वल भविष्य की दिशा में एक सार्थक प्रयास।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k19",
+    "key": "our-missions-k19",
+    "section": "Our Missions — शिक्षा एवं संस्कार सहायता अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k20",
+    "key": "our-missions-k20",
+    "section": "Our Missions — शिक्षा एवं संस्कार सहायता अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i21",
+    "key": "our-missions-i21",
+    "section": "Our Missions — शिक्षा एवं संस्कार सहायता अभियान",
+    "currentSrc": "/img/future-help.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k22",
+    "key": "our-missions-k22",
+    "section": "Our Missions — धोखाधड़ी जागरूकता एवं सुरक्षा अभियान",
+    "text": "धोखाधड़ी, अपराध, नकली एवं मिलावटी उत्पादों के विरुद्ध जागरूकता और सहायता अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k23",
+    "key": "our-missions-k23",
+    "section": "Our Missions — धोखाधड़ी जागरूकता एवं सुरक्षा अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k24",
+    "key": "our-missions-k24",
+    "section": "Our Missions — धोखाधड़ी जागरूकता एवं सुरक्षा अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i25",
+    "key": "our-missions-i25",
+    "section": "Our Missions — धोखाधड़ी जागरूकता एवं सुरक्षा अभियान",
+    "currentSrc": "/img/campaign-gaushala.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k26",
+    "key": "our-missions-k26",
+    "section": "Our Missions — गौ सेवा एवं संरक्षण अभियान",
+    "text": "गौ संरक्षण, सेवा, देखभाल एवं जनजागरण के लिए समर्पित अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k27",
+    "key": "our-missions-k27",
+    "section": "Our Missions — गौ सेवा एवं संरक्षण अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k28",
+    "key": "our-missions-k28",
+    "section": "Our Missions — गौ सेवा एवं संरक्षण अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i29",
+    "key": "our-missions-i29",
+    "section": "Our Missions — गौ सेवा एवं संरक्षण अभियान",
+    "currentSrc": "/img/campaign-tree.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k30",
+    "key": "our-missions-k30",
+    "section": "Our Missions — पर्यावरण संरक्षण एवं वृक्षारोपण अभियान",
+    "text": "हरित, स्वच्छ एवं सुरक्षित भविष्य के निर्माण का जनजागरण अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k31",
+    "key": "our-missions-k31",
+    "section": "Our Missions — पर्यावरण संरक्षण एवं वृक्षारोपण अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k32",
+    "key": "our-missions-k32",
+    "section": "Our Missions — पर्यावरण संरक्षण एवं वृक्षारोपण अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i33",
+    "key": "our-missions-i33",
+    "section": "Our Missions — पर्यावरण संरक्षण एवं वृक्षारोपण अभियान",
+    "currentSrc": "/img/campaign-disaster.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k34",
+    "key": "our-missions-k34",
+    "section": "Our Missions — आपदा राहत एवं मानव सहायता अभियान",
+    "text": "आपदा एवं आपातकालीन परिस्थितियों में राहत, सहायता एवं मानव सेवा का अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k35",
+    "key": "our-missions-k35",
+    "section": "Our Missions — आपदा राहत एवं मानव सहायता अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k36",
+    "key": "our-missions-k36",
+    "section": "Our Missions — आपदा राहत एवं मानव सहायता अभियान",
+    "text": "Goal: ₹5,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "our-missions-i37",
+    "key": "our-missions-i37",
+    "section": "Our Missions — आपदा राहत एवं मानव सहायता अभियान",
+    "currentSrc": "/img/megaphone.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k38",
+    "key": "our-missions-k38",
+    "section": "Our Missions — फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान",
+    "text": "फिल्म, वेब सीरीज़, संगीत एवं डिजिटल मीडिया द्वारा सकारात्मक सामाजिक संदेश पहुँचाने का अभियान।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k39",
+    "key": "our-missions-k39",
+    "section": "Our Missions — फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान",
+    "text": "₹0"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "our-missions-k40",
+    "key": "our-missions-k40",
+    "section": "Our Missions — फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान",
+    "text": "Goal: ₹5,00,000"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-future-missions-section",
+  "_type": "page",
+  "title": "Home — Future Missions Section",
+  "path": "/",
+  "order": 6,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k1",
+    "key": "future-missions-section-k1",
+    "section": "Future Missions Section",
+    "text": "Service Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k2",
+    "key": "future-missions-section-k2",
+    "section": "Future Missions Section",
+    "text": "आपके सहयोग, निधि एवं समर्थन की प्रतीक्षा में।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k3",
+    "key": "future-missions-section-k3",
+    "section": "Future Missions Section",
+    "text": "Awaiting Your Support & Contribution"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k4",
+    "key": "future-missions-section-k4",
+    "section": "Future Missions Section",
+    "text": "शीघ्र प्रारंभ होने वाले सेवा अभियान, जिनमें आप सहभागी बन सकते हैं। आपका सहयोग इन्हें वास्तविकता में बदल सकता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k5",
+    "key": "future-missions-section-k5",
+    "section": "Future Missions Section",
+    "text": "View All Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "future-missions-section-k6",
+    "key": "future-missions-section-k6",
+    "section": "Future Missions Section",
+    "text": "सभी आगामी सेवा मिशन एक साथ देखें।"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-long-term-commitment",
+  "_type": "page",
+  "title": "Home — Long Term Commitment",
+  "path": "/",
+  "order": 7,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k1",
+    "key": "long-term-commitment-k1",
+    "section": "Long Term Commitment",
+    "text": "Commitment"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k2",
+    "key": "long-term-commitment-k2",
+    "section": "Long Term Commitment",
+    "text": "हमारा दीर्घकालिक संकल्प।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k3",
+    "key": "long-term-commitment-k3",
+    "section": "Long Term Commitment",
+    "text": "“सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।”"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k4",
+    "key": "long-term-commitment-k4",
+    "section": "Long Term Commitment",
+    "text": "सनातन धर्म मानव कल्याण फाउंडेशन का उद्देश्य केवल वर्तमान समस्याओं का समाधान करना नहीं, बल्कि आने वाली पीढ़ियों के लिए एक सुरक्षित, संस्कारित, संगठित एवं आत्मनिर्भर समाज की मजबूत नींव तैयार करना है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k5",
+    "key": "long-term-commitment-k5",
+    "section": "Long Term Commitment",
+    "text": "हमारा प्रथम संकल्प सनातन समाज को संगठित, सुरक्षित, जागरूक एवं सशक्त बनाना है, ताकि आवश्यकता पड़ने पर प्रत्येक सनातनी को सहयोग, मार्गदर्शन एवं सहायता का एक विश्वसनीय मंच उपलब्ध हो सके।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k6",
+    "key": "long-term-commitment-k6",
+    "section": "Long Term Commitment",
+    "text": "हम मानते हैं कि वास्तविक परिवर्तन केवल सहायता प्रदान करने से नहीं, बल्कि समाज को जागरूक, संगठित और आत्मनिर्भर बनाने से आता है। इसी विचार के साथ संस्था सेवा, संस्कार, सामाजिक उत्तरदायित्व, महिला सुरक्षा, स्वास्थ्य सहायता, शिक्षा, गौ सेवा, पर्यावरण संरक्षण एवं जनजागरण के विभिन्न क्षेत्रों में दीर्घकालिक कार्य करने के लिए प्रतिबद्ध है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k7",
+    "key": "long-term-commitment-k7",
+    "section": "Long Term Commitment",
+    "text": "हमारी कार्य दिशा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k8",
+    "key": "long-term-commitment-k8",
+    "section": "Long Term Commitment — सेवा एवं मानव कल्याण",
+    "text": "कोई भूखा न सोए, कोई असहाय अकेला न रहे और आवश्यकता पड़ने पर प्रत्येक सनातनी को समय पर सहयोग एवं सहायता प्राप्त हो सके — इसी उद्देश्य से विभिन्न सेवा, सहायता एवं जनकल्याण कार्यक्रमों का संचालन किया जाता है। साथ ही आवश्यकता अनुसार अन्य जरूरतमंद लोगों तक भी मानवीय सहायता पहुँचाने का प्रयास किया जाता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k9",
+    "key": "long-term-commitment-k9",
+    "section": "Long Term Commitment — शिक्षा, संस्कार एवं जनजागरण",
+    "text": "बच्चों, युवाओं एवं समाज में नैतिक मूल्यों, भारतीय संस्कृति, सनातन परंपराओं, सामाजिक उत्तरदायित्व एवं राष्ट्रहित की भावना को सुदृढ़ करना तथा जागरूक एवं संस्कारित समाज के निर्माण में योगदान देना।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k10",
+    "key": "long-term-commitment-k10",
+    "section": "Long Term Commitment — महिला सुरक्षा, सम्मान एवं सशक्तीकरण",
+    "text": "महिलाओं की सुरक्षा हमारी सर्वोच्च प्राथमिकताओं में से एक है। महिला सुरक्षा, सम्मान, जागरूकता, आत्मनिर्भरता एवं अधिकारों के संरक्षण हेतु सहयोग, मार्गदर्शन, सहायता एवं जनजागरण अभियान संचालित किए जाते हैं। हमारा प्रयास है कि प्रत्येक महिला स्वयं को सुरक्षित, सम्मानित, सक्षम और आत्मविश्वासी महसूस करे तथा उसे उसके अधिकार एवं सम्मान प्राप्त हों।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k11",
+    "key": "long-term-commitment-k11",
+    "section": "Long Term Commitment — स्वास्थ्य सहायता एवं राहत कार्य",
+    "text": "आर्थिक रूप से कमजोर, असहाय एवं जरूरतमंद सनातनी परिवारों को स्वास्थ्य सहायता, चिकित्सा सहयोग, रक्तदान, आपदा राहत एवं आपातकालीन सहायता उपलब्ध कराने के लिए निरंतर प्रयास करना। आवश्यकता अनुसार अन्य जरूरतमंद व्यक्तियों तक भी मानवीय सहयोग पहुँचाने का प्रयास किया जाता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k12",
+    "key": "long-term-commitment-k12",
+    "section": "Long Term Commitment — गौ सेवा एवं पर्यावरण संरक्षण",
+    "text": "गौ संरक्षण, गौ सेवा, वृक्षारोपण, जल संरक्षण एवं पर्यावरण जागरूकता के माध्यम से प्रकृति एवं जीव-जगत के प्रति अपनी जिम्मेदारियों का निर्वहन करना।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k13",
+    "key": "long-term-commitment-k13",
+    "section": "Long Term Commitment — संगठन, सुरक्षा एवं सामाजिक सहयोग",
+    "text": "सनातन समाज को एक सशक्त, संगठित एवं सहयोगी नेटवर्क से जोड़ना, सामाजिक जागरूकता बढ़ाना, गलत गतिविधियों के प्रति सतर्कता विकसित करना तथा आवश्यकता पड़ने पर सहयोग एवं मार्गदर्शन उपलब्ध कराना।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k14",
+    "key": "long-term-commitment-k14",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "कौशल विकास, मार्गदर्शन, जनसहभागिता, स्वयंसेवा एवं सामुदायिक सहयोग के माध्यम से ऐसे समाज का निर्माण करना जहाँ व्यक्ति केवल सहायता प्राप्त करने वाला नहीं, बल्कि दूसरों की सहायता करने में भी सक्षम बन सके।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k15",
+    "key": "long-term-commitment-k15",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "हमारा विश्वास"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k16",
+    "key": "long-term-commitment-k16",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "हमारा विश्वास है कि जब सेवा संस्कारों से जुड़ती है, सुरक्षा संगठन से जुड़ती है और समाज जागरूक होकर एक साथ खड़ा होता है, तब परिवर्तन केवल एक अभियान नहीं रहता — वह एक स्थायी सामाजिक शक्ति बन जाता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k17",
+    "key": "long-term-commitment-k17",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "हम ऐसा समाज देखना चाहते हैं जहाँ प्रत्येक सनातनी स्वयं को सुरक्षित, सम्मानित, जागरूक एवं संगठित महसूस करे, जहाँ सेवा जीवन का संस्कार बने और जहाँ समाज का प्रत्येक सक्षम व्यक्ति किसी न किसी रूप में मानव कल्याण का सहभागी बने।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k18",
+    "key": "long-term-commitment-k18",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "इसी विश्वास और संकल्प के साथ सनातन धर्म मानव कल्याण फाउंडेशन सेवा, सुरक्षा, संस्कार एवं आत्मनिर्भरता आधारित समाज निर्माण के लिए निरंतर कार्यरत है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k19",
+    "key": "long-term-commitment-k19",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "आप भी इस मिशन का हिस्सा बनें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k20",
+    "key": "long-term-commitment-k20",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "सेवा का संकल्प लें, समाज से जुड़ें और सकारात्मक परिवर्तन के सहभागी बनें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k21",
+    "key": "long-term-commitment-k21",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "Join Us"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k22",
+    "key": "long-term-commitment-k22",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "Donate Now"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k23",
+    "key": "long-term-commitment-k23",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "Daily Support"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k24",
+    "key": "long-term-commitment-k24",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "Start Fundraising"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "long-term-commitment-k25",
+    "key": "long-term-commitment-k25",
+    "section": "Long Term Commitment — आत्मनिर्भर एवं सशक्त समाज निर्माण",
+    "text": "“सेवा ही सनातन, समर्पण ही हमारा धर्म।”"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-seva-activities",
+  "_type": "page",
+  "title": "Home — Seva Activities",
+  "path": "/",
+  "order": 8,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k1",
+    "key": "seva-activities-k1",
+    "section": "Seva Activities",
+    "text": "बढ़ते कदम"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k2",
+    "key": "seva-activities-k2",
+    "section": "Seva Activities",
+    "text": "Our Mission Journey"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k3",
+    "key": "seva-activities-k3",
+    "section": "Seva Activities",
+    "text": "चल रहे, आगामी एवं पूर्ण हो चुके सेवा अभियानों की एक प्रेरक झलक।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k4",
+    "key": "seva-activities-k4",
+    "section": "Seva Activities",
+    "text": "हमारे सेवा, जनजागरण एवं विकास अभियानों की वर्तमान यात्रा — सक्रिय मिशन, सहयोग की प्रतीक्षा में चल रही भावी योजनाएँ तथा सफलतापूर्वक पूर्ण किए गए सेवा कार्य।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k5",
+    "key": "seva-activities-k5",
+    "section": "Seva Activities",
+    "text": "Active Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k6",
+    "key": "seva-activities-k6",
+    "section": "Seva Activities",
+    "text": "सक्रिय मिशन (वर्तमान)"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k7",
+    "key": "seva-activities-k7",
+    "section": "Seva Activities",
+    "text": "वर्तमान में संचालित सेवा कार्य एवं अभियान, जिनमें आपका सहयोग सकारात्मक परिवर्तन लाता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k8",
+    "key": "seva-activities-k8",
+    "section": "Seva Activities",
+    "text": "5 सक्रिय अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k9",
+    "key": "seva-activities-k9",
+    "section": "Seva Activities",
+    "text": "सनातन बोर्ड"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k10",
+    "key": "seva-activities-k10",
+    "section": "Seva Activities",
+    "text": "हमारा प्रथम एवं प्रमुख मिशन"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k11",
+    "key": "seva-activities-k11",
+    "section": "Seva Activities",
+    "text": "सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k12",
+    "key": "seva-activities-k12",
+    "section": "Seva Activities",
+    "text": "महिला सुरक्षा एवं सम्मान अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k13",
+    "key": "seva-activities-k13",
+    "section": "Seva Activities",
+    "text": "सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k14",
+    "key": "seva-activities-k14",
+    "section": "Seva Activities",
+    "text": "अन्न सेवा अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k15",
+    "key": "seva-activities-k15",
+    "section": "Seva Activities",
+    "text": "सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k16",
+    "key": "seva-activities-k16",
+    "section": "Seva Activities",
+    "text": "शिक्षा एवं संस्कार सहायता अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k17",
+    "key": "seva-activities-k17",
+    "section": "Seva Activities",
+    "text": "सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k18",
+    "key": "seva-activities-k18",
+    "section": "Seva Activities",
+    "text": "धोखाधड़ी जागरूकता एवं सहायता अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k19",
+    "key": "seva-activities-k19",
+    "section": "Seva Activities",
+    "text": "सक्रिय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k20",
+    "key": "seva-activities-k20",
+    "section": "Seva Activities",
+    "text": "सभी सक्रिय अभियान देखें →"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k21",
+    "key": "seva-activities-k21",
+    "section": "Seva Activities",
+    "text": "Upcoming Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k22",
+    "key": "seva-activities-k22",
+    "section": "Seva Activities",
+    "text": "आगामी सेवा मिशन"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k23",
+    "key": "seva-activities-k23",
+    "section": "Seva Activities",
+    "text": "प्रस्तावित सेवा परियोजनाएँ एवं जनकल्याण अभियान, जो आपके सहयोग एवं समर्थन की प्रतीक्षा में हैं।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k24",
+    "key": "seva-activities-k24",
+    "section": "Seva Activities",
+    "text": "5 प्रस्तावित परियोजनाएँ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k25",
+    "key": "seva-activities-k25",
+    "section": "Seva Activities",
+    "text": "सनातन हेल्प सेंटर"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k26",
+    "key": "seva-activities-k26",
+    "section": "Seva Activities",
+    "text": "सनातनी भोजनालय"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k27",
+    "key": "seva-activities-k27",
+    "section": "Seva Activities",
+    "text": "सनातनी स्किल डेवलपमेंट सेंटर"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k28",
+    "key": "seva-activities-k28",
+    "section": "Seva Activities",
+    "text": "सनातनी आश्रय धाम"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k29",
+    "key": "seva-activities-k29",
+    "section": "Seva Activities",
+    "text": "सनातन गुरुकुल एवं संस्कार केंद्र"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k30",
+    "key": "seva-activities-k30",
+    "section": "Seva Activities",
+    "text": "सभी आगामी मिशन देखें →"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k31",
+    "key": "seva-activities-k31",
+    "section": "Seva Activities",
+    "text": "Completed Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k32",
+    "key": "seva-activities-k32",
+    "section": "Seva Activities",
+    "text": "सफलतापूर्वक पूर्ण मिशन"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k33",
+    "key": "seva-activities-k33",
+    "section": "Seva Activities",
+    "text": "आपके अमूल्य सहयोग से सफलतापूर्वक पूर्ण हुए सेवा कार्य, जनकल्याण अभियान एवं सामाजिक पहल।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k34",
+    "key": "seva-activities-k34",
+    "section": "Seva Activities",
+    "text": "5 पूर्ण अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k35",
+    "key": "seva-activities-k35",
+    "section": "Seva Activities",
+    "text": "(पिछले महीनों में पूर्ण किए गए सेवा अभियान)"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k36",
+    "key": "seva-activities-k36",
+    "section": "Seva Activities",
+    "text": "अन्न सेवा वितरण अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k37",
+    "key": "seva-activities-k37",
+    "section": "Seva Activities",
+    "text": "Completed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k38",
+    "key": "seva-activities-k38",
+    "section": "Seva Activities",
+    "text": "250+ People"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k39",
+    "key": "seva-activities-k39",
+    "section": "Seva Activities",
+    "text": "April 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k40",
+    "key": "seva-activities-k40",
+    "section": "Seva Activities",
+    "text": "निःशुल्क स्वास्थ्य एवं चिकित्सा सहायता शिविर"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k41",
+    "key": "seva-activities-k41",
+    "section": "Seva Activities",
+    "text": "Free Medical & Health Camp"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k42",
+    "key": "seva-activities-k42",
+    "section": "Seva Activities",
+    "text": "Completed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k43",
+    "key": "seva-activities-k43",
+    "section": "Seva Activities",
+    "text": "120+ People"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k44",
+    "key": "seva-activities-k44",
+    "section": "Seva Activities",
+    "text": "May 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k45",
+    "key": "seva-activities-k45",
+    "section": "Seva Activities",
+    "text": "वृक्षारोपण एवं पर्यावरण संरक्षण अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k46",
+    "key": "seva-activities-k46",
+    "section": "Seva Activities",
+    "text": "Tree Plantation Drive"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k47",
+    "key": "seva-activities-k47",
+    "section": "Seva Activities",
+    "text": "Completed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k48",
+    "key": "seva-activities-k48",
+    "section": "Seva Activities",
+    "text": "100+ Trees Planted"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k49",
+    "key": "seva-activities-k49",
+    "section": "Seva Activities",
+    "text": "June 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k50",
+    "key": "seva-activities-k50",
+    "section": "Seva Activities",
+    "text": "सनातन संस्कार एवं जागरूकता कार्यक्रम"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k51",
+    "key": "seva-activities-k51",
+    "section": "Seva Activities",
+    "text": "Sanatan Sanskar & Awareness Program"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k52",
+    "key": "seva-activities-k52",
+    "section": "Seva Activities",
+    "text": "Completed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k53",
+    "key": "seva-activities-k53",
+    "section": "Seva Activities",
+    "text": "80+ Families"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k54",
+    "key": "seva-activities-k54",
+    "section": "Seva Activities",
+    "text": "June 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k55",
+    "key": "seva-activities-k55",
+    "section": "Seva Activities",
+    "text": "गौ सेवा एवं चारा वितरण अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k56",
+    "key": "seva-activities-k56",
+    "section": "Seva Activities",
+    "text": "Gau Seva & Fodder Support Drive"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k57",
+    "key": "seva-activities-k57",
+    "section": "Seva Activities",
+    "text": "Completed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k58",
+    "key": "seva-activities-k58",
+    "section": "Seva Activities",
+    "text": "50+ Cattle Supported"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k59",
+    "key": "seva-activities-k59",
+    "section": "Seva Activities",
+    "text": "July 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k60",
+    "key": "seva-activities-k60",
+    "section": "Seva Activities",
+    "text": "पूर्ण अभियानों की रिपोर्ट देखें →"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k61",
+    "key": "seva-activities-k61",
+    "section": "Seva Activities",
+    "text": "यह सेवा यात्रा निरंतर आगे बढ़ रही है। आपका सहयोग आने वाले अनेक सेवा अभियानों को वास्तविकता में बदल सकता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "seva-activities-k62",
+    "key": "seva-activities-k62",
+    "section": "Seva Activities",
+    "text": "View Reports"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-start-fundraising",
+  "_type": "page",
+  "title": "Home — Start Fundraising",
+  "path": "/",
+  "order": 9,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k1",
+    "key": "start-fundraising-k1",
+    "section": "Start Fundraising",
+    "text": "Fundraising Support"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k2",
+    "key": "start-fundraising-k2",
+    "section": "Start Fundraising",
+    "text": "Fundraising"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k3",
+    "key": "start-fundraising-k3",
+    "section": "Start Fundraising",
+    "text": "निधि-संग्रह सहयोग सुविधा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k4",
+    "key": "start-fundraising-k4",
+    "section": "Start Fundraising",
+    "text": "आइए, मिलकर किसी मजबूर, लाचार एवं असहाय जरूरतमंद की आवश्यकता पूरी करें — आपका मामूली सहयोग भी उसके जीवन में अमूल्य महत्व रखता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k5",
+    "key": "start-fundraising-k5",
+    "section": "Start Fundraising",
+    "text": "हर Mission (अभियान) के पीछे एक वास्तविक जरूरत, एक संघर्ष और एक नई उम्मीद छिपी होती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k6",
+    "key": "start-fundraising-k6",
+    "section": "Start Fundraising",
+    "text": "Verified Missions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k7",
+    "key": "start-fundraising-k7",
+    "section": "Start Fundraising",
+    "text": "Social Causes"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k8",
+    "key": "start-fundraising-k8",
+    "section": "Start Fundraising",
+    "text": "Genuine Need Cases"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k9",
+    "key": "start-fundraising-k9",
+    "section": "Start Fundraising",
+    "text": "यह सुविधा संस्था की निगरानी एवं निर्धारित नीतियों के अनुसार संचालित की जाती है, ताकि आपका सहयोग सही व्यक्ति, सही उद्देश्य और सही समय पर पहुँच सके।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k10",
+    "key": "start-fundraising-k10",
+    "section": "Start Fundraising",
+    "text": "एक छोटी सी सहायता किसी के उपचार, भोजन, शिक्षा, सुरक्षा या सम्मानपूर्ण जीवन का आधार बन सकती है। आपका सहयोग केवल आर्थिक सहायता नहीं, बल्कि मानवता, करुणा और सनातन सेवा भाव का सशक्त प्रतीक है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "start-fundraising-k11",
+    "key": "start-fundraising-k11",
+    "section": "Start Fundraising",
+    "text": "Start Fundraising"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-active-fundraisers",
+  "_type": "page",
+  "title": "Home — Active Fundraisers",
+  "path": "/",
+  "order": 10,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k1",
+    "key": "active-fundraisers-k1",
+    "section": "Active Fundraisers",
+    "text": "Ongoing Fundraising Campaigns"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k2",
+    "key": "active-fundraisers-k2",
+    "section": "Active Fundraisers",
+    "text": "Fundraisers"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k3",
+    "key": "active-fundraisers-k3",
+    "section": "Active Fundraisers",
+    "text": "सक्रिय निधि-संग्रह अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k4",
+    "key": "active-fundraisers-k4",
+    "section": "Active Fundraisers",
+    "text": "वर्तमान में संचालित फंडरेज़िंग अभियान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k5",
+    "key": "active-fundraisers-k5",
+    "section": "Active Fundraisers",
+    "text": "View All Fundraisers"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k6",
+    "key": "active-fundraisers-k6",
+    "section": "Active Fundraisers",
+    "text": "सेवा, सहायता, जनजागरण एवं जनकल्याण अभियानों के लिए आपका सहयोग सादर आमंत्रित है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k7",
+    "key": "active-fundraisers-k7",
+    "section": "Active Fundraisers",
+    "text": "किसी अस्पताल के कक्ष में, किसी साधारण घर में, या खुले आसमान के नीचे जीवन से संघर्ष कर रहा कोई व्यक्ति आज भी सहायता की प्रतीक्षा कर रहा है। उसकी आँखों में यह विश्वास जीवित है कि समाज में ऐसे संवेदनशील लोग हैं जो पीड़ा को समझते हैं और सहायता के लिए आगे आते हैं। आपका छोटा सा सहयोग किसी के जीवन में आशा, सम्मान और नई शुरुआत का कारण बन सकता है। अनेक बार किसी जरूरतमंद के लिए समय पर मिली सहायता ईश्वर की कृपा के समान अनुभव होती है।"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i8",
+    "key": "active-fundraisers-i8",
+    "section": "Active Fundraisers",
+    "currentSrc": "/img/campaign-food.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k9",
+    "key": "active-fundraisers-k9",
+    "section": "Active Fundraisers",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k10",
+    "key": "active-fundraisers-k10",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k11",
+    "key": "active-fundraisers-k11",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "74%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k12",
+    "key": "active-fundraisers-k12",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "Goal ₹25,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i13",
+    "key": "active-fundraisers-i13",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "currentSrc": "/img/campaign-girl.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k14",
+    "key": "active-fundraisers-k14",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k15",
+    "key": "active-fundraisers-k15",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "64%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k16",
+    "key": "active-fundraisers-k16",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "Goal ₹15,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i17",
+    "key": "active-fundraisers-i17",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "currentSrc": "/img/campaign-medical.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k18",
+    "key": "active-fundraisers-k18",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k19",
+    "key": "active-fundraisers-k19",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "73%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k20",
+    "key": "active-fundraisers-k20",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "Goal ₹18,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i21",
+    "key": "active-fundraisers-i21",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "currentSrc": "/img/campaign-temple.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k22",
+    "key": "active-fundraisers-k22",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k23",
+    "key": "active-fundraisers-k23",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "69%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k24",
+    "key": "active-fundraisers-k24",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹40,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i25",
+    "key": "active-fundraisers-i25",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gaushala.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k26",
+    "key": "active-fundraisers-k26",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k27",
+    "key": "active-fundraisers-k27",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k28",
+    "key": "active-fundraisers-k28",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "66%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k29",
+    "key": "active-fundraisers-k29",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹12,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i30",
+    "key": "active-fundraisers-i30",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gurukul.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k31",
+    "key": "active-fundraisers-k31",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k32",
+    "key": "active-fundraisers-k32",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "60%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k33",
+    "key": "active-fundraisers-k33",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Goal ₹9,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i34",
+    "key": "active-fundraisers-i34",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "currentSrc": "/img/campaign-food.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k35",
+    "key": "active-fundraisers-k35",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k36",
+    "key": "active-fundraisers-k36",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k37",
+    "key": "active-fundraisers-k37",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "74%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k38",
+    "key": "active-fundraisers-k38",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "Goal ₹25,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i39",
+    "key": "active-fundraisers-i39",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "currentSrc": "/img/campaign-girl.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k40",
+    "key": "active-fundraisers-k40",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k41",
+    "key": "active-fundraisers-k41",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "64%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k42",
+    "key": "active-fundraisers-k42",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "Goal ₹15,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i43",
+    "key": "active-fundraisers-i43",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "currentSrc": "/img/campaign-medical.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k44",
+    "key": "active-fundraisers-k44",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k45",
+    "key": "active-fundraisers-k45",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "73%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k46",
+    "key": "active-fundraisers-k46",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "Goal ₹18,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i47",
+    "key": "active-fundraisers-i47",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "currentSrc": "/img/campaign-temple.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k48",
+    "key": "active-fundraisers-k48",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k49",
+    "key": "active-fundraisers-k49",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "69%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k50",
+    "key": "active-fundraisers-k50",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹40,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i51",
+    "key": "active-fundraisers-i51",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gaushala.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k52",
+    "key": "active-fundraisers-k52",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k53",
+    "key": "active-fundraisers-k53",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k54",
+    "key": "active-fundraisers-k54",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "66%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k55",
+    "key": "active-fundraisers-k55",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹12,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i56",
+    "key": "active-fundraisers-i56",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gurukul.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k57",
+    "key": "active-fundraisers-k57",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k58",
+    "key": "active-fundraisers-k58",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "60%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k59",
+    "key": "active-fundraisers-k59",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Goal ₹9,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i60",
+    "key": "active-fundraisers-i60",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "currentSrc": "/img/campaign-food.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k61",
+    "key": "active-fundraisers-k61",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k62",
+    "key": "active-fundraisers-k62",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k63",
+    "key": "active-fundraisers-k63",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "74%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k64",
+    "key": "active-fundraisers-k64",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "text": "Goal ₹25,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i65",
+    "key": "active-fundraisers-i65",
+    "section": "Active Fundraisers — Feed 10,000 families across Varanasi this month",
+    "currentSrc": "/img/campaign-girl.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k66",
+    "key": "active-fundraisers-k66",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k67",
+    "key": "active-fundraisers-k67",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "64%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k68",
+    "key": "active-fundraisers-k68",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "text": "Goal ₹15,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i69",
+    "key": "active-fundraisers-i69",
+    "section": "Active Fundraisers — Send 500 girls back to school in rural Bihar",
+    "currentSrc": "/img/campaign-medical.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k70",
+    "key": "active-fundraisers-k70",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k71",
+    "key": "active-fundraisers-k71",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "73%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k72",
+    "key": "active-fundraisers-k72",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "text": "Goal ₹18,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i73",
+    "key": "active-fundraisers-i73",
+    "section": "Active Fundraisers — Free medical camps in 40 tribal villages of Odisha",
+    "currentSrc": "/img/campaign-temple.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k74",
+    "key": "active-fundraisers-k74",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k75",
+    "key": "active-fundraisers-k75",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "69%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k76",
+    "key": "active-fundraisers-k76",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹40,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i77",
+    "key": "active-fundraisers-i77",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gaushala.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k78",
+    "key": "active-fundraisers-k78",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Urgent"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k79",
+    "key": "active-fundraisers-k79",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k80",
+    "key": "active-fundraisers-k80",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "66%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k81",
+    "key": "active-fundraisers-k81",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "text": "Goal ₹12,00,000"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "active-fundraisers-i82",
+    "key": "active-fundraisers-i82",
+    "section": "Active Fundraisers — Restoration of 800-year old Shri Hanuman Mandir, Rajasthan",
+    "currentSrc": "/img/campaign-gurukul.jpg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k83",
+    "key": "active-fundraisers-k83",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "raised"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k84",
+    "key": "active-fundraisers-k84",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "60%"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k85",
+    "key": "active-fundraisers-k85",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Goal ₹9,00,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k86",
+    "key": "active-fundraisers-k86",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "जरा सोचिए, आपका सहयोग कितना महत्वपूर्ण हो सकता है। आपकी छोटी-सी मदद किसी के जीवन में आशा, उपचार, सुरक्षा और नई शुरुआत का कारण बन सकती है। आइए, सहायता करें और सदैव सहायता करने योग्य बने रहें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "active-fundraisers-k87",
+    "key": "active-fundraisers-k87",
+    "section": "Active Fundraisers — Sponsor 100 students at traditional Gurukul, Haridwar",
+    "text": "Donate Now"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-join-the-mission",
+  "_type": "page",
+  "title": "Home — Join The Mission",
+  "path": "/",
+  "order": 11,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k1",
+    "key": "join-the-mission-k1",
+    "section": "Join The Mission",
+    "text": "Mission"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k2",
+    "key": "join-the-mission-k2",
+    "section": "Join The Mission",
+    "text": "Volunteer Ecosystem"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k3",
+    "key": "join-the-mission-k3",
+    "section": "Join The Mission",
+    "text": "साथ आइए • सेवा से जुड़िए • परिवर्तन का हिस्सा बनिए"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i4",
+    "key": "join-the-mission-i4",
+    "section": "Join The Mission",
+    "currentSrc": "/img/sanatani_sena.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k5",
+    "key": "join-the-mission-k5",
+    "section": "Join The Mission",
+    "text": "Join Sanatani Sena"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i6",
+    "key": "join-the-mission-i6",
+    "section": "Join The Mission",
+    "currentSrc": "/img/vigilance_department.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k7",
+    "key": "join-the-mission-k7",
+    "section": "Join The Mission",
+    "text": "Join Vigilance Department"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i8",
+    "key": "join-the-mission-i8",
+    "section": "Join The Mission",
+    "currentSrc": "/img/seva_network.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k9",
+    "key": "join-the-mission-k9",
+    "section": "Join The Mission",
+    "text": "Join Seva Network"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i10",
+    "key": "join-the-mission-i10",
+    "section": "Join The Mission",
+    "currentSrc": "/img/active_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k11",
+    "key": "join-the-mission-k11",
+    "section": "Join The Mission",
+    "text": "Become a Member"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i12",
+    "key": "join-the-mission-i12",
+    "section": "Join The Mission",
+    "currentSrc": "/img/supporting_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k13",
+    "key": "join-the-mission-k13",
+    "section": "Join The Mission",
+    "text": "Become a Patron Member"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i14",
+    "key": "join-the-mission-i14",
+    "section": "Join The Mission",
+    "currentSrc": "/img/sanatani_sena.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k15",
+    "key": "join-the-mission-k15",
+    "section": "Join The Mission",
+    "text": "Join Sanatani Sena"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i16",
+    "key": "join-the-mission-i16",
+    "section": "Join The Mission",
+    "currentSrc": "/img/vigilance_department.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k17",
+    "key": "join-the-mission-k17",
+    "section": "Join The Mission",
+    "text": "Join Vigilance Department"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i18",
+    "key": "join-the-mission-i18",
+    "section": "Join The Mission",
+    "currentSrc": "/img/seva_network.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k19",
+    "key": "join-the-mission-k19",
+    "section": "Join The Mission",
+    "text": "Join Seva Network"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i20",
+    "key": "join-the-mission-i20",
+    "section": "Join The Mission",
+    "currentSrc": "/img/active_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k21",
+    "key": "join-the-mission-k21",
+    "section": "Join The Mission",
+    "text": "Become a Member"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i22",
+    "key": "join-the-mission-i22",
+    "section": "Join The Mission",
+    "currentSrc": "/img/supporting_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k23",
+    "key": "join-the-mission-k23",
+    "section": "Join The Mission",
+    "text": "Become a Patron Member"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i24",
+    "key": "join-the-mission-i24",
+    "section": "Join The Mission",
+    "currentSrc": "/img/sanatani_sena.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k25",
+    "key": "join-the-mission-k25",
+    "section": "Join The Mission",
+    "text": "Join Sanatani Sena"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i26",
+    "key": "join-the-mission-i26",
+    "section": "Join The Mission",
+    "currentSrc": "/img/vigilance_department.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k27",
+    "key": "join-the-mission-k27",
+    "section": "Join The Mission",
+    "text": "Join Vigilance Department"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i28",
+    "key": "join-the-mission-i28",
+    "section": "Join The Mission",
+    "currentSrc": "/img/seva_network.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k29",
+    "key": "join-the-mission-k29",
+    "section": "Join The Mission",
+    "text": "Join Seva Network"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i30",
+    "key": "join-the-mission-i30",
+    "section": "Join The Mission",
+    "currentSrc": "/img/active_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k31",
+    "key": "join-the-mission-k31",
+    "section": "Join The Mission",
+    "text": "Become a Member"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "join-the-mission-i32",
+    "key": "join-the-mission-i32",
+    "section": "Join The Mission",
+    "currentSrc": "/img/supporting_member.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-the-mission-k33",
+    "key": "join-the-mission-k33",
+    "section": "Join The Mission",
+    "text": "Become a Patron Member"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-why-choose-us",
+  "_type": "page",
+  "title": "Home — Why Choose Us",
+  "path": "/",
+  "order": 12,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "why-choose-us-k1",
+    "key": "why-choose-us-k1",
+    "section": "Why Choose Us — Why Choose Us",
+    "text": "Built on Trust, Transparency & Service"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "why-choose-us-k2",
+    "key": "why-choose-us-k2",
+    "section": "Why Choose Us — Why Choose Us",
+    "text": "हम संस्था के कार्यों, अभियानों एवं उपलब्ध संसाधनों के उपयोग में पारदर्शिता और उत्तरदायित्व बनाए रखने के लिए प्रतिबद्ध हैं।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "why-choose-us-k3",
+    "key": "why-choose-us-k3",
+    "section": "Why Choose Us — Why Choose Us",
+    "text": "Section 8 Company, 12A, 80G, CSR-1 एवं NGO Darpan जैसे महत्वपूर्ण पंजीकरणों के अंतर्गत कार्यरत एक वैधानिक संस्था।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "why-choose-us-k4",
+    "key": "why-choose-us-k4",
+    "section": "Why Choose Us — Why Choose Us",
+    "text": "सभी ऑनलाइन सहयोग राशि अधिकृत एवं सुरक्षित भुगतान माध्यमों के द्वारा स्वीकार की जाती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "why-choose-us-k5",
+    "key": "why-choose-us-k5",
+    "section": "Why Choose Us — Why Choose Us",
+    "text": "संस्था की टीम, स्वयंसेवक एवं सहयोगी सदस्य सेवा, जागरूकता एवं जनकल्याण के विभिन्न अभियानों में सक्रिय रूप से योगदान देते हैं।"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-verification-portal",
+  "_type": "page",
+  "title": "Home — Verification Portal",
+  "path": "/",
+  "order": 13,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k1",
+    "key": "verification-portal-k1",
+    "section": "Verification Portal — Verification Portal",
+    "text": "विश्वास के साथ सत्यापन • भरोसे के साथ पुष्टि"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k2",
+    "key": "verification-portal-k2",
+    "section": "Verification Portal — Verification Portal",
+    "text": "हमारी संस्था द्वारा जारी स्वयंसेवक पहचान पत्र, सदस्य प्रमाणपत्र, नियुक्ति पत्र, समन्वयक नियुक्तियाँ, दान रसीदें तथा अन्य आधिकारिक दस्तावेज़ों की ऑनलाइन सत्यापन सुविधा उपलब्ध है। प्रत्येक प्रमाणपत्र एवं पहचान विवरण को निर्धारित सत्यापन प्रणाली के माध्यम से वास्तविक समय (Real-Time) में जाँचा जा सकता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k3",
+    "key": "verification-portal-k3",
+    "section": "Verification Portal — Verification Portal",
+    "text": "पारदर्शिता, विश्वसनीयता और जनविश्वास हमारे कार्यों की आधारशिला हैं। किसी भी दस्तावेज़ की पुष्टि कर निश्चिंत होकर संस्था से जुड़ें और सेवा कार्यों में सहभागिता करें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k4",
+    "key": "verification-portal-k4",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Volunteer ID"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k5",
+    "key": "verification-portal-k5",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Member Certificate"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k6",
+    "key": "verification-portal-k6",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Coordinator ID"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k7",
+    "key": "verification-portal-k7",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Donation Receipt"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k8",
+    "key": "verification-portal-k8",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Appointment Letter"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "verification-portal-k9",
+    "key": "verification-portal-k9",
+    "section": "Verification Portal — Verification Portal",
+    "text": "Verify Now"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-cultural-media-hub",
+  "_type": "page",
+  "title": "Home — Cultural Media Hub",
+  "path": "/",
+  "order": 14,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k1",
+    "key": "cultural-media-hub-k1",
+    "section": "Cultural Media Hub — Cultural Media Hub",
+    "text": "Sanatan Stories • Culture • Inspiration"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k2",
+    "key": "cultural-media-hub-k2",
+    "section": "Cultural Media Hub — Cultural Media Hub",
+    "text": "Watch inspiring Sanatan stories, cultural films, devotional music, awareness videos and meaningful content that connects hearts with culture and values."
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k3",
+    "key": "cultural-media-hub-k3",
+    "section": "Cultural Media Hub — Films &amp; Documentaries",
+    "text": "24 productions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k4",
+    "key": "cultural-media-hub-k4",
+    "section": "Cultural Media Hub — Films &amp; Documentaries",
+    "text": "Watch trailer"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k5",
+    "key": "cultural-media-hub-k5",
+    "section": "Cultural Media Hub — Web Series",
+    "text": "6 ongoing seasons"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k6",
+    "key": "cultural-media-hub-k6",
+    "section": "Cultural Media Hub — Web Series",
+    "text": "Watch trailer"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k7",
+    "key": "cultural-media-hub-k7",
+    "section": "Cultural Media Hub — Bhakti &amp; Bhajan",
+    "text": "180+ tracks"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k8",
+    "key": "cultural-media-hub-k8",
+    "section": "Cultural Media Hub — Bhakti &amp; Bhajan",
+    "text": "Watch trailer"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k9",
+    "key": "cultural-media-hub-k9",
+    "section": "Cultural Media Hub — Cultural Campaigns",
+    "text": "12 active initiatives"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "cultural-media-hub-k10",
+    "key": "cultural-media-hub-k10",
+    "section": "Cultural Media Hub — Cultural Campaigns",
+    "text": "Watch trailer"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-nitya-seva-sankalp",
+  "_type": "page",
+  "title": "Home — Nitya Seva Sankalp",
+  "path": "/",
+  "order": 15,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k1",
+    "key": "nitya-seva-sankalp-k1",
+    "section": "Nitya Seva Sankalp",
+    "text": "Daily Support"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k2",
+    "key": "nitya-seva-sankalp-k2",
+    "section": "Nitya Seva Sankalp",
+    "text": "नियमित सेवा, स्थायी प्रभाव।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k3",
+    "key": "nitya-seva-sankalp-k3",
+    "section": "Nitya Seva Sankalp",
+    "text": "नित्य दानी बनकर हमारे सेवा अभियानों को निरंतर सहयोग दें। आपका मासिक सहयोग अन्न सेवा, स्वास्थ्य सहायता, शिक्षा सहायता, गौ सेवा, महिला सहायता एवं अन्य मानव कल्याण कार्यों को निरंतर गति प्रदान करता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k4",
+    "key": "nitya-seva-sankalp-k4",
+    "section": "Nitya Seva Sankalp",
+    "text": "नियमित सहयोग, निरंतर सेवा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k5",
+    "key": "nitya-seva-sankalp-k5",
+    "section": "Nitya Seva Sankalp",
+    "text": "80G Tax Benefit (लागू नियमों के अनुसार)"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k6",
+    "key": "nitya-seva-sankalp-k6",
+    "section": "Nitya Seva Sankalp",
+    "text": "सेवा कार्यों एवं प्रभाव की समय-समय पर जानकारी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k7",
+    "key": "nitya-seva-sankalp-k7",
+    "section": "Nitya Seva Sankalp",
+    "text": "पूर्ण पारदर्शिता एवं जवाबदेही"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k8",
+    "key": "nitya-seva-sankalp-k8",
+    "section": "Nitya Seva Sankalp",
+    "text": "सेवक"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k9",
+    "key": "nitya-seva-sankalp-k9",
+    "section": "Nitya Seva Sankalp",
+    "text": "₹500"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k10",
+    "key": "nitya-seva-sankalp-k10",
+    "section": "Nitya Seva Sankalp",
+    "text": "/ माह"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k11",
+    "key": "nitya-seva-sankalp-k11",
+    "section": "Nitya Seva Sankalp",
+    "text": "आपका मासिक सहयोग जरूरतमंद लोगों तक सहायता पहुँचाने और सेवा अभियानों को निरंतर रखने में योगदान देता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k12",
+    "key": "nitya-seva-sankalp-k12",
+    "section": "Nitya Seva Sankalp",
+    "text": "सहयोगी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k13",
+    "key": "nitya-seva-sankalp-k13",
+    "section": "Nitya Seva Sankalp",
+    "text": "₹1100"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k14",
+    "key": "nitya-seva-sankalp-k14",
+    "section": "Nitya Seva Sankalp",
+    "text": "/ माह"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k15",
+    "key": "nitya-seva-sankalp-k15",
+    "section": "Nitya Seva Sankalp",
+    "text": "आपका मासिक सहयोग अन्न सेवा, शिक्षा सहायता, स्वास्थ्य सहायता एवं गौ सेवा जैसे अनेक मानव कल्याण अभियानों को निरंतर सहयोग प्रदान करने में सहायक होता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k16",
+    "key": "nitya-seva-sankalp-k16",
+    "section": "Nitya Seva Sankalp",
+    "text": "धर्मवीर"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k17",
+    "key": "nitya-seva-sankalp-k17",
+    "section": "Nitya Seva Sankalp",
+    "text": "₹2100"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k18",
+    "key": "nitya-seva-sankalp-k18",
+    "section": "Nitya Seva Sankalp",
+    "text": "/ माह"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "nitya-seva-sankalp-k19",
+    "key": "nitya-seva-sankalp-k19",
+    "section": "Nitya Seva Sankalp",
+    "text": "गौ सेवा, सनातन संस्कृति संरक्षण, स्वास्थ्य सहायता एवं समाज सेवा के विविध अभियानों को निरंतर सहयोग प्रदान करने हेतु समर्पित मासिक सहयोग।"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-donation-hub",
+  "_type": "page",
+  "title": "Home — Donation Hub",
+  "path": "/",
+  "order": 16,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k1",
+    "key": "donation-hub-k1",
+    "section": "Donation Hub",
+    "text": "Hub"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k2",
+    "key": "donation-hub-k2",
+    "section": "Donation Hub",
+    "text": "Online & Offline"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k3",
+    "key": "donation-hub-k3",
+    "section": "Donation Hub",
+    "text": "ऑनलाइन एवं प्रत्यक्ष सहयोग माध्यम।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k4",
+    "key": "donation-hub-k4",
+    "section": "Donation Hub",
+    "text": "Choose Contribution Amount:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k5",
+    "key": "donation-hub-k5",
+    "section": "Donation Hub",
+    "text": "Selected: ₹501"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k6",
+    "key": "donation-hub-k6",
+    "section": "Donation Hub",
+    "text": "₹51"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k7",
+    "key": "donation-hub-k7",
+    "section": "Donation Hub",
+    "text": "शुभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k8",
+    "key": "donation-hub-k8",
+    "section": "Donation Hub",
+    "text": "₹101"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k9",
+    "key": "donation-hub-k9",
+    "section": "Donation Hub",
+    "text": "मंगल"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k10",
+    "key": "donation-hub-k10",
+    "section": "Donation Hub",
+    "text": "₹301"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k11",
+    "key": "donation-hub-k11",
+    "section": "Donation Hub",
+    "text": "शुभारंभ"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k12",
+    "key": "donation-hub-k12",
+    "section": "Donation Hub",
+    "text": "₹501"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k13",
+    "key": "donation-hub-k13",
+    "section": "Donation Hub",
+    "text": "एक परिवार का सहारा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k14",
+    "key": "donation-hub-k14",
+    "section": "Donation Hub",
+    "text": "₹1,001"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k15",
+    "key": "donation-hub-k15",
+    "section": "Donation Hub",
+    "text": "शिक्षा सहयोग"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k16",
+    "key": "donation-hub-k16",
+    "section": "Donation Hub",
+    "text": "₹5,001"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k17",
+    "key": "donation-hub-k17",
+    "section": "Donation Hub",
+    "text": "विशेष सहायता"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k18",
+    "key": "donation-hub-k18",
+    "section": "Donation Hub",
+    "text": "₹11,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k19",
+    "key": "donation-hub-k19",
+    "section": "Donation Hub",
+    "text": "बड़ी मदद"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k20",
+    "key": "donation-hub-k20",
+    "section": "Donation Hub",
+    "text": "₹21,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k21",
+    "key": "donation-hub-k21",
+    "section": "Donation Hub",
+    "text": "महत्वपूर्ण योगदान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k22",
+    "key": "donation-hub-k22",
+    "section": "Donation Hub",
+    "text": "₹51,000"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k23",
+    "key": "donation-hub-k23",
+    "section": "Donation Hub",
+    "text": "सम्मानित सहयोगी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k24",
+    "key": "donation-hub-k24",
+    "section": "Donation Hub",
+    "text": "₹1,00,001"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k25",
+    "key": "donation-hub-k25",
+    "section": "Donation Hub",
+    "text": "गर्व का योगदान"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k26",
+    "key": "donation-hub-k26",
+    "section": "Donation Hub",
+    "text": "Google Pay"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k27",
+    "key": "donation-hub-k27",
+    "section": "Donation Hub",
+    "text": "+91 97680 00666"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k28",
+    "key": "donation-hub-k28",
+    "section": "Donation Hub",
+    "text": "Scan & pay:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k29",
+    "key": "donation-hub-k29",
+    "section": "Donation Hub",
+    "text": "₹501"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k30",
+    "key": "donation-hub-k30",
+    "section": "Donation Hub",
+    "text": "UPI ID:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k32",
+    "key": "donation-hub-k32",
+    "section": "Donation Hub",
+    "text": "BHIM"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k33",
+    "key": "donation-hub-k33",
+    "section": "Donation Hub",
+    "text": "UPI"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k34",
+    "key": "donation-hub-k34",
+    "section": "Donation Hub",
+    "text": "G Pay"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k35",
+    "key": "donation-hub-k35",
+    "section": "Donation Hub",
+    "text": "Paytm"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k36",
+    "key": "donation-hub-k36",
+    "section": "Donation Hub",
+    "text": "PhonePe"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k37",
+    "key": "donation-hub-k37",
+    "section": "Donation Hub",
+    "text": "Open GPay / UPI App (₹501)"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k38",
+    "key": "donation-hub-k38",
+    "section": "Donation Hub — पारदर्शिता, जवाबदेही और विश्वास हमारी प्राथमिकता है।",
+    "text": "Donation Receipt ईमेल एवं WhatsApp पर उपलब्ध कराई जाती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k39",
+    "key": "donation-hub-k39",
+    "section": "Donation Hub — पारदर्शिता, जवाबदेही और विश्वास हमारी प्राथमिकता है।",
+    "text": "80G Tax Benefit (लागू नियमों के अनुसार)।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k40",
+    "key": "donation-hub-k40",
+    "section": "Donation Hub — पारदर्शिता, जवाबदेही और विश्वास हमारी प्राथमिकता है।",
+    "text": "प्रमुख सेवा कार्यों एवं अभियानों की जानकारी समय-समय पर साझा की जाती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "donation-hub-k41",
+    "key": "donation-hub-k41",
+    "section": "Donation Hub — पारदर्शिता, जवाबदेही और विश्वास हमारी प्राथमिकता है।",
+    "text": "महत्वपूर्ण रिपोर्ट एवं दस्तावेज उपलब्ध कराए जाते हैं।"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-csr-partnerships",
+  "_type": "page",
+  "title": "Home — CSR Partnerships",
+  "path": "/",
+  "order": 17,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "csr-partnerships-k1",
+    "key": "csr-partnerships-k1",
+    "section": "Csr Partnerships",
+    "text": "Partnerships"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "csr-partnerships-k2",
+    "key": "csr-partnerships-k2",
+    "section": "Csr Partnerships",
+    "text": "साझेदारी से सेवा, सहयोग से परिवर्तन।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "csr-partnerships-k3",
+    "key": "csr-partnerships-k3",
+    "section": "Csr Partnerships",
+    "text": "CSR, Sponsorship एवं Strategic Partnerships के माध्यम से समाज कल्याण एवं जनहित कार्यों में हमारे साथ जुड़ें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "csr-partnerships-k4",
+    "key": "csr-partnerships-k4",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "text": "From rural education to gaushala infrastructure — co-design and co-brand programs aligned to your CSR mandate."
+   },
+   {
+    "_type": "textBlock",
+    "_key": "csr-partnerships-k5",
+    "key": "csr-partnerships-k5",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "text": "CSR Partnership"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i6",
+    "key": "csr-partnerships-i6",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/tata.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i7",
+    "key": "csr-partnerships-i7",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/infosys.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i8",
+    "key": "csr-partnerships-i8",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/wipro.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i9",
+    "key": "csr-partnerships-i9",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/reliance.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i10",
+    "key": "csr-partnerships-i10",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/icici.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i11",
+    "key": "csr-partnerships-i11",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/indian.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i12",
+    "key": "csr-partnerships-i12",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/tata.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i13",
+    "key": "csr-partnerships-i13",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/infosys.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i14",
+    "key": "csr-partnerships-i14",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/wipro.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i15",
+    "key": "csr-partnerships-i15",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/reliance.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i16",
+    "key": "csr-partnerships-i16",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/icici.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i17",
+    "key": "csr-partnerships-i17",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/indian.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i18",
+    "key": "csr-partnerships-i18",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/hdfc.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i19",
+    "key": "csr-partnerships-i19",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/abg.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i20",
+    "key": "csr-partnerships-i20",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/lnt.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i21",
+    "key": "csr-partnerships-i21",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/mahindra.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i22",
+    "key": "csr-partnerships-i22",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/ntpc.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i23",
+    "key": "csr-partnerships-i23",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/hdfc.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i24",
+    "key": "csr-partnerships-i24",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/abg.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i25",
+    "key": "csr-partnerships-i25",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/lnt.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i26",
+    "key": "csr-partnerships-i26",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/mahindra.jpeg",
+    "alt": ""
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "csr-partnerships-i27",
+    "key": "csr-partnerships-i27",
+    "section": "Csr Partnerships — Become a CSR Partner",
+    "currentSrc": "/img/ntpc.jpeg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "_id": "page-home-festival-calendar-preview",
+  "_type": "page",
+  "title": "Home — Festival Calendar Preview",
+  "path": "/",
+  "order": 18,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k1",
+    "key": "festival-calendar-preview-k1",
+    "section": "Festival Calendar Preview",
+    "text": "सनातन पंचांग"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k2",
+    "key": "festival-calendar-preview-k2",
+    "section": "Festival Calendar Preview",
+    "text": "सनातन पर्व, उत्सव एवं सेवा पंचांग।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k3",
+    "key": "festival-calendar-preview-k3",
+    "section": "Festival Calendar Preview",
+    "text": "Click or hover on any auspicious festival to discover its spiritual significance, motivational quotes, and contribute to its dedicated Seva mission."
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k4",
+    "key": "festival-calendar-preview-k4",
+    "section": "Festival Calendar Preview",
+    "text": "All Events"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k5",
+    "key": "festival-calendar-preview-k5",
+    "section": "Festival Calendar Preview",
+    "text": "महापर्व (Major) 🚩"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k6",
+    "key": "festival-calendar-preview-k6",
+    "section": "Festival Calendar Preview",
+    "text": "पवित्र पर्व (Medium) 🪔"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k7",
+    "key": "festival-calendar-preview-k7",
+    "section": "Festival Calendar Preview",
+    "text": "शुभ व्रत (Vrat & Seva) 🌸"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k8",
+    "key": "festival-calendar-preview-k8",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "अगस्त 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k9",
+    "key": "festival-calendar-preview-k9",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Sun"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k10",
+    "key": "festival-calendar-preview-k10",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "रवि"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k11",
+    "key": "festival-calendar-preview-k11",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Mon"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k12",
+    "key": "festival-calendar-preview-k12",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "सोम"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k13",
+    "key": "festival-calendar-preview-k13",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Tue"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k14",
+    "key": "festival-calendar-preview-k14",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "मंगल"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k15",
+    "key": "festival-calendar-preview-k15",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Wed"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k16",
+    "key": "festival-calendar-preview-k16",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "बुध"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k17",
+    "key": "festival-calendar-preview-k17",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Thu"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k18",
+    "key": "festival-calendar-preview-k18",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "गुरु"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k19",
+    "key": "festival-calendar-preview-k19",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Fri"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k20",
+    "key": "festival-calendar-preview-k20",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "शुक्र"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k21",
+    "key": "festival-calendar-preview-k21",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "Sat"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k22",
+    "key": "festival-calendar-preview-k22",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "शनि"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k23",
+    "key": "festival-calendar-preview-k23",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "🪔"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k24",
+    "key": "festival-calendar-preview-k24",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "🌸"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k25",
+    "key": "festival-calendar-preview-k25",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "10"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k26",
+    "key": "festival-calendar-preview-k26",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "11"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k27",
+    "key": "festival-calendar-preview-k27",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "12"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k28",
+    "key": "festival-calendar-preview-k28",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "13"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k29",
+    "key": "festival-calendar-preview-k29",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "14"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k30",
+    "key": "festival-calendar-preview-k30",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "15"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k31",
+    "key": "festival-calendar-preview-k31",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "16"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k32",
+    "key": "festival-calendar-preview-k32",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "17"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k33",
+    "key": "festival-calendar-preview-k33",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "18"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k34",
+    "key": "festival-calendar-preview-k34",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "19"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k35",
+    "key": "festival-calendar-preview-k35",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "20"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k36",
+    "key": "festival-calendar-preview-k36",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "21"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k37",
+    "key": "festival-calendar-preview-k37",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "22"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k38",
+    "key": "festival-calendar-preview-k38",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "23"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k39",
+    "key": "festival-calendar-preview-k39",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "24"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k40",
+    "key": "festival-calendar-preview-k40",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "25"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k41",
+    "key": "festival-calendar-preview-k41",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "26"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k42",
+    "key": "festival-calendar-preview-k42",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "27"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k43",
+    "key": "festival-calendar-preview-k43",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "28"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k44",
+    "key": "festival-calendar-preview-k44",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "🚩"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k45",
+    "key": "festival-calendar-preview-k45",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "29"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k46",
+    "key": "festival-calendar-preview-k46",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "30"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k47",
+    "key": "festival-calendar-preview-k47",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "31"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k48",
+    "key": "festival-calendar-preview-k48",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "August 2026"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k49",
+    "key": "festival-calendar-preview-k49",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "🚩 किसी भी पर्व पर क्लिक कर विशेष अन्नदान एवं सेवा संकल्प लें"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k50",
+    "key": "festival-calendar-preview-k50",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "🚩 Auspicious Events"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k51",
+    "key": "festival-calendar-preview-k51",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "August 2026 · सनातन पावन तिथि एवं सेवा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k52",
+    "key": "festival-calendar-preview-k52",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "80G Exemption"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k53",
+    "key": "festival-calendar-preview-k53",
+    "section": "Festival Calendar Preview — August 2026",
+    "text": "श्रावण शुक्ल पक्ष पंचमी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k54",
+    "key": "festival-calendar-preview-k54",
+    "section": "Festival Calendar Preview — नाग पंचमी एवं जीव दया पर्व",
+    "text": "सेवा संकल्प:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k55",
+    "key": "festival-calendar-preview-k55",
+    "section": "Festival Calendar Preview — नाग पंचमी एवं जीव दया पर्व",
+    "text": "Share"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k56",
+    "key": "festival-calendar-preview-k56",
+    "section": "Festival Calendar Preview — नाग पंचमी एवं जीव दया पर्व",
+    "text": "Donate"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k57",
+    "key": "festival-calendar-preview-k57",
+    "section": "Festival Calendar Preview — नाग पंचमी एवं जीव दया पर्व",
+    "text": "श्रावण शुक्ल पक्ष एकादशी"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k58",
+    "key": "festival-calendar-preview-k58",
+    "section": "Festival Calendar Preview — श्रावण पुत्रदा एकादशी",
+    "text": "सेवा संकल्प:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k59",
+    "key": "festival-calendar-preview-k59",
+    "section": "Festival Calendar Preview — श्रावण पुत्रदा एकादशी",
+    "text": "Share"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k60",
+    "key": "festival-calendar-preview-k60",
+    "section": "Festival Calendar Preview — श्रावण पुत्रदा एकादशी",
+    "text": "Donate"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k61",
+    "key": "festival-calendar-preview-k61",
+    "section": "Festival Calendar Preview — श्रावण पुत्रदा एकादशी",
+    "text": "श्रावण शुक्ल पक्ष पूर्णिमा"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k62",
+    "key": "festival-calendar-preview-k62",
+    "section": "Festival Calendar Preview — रक्षाबंधन एवं नारी सुरक्षा संकल्प पर्व",
+    "text": "सेवा संकल्प:"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k63",
+    "key": "festival-calendar-preview-k63",
+    "section": "Festival Calendar Preview — रक्षाबंधन एवं नारी सुरक्षा संकल्प पर्व",
+    "text": "Share"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "festival-calendar-preview-k64",
+    "key": "festival-calendar-preview-k64",
+    "section": "Festival Calendar Preview — रक्षाबंधन एवं नारी सुरक्षा संकल्प पर्व",
+    "text": "Donate"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-official-announcements",
+  "_type": "page",
+  "title": "Home — Official Announcements",
+  "path": "/",
+  "order": 19,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k1",
+    "key": "official-announcements-k1",
+    "section": "Official Announcements",
+    "text": "REGISTERED MEMBERS ONLY"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k2",
+    "key": "official-announcements-k2",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "text": "Official Announcements"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k3",
+    "key": "official-announcements-k3",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "text": "(Only for Registered Members)"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k4",
+    "key": "official-announcements-k4",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "text": "संगठन की महत्वपूर्ण घोषणाएँ, अभियान निर्देश, बैठक सूचनाएँ, कार्यक्रम अपडेट एवं अन्य आवश्यक जानकारी केवल पंजीकृत सदस्यों के लिए उपलब्ध है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k5",
+    "key": "official-announcements-k5",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "text": "यहाँ प्रकाशित सूचनाएँ संगठन की आधिकारिक जानकारी मानी जाएँगी। सभी सदस्यों से अनुरोध है कि समय-समय पर नवीनतम अपडेट एवं घोषणाएँ अवश्य देखें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "official-announcements-k6",
+    "key": "official-announcements-k6",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "text": "View Announcements"
+   },
+   {
+    "_type": "imageBlock",
+    "_key": "official-announcements-i7",
+    "key": "official-announcements-i7",
+    "section": "Official Announcements — आधिकारिक सूचना",
+    "currentSrc": "/img/members_only.jpeg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "_id": "page-home-community-voices",
+  "_type": "page",
+  "title": "Home — Community Voices",
+  "path": "/",
+  "order": 20,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k1",
+    "key": "community-voices-k1",
+    "section": "Community Voices",
+    "text": "Voices"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k2",
+    "key": "community-voices-k2",
+    "section": "Community Voices",
+    "text": "यहाँ transparency और dedication साफ़ दिखाई देती है। यहाँ सेवा भावना साफ दिखाई देती है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k3",
+    "key": "community-voices-k3",
+    "section": "Community Voices — अमित शर्मा",
+    "text": "Dehradun, Uttarakhand"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k4",
+    "key": "community-voices-k4",
+    "section": "Community Voices — अमित शर्मा",
+    "text": "Help Center, Seva Network और भविष्य की आपातकालीन सहायता जैसी योजनाएँ यदि सफलतापूर्वक आगे बढ़ती हैं, तो यह समाज के लिए बहुत बड़ा योगदान साबित हो सकती हैं।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k5",
+    "key": "community-voices-k5",
+    "section": "Community Voices — नितिन कुलकर्णी",
+    "text": "Pune, Maharashtra"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k6",
+    "key": "community-voices-k6",
+    "section": "Community Voices — नितिन कुलकर्णी",
+    "text": "Foundation के साथ जुड़कर मुझे लगा कि समाज के लिए कुछ अच्छा करने का यह सही मंच है। यहाँ हर छोटा सहयोग भी महत्वपूर्ण माना जाता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k7",
+    "key": "community-voices-k7",
+    "section": "Community Voices — रचना सिंह",
+    "text": "Patna, Bihar"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k8",
+    "key": "community-voices-k8",
+    "section": "Community Voices — रचना सिंह",
+    "text": "सनातन संस्कृति, भजन, और समाज सेवा के माध्यम से समाज में सकारात्मक बदलाव लाना सराहनीय है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k9",
+    "key": "community-voices-k9",
+    "section": "Community Voices — देवेंद्र जोशी",
+    "text": "Ujjain, Madhya Pradesh"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k10",
+    "key": "community-voices-k10",
+    "section": "Community Voices — देवेंद्र जोशी",
+    "text": "बच्चों की शिक्षा और स्वास्थ्य को लेकर संस्था द्वारा किए जा रहे प्रयास वास्तव में अनुकरणीय हैं।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k11",
+    "key": "community-voices-k11",
+    "section": "Community Voices — सुनीता वर्मा",
+    "text": "Lucknow, Uttar Pradesh"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k12",
+    "key": "community-voices-k12",
+    "section": "Community Voices — सुनीता वर्मा",
+    "text": "आपदा के समय तुरंत सहायता पहुँचाना इस टीम की सबसे बड़ी खासियत है। मुझे गर्व है कि मैं इनसे जुड़ा हूँ।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k13",
+    "key": "community-voices-k13",
+    "section": "Community Voices — राजीव मेहरा",
+    "text": "Jaipur, Rajasthan"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k14",
+    "key": "community-voices-k14",
+    "section": "Community Voices — राजीव मेहरा",
+    "text": "पारदर्शिता और निष्ठा के साथ काम करने वाला यह एक अद्भुत संगठन है। हर दान सही जगह पहुँचता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k15",
+    "key": "community-voices-k15",
+    "section": "Community Voices — प्रिया देशपांडे",
+    "text": "Nagpur, Maharashtra"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k16",
+    "key": "community-voices-k16",
+    "section": "Community Voices — प्रिया देशपांडे",
+    "text": "युवाओं को समाज कल्याण के कार्यों से जोड़ना और उनमें सेवा भाव जगाना एक बेहतरीन पहल है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k17",
+    "key": "community-voices-k17",
+    "section": "Community Voices — अजय चौहान",
+    "text": "Ahmedabad, Gujarat"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k18",
+    "key": "community-voices-k18",
+    "section": "Community Voices — अजय चौहान",
+    "text": "हमारी पूरी सोसाइटी हर महीने इस संस्था को सहयोग देती है। इनका काम वास्तव में धरातल पर दिखता है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k19",
+    "key": "community-voices-k19",
+    "section": "Community Voices — संजय गुप्ता",
+    "text": "Kanpur, Uttar Pradesh"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k20",
+    "key": "community-voices-k20",
+    "section": "Community Voices — संजय गुप्ता",
+    "text": "गरीब परिवारों को आत्मनिर्भर बनाने के लिए चलाए जा रहे वोकेशनल कोर्स बहुत ही असरदार हैं।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k21",
+    "key": "community-voices-k21",
+    "section": "Community Voices — मीनाक्षी राव",
+    "text": "Bengaluru, Karnataka"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k22",
+    "key": "community-voices-k22",
+    "section": "Community Voices — मीनाक्षी राव",
+    "text": "वृद्ध आश्रमों में भोजन और मेडिकल सहायता उपलब्ध कराना एक बहुत ही पवित्र कार्य है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k23",
+    "key": "community-voices-k23",
+    "section": "Community Voices — विशाल पांडे",
+    "text": "Varanasi, Uttar Pradesh"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k24",
+    "key": "community-voices-k24",
+    "section": "Community Voices — विशाल पांडे",
+    "text": "साफ़ नियत और स्पष्ट विज़न के साथ काम करने वाली यह संस्था समाज का ताना-बाना मजबूत कर रही है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k25",
+    "key": "community-voices-k25",
+    "section": "Community Voices — कविता पाटिल",
+    "text": "Nashik, Maharashtra"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k26",
+    "key": "community-voices-k26",
+    "section": "Community Voices — कविता पाटिल",
+    "text": "मेडिकल कैंप्स के जरिए दूर-दराज के गाँवों तक स्वास्थ्य सेवाएँ पहुँचाना एक क्रांतिकारी कदम है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k27",
+    "key": "community-voices-k27",
+    "section": "Community Voices — डॉ. अलका भट्ट",
+    "text": "Shimla, Himachal Pradesh"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k28",
+    "key": "community-voices-k28",
+    "section": "Community Voices — डॉ. अलका भट्ट",
+    "text": "वालंटियर के रूप में काम करते हुए मुझे जो आत्मसंतोष मिला है, उसे शब्दों में बयां नहीं किया जा सकता।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k29",
+    "key": "community-voices-k29",
+    "section": "Community Voices — रोहन खन्ना",
+    "text": "Delhi NCR"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k30",
+    "key": "community-voices-k30",
+    "section": "Community Voices — रोहन खन्ना",
+    "text": "ईमानदारी और समर्पण का दूसरा नाम है यह संस्था। समाज के हर वर्ग को साथ लेकर चलना इनकी ताकत है।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "community-voices-k31",
+    "key": "community-voices-k31",
+    "section": "Community Voices — मनोज जोशी",
+    "text": "Indore, Madhya Pradesh"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-faq",
+  "_type": "page",
+  "title": "Home — FAQ",
+  "path": "/",
+  "order": 21,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "faq-k1",
+    "key": "faq-k1",
+    "section": "Faq",
+    "text": "Questions"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "faq-k2",
+    "key": "faq-k2",
+    "section": "Faq",
+    "text": "सामान्यतः पूछे जाने वाले प्रश्न।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "faq-k3",
+    "key": "faq-k3",
+    "section": "Faq",
+    "text": "Sanatani Sena, Vigilance Department एवं Sanatan Seva Network क्या हैं?"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "faq-k4",
+    "key": "faq-k4",
+    "section": "Faq",
+    "text": "क्या कॉर्पोरेट कंपनियाँ (CSR) भी संस्था के अभियानों में सहयोग कर सकती हैं?"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "faq-k5",
+    "key": "faq-k5",
+    "section": "Faq",
+    "text": "क्या संस्था द्वारा उत्कृष्ट कार्य करने वाले सदस्यों को सम्मानित किया जाता है?"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "faq-k6",
+    "key": "faq-k6",
+    "section": "Faq",
+    "text": "क्या संस्था द्वारा Appointment Letter, Certificate या ID Card प्रदान किया जाता है?"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-join-us-cta",
+  "_type": "page",
+  "title": "Home — Join Us CTA",
+  "path": "/",
+  "order": 22,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "join-us-cta-k1",
+    "key": "join-us-cta-k1",
+    "section": "Join Us Cta",
+    "text": "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-us-cta-k2",
+    "key": "join-us-cta-k2",
+    "section": "Join Us Cta — सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें",
+    "text": "Be part of positive change. Your contribution brings hope, support and dignity to lives across India."
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-us-cta-k3",
+    "key": "join-us-cta-k3",
+    "section": "Join Us Cta — सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें",
+    "text": "Donate Now"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "join-us-cta-k4",
+    "key": "join-us-cta-k4",
+    "section": "Join Us Cta — सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें",
+    "text": "Join the Mission"
+   }
+  ]
+ },
+ {
+  "_id": "page-home-newsletter-cta",
+  "_type": "page",
+  "title": "Home — Newsletter CTA",
+  "path": "/",
+  "order": 23,
+  "blocks": [
+   {
+    "_type": "textBlock",
+    "_key": "newsletter-cta-k1",
+    "key": "newsletter-cta-k1",
+    "section": "Newsletter Cta — सेवा, संस्कार और सनातन से जुड़े रहें",
+    "text": "सनातन पर्वों, सेवा अभियानों, आध्यात्मिक प्रेरणाओं एवं विशेष कार्यक्रमों की नियमित जानकारी प्राप्त करने के लिए Subscribe करें।"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "newsletter-cta-k2",
+    "key": "newsletter-cta-k2",
+    "section": "Newsletter Cta — सेवा, संस्कार और सनातन से जुड़े रहें",
+    "text": "Email Address"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "newsletter-cta-k3",
+    "key": "newsletter-cta-k3",
+    "section": "Newsletter Cta — सेवा, संस्कार और सनातन से जुड़े रहें",
+    "text": "Subscribe Now"
+   },
+   {
+    "_type": "textBlock",
+    "_key": "newsletter-cta-k4",
+    "key": "newsletter-cta-k4",
+    "section": "Newsletter Cta — सेवा, संस्कार और सनातन से जुड़े रहें",
+    "text": "We respect your privacy. Unsubscribe anytime."
+   }
+  ]
+ }
+]

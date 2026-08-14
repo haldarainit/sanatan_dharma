@@ -2,11 +2,15 @@ import { groq } from 'next-sanity'
 
 export const siteSettingsQuery = groq`*[_type == "siteSettings"][0]{
   siteName, logo, donateLabel, helplines, emails, whatsapp, footerAbout, cin,
+  upiId, upiName,
   social[]{ network, url }
 }`
 
-export const pageQuery = groq`*[_type == "page" && path == $path][0]{
-  title, path, seoTitle, seoDescription,
+/* A route may be split across several documents so an editor is not scrolling
+   one enormous list -- the homepage is one document per section. They are
+   merged back together by key when the page is rendered. */
+export const pageQuery = groq`*[_type == "page" && path == $path] | order(order asc, _id asc){
+  title, path, order, seoTitle, seoDescription,
   blocks[]{ _type, key, section, text, alt, currentSrc, image }
 }`
 

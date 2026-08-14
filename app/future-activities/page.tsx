@@ -329,7 +329,7 @@ export default async function FutureActivitiesPage() {
           <p
             className="deva text-lg sm:text-xl font-bold text-slate-800 leading-relaxed max-w-3xl mx-auto"
           >
-            {t(text, 'k25', "&quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;")}
+            {t(text, 'k25', "\"सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।\"")}
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 text-left">

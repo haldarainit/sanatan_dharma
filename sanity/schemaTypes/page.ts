@@ -81,6 +81,12 @@ export const page = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      description: 'Where this section sits on the page. Only matters when a route is split into sections.',
+    }),
+    defineField({
       name: 'seoTitle',
       title: 'Browser tab title',
       type: 'string',

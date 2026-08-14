@@ -1,4 +1,5 @@
-export default function CommunityVoices() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function CommunityVoices({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="bg-[#fdfbf7] py-12 px-4 font-sans text-neutral-800 border-t border-[#efeae4] overflow-hidden sd-gap"
@@ -6,7 +7,7 @@ export default function CommunityVoices() {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Community{' '}
-          <span className="block sm:inline text-[#e35300]">Voices</span>
+          <span className="block sm:inline text-[#e35300]">{t(text, 'community-voices-k1', "Voices")}</span>
         </h2>
         <p
           className="text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-12 uppercase"
@@ -42,7 +43,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    यहाँ transparency और dedication साफ़ दिखाई देती है। यहाँ सेवा भावना साफ दिखाई देती है।
+                    {t(text, 'community-voices-k2', "यहाँ transparency और dedication साफ़ दिखाई देती है। यहाँ सेवा भावना साफ दिखाई देती है।")}
                   </p>
                 </div>
                 <div>
@@ -53,7 +54,7 @@ export default function CommunityVoices() {
                     >अ</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">अमित शर्मा</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Dehradun, Uttarakhand</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k3', "Dehradun, Uttarakhand")}</p>
                     </div>
                   </div>
                 </div>
@@ -64,7 +65,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    Help Center, Seva Network और भविष्य की आपातकालीन सहायता जैसी योजनाएँ यदि सफलतापूर्वक आगे बढ़ती हैं, तो यह समाज के लिए बहुत बड़ा योगदान साबित हो सकती हैं।
+                    {t(text, 'community-voices-k4', "Help Center, Seva Network और भविष्य की आपातकालीन सहायता जैसी योजनाएँ यदि सफलतापूर्वक आगे बढ़ती हैं, तो यह समाज के लिए बहुत बड़ा योगदान साबित हो सकती हैं।")}
                   </p>
                 </div>
                 <div>
@@ -75,7 +76,7 @@ export default function CommunityVoices() {
                     >न</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">नितिन कुलकर्णी</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Pune, Maharashtra</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k5', "Pune, Maharashtra")}</p>
                     </div>
                   </div>
                 </div>
@@ -86,7 +87,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    Foundation के साथ जुड़कर मुझे लगा कि समाज के लिए कुछ अच्छा करने का यह सही मंच है। यहाँ हर छोटा सहयोग भी महत्वपूर्ण माना जाता है।
+                    {t(text, 'community-voices-k6', "Foundation के साथ जुड़कर मुझे लगा कि समाज के लिए कुछ अच्छा करने का यह सही मंच है। यहाँ हर छोटा सहयोग भी महत्वपूर्ण माना जाता है।")}
                   </p>
                 </div>
                 <div>
@@ -97,7 +98,7 @@ export default function CommunityVoices() {
                     >र</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">रचना सिंह</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Patna, Bihar</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k7', "Patna, Bihar")}</p>
                     </div>
                   </div>
                 </div>
@@ -108,7 +109,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    सनातन संस्कृति, भजन, और समाज सेवा के माध्यम से समाज में सकारात्मक बदलाव लाना सराहनीय है।
+                    {t(text, 'community-voices-k8', "सनातन संस्कृति, भजन, और समाज सेवा के माध्यम से समाज में सकारात्मक बदलाव लाना सराहनीय है।")}
                   </p>
                 </div>
                 <div>
@@ -119,7 +120,7 @@ export default function CommunityVoices() {
                     >द</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">देवेंद्र जोशी</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Ujjain, Madhya Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k9', "Ujjain, Madhya Pradesh")}</p>
                     </div>
                   </div>
                 </div>
@@ -130,7 +131,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    बच्चों की शिक्षा और स्वास्थ्य को लेकर संस्था द्वारा किए जा रहे प्रयास वास्तव में अनुकरणीय हैं।
+                    {t(text, 'community-voices-k10', "बच्चों की शिक्षा और स्वास्थ्य को लेकर संस्था द्वारा किए जा रहे प्रयास वास्तव में अनुकरणीय हैं।")}
                   </p>
                 </div>
                 <div>
@@ -141,7 +142,7 @@ export default function CommunityVoices() {
                     >स</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">सुनीता वर्मा</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Lucknow, Uttar Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k11', "Lucknow, Uttar Pradesh")}</p>
                     </div>
                   </div>
                 </div>
@@ -152,7 +153,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    आपदा के समय तुरंत सहायता पहुँचाना इस टीम की सबसे बड़ी खासियत है। मुझे गर्व है कि मैं इनसे जुड़ा हूँ।
+                    {t(text, 'community-voices-k12', "आपदा के समय तुरंत सहायता पहुँचाना इस टीम की सबसे बड़ी खासियत है। मुझे गर्व है कि मैं इनसे जुड़ा हूँ।")}
                   </p>
                 </div>
                 <div>
@@ -163,7 +164,7 @@ export default function CommunityVoices() {
                     >र</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">राजीव मेहरा</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Jaipur, Rajasthan</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k13', "Jaipur, Rajasthan")}</p>
                     </div>
                   </div>
                 </div>
@@ -174,7 +175,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    पारदर्शिता और निष्ठा के साथ काम करने वाला यह एक अद्भुत संगठन है। हर दान सही जगह पहुँचता है।
+                    {t(text, 'community-voices-k14', "पारदर्शिता और निष्ठा के साथ काम करने वाला यह एक अद्भुत संगठन है। हर दान सही जगह पहुँचता है।")}
                   </p>
                 </div>
                 <div>
@@ -185,7 +186,7 @@ export default function CommunityVoices() {
                     >प</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">प्रिया देशपांडे</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Nagpur, Maharashtra</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k15', "Nagpur, Maharashtra")}</p>
                     </div>
                   </div>
                 </div>
@@ -196,7 +197,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    युवाओं को समाज कल्याण के कार्यों से जोड़ना और उनमें सेवा भाव जगाना एक बेहतरीन पहल है।
+                    {t(text, 'community-voices-k16', "युवाओं को समाज कल्याण के कार्यों से जोड़ना और उनमें सेवा भाव जगाना एक बेहतरीन पहल है।")}
                   </p>
                 </div>
                 <div>
@@ -207,7 +208,7 @@ export default function CommunityVoices() {
                     >अ</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">अजय चौहान</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Ahmedabad, Gujarat</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k17', "Ahmedabad, Gujarat")}</p>
                     </div>
                   </div>
                 </div>
@@ -218,7 +219,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    हमारी पूरी सोसाइटी हर महीने इस संस्था को सहयोग देती है। इनका काम वास्तव में धरातल पर दिखता है।
+                    {t(text, 'community-voices-k18', "हमारी पूरी सोसाइटी हर महीने इस संस्था को सहयोग देती है। इनका काम वास्तव में धरातल पर दिखता है।")}
                   </p>
                 </div>
                 <div>
@@ -229,7 +230,7 @@ export default function CommunityVoices() {
                     >स</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">संजय गुप्ता</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Kanpur, Uttar Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k19', "Kanpur, Uttar Pradesh")}</p>
                     </div>
                   </div>
                 </div>
@@ -240,7 +241,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    गरीब परिवारों को आत्मनिर्भर बनाने के लिए चलाए जा रहे वोकेशनल कोर्स बहुत ही असरदार हैं।
+                    {t(text, 'community-voices-k20', "गरीब परिवारों को आत्मनिर्भर बनाने के लिए चलाए जा रहे वोकेशनल कोर्स बहुत ही असरदार हैं।")}
                   </p>
                 </div>
                 <div>
@@ -251,7 +252,7 @@ export default function CommunityVoices() {
                     >म</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">मीनाक्षी राव</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Bengaluru, Karnataka</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k21', "Bengaluru, Karnataka")}</p>
                     </div>
                   </div>
                 </div>
@@ -262,7 +263,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    वृद्ध आश्रमों में भोजन और मेडिकल सहायता उपलब्ध कराना एक बहुत ही पवित्र कार्य है।
+                    {t(text, 'community-voices-k22', "वृद्ध आश्रमों में भोजन और मेडिकल सहायता उपलब्ध कराना एक बहुत ही पवित्र कार्य है।")}
                   </p>
                 </div>
                 <div>
@@ -273,7 +274,7 @@ export default function CommunityVoices() {
                     >व</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">विशाल पांडे</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Varanasi, Uttar Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k23', "Varanasi, Uttar Pradesh")}</p>
                     </div>
                   </div>
                 </div>
@@ -284,7 +285,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    साफ़ नियत और स्पष्ट विज़न के साथ काम करने वाली यह संस्था समाज का ताना-बाना मजबूत कर रही है।
+                    {t(text, 'community-voices-k24', "साफ़ नियत और स्पष्ट विज़न के साथ काम करने वाली यह संस्था समाज का ताना-बाना मजबूत कर रही है।")}
                   </p>
                 </div>
                 <div>
@@ -295,7 +296,7 @@ export default function CommunityVoices() {
                     >क</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">कविता पाटिल</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Nashik, Maharashtra</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k25', "Nashik, Maharashtra")}</p>
                     </div>
                   </div>
                 </div>
@@ -306,7 +307,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    मेडिकल कैंप्स के जरिए दूर-दराज के गाँवों तक स्वास्थ्य सेवाएँ पहुँचाना एक क्रांतिकारी कदम है।
+                    {t(text, 'community-voices-k26', "मेडिकल कैंप्स के जरिए दूर-दराज के गाँवों तक स्वास्थ्य सेवाएँ पहुँचाना एक क्रांतिकारी कदम है।")}
                   </p>
                 </div>
                 <div>
@@ -317,7 +318,7 @@ export default function CommunityVoices() {
                     >ड</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">डॉ. अलका भट्ट</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Shimla, Himachal Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k27', "Shimla, Himachal Pradesh")}</p>
                     </div>
                   </div>
                 </div>
@@ -328,7 +329,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    वालंटियर के रूप में काम करते हुए मुझे जो आत्मसंतोष मिला है, उसे शब्दों में बयां नहीं किया जा सकता।
+                    {t(text, 'community-voices-k28', "वालंटियर के रूप में काम करते हुए मुझे जो आत्मसंतोष मिला है, उसे शब्दों में बयां नहीं किया जा सकता।")}
                   </p>
                 </div>
                 <div>
@@ -339,7 +340,7 @@ export default function CommunityVoices() {
                     >र</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">रोहन खन्ना</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Delhi NCR</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k29', "Delhi NCR")}</p>
                     </div>
                   </div>
                 </div>
@@ -350,7 +351,7 @@ export default function CommunityVoices() {
                 <div>
                   <div className="font-serif text-3xl font-bold text-[#ea580c] leading-none mb-3">“</div>
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-6">
-                    ईमानदारी और समर्पण का दूसरा नाम है यह संस्था। समाज के हर वर्ग को साथ लेकर चलना इनकी ताकत है।
+                    {t(text, 'community-voices-k30', "ईमानदारी और समर्पण का दूसरा नाम है यह संस्था। समाज के हर वर्ग को साथ लेकर चलना इनकी ताकत है।")}
                   </p>
                 </div>
                 <div>
@@ -361,7 +362,7 @@ export default function CommunityVoices() {
                     >म</div>
                     <div>
                       <h4 className="font-bold text-sm text-neutral-900">मनोज जोशी</h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">Indore, Madhya Pradesh</p>
+                      <p className="text-xs text-neutral-400 mt-0.5">{t(text, 'community-voices-k31', "Indore, Madhya Pradesh")}</p>
                     </div>
                   </div>
                 </div>

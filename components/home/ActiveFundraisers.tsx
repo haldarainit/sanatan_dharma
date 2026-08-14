@@ -1,21 +1,22 @@
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import Link from 'next/link'
 
-export default function ActiveFundraisers() {
+export default function ActiveFundraisers({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section id="active-fundraisers" className="max-w-7xl mx-auto px-4 py-12 relative font-sans sd-gap">
       
       <div className="sd-af-head">
         <div>
-          <p className="sd-af-eyebrow">Ongoing Fundraising Campaigns</p>
+          <p className="sd-af-eyebrow">{t(text, 'active-fundraisers-k1', "Ongoing Fundraising Campaigns")}</p>
           <h2 className="sd-af-title">
             Active{' '}
-            <span>Fundraisers</span>
+            <span>{t(text, 'active-fundraisers-k2', "Fundraisers")}</span>
           </h2>
-          <p className="sd-af-sub deva">सक्रिय निधि-संग्रह अभियान</p>
-          <p className="sd-af-subnote deva">वर्तमान में संचालित फंडरेज़िंग अभियान</p>
+          <p className="sd-af-sub deva">{t(text, 'active-fundraisers-k3', "सक्रिय निधि-संग्रह अभियान")}</p>
+          <p className="sd-af-subnote deva">{t(text, 'active-fundraisers-k4', "वर्तमान में संचालित फंडरेज़िंग अभियान")}</p>
         </div>
         <Link className="sd-af-viewall" href="/view-fundraisers">
-          <span>View All Fundraisers</span>
+          <span>{t(text, 'active-fundraisers-k5', "View All Fundraisers")}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -33,10 +34,10 @@ export default function ActiveFundraisers() {
       </div>
       <div className="sd-af-intro">
         <p className="sd-af-lead deva">
-          सेवा, सहायता, जनजागरण एवं जनकल्याण अभियानों के लिए आपका सहयोग सादर आमंत्रित है।
+          {t(text, 'active-fundraisers-k6', "सेवा, सहायता, जनजागरण एवं जनकल्याण अभियानों के लिए आपका सहयोग सादर आमंत्रित है।")}
         </p>
         <p className="sd-af-desc deva">
-          किसी अस्पताल के कक्ष में, किसी साधारण घर में, या खुले आसमान के नीचे जीवन से संघर्ष कर रहा कोई व्यक्ति आज भी सहायता की प्रतीक्षा कर रहा है। उसकी आँखों में यह विश्वास जीवित है कि समाज में ऐसे संवेदनशील लोग हैं जो पीड़ा को समझते हैं और सहायता के लिए आगे आते हैं। आपका छोटा सा सहयोग किसी के जीवन में आशा, सम्मान और नई शुरुआत का कारण बन सकता है। अनेक बार किसी जरूरतमंद के लिए समय पर मिली सहायता ईश्वर की कृपा के समान अनुभव होती है।
+          {t(text, 'active-fundraisers-k7', "किसी अस्पताल के कक्ष में, किसी साधारण घर में, या खुले आसमान के नीचे जीवन से संघर्ष कर रहा कोई व्यक्ति आज भी सहायता की प्रतीक्षा कर रहा है। उसकी आँखों में यह विश्वास जीवित है कि समाज में ऐसे संवेदनशील लोग हैं जो पीड़ा को समझते हैं और सहायता के लिए आगे आते हैं। आपका छोटा सा सहयोग किसी के जीवन में आशा, सम्मान और नई शुरुआत का कारण बन सकता है। अनेक बार किसी जरूरतमंद के लिए समय पर मिली सहायता ईश्वर की कृपा के समान अनुभव होती है।")}
         </p>
       </div>
       <div className="relative px-4 sm:px-8">
@@ -88,7 +89,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-food.jpg"
+                  src={img(images, 'active-fundraisers-i8', "/img/campaign-food.jpg")}
                   alt="Feed 10,000 families across Varanasi this month"
                   className="w-full h-full object-cover"
                 />
@@ -113,7 +114,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k9', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -124,9 +125,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹18,42,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k10', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">74%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k11', "74%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -135,7 +136,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹25,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k12', "Goal ₹25,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +193,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-girl.jpg"
+                  src={img(images, 'active-fundraisers-i13', "/img/campaign-girl.jpg")}
                   alt="Send 500 girls back to school in rural Bihar"
                   className="w-full h-full object-cover"
                 />
@@ -227,9 +228,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹9,62,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k14', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">64%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k15', "64%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -238,7 +239,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹15,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k16', "Goal ₹15,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +296,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-medical.jpg"
+                  src={img(images, 'active-fundraisers-i17', "/img/campaign-medical.jpg")}
                   alt="Free medical camps in 40 tribal villages of Odisha"
                   className="w-full h-full object-cover"
                 />
@@ -330,9 +331,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹13,20,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k18', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">73%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k19', "73%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -341,7 +342,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹18,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k20', "Goal ₹18,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -398,7 +399,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-temple.jpg"
+                  src={img(images, 'active-fundraisers-i21', "/img/campaign-temple.jpg")}
                   alt="Restoration of 800-year old Shri Hanuman Mandir, Rajasthan"
                   className="w-full h-full object-cover"
                 />
@@ -433,9 +434,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹27,45,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k22', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">69%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k23', "69%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -444,7 +445,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹40,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k24', "Goal ₹40,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -501,7 +502,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gaushala.jpg"
+                  src={img(images, 'active-fundraisers-i25', "/img/campaign-gaushala.jpg")}
                   alt="Shelter & care for 1,200 rescued cows at Mathura Gaushala"
                   className="w-full h-full object-cover"
                 />
@@ -526,7 +527,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k26', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -537,9 +538,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹7,86,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k27', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">66%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k28', "66%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -548,7 +549,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹12,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k29', "Goal ₹12,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -605,7 +606,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gurukul.jpg"
+                  src={img(images, 'active-fundraisers-i30', "/img/campaign-gurukul.jpg")}
                   alt="Sponsor 100 students at traditional Gurukul, Haridwar"
                   className="w-full h-full object-cover"
                 />
@@ -640,9 +641,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹5,43,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k31', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">60%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k32', "60%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -651,7 +652,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹9,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k33', "Goal ₹9,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -708,7 +709,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-food.jpg"
+                  src={img(images, 'active-fundraisers-i34', "/img/campaign-food.jpg")}
                   alt="Feed 10,000 families across Varanasi this month"
                   className="w-full h-full object-cover"
                 />
@@ -733,7 +734,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k35', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -744,9 +745,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹18,42,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k36', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">74%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k37', "74%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -755,7 +756,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹25,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k38', "Goal ₹25,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -812,7 +813,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-girl.jpg"
+                  src={img(images, 'active-fundraisers-i39', "/img/campaign-girl.jpg")}
                   alt="Send 500 girls back to school in rural Bihar"
                   className="w-full h-full object-cover"
                 />
@@ -847,9 +848,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹9,62,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k40', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">64%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k41', "64%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -858,7 +859,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹15,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k42', "Goal ₹15,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -915,7 +916,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-medical.jpg"
+                  src={img(images, 'active-fundraisers-i43', "/img/campaign-medical.jpg")}
                   alt="Free medical camps in 40 tribal villages of Odisha"
                   className="w-full h-full object-cover"
                 />
@@ -950,9 +951,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹13,20,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k44', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">73%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k45', "73%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -961,7 +962,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹18,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k46', "Goal ₹18,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1018,7 +1019,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-temple.jpg"
+                  src={img(images, 'active-fundraisers-i47', "/img/campaign-temple.jpg")}
                   alt="Restoration of 800-year old Shri Hanuman Mandir, Rajasthan"
                   className="w-full h-full object-cover"
                 />
@@ -1053,9 +1054,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹27,45,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k48', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">69%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k49', "69%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1064,7 +1065,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹40,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k50', "Goal ₹40,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1121,7 +1122,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gaushala.jpg"
+                  src={img(images, 'active-fundraisers-i51', "/img/campaign-gaushala.jpg")}
                   alt="Shelter & care for 1,200 rescued cows at Mathura Gaushala"
                   className="w-full h-full object-cover"
                 />
@@ -1146,7 +1147,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k52', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -1157,9 +1158,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹7,86,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k53', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">66%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k54', "66%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1168,7 +1169,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹12,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k55', "Goal ₹12,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1225,7 +1226,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gurukul.jpg"
+                  src={img(images, 'active-fundraisers-i56', "/img/campaign-gurukul.jpg")}
                   alt="Sponsor 100 students at traditional Gurukul, Haridwar"
                   className="w-full h-full object-cover"
                 />
@@ -1260,9 +1261,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹5,43,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k57', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">60%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k58', "60%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1271,7 +1272,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹9,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k59', "Goal ₹9,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1328,7 +1329,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-food.jpg"
+                  src={img(images, 'active-fundraisers-i60', "/img/campaign-food.jpg")}
                   alt="Feed 10,000 families across Varanasi this month"
                   className="w-full h-full object-cover"
                 />
@@ -1353,7 +1354,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k61', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -1364,9 +1365,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹18,42,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k62', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">74%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k63', "74%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1375,7 +1376,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹25,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k64', "Goal ₹25,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1432,7 +1433,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-girl.jpg"
+                  src={img(images, 'active-fundraisers-i65', "/img/campaign-girl.jpg")}
                   alt="Send 500 girls back to school in rural Bihar"
                   className="w-full h-full object-cover"
                 />
@@ -1467,9 +1468,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹9,62,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k66', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">64%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k67', "64%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1478,7 +1479,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹15,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k68', "Goal ₹15,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1535,7 +1536,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-medical.jpg"
+                  src={img(images, 'active-fundraisers-i69', "/img/campaign-medical.jpg")}
                   alt="Free medical camps in 40 tribal villages of Odisha"
                   className="w-full h-full object-cover"
                 />
@@ -1570,9 +1571,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹13,20,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k70', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">73%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k71', "73%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1581,7 +1582,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹18,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k72', "Goal ₹18,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1638,7 +1639,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-temple.jpg"
+                  src={img(images, 'active-fundraisers-i73', "/img/campaign-temple.jpg")}
                   alt="Restoration of 800-year old Shri Hanuman Mandir, Rajasthan"
                   className="w-full h-full object-cover"
                 />
@@ -1673,9 +1674,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹27,45,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k74', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">69%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k75', "69%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1684,7 +1685,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹40,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k76', "Goal ₹40,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1741,7 +1742,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gaushala.jpg"
+                  src={img(images, 'active-fundraisers-i77', "/img/campaign-gaushala.jpg")}
                   alt="Shelter & care for 1,200 rescued cows at Mathura Gaushala"
                   className="w-full h-full object-cover"
                 />
@@ -1766,7 +1767,7 @@ export default function ActiveFundraisers() {
                     </svg>
                     {' '}Verified
                   </span>
-                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Urgent</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{t(text, 'active-fundraisers-k78', "Urgent")}</span>
                 </div>
                 <span
                   className="absolute bottom-3.5 left-3.5 bg-orange-600 text-white text-[11px] font-extrabold tracking-wider px-2.5 py-1 rounded-md uppercase"
@@ -1777,9 +1778,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹7,86,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k79', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">66%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k80', "66%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1788,7 +1789,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹12,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k81', "Goal ₹12,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1845,7 +1846,7 @@ export default function ActiveFundraisers() {
             >
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gurukul.jpg"
+                  src={img(images, 'active-fundraisers-i82', "/img/campaign-gurukul.jpg")}
                   alt="Sponsor 100 students at traditional Gurukul, Haridwar"
                   className="w-full h-full object-cover"
                 />
@@ -1880,9 +1881,9 @@ export default function ActiveFundraisers() {
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-base font-bold text-gray-900">
                     ₹5,43,000{' '}
-                    <span className="font-normal text-gray-500 text-sm">raised</span>
+                    <span className="font-normal text-gray-500 text-sm">{t(text, 'active-fundraisers-k83', "raised")}</span>
                   </span>
-                  <span className="text-orange-600 font-bold text-sm">60%</span>
+                  <span className="text-orange-600 font-bold text-sm">{t(text, 'active-fundraisers-k84', "60%")}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-3 overflow-hidden">
                   <div
@@ -1891,7 +1892,7 @@ export default function ActiveFundraisers() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-gray-500 font-medium mb-6">
-                  <span>Goal ₹9,00,000</span>
+                  <span>{t(text, 'active-fundraisers-k85', "Goal ₹9,00,000")}</span>
                   <span className="flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1973,7 +1974,7 @@ export default function ActiveFundraisers() {
         </div>
         <div className="sd-af-cta">
           <p className="sd-af-ctatext deva">
-            जरा सोचिए, आपका सहयोग कितना महत्वपूर्ण हो सकता है। आपकी छोटी-सी मदद किसी के जीवन में आशा, उपचार, सुरक्षा और नई शुरुआत का कारण बन सकती है। आइए, सहायता करें और सदैव सहायता करने योग्य बने रहें।
+            {t(text, 'active-fundraisers-k86', "जरा सोचिए, आपका सहयोग कितना महत्वपूर्ण हो सकता है। आपकी छोटी-सी मदद किसी के जीवन में आशा, उपचार, सुरक्षा और नई शुरुआत का कारण बन सकती है। आइए, सहायता करें और सदैव सहायता करने योग्य बने रहें।")}
           </p>
           <div className="sd-af-ctaactions">
             <Link className="sd-af-donate sd-btn sd-btn--donate-now" href="/donate">
@@ -1991,7 +1992,7 @@ export default function ActiveFundraisers() {
                   d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
                 ></path>
               </svg>
-              <span>Donate Now</span>
+              <span>{t(text, 'active-fundraisers-k87', "Donate Now")}</span>
             </Link>
           </div>
         </div>

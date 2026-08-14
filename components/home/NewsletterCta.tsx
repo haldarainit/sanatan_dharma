@@ -1,4 +1,5 @@
-export default function NewsletterCta() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function NewsletterCta({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section className="container-x my-12 sd-gap">
       <div className="card overflow-hidden p-0">
@@ -11,13 +12,13 @@ export default function NewsletterCta() {
             >Newsletter</div>
             <h3 className="deva mt-4 font-display text-2xl font-bold sm:text-3xl">सेवा, संस्कार और सनातन से जुड़े रहें</h3>
             <p className="deva mt-3 text-sm text-white/85">
-              सनातन पर्वों, सेवा अभियानों, आध्यात्मिक प्रेरणाओं एवं विशेष कार्यक्रमों की नियमित जानकारी प्राप्त करने के लिए Subscribe करें।
+              {t(text, 'newsletter-cta-k1', "सनातन पर्वों, सेवा अभियानों, आध्यात्मिक प्रेरणाओं एवं विशेष कार्यक्रमों की नियमित जानकारी प्राप्त करने के लिए Subscribe करें।")}
             </p>
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-10">
             <form className="space-y-4">
               <div>
-                <label className="field-label">Email Address</label>
+                <label className="field-label">{t(text, 'newsletter-cta-k2', "Email Address")}</label>
                 <div className="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +68,9 @@ export default function NewsletterCta() {
                     <path d="m21.854 2.147-10.94 10.939"></path>
                   </svg>
                 </span>
-                Subscribe Now
+                {t(text, 'newsletter-cta-k3', "Subscribe Now")}
               </button>
-              <p className="text-center text-xs text-ink/50">We respect your privacy. Unsubscribe anytime.</p>
+              <p className="text-center text-xs text-ink/50">{t(text, 'newsletter-cta-k4', "We respect your privacy. Unsubscribe anytime.")}</p>
             </form>
           </div>
         </div>

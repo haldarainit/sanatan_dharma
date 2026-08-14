@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import CopyButton from './CopyButton'
+import { DEFAULT_UPI, upiLink, upiQr, type Upi } from '@/lib/upi'
 
 /* The three payment panels from the donate page, split out during the
    Next.js rebuild so PayTabs can switch between them. */
-export function QrPanel() {
+export function QrPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   const [qr, setQr] = useState<string>('gpay')
 
   return (
@@ -53,7 +54,7 @@ export function QrPanel() {
             </div>
             <div className="sd-phone-qr">
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=upi%3A%2F%2Fpay%3Fpa%3D9768000666-4%40okbizaxis%26pn%3DSanatan%2520Dharm%2520Manav%2520Kalyan%2520Foundation%26am%3D501%26cu%3DINR"
+                src={upiQr(upi)}
                 alt="Google Pay UPI QR code for ₹501"
                 className="sd-phone-qrimg"
                 loading="lazy"
@@ -62,13 +63,13 @@ export function QrPanel() {
             <div className="sd-phone-foot">
               <div>
                 UPI ID:{' '}
-                <strong className="sd-mono">9768000666-4@okbizaxis</strong>
+                <strong className="sd-mono">{upi.id}</strong>
               </div>
             </div>
           </div>
         </div>
         <a
-          href="upi://pay?pa=9768000666-4@okbizaxis&pn=Sanatan%20Dharm%20Manav%20Kalyan%20Foundation&am=501&cu=INR"
+          href={upiLink(upi)}
           className="sd-pay-cta sd-btn sd-btn--pay-now"
         >
           <span>Open Google Pay / UPI App (₹501)</span>
@@ -94,7 +95,7 @@ export function QrPanel() {
             </div>
             <div className="sd-phone-qr">
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=upi%3A%2F%2Fpay%3Fpa%3D9768000666-4%40okbizaxis%26pn%3DSanatan%2520Dharm%2520Manav%2520Kalyan%2520Foundation%26am%3D501%26cu%3DINR"
+                src={upiQr(upi)}
                 alt="Indian Bank QR code for ₹501"
                 className="sd-phone-qrimg"
                 loading="lazy"
@@ -113,7 +114,7 @@ export function QrPanel() {
           </div>
         </div>
         <a
-          href="upi://pay?pa=9768000666-4@okbizaxis&pn=Sanatan%20Dharm%20Manav%20Kalyan%20Foundation&am=501&cu=INR"
+          href={upiLink(upi)}
           className="sd-pay-cta sd-btn sd-btn--pay-now"
         >
           <span>Open Google Pay / UPI App (₹501)</span>
@@ -164,7 +165,7 @@ export function QrPanel() {
   )
 }
 
-export function BankPanel() {
+export function BankPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   return (
     <div className="sd-pay-panel">
       <div className="sd-pay-lead">
@@ -276,7 +277,7 @@ export function BankPanel() {
   )
 }
 
-export function OtherPanel() {
+export function OtherPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   return (
     <div className="sd-pay-panel">
       <div className="sd-pay-lead">

@@ -110,7 +110,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i11', "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Flood Relief Food Distribution Drive"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -197,7 +197,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i12', "https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Desi Gau Seva & Fodder Feeding Campaign"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -284,7 +284,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i13', "https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Free Health Checkup & Eye Screening Camp"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -371,7 +371,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/6765189/pexels-photo-6765189.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i14', "https://images.pexels.com/photos/6765189/pexels-photo-6765189.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Grand Maha Aarti & Cultural Samskriti Yagna"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -458,7 +458,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80"
+                src={img(images, 'i15', "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80")}
                 alt="Youth Volunteer Tree Plantation Drive"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -545,7 +545,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/6765190/pexels-photo-6765190.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i16', "https://images.pexels.com/photos/6765190/pexels-photo-6765190.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Sanatan Sena Volunteer Induction Camp"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -632,7 +632,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/6765191/pexels-photo-6765191.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i17', "https://images.pexels.com/photos/6765191/pexels-photo-6765191.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Children Education & Stationery Kit Distribution"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -719,7 +719,7 @@ export default async function MediaPhotoGalleryPage() {
           >
             <div className="relative h-64 w-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
+                src={img(images, 'i18', "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80")}
                 alt="Special Medical Mobile Unit in Remote Villages"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />

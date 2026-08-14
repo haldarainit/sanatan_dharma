@@ -1,9 +1,10 @@
 'use client'
 
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import { useVolunteerCarousel } from './useVolunteerCarousel'
 import Link from 'next/link'
 
-export default function JoinTheMission() {
+export default function JoinTheMission({ text, images }: { text?: TextMap; images?: ImageMap }) {
   const { index, go, transform } = useVolunteerCarousel(5)
 
   return (
@@ -14,10 +15,10 @@ export default function JoinTheMission() {
         <div className="text-center mb-8 sm:mb-10 px-4 sm:px-0">
           <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Join the{' '}
-            <span className="block sm:inline text-[#e35300]">Mission</span>
+            <span className="block sm:inline text-[#e35300]">{t(text, 'join-the-mission-k1', "Mission")}</span>
           </h2>
-          <p className="text-slate-700 font-bold text-[15px] sm:text-lg tracking-wide mb-1">Volunteer Ecosystem</p>
-          <p className="deva text-slate-600 font-semibold text-[15px] sm:text-lg tracking-wide mb-4">साथ आइए • सेवा से जुड़िए • परिवर्तन का हिस्सा बनिए</p>
+          <p className="text-slate-700 font-bold text-[15px] sm:text-lg tracking-wide mb-1">{t(text, 'join-the-mission-k2', "Volunteer Ecosystem")}</p>
+          <p className="deva text-slate-600 font-semibold text-[15px] sm:text-lg tracking-wide mb-4">{t(text, 'join-the-mission-k3', "साथ आइए • सेवा से जुड़िए • परिवर्तन का हिस्सा बनिए")}</p>
         </div>
         <div className="relative flex flex-col items-center px-0 sm:px-8">
           <button
@@ -73,7 +74,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/sanatani_sena.jpeg"
+                    src={img(images, 'join-the-mission-i4', "/img/sanatani_sena.jpeg")}
                     alt="Sanatani Sena"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -83,7 +84,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Sanatani Sena</span>
+                    <span>{t(text, 'join-the-mission-k5', "Join Sanatani Sena")}</span>
                   </Link>
                 </div>
               </div>
@@ -95,7 +96,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/vigilance_department.jpeg"
+                    src={img(images, 'join-the-mission-i6', "/img/vigilance_department.jpeg")}
                     alt="Vigilance Department"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -105,7 +106,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Vigilance Department</span>
+                    <span>{t(text, 'join-the-mission-k7', "Join Vigilance Department")}</span>
                   </Link>
                 </div>
               </div>
@@ -117,7 +118,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/seva_network.jpeg"
+                    src={img(images, 'join-the-mission-i8', "/img/seva_network.jpeg")}
                     alt="Sanatan Seva Network"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -127,7 +128,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Seva Network</span>
+                    <span>{t(text, 'join-the-mission-k9', "Join Seva Network")}</span>
                   </Link>
                 </div>
               </div>
@@ -139,7 +140,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/active_member.jpeg"
+                    src={img(images, 'join-the-mission-i10', "/img/active_member.jpeg")}
                     alt="Active Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -149,7 +150,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Member</span>
+                    <span>{t(text, 'join-the-mission-k11', "Become a Member")}</span>
                   </Link>
                 </div>
               </div>
@@ -161,7 +162,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/supporting_member.jpeg"
+                    src={img(images, 'join-the-mission-i12', "/img/supporting_member.jpeg")}
                     alt="Supporting Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -171,7 +172,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Patron Member</span>
+                    <span>{t(text, 'join-the-mission-k13', "Become a Patron Member")}</span>
                   </Link>
                 </div>
               </div>
@@ -183,7 +184,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/sanatani_sena.jpeg"
+                    src={img(images, 'join-the-mission-i14', "/img/sanatani_sena.jpeg")}
                     alt="Sanatani Sena"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -193,7 +194,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Sanatani Sena</span>
+                    <span>{t(text, 'join-the-mission-k15', "Join Sanatani Sena")}</span>
                   </Link>
                 </div>
               </div>
@@ -205,7 +206,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/vigilance_department.jpeg"
+                    src={img(images, 'join-the-mission-i16', "/img/vigilance_department.jpeg")}
                     alt="Vigilance Department"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -215,7 +216,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Vigilance Department</span>
+                    <span>{t(text, 'join-the-mission-k17', "Join Vigilance Department")}</span>
                   </Link>
                 </div>
               </div>
@@ -227,7 +228,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/seva_network.jpeg"
+                    src={img(images, 'join-the-mission-i18', "/img/seva_network.jpeg")}
                     alt="Sanatan Seva Network"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -237,7 +238,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Seva Network</span>
+                    <span>{t(text, 'join-the-mission-k19', "Join Seva Network")}</span>
                   </Link>
                 </div>
               </div>
@@ -249,7 +250,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/active_member.jpeg"
+                    src={img(images, 'join-the-mission-i20', "/img/active_member.jpeg")}
                     alt="Active Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -259,7 +260,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Member</span>
+                    <span>{t(text, 'join-the-mission-k21', "Become a Member")}</span>
                   </Link>
                 </div>
               </div>
@@ -271,7 +272,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/supporting_member.jpeg"
+                    src={img(images, 'join-the-mission-i22', "/img/supporting_member.jpeg")}
                     alt="Supporting Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -281,7 +282,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Patron Member</span>
+                    <span>{t(text, 'join-the-mission-k23', "Become a Patron Member")}</span>
                   </Link>
                 </div>
               </div>
@@ -293,7 +294,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/sanatani_sena.jpeg"
+                    src={img(images, 'join-the-mission-i24', "/img/sanatani_sena.jpeg")}
                     alt="Sanatani Sena"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -303,7 +304,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Sanatani Sena</span>
+                    <span>{t(text, 'join-the-mission-k25', "Join Sanatani Sena")}</span>
                   </Link>
                 </div>
               </div>
@@ -315,7 +316,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/vigilance_department.jpeg"
+                    src={img(images, 'join-the-mission-i26', "/img/vigilance_department.jpeg")}
                     alt="Vigilance Department"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -325,7 +326,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Vigilance Department</span>
+                    <span>{t(text, 'join-the-mission-k27', "Join Vigilance Department")}</span>
                   </Link>
                 </div>
               </div>
@@ -337,7 +338,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/seva_network.jpeg"
+                    src={img(images, 'join-the-mission-i28', "/img/seva_network.jpeg")}
                     alt="Sanatan Seva Network"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -347,7 +348,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Join Seva Network</span>
+                    <span>{t(text, 'join-the-mission-k29', "Join Seva Network")}</span>
                   </Link>
                 </div>
               </div>
@@ -359,7 +360,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/active_member.jpeg"
+                    src={img(images, 'join-the-mission-i30', "/img/active_member.jpeg")}
                     alt="Active Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -369,7 +370,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Member</span>
+                    <span>{t(text, 'join-the-mission-k31', "Become a Member")}</span>
                   </Link>
                 </div>
               </div>
@@ -381,7 +382,7 @@ export default function JoinTheMission() {
                   href="/membership"
                 >
                   <img
-                    src="/img/supporting_member.jpeg"
+                    src={img(images, 'join-the-mission-i32', "/img/supporting_member.jpeg")}
                     alt="Supporting Member"
                     className="w-full h-full object-contain bg-[#180c06] group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -391,7 +392,7 @@ export default function JoinTheMission() {
                     className="w-56 sm:w-60 h-10 px-3 bg-[#1E3A8A] hover:bg-[#1B347B] text-white rounded-full font-bold text-xs sm:text-[13px] shadow-md shadow-blue-900/25 transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center whitespace-nowrap group-hover:scale-[1.01] sd-btn sd-btn--join-mission"
                     href="/membership"
                   >
-                    <span>Become a Patron Member</span>
+                    <span>{t(text, 'join-the-mission-k33', "Become a Patron Member")}</span>
                   </Link>
                 </div>
               </div>

@@ -1,4 +1,5 @@
-export default function VerificationPortal() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function VerificationPortal({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="w-full max-w-5xl mx-auto my-12 p-8 md:p-14 rounded-3xl bg-gradient-to-br from-[#121d2b] via-[#17212e] to-[#1e1b19] shadow-2xl relative overflow-hidden text-white"
@@ -25,14 +26,14 @@ export default function VerificationPortal() {
             </svg>
             <div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight text-white">Verification Portal</h2>
-              <p className="deva text-[#d49b4b] text-base md:text-lg font-semibold mt-2">विश्वास के साथ सत्यापन • भरोसे के साथ पुष्टि</p>
+              <p className="deva text-[#d49b4b] text-base md:text-lg font-semibold mt-2">{t(text, 'verification-portal-k1', "विश्वास के साथ सत्यापन • भरोसे के साथ पुष्टि")}</p>
             </div>
           </div>
           <p className="deva text-gray-300 text-[13px] leading-relaxed max-w-xl pl-10 mt-4">
-            हमारी संस्था द्वारा जारी स्वयंसेवक पहचान पत्र, सदस्य प्रमाणपत्र, नियुक्ति पत्र, समन्वयक नियुक्तियाँ, दान रसीदें तथा अन्य आधिकारिक दस्तावेज़ों की ऑनलाइन सत्यापन सुविधा उपलब्ध है। प्रत्येक प्रमाणपत्र एवं पहचान विवरण को निर्धारित सत्यापन प्रणाली के माध्यम से वास्तविक समय (Real-Time) में जाँचा जा सकता है।
+            {t(text, 'verification-portal-k2', "हमारी संस्था द्वारा जारी स्वयंसेवक पहचान पत्र, सदस्य प्रमाणपत्र, नियुक्ति पत्र, समन्वयक नियुक्तियाँ, दान रसीदें तथा अन्य आधिकारिक दस्तावेज़ों की ऑनलाइन सत्यापन सुविधा उपलब्ध है। प्रत्येक प्रमाणपत्र एवं पहचान विवरण को निर्धारित सत्यापन प्रणाली के माध्यम से वास्तविक समय (Real-Time) में जाँचा जा सकता है।")}
           </p>
           <p className="deva text-gray-400 text-[13px] leading-relaxed max-w-xl pl-10 mt-3">
-            पारदर्शिता, विश्वसनीयता और जनविश्वास हमारे कार्यों की आधारशिला हैं। किसी भी दस्तावेज़ की पुष्टि कर निश्चिंत होकर संस्था से जुड़ें और सेवा कार्यों में सहभागिता करें।
+            {t(text, 'verification-portal-k3', "पारदर्शिता, विश्वसनीयता और जनविश्वास हमारे कार्यों की आधारशिला हैं। किसी भी दस्तावेज़ की पुष्टि कर निश्चिंत होकर संस्था से जुड़ें और सेवा कार्यों में सहभागिता करें।")}
           </p>
         </div>
         <div
@@ -48,11 +49,11 @@ export default function VerificationPortal() {
                 id="docType"
                 className="w-full h-12 px-4 rounded-xl bg-white/10 border border-white/20 text-white text-sm focus:outline-none focus:border-orange-500 transition-all cursor-pointer [&>option]:bg-[#1a2332] [&>option]:text-white"
               >
-                <option defaultValue="Volunteer ID" selected>Volunteer ID</option>
-                <option defaultValue="Member Certificate">Member Certificate</option>
-                <option defaultValue="Coordinator ID">Coordinator ID</option>
-                <option defaultValue="Donation Receipt">Donation Receipt</option>
-                <option defaultValue="Appointment Letter">Appointment Letter</option>
+                <option defaultValue="Volunteer ID" selected>{t(text, 'verification-portal-k4', "Volunteer ID")}</option>
+                <option defaultValue="Member Certificate">{t(text, 'verification-portal-k5', "Member Certificate")}</option>
+                <option defaultValue="Coordinator ID">{t(text, 'verification-portal-k6', "Coordinator ID")}</option>
+                <option defaultValue="Donation Receipt">{t(text, 'verification-portal-k7', "Donation Receipt")}</option>
+                <option defaultValue="Appointment Letter">{t(text, 'verification-portal-k8', "Appointment Letter")}</option>
               </select>
             </div>
             <div>
@@ -88,7 +89,7 @@ export default function VerificationPortal() {
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
               </svg>
-              <span>Verify Now</span>
+              <span>{t(text, 'verification-portal-k9', "Verify Now")}</span>
             </button>
           </form>
         </div>

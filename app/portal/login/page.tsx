@@ -157,7 +157,7 @@ export default async function PortalLoginPage() {
             </button>
           </form>
           <div className="mt-8 pt-6 border-t border-slate-100 text-center">
-            <p className="text-xs text-slate-600 mb-3">{t(text, 'k12', "Don&#x27;t have an official Sanatan member account yet?")}</p>
+            <p className="text-xs text-slate-600 mb-3">{t(text, 'k12', "Don't have an official Sanatan member account yet?")}</p>
             <Link
               className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-saffron-500 bg-saffron-50 px-6 py-2.5 text-xs font-bold text-saffron-800 hover:bg-saffron-100 transition-colors sd-btn sd-btn--join-mission"
               href="/membership"
@@ -179,7 +179,7 @@ export default async function PortalLoginPage() {
                 <line x1="19" x2="19" y1="8" y2="14"></line>
                 <line x1="22" x2="16" y1="11" y2="11"></line>
               </svg>
-              <span>{t(text, 'k13', "Join Us &amp; Create New Profile (Free Registration)")}</span>
+              <span>{t(text, 'k13', "Join Us & Create New Profile (Free Registration)")}</span>
             </Link>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { BankPanel, OtherPanel, QrPanel } from './panels'
+import { DEFAULT_UPI, type Upi } from '@/lib/upi'
 
 const TABS = [
   { id: 'qr', label: 'Scan & Pay' },
@@ -9,7 +10,7 @@ const TABS = [
   { id: 'other', label: 'Other Ways' },
 ] as const
 
-export default function PayTabs() {
+export default function PayTabs({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   const [tab, setTab] = useState<string>('qr')
   return (
     <>
@@ -29,9 +30,9 @@ export default function PayTabs() {
       </div>
 
       <div className="sd-pay-panel is-active">
-        {tab === 'qr' && <QrPanel />}
-        {tab === 'bank' && <BankPanel />}
-        {tab === 'other' && <OtherPanel />}
+        {tab === 'qr' && <QrPanel upi={upi} />}
+        {tab === 'bank' && <BankPanel upi={upi} />}
+        {tab === 'other' && <OtherPanel upi={upi} />}
       </div>
     </>
   )

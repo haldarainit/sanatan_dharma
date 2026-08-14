@@ -1,7 +1,8 @@
 'use client'
 
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import { useState } from 'react'
-export default function OurMissions() {
+export default function OurMissions({ text, images }: { text?: TextMap; images?: ImageMap }) {
   const [showAll, setShowAll] = useState(false)
 
   return (
@@ -12,16 +13,16 @@ export default function OurMissions() {
         <div className="mx-auto max-w-3xl text-center mb-10 space-y-2">
           <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Our{' '}
-            <span className="text-[#e35300]">Missions</span>
+            <span className="text-[#e35300]">{t(text, 'our-missions-k1', "Missions")}</span>
           </h2>
-          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-3">हमारे सेवा मिशन</p>
+          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-3">{t(text, 'our-missions-k2', "हमारे सेवा मिशन")}</p>
           <p
             className="deva max-w-3xl mx-auto text-sm sm:text-[15px] text-slate-600 leading-relaxed text-justify"
           >
-            सनातन धर्म मानव कल्याण फाउंडेशन सेवा, संस्कार, संस्कृति और मानव कल्याण के विभिन्न क्षेत्रों में समर्पित भाव से कार्यरत है। हमारा उद्देश्य जनजागरण, सेवा भावना और सनातन मूल्यों के संरक्षण के माध्यम से समाज में सकारात्मक परिवर्तन लाना है।
+            {t(text, 'our-missions-k3', "सनातन धर्म मानव कल्याण फाउंडेशन सेवा, संस्कार, संस्कृति और मानव कल्याण के विभिन्न क्षेत्रों में समर्पित भाव से कार्यरत है। हमारा उद्देश्य जनजागरण, सेवा भावना और सनातन मूल्यों के संरक्षण के माध्यम से समाज में सकारात्मक परिवर्तन लाना है।")}
             <br />
             <br />
-            हम अपने सेवा अभियानों के माध्यम से अधिक से अधिक लोगों तक सहयोग पहुँचाने का सतत प्रयास करते हैं। आइए, सेवा और मानव कल्याण की इस पवित्र यात्रा में सहभागी बनें और मानव कल्याण के कार्यों को नई शक्ति प्रदान करें।🚩
+            {t(text, 'our-missions-k4', "हम अपने सेवा अभियानों के माध्यम से अधिक से अधिक लोगों तक सहयोग पहुँचाने का सतत प्रयास करते हैं। आइए, सेवा और मानव कल्याण की इस पवित्र यात्रा में सहभागी बनें और मानव कल्याण के कार्यों को नई शक्ति प्रदान करें।🚩")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -31,7 +32,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/yogi-flag.jpg"
+                  src={img(images, 'our-missions-i5', "/img/yogi-flag.jpg")}
                   alt="सनातन संस्कृति संरक्षण एवं जनजागरण अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -52,15 +53,15 @@ export default function OurMissions() {
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">सनातन संस्कृति संरक्षण एवं जनजागरण अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  सनातन मूल्यों, भारतीय परंपराओं एवं सामाजिक जागरूकता के संरक्षण का सतत अभियान।
+                  {t(text, 'our-missions-k6', "सनातन मूल्यों, भारतीय परंपराओं एवं सामाजिक जागरूकता के संरक्षण का सतत अभियान।")}
                 </p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹2,60,000</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k7', "₹2,60,000")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k8', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -80,7 +81,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/act-women.jpg"
+                  src={img(images, 'our-missions-i9', "/img/act-women.jpg")}
                   alt="महिला सुरक्षा एवं सम्मान अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -100,14 +101,14 @@ export default function OurMissions() {
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">महिला सुरक्षा एवं सम्मान अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">सुरक्षा, सम्मान, जागरूकता एवं सहयोग के लिए समर्पित अभियान।</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k10', "सुरक्षा, सम्मान, जागरूकता एवं सहयोग के लिए समर्पित अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹2,45,000</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k11', "₹2,45,000")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k12', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -127,7 +128,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/act-child.jpg"
+                  src={img(images, 'our-missions-i13', "/img/act-child.jpg")}
                   alt="अन्न सेवा अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -147,14 +148,14 @@ export default function OurMissions() {
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">अन्न सेवा अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">जरूरतमंद एवं असहाय लोगों तक भोजन एवं सहायता पहुँचाने का सेवा अभियान।</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k14', "जरूरतमंद एवं असहाय लोगों तक भोजन एवं सहायता पहुँचाने का सेवा अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹2,85,000</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k15', "₹2,85,000")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k16', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -175,7 +176,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gurukul.jpg"
+                  src={img(images, 'our-missions-i17', "/img/campaign-gurukul.jpg")}
                   alt="शिक्षा एवं संस्कार सहायता अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -195,14 +196,14 @@ export default function OurMissions() {
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">शिक्षा एवं संस्कार सहायता अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">शिक्षा, संस्कार एवं उज्ज्वल भविष्य की दिशा में एक सार्थक प्रयास।</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k18', "शिक्षा, संस्कार एवं उज्ज्वल भविष्य की दिशा में एक सार्थक प्रयास।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k19', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k20', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -223,7 +224,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/future-help.jpeg"
+                  src={img(images, 'our-missions-i21', "/img/future-help.jpeg")}
                   alt="धोखाधड़ी जागरूकता एवं सुरक्षा अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -244,15 +245,15 @@ export default function OurMissions() {
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">धोखाधड़ी जागरूकता एवं सुरक्षा अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  धोखाधड़ी, अपराध, नकली एवं मिलावटी उत्पादों के विरुद्ध जागरूकता और सहायता अभियान।
+                  {t(text, 'our-missions-k22', "धोखाधड़ी, अपराध, नकली एवं मिलावटी उत्पादों के विरुद्ध जागरूकता और सहायता अभियान।")}
                 </p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k23', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k24', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -273,7 +274,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-gaushala.jpg"
+                  src={img(images, 'our-missions-i25', "/img/campaign-gaushala.jpg")}
                   alt="गौ सेवा एवं संरक्षण अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -293,14 +294,14 @@ export default function OurMissions() {
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">गौ सेवा एवं संरक्षण अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">गौ संरक्षण, सेवा, देखभाल एवं जनजागरण के लिए समर्पित अभियान।</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k26', "गौ संरक्षण, सेवा, देखभाल एवं जनजागरण के लिए समर्पित अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k27', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k28', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -321,7 +322,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-tree.jpg"
+                  src={img(images, 'our-missions-i29', "/img/campaign-tree.jpg")}
                   alt="पर्यावरण संरक्षण एवं वृक्षारोपण अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -341,14 +342,14 @@ export default function OurMissions() {
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">पर्यावरण संरक्षण एवं वृक्षारोपण अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">हरित, स्वच्छ एवं सुरक्षित भविष्य के निर्माण का जनजागरण अभियान।</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k30', "हरित, स्वच्छ एवं सुरक्षित भविष्य के निर्माण का जनजागरण अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k31', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k32', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -369,7 +370,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/campaign-disaster.jpg"
+                  src={img(images, 'our-missions-i33', "/img/campaign-disaster.jpg")}
                   alt="आपदा राहत एवं मानव सहायता अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -390,15 +391,15 @@ export default function OurMissions() {
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">आपदा राहत एवं मानव सहायता अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  आपदा एवं आपातकालीन परिस्थितियों में राहत, सहायता एवं मानव सेवा का अभियान।
+                  {t(text, 'our-missions-k34', "आपदा एवं आपातकालीन परिस्थितियों में राहत, सहायता एवं मानव सेवा का अभियान।")}
                 </p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k35', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k36', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div
@@ -419,7 +420,7 @@ export default function OurMissions() {
             <div>
               <div className="relative h-56 w-full">
                 <img
-                  src="/img/megaphone.jpeg"
+                  src={img(images, 'our-missions-i37', "/img/megaphone.jpeg")}
                   alt="फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -440,15 +441,15 @@ export default function OurMissions() {
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  फिल्म, वेब सीरीज़, संगीत एवं डिजिटल मीडिया द्वारा सकारात्मक सामाजिक संदेश पहुँचाने का अभियान।
+                  {t(text, 'our-missions-k38', "फिल्म, वेब सीरीज़, संगीत एवं डिजिटल मीडिया द्वारा सकारात्मक सामाजिक संदेश पहुँचाने का अभियान।")}
                 </p>
               </div>
             </div>
             <div className="px-5 pb-5">
               <div className="mb-4">
                 <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
-                  <span className="text-slate-800">₹0</span>
-                  <span className="text-slate-400">Goal: ₹5,00,000</span>
+                  <span className="text-slate-800">{t(text, 'our-missions-k39', "₹0")}</span>
+                  <span className="text-slate-400">{t(text, 'our-missions-k40', "Goal: ₹5,00,000")}</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div

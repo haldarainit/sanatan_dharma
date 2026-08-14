@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getHeroSlides, getMissions } from '@/lib/sanity/data'
+import { getHeroSlides, getMissions, getSiteSettings } from '@/lib/sanity/data'
+import { getPageContent } from '@/lib/sanity/content'
 import Hero from '@/components/home/Hero'
 import ImpactTicker from '@/components/home/ImpactTicker'
 import TrustCredentials from '@/components/home/TrustCredentials'
@@ -31,33 +32,39 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const [slides, missions] = await Promise.all([getHeroSlides(), getMissions()])
+  const [slides, missions, content, settings] = await Promise.all([
+    getHeroSlides(),
+    getMissions(),
+    getPageContent('/'),
+    getSiteSettings(),
+  ])
+  const { text, images } = content
 
   return (
     <>
-      <Hero slides={slides} />
-      <ImpactTicker />
-      <TrustCredentials />
-      <WhoWeAre />
-      <OurMissions />
-      <FutureMissionsSection missions={missions} />
-      <LongTermCommitment />
-      <SevaActivities />
-      <StartFundraising />
-      <ActiveFundraisers />
-      <JoinTheMission />
-      <WhyChooseUs />
-      <VerificationPortal />
-      <CulturalMediaHub />
-      <NityaSevaSankalp />
-      <DonationHub />
-      <CsrPartnerships />
-      <FestivalCalendarPreview />
-      <OfficialAnnouncements />
-      <CommunityVoices />
-      <Faq />
-      <JoinUsCta />
-      <NewsletterCta />
+      <Hero slides={slides} text={text} images={images} />
+      <ImpactTicker text={text} images={images} />
+      <TrustCredentials text={text} images={images} />
+      <WhoWeAre text={text} images={images} />
+      <OurMissions text={text} images={images} />
+      <FutureMissionsSection missions={missions} text={text} images={images} />
+      <LongTermCommitment text={text} images={images} />
+      <SevaActivities text={text} images={images} />
+      <StartFundraising text={text} images={images} />
+      <ActiveFundraisers text={text} images={images} />
+      <JoinTheMission text={text} images={images} />
+      <WhyChooseUs text={text} images={images} />
+      <VerificationPortal text={text} images={images} />
+      <CulturalMediaHub text={text} images={images} />
+      <NityaSevaSankalp text={text} images={images} />
+      <DonationHub text={text} images={images} upi={settings.upi} />
+      <CsrPartnerships text={text} images={images} />
+      <FestivalCalendarPreview text={text} images={images} />
+      <OfficialAnnouncements text={text} images={images} />
+      <CommunityVoices text={text} images={images} />
+      <Faq text={text} images={images} />
+      <JoinUsCta text={text} images={images} />
+      <NewsletterCta text={text} images={images} />
     </>
   )
 }

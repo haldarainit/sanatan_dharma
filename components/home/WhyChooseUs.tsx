@@ -1,11 +1,12 @@
-export default function WhyChooseUs() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function WhyChooseUs({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#241812] via-[#110b08] to-[#0a0604] py-14 px-4 text-white sd-gap"
     >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold font-serif tracking-wide text-white mb-2">Why Choose Us</h2>
-        <p className="text-[#d49b4b] text-xs font-bold uppercase tracking-[2.5px] mb-16">Built on Trust, Transparency &amp; Service</p>
+        <p className="text-[#d49b4b] text-xs font-bold uppercase tracking-[2.5px] mb-16">{t(text, 'why-choose-us-k1', "Built on Trust, Transparency & Service")}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="group flex flex-col items-center p-2 cursor-pointer">
             <div
@@ -31,7 +32,7 @@ export default function WhyChooseUs() {
               className="font-serif text-[1.125rem] font-bold text-white mb-3 min-h-[48px] flex items-center justify-center leading-snug"
             >Transparency &amp; Accountability</h3>
             <p className="text-xs text-[#bfb8b2] leading-relaxed max-w-[250px] mx-auto">
-              हम संस्था के कार्यों, अभियानों एवं उपलब्ध संसाधनों के उपयोग में पारदर्शिता और उत्तरदायित्व बनाए रखने के लिए प्रतिबद्ध हैं।
+              {t(text, 'why-choose-us-k2', "हम संस्था के कार्यों, अभियानों एवं उपलब्ध संसाधनों के उपयोग में पारदर्शिता और उत्तरदायित्व बनाए रखने के लिए प्रतिबद्ध हैं।")}
             </p>
           </div>
           <div className="group flex flex-col items-center p-2 cursor-pointer">
@@ -60,7 +61,7 @@ export default function WhyChooseUs() {
               className="font-serif text-[1.125rem] font-bold text-white mb-3 min-h-[48px] flex items-center justify-center leading-snug"
             >Registered &amp; Verified Organization</h3>
             <p className="text-xs text-[#bfb8b2] leading-relaxed max-w-[250px] mx-auto">
-              Section 8 Company, 12A, 80G, CSR-1 एवं NGO Darpan जैसे महत्वपूर्ण पंजीकरणों के अंतर्गत कार्यरत एक वैधानिक संस्था।
+              {t(text, 'why-choose-us-k3', "Section 8 Company, 12A, 80G, CSR-1 एवं NGO Darpan जैसे महत्वपूर्ण पंजीकरणों के अंतर्गत कार्यरत एक वैधानिक संस्था।")}
             </p>
           </div>
           <div className="group flex flex-col items-center p-2 cursor-pointer">
@@ -87,7 +88,7 @@ export default function WhyChooseUs() {
               className="font-serif text-[1.125rem] font-bold text-white mb-3 min-h-[48px] flex items-center justify-center leading-snug"
             >Safe &amp; Secure Contributions</h3>
             <p className="text-xs text-[#bfb8b2] leading-relaxed max-w-[250px] mx-auto">
-              सभी ऑनलाइन सहयोग राशि अधिकृत एवं सुरक्षित भुगतान माध्यमों के द्वारा स्वीकार की जाती है।
+              {t(text, 'why-choose-us-k4', "सभी ऑनलाइन सहयोग राशि अधिकृत एवं सुरक्षित भुगतान माध्यमों के द्वारा स्वीकार की जाती है।")}
             </p>
           </div>
           <div className="group flex flex-col items-center p-2 cursor-pointer">
@@ -116,7 +117,7 @@ export default function WhyChooseUs() {
               className="font-serif text-[1.125rem] font-bold text-white mb-3 min-h-[48px] flex items-center justify-center leading-snug"
             >Dedicated Team &amp; Volunteers</h3>
             <p className="text-xs text-[#bfb8b2] leading-relaxed max-w-[250px] mx-auto">
-              संस्था की टीम, स्वयंसेवक एवं सहयोगी सदस्य सेवा, जागरूकता एवं जनकल्याण के विभिन्न अभियानों में सक्रिय रूप से योगदान देते हैं।
+              {t(text, 'why-choose-us-k5', "संस्था की टीम, स्वयंसेवक एवं सहयोगी सदस्य सेवा, जागरूकता एवं जनकल्याण के विभिन्न अभियानों में सक्रिय रूप से योगदान देते हैं।")}
             </p>
           </div>
         </div>

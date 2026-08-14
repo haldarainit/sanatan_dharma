@@ -1,6 +1,7 @@
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import Link from 'next/link'
 
-export default function OfficialAnnouncements() {
+export default function OfficialAnnouncements({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="py-8 sm:py-12 bg-[#fcf8f5] flex items-center justify-center p-4 border-t border-[#FF6F00]/15 sd-gap"
@@ -27,16 +28,16 @@ export default function OfficialAnnouncements() {
               <path d="m3 11 18-5v12L3 14v-3z"></path>
               <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
             </svg>
-            <span>REGISTERED MEMBERS ONLY</span>
+            <span>{t(text, 'official-announcements-k1', "REGISTERED MEMBERS ONLY")}</span>
           </div>
           <h2 className="deva text-2xl sm:text-3xl font-bold text-white mb-1 leading-tight">आधिकारिक सूचना</h2>
-          <p className="text-slate-200 font-bold text-base sm:text-lg mb-1">Official Announcements</p>
-          <p className="text-slate-400 text-xs sm:text-sm mb-4">(Only for Registered Members)</p>
+          <p className="text-slate-200 font-bold text-base sm:text-lg mb-1">{t(text, 'official-announcements-k2', "Official Announcements")}</p>
+          <p className="text-slate-400 text-xs sm:text-sm mb-4">{t(text, 'official-announcements-k3', "(Only for Registered Members)")}</p>
           <p className="deva text-slate-300 text-sm leading-relaxed mb-3">
-            संगठन की महत्वपूर्ण घोषणाएँ, अभियान निर्देश, बैठक सूचनाएँ, कार्यक्रम अपडेट एवं अन्य आवश्यक जानकारी केवल पंजीकृत सदस्यों के लिए उपलब्ध है।
+            {t(text, 'official-announcements-k4', "संगठन की महत्वपूर्ण घोषणाएँ, अभियान निर्देश, बैठक सूचनाएँ, कार्यक्रम अपडेट एवं अन्य आवश्यक जानकारी केवल पंजीकृत सदस्यों के लिए उपलब्ध है।")}
           </p>
           <p className="deva text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            यहाँ प्रकाशित सूचनाएँ संगठन की आधिकारिक जानकारी मानी जाएँगी। सभी सदस्यों से अनुरोध है कि समय-समय पर नवीनतम अपडेट एवं घोषणाएँ अवश्य देखें।
+            {t(text, 'official-announcements-k5', "यहाँ प्रकाशित सूचनाएँ संगठन की आधिकारिक जानकारी मानी जाएँगी। सभी सदस्यों से अनुरोध है कि समय-समय पर नवीनतम अपडेट एवं घोषणाएँ अवश्य देखें।")}
           </p>
           <Link
             href="/portal/announcements"
@@ -57,14 +58,14 @@ export default function OfficialAnnouncements() {
               <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
-            <span>View Announcements</span>
+            <span>{t(text, 'official-announcements-k6', "View Announcements")}</span>
           </Link>
         </div>
         <div
           className="w-full md:w-80 h-48 md:h-56 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 relative shadow-xl border border-slate-700/50 group bg-slate-900"
         >
           <img
-            src="/img/members_only.jpeg"
+            src={img(images, 'official-announcements-i7', "/img/members_only.jpeg")}
             alt="Registered Members Only Notice"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />

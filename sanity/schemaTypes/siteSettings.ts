@@ -29,6 +29,19 @@ export const siteSettings = defineType({
       of: [defineArrayMember({ type: 'string' })],
     }),
     defineField({ name: 'whatsapp', title: 'WhatsApp number', type: 'string' }),
+    defineField({
+      name: 'upiId',
+      title: 'UPI ID for donations',
+      type: 'string',
+      description:
+        'Changing this updates the QR codes, the pay links and the printed ID everywhere on the site.',
+    }),
+    defineField({
+      name: 'upiName',
+      title: 'Name shown in the UPI app',
+      type: 'string',
+      description: 'The payee name donors see when their UPI app opens.',
+    }),
     defineField({ name: 'footerAbout', title: 'Footer description', type: 'text', rows: 5 }),
     defineField({ name: 'cin', title: 'CIN', type: 'string' }),
     defineField({

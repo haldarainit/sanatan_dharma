@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import { HERO_SLIDES, type HeroSlide } from '@/lib/hero'
 
 const TYPE_MS = 28
@@ -77,7 +78,15 @@ function useTypedSlide(index: number, slide: HeroSlide) {
   return { line1, line2, ctaIn }
 }
 
-export default function Hero({ slides = HERO_SLIDES }: { slides?: HeroSlide[] }) {
+export default function Hero({
+  slides = HERO_SLIDES,
+  text,
+  images,
+}: {
+  slides?: HeroSlide[]
+  text?: TextMap
+  images?: ImageMap
+}) {
   const [index, setIndex] = useState(0)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
   const slide = slides[index]

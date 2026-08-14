@@ -190,7 +190,7 @@ export default async function SanataniSenaPage() {
                 <div>
                   <h3 className="font-serif text-xl font-bold text-saffron-900">GENERAL MEMBER</h3>
                   <h4 className="text-sm font-bold text-amber-700">सामान्य सदस्य</h4>
-                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">{t(text, 'k17', "(Associate Member &amp; Supporter / सहयोगी सदस्य)")}</p>
+                  <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">{t(text, 'k17', "(Associate Member & Supporter / सहयोगी सदस्य)")}</p>
                 </div>
                 <p
                   className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-saffron-50/50 p-2.5 rounded-xl border border-saffron-100"
@@ -255,7 +255,7 @@ export default async function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">VIGILANCE DEPARTMENT</h3>
                   <h4 className="text-sm font-bold text-amber-700">विजिलेंस विभाग</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    {t(text, 'k26', "(Transparency, Integrity &amp; Fraud Awareness Wing / सतर्कता एवं निगरानी विभाग)")}
+                    {t(text, 'k26', "(Transparency, Integrity & Fraud Awareness Wing / सतर्कता एवं निगरानी विभाग)")}
                   </p>
                 </div>
                 <p
@@ -321,7 +321,7 @@ export default async function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">SANATAN SEVA NETWORK</h3>
                   <h4 className="text-sm font-bold text-amber-700">सनातन सेवा नेटवर्क</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    {t(text, 'k35', "(Professionals, Businessmen &amp; Service Providers Network / पेशेवर एवं सेवाप्रदाता मंच)")}
+                    {t(text, 'k35', "(Professionals, Businessmen & Service Providers Network / पेशेवर एवं सेवाप्रदाता मंच)")}
                   </p>
                 </div>
                 <p
@@ -384,7 +384,7 @@ export default async function SanataniSenaPage() {
                   <h3 className="font-serif text-xl font-bold text-saffron-900">SUPPORTING MEMBER / PATRON MEMBER</h3>
                   <h4 className="text-sm font-bold text-amber-700">संरक्षक / सहयोगी सदस्य</h4>
                   <p className="text-[11px] text-slate-500 font-medium italic mt-0.5">
-                    {t(text, 'k40', "(Patrons, Donors &amp; Institutional Supporters / विशिष्ट संरक्षक सदस्य)")}
+                    {t(text, 'k40', "(Patrons, Donors & Institutional Supporters / विशिष्ट संरक्षक सदस्य)")}
                   </p>
                 </div>
                 <p

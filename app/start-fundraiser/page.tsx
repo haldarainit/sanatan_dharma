@@ -46,7 +46,7 @@ export default async function StartFundraiserPage() {
           <hr className="my-10 border-slate-200" />
           <div className="mb-14">
             <div className="text-center mb-8">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k5', "Eligibility &amp; Scope")}</span>
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k5', "Eligibility & Scope")}</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">WHO CAN APPLY FOR FUNDRAISING SUPPORT?</h2>
               <p className="text-sm font-semibold text-[#FF6F00] mt-1">{t(text, 'k6', "Fundraising सहायता हेतु कौन आवेदन कर सकता है?")}</p>
             </div>
@@ -87,11 +87,11 @@ export default async function StartFundraiserPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>{t(text, 'k10', "Food &amp; Nutrition Support")}</span>
+                      <span>{t(text, 'k10', "Food & Nutrition Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>{t(text, 'k11', "Women Support &amp; Safety")}</span>
+                      <span>{t(text, 'k11', "Women Support & Safety")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
@@ -111,7 +111,7 @@ export default async function StartFundraiserPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>{t(text, 'k16', "Livelihood &amp; Skill Support")}</span>
+                      <span>{t(text, 'k16', "Livelihood & Skill Support")}</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
@@ -189,7 +189,7 @@ export default async function StartFundraiserPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#FF6F00] mt-1.5 shrink-0"></span>
-                      <span>{t(text, 'k28', "Fraud Awareness &amp; Help Center")}</span>
+                      <span>{t(text, 'k28', "Fraud Awareness & Help Center")}</span>
                     </li>
                   </ul>
                 </div>
@@ -286,7 +286,7 @@ export default async function StartFundraiserPage() {
           <hr className="my-10 border-slate-200" />
           <div className="mb-14">
             <div className="text-center mb-8">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k38', "Process &amp; Workflow")}</span>
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6F00]">{t(text, 'k38', "Process & Workflow")}</span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">HOW FUNDRAISING WORKS?</h2>
               <p className="text-xs sm:text-sm text-slate-600 mt-1">{t(text, 'k39', "6 सरल चरणों में जानिए अभियान की संपूर्ण प्रक्रिया")}</p>
             </div>
@@ -431,7 +431,7 @@ export default async function StartFundraiserPage() {
                       >4</span>
                       <span className="text-xs font-bold">{t(text, 'k56', "Section D")}</span>
                     </div>
-                    <div className="text-[11px] font-medium truncate">{t(text, 'k57', "Transfer &amp; Declaration")}</div>
+                    <div className="text-[11px] font-medium truncate">{t(text, 'k57', "Transfer & Declaration")}</div>
                   </div>
                 </div>
               </div>
@@ -662,7 +662,7 @@ export default async function StartFundraiserPage() {
             <blockquote
               className="font-serif text-base sm:text-xl font-bold text-[#0D1B2A] italic max-w-3xl mx-auto leading-relaxed mb-4"
             >
-              {t(text, 'k70', "&quot;हमारा उद्देश्य केवल धन संग्रह करना नहीं, बल्कि सही व्यक्ति, सही उद्देश्य और सही आवश्यकता तक सहयोग पहुँचाना है — पूर्ण पारदर्शिता, उत्तरदायित्व एवं सेवा भावना के साथ।&quot;")}
+              {t(text, 'k70', "\"हमारा उद्देश्य केवल धन संग्रह करना नहीं, बल्कि सही व्यक्ति, सही उद्देश्य और सही आवश्यकता तक सहयोग पहुँचाना है — पूर्ण पारदर्शिता, उत्तरदायित्व एवं सेवा भावना के साथ।\"")}
             </blockquote>
             <div className="text-[#FF6F00] font-extrabold text-sm sm:text-base tracking-widest uppercase">{t(text, 'k71', "🚩 सेवा ही सनातन • समर्पण ही हमारा धर्म")}</div>
           </div>

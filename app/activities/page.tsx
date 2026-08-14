@@ -51,7 +51,7 @@ export default async function ActivitiesPage() {
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
           >
             <div className="relative h-52 w-full overflow-hidden">
-              <img src="/img/yogi-flag.jpg" alt="सनातन बोर्ड" className="w-full h-full object-cover" />
+              <img src={img(images, 'i29', "/img/yogi-flag.jpg")} alt="सनातन बोर्ड" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div
                 className="absolute top-3 right-3 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md"
@@ -163,7 +163,7 @@ export default async function ActivitiesPage() {
             className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
           >
             <div className="relative h-52 w-full overflow-hidden">
-              <img src="/img/act-child.jpg" alt="अन्न सेवा अभियान" className="w-full h-full object-cover" />
+              <img src={img(images, 'i30', "/img/act-child.jpg")} alt="अन्न सेवा अभियान" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div
                 className="absolute top-3 right-3 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md"
@@ -360,7 +360,7 @@ export default async function ActivitiesPage() {
           <p
             className="deva text-lg sm:text-xl font-bold text-slate-800 leading-relaxed max-w-3xl mx-auto"
           >
-            {t(text, 'k16', "&quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;")}
+            {t(text, 'k16', "\"सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।\"")}
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 text-left">

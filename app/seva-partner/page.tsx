@@ -134,7 +134,7 @@ export default async function SevaPartnerPage() {
       </div>
       <div className="mb-12">
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k10', "Synergy &amp; Empowerment")}</span>
+          <span className="text-xs font-bold text-[#FF6F00] uppercase tracking-widest">{t(text, 'k10', "Synergy & Empowerment")}</span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D1B2A] mt-1">BENEFITS OF SEVA PARTNERSHIP / सेवा सहभागिता के लाभ</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -338,7 +338,7 @@ export default async function SevaPartnerPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k21', "City &amp; State *")}</label>
+                <label className="block text-xs font-bold text-slate-800 mb-1">{t(text, 'k21', "City & State *")}</label>
                 <input
                   type="text"
                   required
@@ -359,7 +359,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k22', "Gau Seva &amp; Animal Welfare (गौ सेवा व पशु कल्याण)")}</span>
+                <span>{t(text, 'k22', "Gau Seva & Animal Welfare (गौ सेवा व पशु कल्याण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -368,7 +368,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k23', "Food &amp; Ration Relief / Annadaan (अन्नदान व भोजन वितरण)")}</span>
+                <span>{t(text, 'k23', "Food & Ration Relief / Annadaan (अन्नदान व भोजन वितरण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -377,7 +377,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k24', "Healthcare &amp; Medical Camps (स्वास्थ्य शिविर)")}</span>
+                <span>{t(text, 'k24', "Healthcare & Medical Camps (स्वास्थ्य शिविर)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -386,7 +386,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k25', "Education &amp; Skill Training (शिक्षा व कौशल विकास)")}</span>
+                <span>{t(text, 'k25', "Education & Skill Training (शिक्षा व कौशल विकास)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -395,7 +395,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k26', "Cultural Preservation &amp; Temples (सांस्कृतिक व धार्मिक कार्य)")}</span>
+                <span>{t(text, 'k26', "Cultural Preservation & Temples (सांस्कृतिक व धार्मिक कार्य)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -404,7 +404,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k27', "Disaster &amp; Emergency Relief (आपदा प्रबंधन व राहत कार्य)")}</span>
+                <span>{t(text, 'k27', "Disaster & Emergency Relief (आपदा प्रबंधन व राहत कार्य)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"
@@ -413,7 +413,7 @@ export default async function SevaPartnerPage() {
                   type="checkbox"
                   className="h-4 w-4 rounded border-slate-300 text-[#FF6F00] focus:ring-[#FF6F00]"
                 />
-                <span>{t(text, 'k28', "Youth &amp; Women Empowerment (युवा व महिला सशक्तिकरण)")}</span>
+                <span>{t(text, 'k28', "Youth & Women Empowerment (युवा व महिला सशक्तिकरण)")}</span>
               </label>
               <label
                 className="flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer text-xs font-semibold transition-all bg-slate-50 border-slate-200 text-slate-700 hover:bg-white"

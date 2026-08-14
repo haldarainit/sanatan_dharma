@@ -1,7 +1,7 @@
 import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
 import DonationFlow from '@/components/DonationFlow'
-import { getDonationTiers } from '@/lib/sanity/data'
+import { getDonationTiers, getSiteSettings } from '@/lib/sanity/data'
 import PayTabs from '@/components/donate/PayTabs'
 import PaymentConfirmForm from '@/components/donate/PaymentConfirmForm'
 import type { Metadata } from 'next'
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default async function DonatePage() {
   const { text, images } = await getPageContent("/donate")
   const tiers = await getDonationTiers()
+  const { upi } = await getSiteSettings()
 
   return (
     <>
@@ -90,7 +91,7 @@ export default async function DonatePage() {
                   className="rounded-2xl bg-white border border-[#0D1B2A]/10 p-5 shadow-xs flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">{t(text, 'k11', "Trust &amp; Transparency")}</div>
+                    <div className="text-[10.5px] tracking-[0.16em] uppercase font-bold text-[#FF6F00]">{t(text, 'k11', "Trust & Transparency")}</div>
                     <h3 className="font-serif text-lg font-bold text-[#0D1B2A] mt-0.5">Verified &amp; Compliant</h3>
                     <p className="deva mt-2.5 text-[12px] leading-[1.8] text-[#0D1B2A]/75">
                       {t(text, 'k12', "हम आपकी सहयोग राशि का पूर्ण पारदर्शिता एवं जिम्मेदारी के साथ उपयोग करते हैं। यह राशि वर्तमान गतिविधियों, भावी योजनाओं, संस्था के संचालन, प्रशासनिक आवश्यकताओं, टीम प्रबंधन एवं विभिन्न समाज सेवा कार्यों में उपयोग की जाती है। संस्था द्वारा समय-समय पर गतिविधियों एवं उपयोग संबंधी जानकारी वेबसाइट पर प्रकाशित की जाती है।")}
@@ -148,7 +149,7 @@ export default async function DonatePage() {
                           <circle cx="12" cy="12" r="10"></circle>
                           <path d="m9 12 2 2 4-4"></path>
                         </svg>
-                        <span className="font-medium">{t(text, 'k15', "Regular Updates &amp; Reports")}</span>
+                        <span className="font-medium">{t(text, 'k15', "Regular Updates & Reports")}</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg
@@ -215,7 +216,7 @@ export default async function DonatePage() {
                   <h2 className="font-serif text-xl font-bold text-[#0D1B2A]">Scan &amp; Pay</h2>
                   <p className="text-[12px] text-[#0D1B2A]/60 mt-1">{t(text, 'k18', "Use QR or bank transfer for instant payments.")}</p>
                 </div>
-                <PayTabs />
+                <PayTabs upi={upi} />
               </div>
               <PaymentConfirmForm />
               <div

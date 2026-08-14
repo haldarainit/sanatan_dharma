@@ -1,4 +1,5 @@
-export default function Faq() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function Faq({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <div
       className="w-full bg-[#faf8f5] py-16 px-4 flex justify-center items-start border-t border-[#eae7e1]"
@@ -7,9 +8,9 @@ export default function Faq() {
         <div className="text-center mb-8">
           <h2 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Frequently Asked{' '}
-            <span className="block sm:inline text-[#e35300]">Questions</span>
+            <span className="block sm:inline text-[#e35300]">{t(text, 'faq-k1', "Questions")}</span>
           </h2>
-          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">सामान्यतः पूछे जाने वाले प्रश्न।</p>
+          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-4">{t(text, 'faq-k2', "सामान्यतः पूछे जाने वाले प्रश्न।")}</p>
         </div>
         <div className="bg-white rounded-2xl shadow-sm border border-[#eae7e1] overflow-hidden">
           <div className="transition-colors duration-200 border-b border-[#f0ede6]">
@@ -139,7 +140,7 @@ export default function Faq() {
               <span
                 className="font-bold text-base md:text-[17px] leading-snug pr-4 transition-colors text-gray-900"
               >
-                Sanatani Sena, Vigilance Department एवं Sanatan Seva Network क्या हैं?
+                {t(text, 'faq-k3', "Sanatani Sena, Vigilance Department एवं Sanatan Seva Network क्या हैं?")}
               </span>
               <svg
                 className="w-4 h-4 shrink-0 transition-transform duration-200 text-gray-500"
@@ -161,7 +162,7 @@ export default function Faq() {
               <span
                 className="font-bold text-base md:text-[17px] leading-snug pr-4 transition-colors text-gray-900"
               >
-                क्या कॉर्पोरेट कंपनियाँ (CSR) भी संस्था के अभियानों में सहयोग कर सकती हैं?
+                {t(text, 'faq-k4', "क्या कॉर्पोरेट कंपनियाँ (CSR) भी संस्था के अभियानों में सहयोग कर सकती हैं?")}
               </span>
               <svg
                 className="w-4 h-4 shrink-0 transition-transform duration-200 text-gray-500"
@@ -183,7 +184,7 @@ export default function Faq() {
               <span
                 className="font-bold text-base md:text-[17px] leading-snug pr-4 transition-colors text-gray-900"
               >
-                क्या संस्था द्वारा उत्कृष्ट कार्य करने वाले सदस्यों को सम्मानित किया जाता है?
+                {t(text, 'faq-k5', "क्या संस्था द्वारा उत्कृष्ट कार्य करने वाले सदस्यों को सम्मानित किया जाता है?")}
               </span>
               <svg
                 className="w-4 h-4 shrink-0 transition-transform duration-200 text-gray-500"
@@ -225,7 +226,7 @@ export default function Faq() {
               <span
                 className="font-bold text-base md:text-[17px] leading-snug pr-4 transition-colors text-gray-900"
               >
-                क्या संस्था द्वारा Appointment Letter, Certificate या ID Card प्रदान किया जाता है?
+                {t(text, 'faq-k6', "क्या संस्था द्वारा Appointment Letter, Certificate या ID Card प्रदान किया जाता है?")}
               </span>
               <svg
                 className="w-4 h-4 shrink-0 transition-transform duration-200 text-gray-500"

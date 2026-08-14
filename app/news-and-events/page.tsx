@@ -33,7 +33,7 @@ export default async function NewsAndEventsPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">{t(text, 'k2', "News &amp; Field Updates")}</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "News & Field Updates")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           News &amp; Field{' '}
@@ -129,7 +129,7 @@ export default async function NewsAndEventsPage() {
             </div>
             <div className="h-64 md:h-full min-h-[300px] relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80"
+                src={img(images, 'i26', "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80")}
                 alt="Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions"
                 className="h-full w-full object-cover"
               />
@@ -189,7 +189,7 @@ export default async function NewsAndEventsPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80"
+                  src={img(images, 'i27', "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80")}
                   alt="Nationwide Annadanam Drive Serves Over 25,000 Hot Meals in Monsoon Affected Regions"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -298,7 +298,7 @@ export default async function NewsAndEventsPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src={img(images, 'i28', "https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=800")}
                   alt="Press Release: Foundation Expands Free Gaushala Medical & Fodder Support Scheme"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -350,7 +350,7 @@ export default async function NewsAndEventsPage() {
                 <h3
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  {t(text, 'k14', "Press Release: Foundation Expands Free Gaushala Medical &amp; Fodder Support Scheme")}
+                  {t(text, 'k14', "Press Release: Foundation Expands Free Gaushala Medical & Fodder Support Scheme")}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
                   {t(text, 'k15', "Central Board announces ₹1.5 Crore grant allocation for 85 partner gaushalas in UP, Rajasthan, and MP to supply green fodder and veterinary care.")}
@@ -407,7 +407,7 @@ export default async function NewsAndEventsPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src={img(images, 'i29', "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800")}
                   alt="Upcoming: Mega Free Medical & Eye Checkup Camp in Pune District"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -514,7 +514,7 @@ export default async function NewsAndEventsPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80"
+                  src={img(images, 'i30', "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80")}
                   alt="Prakriti Seva: 10,000 Sacred Neem & Banyan Saplings Planted Across Rural Belts"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -566,7 +566,7 @@ export default async function NewsAndEventsPage() {
                 <h3
                   className="font-serif text-lg font-bold text-slate-900 group-hover:text-saffron-700 transition-colors line-clamp-2"
                 >
-                  {t(text, 'k19', "Prakriti Seva: 10,000 Sacred Neem &amp; Banyan Saplings Planted Across Rural Belts")}
+                  {t(text, 'k19', "Prakriti Seva: 10,000 Sacred Neem & Banyan Saplings Planted Across Rural Belts")}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
                   {t(text, 'k20', "Community youth and school students joined hands to plant oxygen-rich indigenous trees along village roads and temple groves.")}

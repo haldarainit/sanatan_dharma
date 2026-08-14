@@ -36,7 +36,7 @@ export default async function LegalDocumentsPage() {
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
-            <span className="text-[#e35300]">{t(text, 'k2', "Legal &amp; Governance Portal")}</span>
+            <span className="text-[#e35300]">{t(text, 'k2', "Legal & Governance Portal")}</span>
           </nav>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
             Legal &amp; Governance{' '}
@@ -44,7 +44,7 @@ export default async function LegalDocumentsPage() {
           </h1>
           <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "📜 पारदर्शिता, वैधानिक पंजीकरण एवं ऑडिट रिपोर्ट")}</p>
           <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
-            {t(text, 'k5', "सनातन धर्म मानव कल्याण फाउंडेशन की वैधानिक प्रामाणिकता, 12A &amp; 80G पंजीकरण, वार्षिक सी.ए. ऑडिट रिपोर्ट एवं नीतियां।")}
+            {t(text, 'k5', "सनातन धर्म मानव कल्याण फाउंडेशन की वैधानिक प्रामाणिकता, 12A & 80G पंजीकरण, वार्षिक सी.ए. ऑडिट रिपोर्ट एवं नीतियां।")}
           </p>
         </div>
       </section>
@@ -229,7 +229,7 @@ export default async function LegalDocumentsPage() {
                   ></path>
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
-                {t(text, 'k6', "TRUST &amp; TRANSPARENCY · पारदर्शिता एवं विश्वास")}
+                {t(text, 'k6', "TRUST & TRANSPARENCY · पारदर्शिता एवं विश्वास")}
               </div>
               <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white leading-tight">
                 विश्वास हमारी सबसे{' '}
@@ -392,7 +392,7 @@ export default async function LegalDocumentsPage() {
                 ></path>
                 <circle cx="12" cy="8" r="6"></circle>
               </svg>
-              {t(text, 'k13', "REGISTRATIONS &amp; CERTIFICATES · पंजीकरण एवं प्रमाणपत्र")}
+              {t(text, 'k13', "REGISTRATIONS & CERTIFICATES · पंजीकरण एवं प्रमाणपत्र")}
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
               हमारी संस्था के{' '}
@@ -2123,7 +2123,7 @@ export default async function LegalDocumentsPage() {
               <path d="M16 13H8"></path>
               <path d="M16 17H8"></path>
             </svg>
-            {t(text, 'k147', "POLICIES &amp; COMPLIANCE · नीतियाँ एवं अनुपालन")}
+            {t(text, 'k147', "POLICIES & COMPLIANCE · नीतियाँ एवं अनुपालन")}
           </div>
           <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
             संस्थागत नीति एवं{' '}
@@ -2457,7 +2457,7 @@ export default async function LegalDocumentsPage() {
           </div>
           <div className="space-y-2 flex-1">
             <div className="flex items-center gap-2">
-              <span className="font-serif font-bold text-slate-900 text-base sm:text-lg">{t(text, 'k170', "DISCLAIMER &amp; NOTICE · अस्वीकरण सूचना")}</span>
+              <span className="font-serif font-bold text-slate-900 text-base sm:text-lg">{t(text, 'k170', "DISCLAIMER & NOTICE · अस्वीकरण सूचना")}</span>
               <span
                 className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-200 text-amber-900"
               >Official Notice</span>

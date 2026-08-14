@@ -1,6 +1,7 @@
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import Link from 'next/link'
 
-export default function JoinUsCta() {
+export default function JoinUsCta({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section className="container-x my-12 sd-gap">
       <div
@@ -8,10 +9,10 @@ export default function JoinUsCta() {
       >
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-        <p className="deva eyebrow text-saffron-100">आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है</p>
+        <p className="deva eyebrow text-saffron-100">{t(text, 'join-us-cta-k1', "आपका सहयोग किसी के जीवन में नई उम्मीद ला सकता है")}</p>
         <h2 className="deva mt-3 font-display text-3xl font-bold sm:text-4xl">सेवा, सहयोग एवं सहभागिता के माध्यम से जुड़ें</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-white/90">
-          Be part of positive change. Your contribution brings hope, support and dignity to lives across India.
+          {t(text, 'join-us-cta-k2', "Be part of positive change. Your contribution brings hope, support and dignity to lives across India.")}
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
@@ -37,7 +38,7 @@ export default function JoinUsCta() {
                 ></path>
               </svg>
             </span>
-            Donate Now
+            {t(text, 'join-us-cta-k3', "Donate Now")}
           </Link>
           <Link
             className="inline-flex items-center justify-center font-semibold text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] whitespace-nowrap select-none h-[52px] px-7 text-[15px] gap-2 sd-btn sd-btn--join-mission"
@@ -63,7 +64,7 @@ export default function JoinUsCta() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </span>
-            Join the Mission
+            {t(text, 'join-us-cta-k4', "Join the Mission")}
           </Link>
         </div>
       </div>

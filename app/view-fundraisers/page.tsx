@@ -46,12 +46,12 @@ export default async function ViewFundraisersPage() {
             <div className="rounded-2xl bg-white border border-[#FF6F00]/20 p-4 text-center shadow-sm">
               <div className="font-serif font-bold text-lg sm:text-xl text-[#FF6F00]">{t(text, 'k8', "12 Live Drives")}</div>
               <div className="font-bold text-xs text-[#0D1B2A] mt-1">{t(text, 'k9', "Active Causes / सक्रिय अभियान")}</div>
-              <div className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k10', "Verified &amp; Ongoing")}</div>
+              <div className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k10', "Verified & Ongoing")}</div>
             </div>
             <div className="rounded-2xl bg-white border border-[#FF6F00]/20 p-4 text-center shadow-sm">
               <div className="font-serif font-bold text-lg sm:text-xl text-[#FF6F00]">{t(text, 'k11', "18,400+ Donors")}</div>
               <div className="font-bold text-xs text-[#0D1B2A] mt-1">{t(text, 'k12', "Verified Donors / दानदाता")}</div>
-              <div className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k13', "Across India &amp; Abroad")}</div>
+              <div className="text-[11px] text-slate-500 mt-0.5">{t(text, 'k13', "Across India & Abroad")}</div>
             </div>
             <div className="rounded-2xl bg-white border border-[#FF6F00]/20 p-4 text-center shadow-sm">
               <div className="font-serif font-bold text-lg sm:text-xl text-[#FF6F00]">{t(text, 'k14', "0% Zero Fee")}</div>
@@ -162,7 +162,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i21', "/img/hero.jpg")}
+                  src={img(images, 'i21', "/img/campaign-temple.jpg")}
                   alt="Shri Ram Mandir Heritage Restoration & Annadanam"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -317,7 +317,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i27', "/img/hero.jpg")}
+                  src={img(images, 'i27', "/img/campaign-gaushala.jpg")}
                   alt="Vedic Gaushala Winter Shed Construction & Cattle Feed"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -472,7 +472,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i33', "/img/hero.jpg")}
+                  src={img(images, 'i33', "/img/campaign-medical.jpg")}
                   alt="Rural Health Camp & Free Medicine Distribution Drive"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -627,7 +627,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i39', "/img/hero.jpg")}
+                  src={img(images, 'i39', "/img/campaign-gurukul.jpg")}
                   alt="Vedic Gurukul Education & Free Digital Computer Lab"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -779,7 +779,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i45', "/img/hero.jpg")}
+                  src={img(images, 'i45', "/img/campaign-food.jpg")}
                   alt="Daily Annapurna Meal Distribution for Pilgrims"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -931,7 +931,7 @@ export default async function ViewFundraisersPage() {
             >
               <div className="relative h-48 bg-slate-900 overflow-hidden">
                 <img
-                  src={img(images, 'i51', "/img/hero.jpg")}
+                  src={img(images, 'i51', "/img/campaign-girl.jpg")}
                   alt="Cultural Heritage Pavilion & Sacred Literature Distribution"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                 />
@@ -1114,7 +1114,7 @@ export default async function ViewFundraisersPage() {
                   </svg>
                 </span>
                 <h3 className="sd-fc-name deva">सेवा एवं सहायता अभियान</h3>
-                <p className="sd-fc-en">{t(text, 'k60', "Service &amp; Relief")}</p>
+                <p className="sd-fc-en">{t(text, 'k60', "Service & Relief")}</p>
                 <ul className="sd-fc-list deva">
                   <li>{t(text, 'k61', "अन्न सेवा एवं भोजन सहायता")}</li>
                   <li>{t(text, 'k62', "चिकित्सा एवं स्वास्थ्य सहायता")}</li>
@@ -1141,7 +1141,7 @@ export default async function ViewFundraisersPage() {
                   </svg>
                 </span>
                 <h3 className="sd-fc-name deva">जनजागरण एवं मिशन अभियान</h3>
-                <p className="sd-fc-en">{t(text, 'k67', "Awareness &amp; Mission")}</p>
+                <p className="sd-fc-en">{t(text, 'k67', "Awareness & Mission")}</p>
                 <ul className="sd-fc-list deva">
                   <li>{t(text, 'k68', "राष्ट्रीय जागरण एवं सनातन चेतना अभियान")}</li>
                   <li>{t(text, 'k69', "सनातन संस्कृति संरक्षण एवं जनजागरण अभियान")}</li>

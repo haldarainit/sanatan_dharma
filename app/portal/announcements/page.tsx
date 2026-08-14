@@ -33,13 +33,13 @@ export default async function PortalAnnouncementsPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">{t(text, 'k2', "Portal Announcements &amp; Circulars")}</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Portal Announcements & Circulars")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Portal Announcements &amp;{' '}
           <span className="text-[#e35300]">{t(text, 'k3', "Circulars")}</span>
         </h1>
-        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Official Directives &amp; Foundation Bulletins")}</p>
+        <p className="deva text-[#e35300] font-bold text-sm tracking-wide mb-2">{t(text, 'k4', "🚩 Official Directives & Foundation Bulletins")}</p>
         <p className="max-w-3xl text-sm sm:text-[15px] leading-relaxed text-slate-700">
           {t(text, 'k5', "Stay updated with official notices, disaster relief directives, volunteer circulars, and transparent financial audit statements.")}
         </p>
@@ -154,7 +154,7 @@ export default async function PortalAnnouncementsPage() {
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >Urgent Monsoon Flood Relief Operational Directives for Sena Cadre</h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              {t(text, 'k7', "All district coordinators and volunteer teams in coastal and riverbank zones are instructed to activate emergency command stations for immediate food &amp; medical kit distribution.")}
+              {t(text, 'k7', "All district coordinators and volunteer teams in coastal and riverbank zones are instructed to activate emergency command stations for immediate food & medical kit distribution.")}
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
@@ -218,7 +218,7 @@ export default async function PortalAnnouncementsPage() {
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >
-              {t(text, 'k12', "Annual Sanatan Samskriti &amp; Gau Seva Sammelan 2026 Registration Open")}
+              {t(text, 'k12', "Annual Sanatan Samskriti & Gau Seva Sammelan 2026 Registration Open")}
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
               {t(text, 'k13', "Join over 5,000 delegates, scholars, and volunteers at our annual flagship conference in New Delhi. Registration links and delegate passes are now active on portal.")}
@@ -226,7 +226,7 @@ export default async function PortalAnnouncementsPage() {
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">{t(text, 'k14', "Cultural &amp; Event Planning Board")}</strong>
+                <strong className="text-slate-700">{t(text, 'k14', "Cultural & Event Planning Board")}</strong>
               </span>
               <button
                 type="button"
@@ -285,7 +285,7 @@ export default async function PortalAnnouncementsPage() {
             <h3
               className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-saffron-700 transition-colors mb-2"
             >
-              {t(text, 'k18', "Quarterly Audit Report &amp; Transparent Financial Utilization Statement Q1 2026")}
+              {t(text, 'k18', "Quarterly Audit Report & Transparent Financial Utilization Statement Q1 2026")}
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
               {t(text, 'k19', "In accordance with our 100% financial transparency promise, the detailed income, expenditure, and project-wise audit report for Q1 2026 has been published.")}
@@ -293,7 +293,7 @@ export default async function PortalAnnouncementsPage() {
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <span className="text-xs text-slate-500 font-semibold">
                 Issued by:{' '}
-                <strong className="text-slate-700">{t(text, 'k20', "Finance &amp; Compliance Board")}</strong>
+                <strong className="text-slate-700">{t(text, 'k20', "Finance & Compliance Board")}</strong>
               </span>
               <button
                 type="button"
@@ -411,7 +411,7 @@ export default async function PortalAnnouncementsPage() {
             <div>
               <h4 className="text-lg font-bold text-white">Subscribe to WhatsApp Circulars</h4>
               <p className="text-xs text-slate-300">
-                {t(text, 'k27', "Get urgent volunteer directives &amp; emergency alerts directly on your phone.")}
+                {t(text, 'k27', "Get urgent volunteer directives & emergency alerts directly on your phone.")}
               </p>
             </div>
           </div>

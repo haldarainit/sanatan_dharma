@@ -1,13 +1,14 @@
-export default function CulturalMediaHub() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function CulturalMediaHub({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <div
       className="py-16 md:py-24 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#181d26] via-[#0d1015] to-[#08090c] text-white flex flex-col justify-center items-center p-6 font-sans"
     >
       <header className="text-center mb-12">
         <h1 className="font-serif text-4xl md:text-5xl font-bold tracking-tight mb-3 text-white">Cultural Media Hub</h1>
-        <p className="text-[#d99b26] text-xs md:text-sm font-bold tracking-[0.25em] uppercase">Sanatan Stories • Culture • Inspiration</p>
+        <p className="text-[#d99b26] text-xs md:text-sm font-bold tracking-[0.25em] uppercase">{t(text, 'cultural-media-hub-k1', "Sanatan Stories • Culture • Inspiration")}</p>
         <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed max-w-2xl mx-auto mt-4">
-          Watch inspiring Sanatan stories, cultural films, devotional music, awareness videos and meaningful content that connects hearts with culture and values.
+          {t(text, 'cultural-media-hub-k2', "Watch inspiring Sanatan stories, cultural films, devotional music, awareness videos and meaningful content that connects hearts with culture and values.")}
         </p>
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full">
@@ -41,7 +42,7 @@ export default function CulturalMediaHub() {
               </svg>
             </div>
             <h2 className="font-serif text-xl font-bold text-white mb-1.5">Films &amp; Documentaries</h2>
-            <p className="text-gray-400 text-sm mb-8">24 productions</p>
+            <p className="text-gray-400 text-sm mb-8">{t(text, 'cultural-media-hub-k3', "24 productions")}</p>
           </div>
           <div
             className="flex items-center gap-2 text-[#f0a92a] font-semibold text-sm group-hover:text-[#f7ba43] transition-colors"
@@ -60,7 +61,7 @@ export default function CulturalMediaHub() {
             >
               <polygon points="6 3 20 12 6 21 6 3"></polygon>
             </svg>
-            <span>Watch trailer</span>
+            <span>{t(text, 'cultural-media-hub-k4', "Watch trailer")}</span>
           </div>
         </div>
         <div
@@ -87,7 +88,7 @@ export default function CulturalMediaHub() {
               </svg>
             </div>
             <h2 className="font-serif text-xl font-bold text-white mb-1.5">Web Series</h2>
-            <p className="text-gray-400 text-sm mb-8">6 ongoing seasons</p>
+            <p className="text-gray-400 text-sm mb-8">{t(text, 'cultural-media-hub-k5', "6 ongoing seasons")}</p>
           </div>
           <div
             className="flex items-center gap-2 text-[#f0a92a] font-semibold text-sm group-hover:text-[#f7ba43] transition-colors"
@@ -106,7 +107,7 @@ export default function CulturalMediaHub() {
             >
               <polygon points="6 3 20 12 6 21 6 3"></polygon>
             </svg>
-            <span>Watch trailer</span>
+            <span>{t(text, 'cultural-media-hub-k6', "Watch trailer")}</span>
           </div>
         </div>
         <div
@@ -134,7 +135,7 @@ export default function CulturalMediaHub() {
               </svg>
             </div>
             <h2 className="font-serif text-xl font-bold text-white mb-1.5">Bhakti &amp; Bhajan</h2>
-            <p className="text-gray-400 text-sm mb-8">180+ tracks</p>
+            <p className="text-gray-400 text-sm mb-8">{t(text, 'cultural-media-hub-k7', "180+ tracks")}</p>
           </div>
           <div
             className="flex items-center gap-2 text-[#f0a92a] font-semibold text-sm group-hover:text-[#f7ba43] transition-colors"
@@ -153,7 +154,7 @@ export default function CulturalMediaHub() {
             >
               <polygon points="6 3 20 12 6 21 6 3"></polygon>
             </svg>
-            <span>Watch trailer</span>
+            <span>{t(text, 'cultural-media-hub-k8', "Watch trailer")}</span>
           </div>
         </div>
         <div
@@ -180,7 +181,7 @@ export default function CulturalMediaHub() {
               </svg>
             </div>
             <h2 className="font-serif text-xl font-bold text-white mb-1.5">Cultural Campaigns</h2>
-            <p className="text-gray-400 text-sm mb-8">12 active initiatives</p>
+            <p className="text-gray-400 text-sm mb-8">{t(text, 'cultural-media-hub-k9', "12 active initiatives")}</p>
           </div>
           <div
             className="flex items-center gap-2 text-[#f0a92a] font-semibold text-sm group-hover:text-[#f7ba43] transition-colors"
@@ -199,7 +200,7 @@ export default function CulturalMediaHub() {
             >
               <polygon points="6 3 20 12 6 21 6 3"></polygon>
             </svg>
-            <span>Watch trailer</span>
+            <span>{t(text, 'cultural-media-hub-k10', "Watch trailer")}</span>
           </div>
         </div>
       </div>

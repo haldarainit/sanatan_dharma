@@ -1,6 +1,7 @@
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
 import Link from 'next/link'
 
-export default function TrustCredentials() {
+export default function TrustCredentials({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="bg-[#fdfbf7] py-8 md:py-12 px-4 sm:px-6 text-center font-sans overflow-hidden sd-gap"
@@ -12,7 +13,7 @@ export default function TrustCredentials() {
           Government Registered &amp;{' '}
           <span className="whitespace-nowrap">
             Certified{' '}
-            <span className="text-[#e35300]">NGO</span>
+            <span className="text-[#e35300]">{t(text, 'trust-credentials-k1', "NGO")}</span>
           </span>
         </h2>
         <p
@@ -26,13 +27,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122551.png"
+                src={img(images, 'trust-credentials-i2', "/img/Screenshot 2026-07-30 122551.png")}
                 alt="Section 8"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">Section 8</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">Company Registered</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k3', "Company Registered")}</p>
           </div>
           <div
             className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card flex flex-col items-center justify-center cursor-pointer shadow-xs hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 select-none"
@@ -41,13 +42,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122605.png"
+                src={img(images, 'trust-credentials-i4', "/img/Screenshot 2026-07-30 122605.png")}
                 alt="12A"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">12A</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">Income Tax Exempt</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k5', "Income Tax Exempt")}</p>
           </div>
           <div
             className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card flex flex-col items-center justify-center cursor-pointer shadow-xs hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 select-none"
@@ -56,13 +57,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122618.png"
+                src={img(images, 'trust-credentials-i6', "/img/Screenshot 2026-07-30 122618.png")}
                 alt="80G"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">80G</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">50% Tax Deduction</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k7', "50% Tax Deduction")}</p>
           </div>
           <div
             className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card flex flex-col items-center justify-center cursor-pointer shadow-xs hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 select-none"
@@ -71,13 +72,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122631.png"
+                src={img(images, 'trust-credentials-i8', "/img/Screenshot 2026-07-30 122631.png")}
                 alt="CSR-1"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">CSR-1</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">MCA Certified</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k9', "MCA Certified")}</p>
           </div>
           <div
             className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card flex flex-col items-center justify-center cursor-pointer shadow-xs hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 select-none"
@@ -86,13 +87,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122642.png"
+                src={img(images, 'trust-credentials-i10', "/img/Screenshot 2026-07-30 122642.png")}
                 alt="NGO Darpan"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">NGO Darpan</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">Niti Aayog Listed</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k11', "Niti Aayog Listed")}</p>
           </div>
           <div
             className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card flex flex-col items-center justify-center cursor-pointer shadow-xs hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 select-none"
@@ -101,13 +102,13 @@ export default function TrustCredentials() {
               className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
             >
               <img
-                src="/img/Screenshot 2026-07-30 122655.png"
+                src={img(images, 'trust-credentials-i12', "/img/Screenshot 2026-07-30 122655.png")}
                 alt="ISO 9001:2015"
                 className="object-contain sd-cert-img"
               />
             </div>
             <h3 className="font-serif font-bold text-base text-gray-900 mb-1 leading-tight">ISO 9001:2015</h3>
-            <p className="text-xs text-slate-500 font-normal leading-tight text-center">Certified Operations</p>
+            <p className="text-xs text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k13', "Certified Operations")}</p>
           </div>
         </div>
         <div className="block md:hidden overflow-hidden w-full mb-10 relative group py-2">
@@ -127,13 +128,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122551.png"
+                  src={img(images, 'trust-credentials-i14', "/img/Screenshot 2026-07-30 122551.png")}
                   alt="Section 8"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">Section 8</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Company Registered</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k15', "Company Registered")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -142,13 +143,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122605.png"
+                  src={img(images, 'trust-credentials-i16', "/img/Screenshot 2026-07-30 122605.png")}
                   alt="12A"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">12A</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Income Tax Exempt</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k17', "Income Tax Exempt")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -157,13 +158,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122618.png"
+                  src={img(images, 'trust-credentials-i18', "/img/Screenshot 2026-07-30 122618.png")}
                   alt="80G"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">80G</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">50% Tax Deduction</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k19', "50% Tax Deduction")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -172,13 +173,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122631.png"
+                  src={img(images, 'trust-credentials-i20', "/img/Screenshot 2026-07-30 122631.png")}
                   alt="CSR-1"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">CSR-1</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">MCA Certified</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k21', "MCA Certified")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -187,13 +188,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122642.png"
+                  src={img(images, 'trust-credentials-i22', "/img/Screenshot 2026-07-30 122642.png")}
                   alt="NGO Darpan"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">NGO Darpan</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Niti Aayog Listed</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k23', "Niti Aayog Listed")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -202,13 +203,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122655.png"
+                  src={img(images, 'trust-credentials-i24', "/img/Screenshot 2026-07-30 122655.png")}
                   alt="ISO 9001:2015"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">ISO 9001:2015</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Certified Operations</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k25', "Certified Operations")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -217,13 +218,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122551.png"
+                  src={img(images, 'trust-credentials-i26', "/img/Screenshot 2026-07-30 122551.png")}
                   alt="Section 8"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">Section 8</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Company Registered</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k27', "Company Registered")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -232,13 +233,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122605.png"
+                  src={img(images, 'trust-credentials-i28', "/img/Screenshot 2026-07-30 122605.png")}
                   alt="12A"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">12A</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Income Tax Exempt</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k29', "Income Tax Exempt")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -247,13 +248,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122618.png"
+                  src={img(images, 'trust-credentials-i30', "/img/Screenshot 2026-07-30 122618.png")}
                   alt="80G"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">80G</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">50% Tax Deduction</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k31', "50% Tax Deduction")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -262,13 +263,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122631.png"
+                  src={img(images, 'trust-credentials-i32', "/img/Screenshot 2026-07-30 122631.png")}
                   alt="CSR-1"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">CSR-1</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">MCA Certified</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k33', "MCA Certified")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -277,13 +278,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122642.png"
+                  src={img(images, 'trust-credentials-i34', "/img/Screenshot 2026-07-30 122642.png")}
                   alt="NGO Darpan"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">NGO Darpan</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Niti Aayog Listed</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k35', "Niti Aayog Listed")}</p>
             </div>
             <div
               className="bg-white border border-slate-200/90 rounded-2xl sd-cert-card shrink-0 flex flex-col items-center justify-center cursor-pointer shadow-xs active:scale-95 transition-transform duration-150 select-none"
@@ -292,13 +293,13 @@ export default function TrustCredentials() {
                 className="bg-white border border-slate-100 flex items-center justify-center shadow-2xs sd-cert-icon"
               >
                 <img
-                  src="/img/Screenshot 2026-07-30 122655.png"
+                  src={img(images, 'trust-credentials-i36', "/img/Screenshot 2026-07-30 122655.png")}
                   alt="ISO 9001:2015"
                   className="object-contain sd-cert-img"
                 />
               </div>
               <h3 className="font-serif font-bold text-sm text-gray-900 mb-1 leading-tight text-center">ISO 9001:2015</h3>
-              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">Certified Operations</p>
+              <p className="text-[11px] text-slate-500 font-normal leading-tight text-center">{t(text, 'trust-credentials-k37', "Certified Operations")}</p>
             </div>
           </div>
         </div>

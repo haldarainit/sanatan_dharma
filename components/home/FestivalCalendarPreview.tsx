@@ -1,4 +1,5 @@
-export default function FestivalCalendarPreview() {
+import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+export default function FestivalCalendarPreview({ text, images }: { text?: TextMap; images?: ImageMap }) {
   return (
     <section
       className="bg-[#FFFDF9] py-8 sm:py-12 border-t border-[#FF6F00]/20 font-sans relative overflow-hidden sd-gap"
@@ -15,35 +16,35 @@ export default function FestivalCalendarPreview() {
             className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5"
           >
             Festival Calendar{' '}
-            <span className="block sm:inline text-[#e35300]">सनातन पंचांग</span>
+            <span className="block sm:inline text-[#e35300]">{t(text, 'festival-calendar-preview-k1', "सनातन पंचांग")}</span>
           </h2>
-          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-3">सनातन पर्व, उत्सव एवं सेवा पंचांग।</p>
+          <p className="deva text-slate-600 font-semibold text-[17px] sm:text-xl tracking-wide mb-3">{t(text, 'festival-calendar-preview-k2', "सनातन पर्व, उत्सव एवं सेवा पंचांग।")}</p>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Click or hover on any auspicious festival to discover its spiritual significance, motivational quotes, and contribute to its dedicated Seva mission.
+            {t(text, 'festival-calendar-preview-k3', "Click or hover on any auspicious festival to discover its spiritual significance, motivational quotes, and contribute to its dedicated Seva mission.")}
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs font-bold">
             <button
               className="flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-200 cursor-pointer bg-[#FF6F00] text-white border-[#FF6F00] shadow-sm ring-2 ring-[#FF6F00]/20 font-extrabold"
             >
-              <span>All Events</span>
+              <span>{t(text, 'festival-calendar-preview-k4', "All Events")}</span>
             </button>
             <button
               className="flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-200 cursor-pointer bg-[#FFF0EB] border-[#E65100]/30 text-[#C62828] hover:bg-[#C62828]/10"
             >
               <span className="w-2 h-2 rounded-full bg-[#E65100] animate-pulse"></span>
-              <span>महापर्व (Major) 🚩</span>
+              <span>{t(text, 'festival-calendar-preview-k5', "महापर्व (Major) 🚩")}</span>
             </button>
             <button
               className="flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-200 cursor-pointer bg-[#FFF8E1] border-[#FFB300]/40 text-[#7A3200] hover:bg-[#F57C00]/10"
             >
               <span className="w-2 h-2 rounded-full bg-[#F57C00]"></span>
-              <span>पवित्र पर्व (Medium) 🪔</span>
+              <span>{t(text, 'festival-calendar-preview-k6', "पवित्र पर्व (Medium) 🪔")}</span>
             </button>
             <button
               className="flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-200 cursor-pointer bg-[#E8F5E9] border-[#4CAF50]/40 text-[#1B5E20] hover:bg-[#2E7D32]/10"
             >
               <span className="w-2 h-2 rounded-full bg-[#2E7D32]"></span>
-              <span>शुभ व्रत (Vrat &amp; Seva) 🌸</span>
+              <span>{t(text, 'festival-calendar-preview-k7', "शुभ व्रत (Vrat & Seva) 🌸")}</span>
             </button>
           </div>
         </div>
@@ -74,7 +75,7 @@ export default function FestivalCalendarPreview() {
                 </button>
                 <div className="text-left min-w-[140px]">
                   <h3 className="font-serif text-lg sm:text-xl font-bold text-[#2D1B10]">August 2026</h3>
-                  <p className="deva text-[11px] font-semibold text-[#FF6F00] -mt-0.5">अगस्त 2026</p>
+                  <p className="deva text-[11px] font-semibold text-[#FF6F00] -mt-0.5">{t(text, 'festival-calendar-preview-k8', "अगस्त 2026")}</p>
                 </div>
                 <button
                   className="w-8 h-8 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-[#FF6F00] hover:text-white hover:border-[#FF6F00] transition-all duration-200 cursor-pointer shadow-xs active:scale-95"
@@ -102,32 +103,32 @@ export default function FestivalCalendarPreview() {
             </div>
             <div className="grid grid-cols-7 gap-1 pt-3 text-center">
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Sun</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">रवि</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k9', "Sun")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k10', "रवि")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Mon</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">सोम</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k11', "Mon")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k12', "सोम")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Tue</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">मंगल</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k13', "Tue")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k14', "मंगल")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Wed</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">बुध</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k15', "Wed")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k16', "बुध")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Thu</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">गुरु</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k17', "Thu")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k18', "गुरु")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Fri</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">शुक्र</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k19', "Fri")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k20', "शुक्र")}</span>
               </div>
               <div className="py-1">
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">Sat</span>
-                <span className="deva block text-[9.5px] text-slate-400 font-semibold">शनि</span>
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#FF6F00]">{t(text, 'festival-calendar-preview-k21', "Sat")}</span>
+                <span className="deva block text-[9.5px] text-slate-400 font-semibold">{t(text, 'festival-calendar-preview-k22', "शनि")}</span>
               </div>
             </div>
             <div className="grid grid-cols-7 gap-1 sm:gap-1.5 mt-1">
@@ -162,7 +163,7 @@ export default function FestivalCalendarPreview() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] sm:text-xs font-bold text-slate-800">2</span>
-                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">🪔</span>
+                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">{t(text, 'festival-calendar-preview-k23', "🪔")}</span>
                 </div>
                 <div className="mt-auto">
                   <div
@@ -220,7 +221,7 @@ export default function FestivalCalendarPreview() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] sm:text-xs font-bold text-slate-800">8</span>
-                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">🌸</span>
+                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">{t(text, 'festival-calendar-preview-k24', "🌸")}</span>
                 </div>
                 <div className="mt-auto">
                   <div
@@ -240,7 +241,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">10</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k25', "10")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -248,7 +249,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">11</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k26', "11")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -256,7 +257,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">12</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k27', "12")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -264,7 +265,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">13</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k28', "13")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -272,7 +273,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">14</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k29', "14")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -280,7 +281,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">15</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k30', "15")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -288,7 +289,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">16</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k31', "16")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -296,7 +297,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">17</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k32', "17")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -304,7 +305,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">18</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k33', "18")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -312,7 +313,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">19</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k34', "19")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -320,7 +321,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">20</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k35', "20")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -328,7 +329,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">21</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k36', "21")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -336,7 +337,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">22</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k37', "22")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -344,7 +345,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">23</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k38', "23")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -352,7 +353,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">24</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k39', "24")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -360,7 +361,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">25</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k40', "25")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -368,7 +369,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">26</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k41', "26")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -376,7 +377,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">27</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k42', "27")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -384,8 +385,8 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-pointer hover:-translate-y-0.5 shadow-xs border-[#FFB74D] bg-gradient-to-b from-[#FFF5ED] to-[#FFE0B2] shadow-2xs hover:shadow-xs "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">28</span>
-                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">🚩</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k43', "28")}</span>
+                  <span className="text-[10px] sm:text-xs leading-none drop-shadow-3xs">{t(text, 'festival-calendar-preview-k44', "🚩")}</span>
                 </div>
                 <div className="mt-auto">
                   <div
@@ -397,7 +398,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">29</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k45', "29")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -405,7 +406,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">30</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k46', "30")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -413,7 +414,7 @@ export default function FestivalCalendarPreview() {
                 className="relative min-h-[46px] sm:min-h-[54px] rounded-xl border p-1 transition-all duration-200 flex flex-col justify-between select-none cursor-default border-slate-100 hover:border-[#FF6F00]/50 bg-white "
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">31</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800">{t(text, 'festival-calendar-preview-k47', "31")}</span>
                 </div>
                 <div className="text-[8px] text-slate-300 font-medium text-right mt-auto"></div>
               </div>
@@ -441,10 +442,10 @@ export default function FestivalCalendarPreview() {
                 </svg>
                 <span>
                   Showing{' '}
-                  <strong>August 2026</strong>
+                  <strong>{t(text, 'festival-calendar-preview-k48', "August 2026")}</strong>
                 </span>
               </div>
-              <div className="deva text-[#FF6F00] font-semibold text-[10.5px]">🚩 किसी भी पर्व पर क्लिक कर विशेष अन्नदान एवं सेवा संकल्प लें</div>
+              <div className="deva text-[#FF6F00] font-semibold text-[10.5px]">{t(text, 'festival-calendar-preview-k49', "🚩 किसी भी पर्व पर क्लिक कर विशेष अन्नदान एवं सेवा संकल्प लें")}</div>
             </div>
           </div>
           <div
@@ -453,12 +454,12 @@ export default function FestivalCalendarPreview() {
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
               <div>
                 <h3 className="font-serif text-lg font-bold text-[#2D1B10] flex items-center gap-1.5">
-                  <span>🚩 Auspicious Events</span>
+                  <span>{t(text, 'festival-calendar-preview-k50', "🚩 Auspicious Events")}</span>
                   <span
                     className="text-xs font-sans font-bold px-2 py-0.5 rounded-full bg-[#FFF4E6] text-[#FF6F00] border border-[#FF6F00]/30"
                   >3</span>
                 </h3>
-                <p className="text-[11px] text-slate-500 mt-0.5">August 2026 · सनातन पावन तिथि एवं सेवा</p>
+                <p className="text-[11px] text-slate-500 mt-0.5">{t(text, 'festival-calendar-preview-k51', "August 2026 · सनातन पावन तिथि एवं सेवा")}</p>
               </div>
               <div
                 className="hidden sm:flex items-center gap-1 text-[10px] text-[#FF6F00] font-bold bg-[#FFF4E6] px-2.5 py-1 rounded-full"
@@ -479,7 +480,7 @@ export default function FestivalCalendarPreview() {
                     d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
                   ></path>
                 </svg>
-                <span>80G Exemption</span>
+                <span>{t(text, 'festival-calendar-preview-k52', "80G Exemption")}</span>
               </div>
             </div>
             <div
@@ -500,11 +501,11 @@ export default function FestivalCalendarPreview() {
                       <span
                         className="text-[9.5px] font-bold px-1.5 py-0.2 rounded border bg-[#FFF8E1] text-[#7A3200] border-[#FFE082]"
                       >विशेष पर्व 🪔</span>
-                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">श्रावण शुक्ल पक्ष पंचमी</span>
+                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">{t(text, 'festival-calendar-preview-k53', "श्रावण शुक्ल पक्ष पंचमी")}</span>
                     </div>
                     <h4 className="deva font-serif font-extrabold text-sm text-[#3D2212] truncate">नाग पंचमी एवं जीव दया पर्व</h4>
                     <p className="text-[11px] text-slate-600 truncate mt-0.5">
-                      <strong className="text-[#FF6F00]">सेवा संकल्प:</strong>
+                      <strong className="text-[#FF6F00]">{t(text, 'festival-calendar-preview-k54', "सेवा संकल्प:")}</strong>
                       {' '}Gaushala Green Fodder &amp; Cow Care
                     </p>
                   </div>
@@ -533,7 +534,7 @@ export default function FestivalCalendarPreview() {
                       <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
                       <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
                     </svg>
-                    <span>Share</span>
+                    <span>{t(text, 'festival-calendar-preview-k55', "Share")}</span>
                   </button>
                   <button
                     type="button"
@@ -555,7 +556,7 @@ export default function FestivalCalendarPreview() {
                         d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
                       ></path>
                     </svg>
-                    <span>Donate</span>
+                    <span>{t(text, 'festival-calendar-preview-k56', "Donate")}</span>
                   </button>
                 </div>
               </div>
@@ -574,11 +575,11 @@ export default function FestivalCalendarPreview() {
                       <span
                         className="text-[9.5px] font-bold px-1.5 py-0.2 rounded border bg-[#E8F5E9] text-[#1B5E20] border-[#A5D6A7]"
                       >शुभ व्रत 🌸</span>
-                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">श्रावण शुक्ल पक्ष एकादशी</span>
+                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">{t(text, 'festival-calendar-preview-k57', "श्रावण शुक्ल पक्ष एकादशी")}</span>
                     </div>
                     <h4 className="deva font-serif font-extrabold text-sm text-[#3D2212] truncate">श्रावण पुत्रदा एकादशी</h4>
                     <p className="text-[11px] text-slate-600 truncate mt-0.5">
-                      <strong className="text-[#FF6F00]">सेवा संकल्प:</strong>
+                      <strong className="text-[#FF6F00]">{t(text, 'festival-calendar-preview-k58', "सेवा संकल्प:")}</strong>
                       {' '}Girl Education &amp; School Supplies
                     </p>
                   </div>
@@ -607,7 +608,7 @@ export default function FestivalCalendarPreview() {
                       <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
                       <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
                     </svg>
-                    <span>Share</span>
+                    <span>{t(text, 'festival-calendar-preview-k59', "Share")}</span>
                   </button>
                   <button
                     type="button"
@@ -629,7 +630,7 @@ export default function FestivalCalendarPreview() {
                         d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
                       ></path>
                     </svg>
-                    <span>Donate</span>
+                    <span>{t(text, 'festival-calendar-preview-k60', "Donate")}</span>
                   </button>
                 </div>
               </div>
@@ -648,11 +649,11 @@ export default function FestivalCalendarPreview() {
                       <span
                         className="text-[9.5px] font-bold px-1.5 py-0.2 rounded border bg-[#FFF0EB] text-[#C62828] border-[#FFB74D]"
                       >महापर्व 🚩</span>
-                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">श्रावण शुक्ल पक्ष पूर्णिमा</span>
+                      <span className="text-[10px] text-amber-900/80 font-semibold deva truncate">{t(text, 'festival-calendar-preview-k61', "श्रावण शुक्ल पक्ष पूर्णिमा")}</span>
                     </div>
                     <h4 className="deva font-serif font-extrabold text-sm text-[#3D2212] truncate">रक्षाबंधन एवं नारी सुरक्षा संकल्प पर्व</h4>
                     <p className="text-[11px] text-slate-600 truncate mt-0.5">
-                      <strong className="text-[#FF6F00]">सेवा संकल्प:</strong>
+                      <strong className="text-[#FF6F00]">{t(text, 'festival-calendar-preview-k62', "सेवा संकल्प:")}</strong>
                       {' '}Nari Suraksha &amp; Self-Defense Kits
                     </p>
                   </div>
@@ -681,7 +682,7 @@ export default function FestivalCalendarPreview() {
                       <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
                       <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
                     </svg>
-                    <span>Share</span>
+                    <span>{t(text, 'festival-calendar-preview-k63', "Share")}</span>
                   </button>
                   <button
                     type="button"
@@ -703,7 +704,7 @@ export default function FestivalCalendarPreview() {
                         d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
                       ></path>
                     </svg>
-                    <span>Donate</span>
+                    <span>{t(text, 'festival-calendar-preview-k64', "Donate")}</span>
                   </button>
                 </div>
               </div>

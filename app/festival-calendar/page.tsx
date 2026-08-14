@@ -54,7 +54,7 @@ export default async function FestivalCalendarPage() {
               className="flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-200 cursor-pointer bg-[#E8F5E9] border-[#4CAF50]/40 text-[#1B5E20] hover:bg-[#2E7D32]/10"
             >
               <span className="w-2 h-2 rounded-full bg-[#2E7D32]"></span>
-              <span>{t(text, 'k7', "शुभ व्रत (Vrat &amp; Seva) 🌸")}</span>
+              <span>{t(text, 'k7', "शुभ व्रत (Vrat & Seva) 🌸")}</span>
             </button>
           </div>
         </div>
@@ -755,7 +755,7 @@ export default async function FestivalCalendarPage() {
           <p
             className="deva text-lg sm:text-xl font-bold text-slate-800 leading-relaxed max-w-3xl mx-auto"
           >
-            {t(text, 'k67', "&quot;सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।&quot;")}
+            {t(text, 'k67', "\"सेवा, सहायता, संस्कार, सुरक्षा एवं आत्मनिर्भरता के माध्यम से एक सशक्त, जागरूक, संगठित एवं आत्मनिर्भर समाज का निर्माण करना हमारा लक्ष्य है।\"")}
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 text-left">

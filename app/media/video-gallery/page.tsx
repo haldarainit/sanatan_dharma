@@ -33,7 +33,7 @@ export default async function MediaVideoGalleryPage() {
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg>
-          <span className="text-[#e35300]">{t(text, 'k2', "Video Gallery &amp; Documentaries")}</span>
+          <span className="text-[#e35300]">{t(text, 'k2', "Video Gallery & Documentaries")}</span>
         </nav>
         <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-[1.05] text-gray-900 mb-1.5">
           Video Gallery &amp;{' '}
@@ -53,7 +53,7 @@ export default async function MediaVideoGalleryPage() {
           <div className="grid lg:grid-cols-[1.3fr_1fr] items-center">
             <div className="relative h-64 sm:h-80 lg:h-96 w-full cursor-pointer overflow-hidden group">
               <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src={img(images, 'i27', "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                 alt="Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -198,7 +198,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={img(images, 'i28', "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                   alt="Sanatan Seva Ground Documentary: Reaching the Unreachable in Flood Zones"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -291,7 +291,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={img(images, 'i29', "https://images.pexels.com/photos/8923247/pexels-photo-8923247.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                   alt="Gau Seva Abhiyan 2026 — Protecting Indigenous Indian Cow Breeds"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -382,7 +382,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/6765189/pexels-photo-6765189.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={img(images, 'i30', "https://images.pexels.com/photos/6765189/pexels-photo-6765189.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                   alt="Live Highlights: Maha Aarti & Vedic Samskriti Convention"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -473,7 +473,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/6765190/pexels-photo-6765190.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={img(images, 'i31', "https://images.pexels.com/photos/6765190/pexels-photo-6765190.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                   alt="Voices of Seva: Why I Joined the Sanatan Sena Volunteer Cadre"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -564,7 +564,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  src={img(images, 'i32', "https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=1200")}
                   alt="Free Mobile Eye Surgery & Glasses Distribution Camp"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -655,7 +655,7 @@ export default async function MediaVideoGalleryPage() {
             <div>
               <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80"
+                  src={img(images, 'i33', "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80")}
                   alt="Prakriti Seva: Planting 10,000 Oxygen Trees in Tribal Belts"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
