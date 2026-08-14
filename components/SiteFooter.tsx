@@ -1,6 +1,11 @@
 import Link from 'next/link'
+import type { SiteSettings } from '@/lib/sanity/data'
 
-export default function SiteFooter() {
+export default function SiteFooter({ settings }: { settings?: SiteSettings }) {
+  const logo = settings?.logo || '/img/logo.jpeg'
+  const siteName = settings?.siteName || 'Sanatan Dharm Manav Kalyan Foundation'
+  const social = settings?.social || []
+
   return (
       <footer className="sd-footer-dark text-white pt-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -8,8 +13,8 @@ export default function SiteFooter() {
             <div className="md:col-span-6 pr-0 md:pr-8">
               <Link className="inline-block mb-5" href="/">
                 <img
-                  src="/img/logo.jpeg"
-                  alt="Sanatan Dharm Manav Kalyan Foundation"
+                  src={logo}
+                  alt={siteName}
                   className="h-16 object-contain mix-blend-multiply"
                 />
               </Link>
@@ -89,7 +94,7 @@ export default function SiteFooter() {
           </div>
           <div className="flex justify-center items-center gap-4 py-6 border-t border-white/20">
             <a
-              href="#"
+              href={social.find((s) => s.network === "Facebook")?.url || "#"}
               className="w-10 h-10 rounded-full bg-black/25 hover:bg-black/40 text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
               aria-label="Facebook"
             >
@@ -100,7 +105,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              href="#"
+              href={social.find((s) => s.network === "Instagram")?.url || "#"}
               className="w-10 h-10 rounded-full bg-black/25 hover:bg-black/40 text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
               aria-label="Instagram"
             >
@@ -111,7 +116,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              href="#"
+              href={social.find((s) => s.network === "YouTube")?.url || "#"}
               className="w-10 h-10 rounded-full bg-black/25 hover:bg-black/40 text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
               aria-label="YouTube"
             >
@@ -122,7 +127,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              href="#"
+              href={social.find((s) => s.network === "Twitter")?.url || "#"}
               className="w-10 h-10 rounded-full bg-black/25 hover:bg-black/40 text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
               aria-label="Twitter"
             >
@@ -133,7 +138,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              href="#"
+              href={social.find((s) => s.network === "LinkedIn")?.url || "#"}
               className="w-10 h-10 rounded-full bg-black/25 hover:bg-black/40 text-white flex items-center justify-center transition-all hover:-translate-y-0.5"
               aria-label="LinkedIn"
             >

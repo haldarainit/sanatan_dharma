@@ -5,8 +5,9 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  /* published content is served from the CDN; the pages revalidate on a
-     webhook from Sanity, so edits appear without a redeploy */
-  useCdn: true,
+  /* The pages are revalidated by Next (every 60s, or instantly on the
+     publish webhook), so reads should not sit behind Sanity's cache as
+     well -- that would stack a second delay on top. */
+  useCdn: false,
   perspective: 'published',
 })

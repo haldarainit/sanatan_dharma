@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans_Devanagari, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
+import { getSiteSettings } from '@/lib/sanity/data'
 import '@/styles/globals.css'
 
 const jakarta = Plus_Jakarta_Sans({
@@ -25,6 +26,11 @@ const deva = Noto_Sans_Devanagari({
   display: 'swap',
 })
 
+/* Every route re-renders at most once a minute so published Sanity edits
+   appear without a redeploy. Without this the pages are baked at build time
+   and never pick up content changes. */
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: {
     default: 'Sanatan Dharm Manav Kalyan Foundation',
@@ -34,13 +40,15 @@ export const metadata: Metadata = {
     'Official Portal of Sanatan Dharm Manav Kalyan Foundation for Seva, Gau Raksha, Annadanam, and Cultural Upliftment.',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const settings = await getSiteSettings()
+
   return (
     <html lang="en" className={`${jakarta.variable} ${playfair.variable} ${deva.variable}`}>
       <body>
-        <SiteHeader />
+        <SiteHeader settings={settings} />
         <main>{children}</main>
-        <SiteFooter />
+        <SiteFooter settings={settings} />
       </body>
     </html>
   )

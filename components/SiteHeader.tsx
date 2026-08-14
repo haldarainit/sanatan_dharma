@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { NAV } from '@/lib/nav'
+import type { SiteSettings } from '@/lib/sanity/data'
 import { ChevronDown, Globe, Menu, X } from './icons'
 
 const LINK_CLS =
@@ -15,7 +16,11 @@ function Underline() {
   )
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({ settings }: { settings?: SiteSettings }) {
+  const logo = settings?.logo || '/img/logo.jpeg'
+  const donateLabel = settings?.donateLabel || 'Donate Now'
+  const siteName = settings?.siteName || 'Sanatan Dharm Manav Kalyan Foundation'
+
   const [open, setOpen] = useState<string | null>(null)
   const [drawer, setDrawer] = useState(false)
   const navRef = useRef<HTMLElement>(null)
@@ -53,8 +58,8 @@ export default function SiteHeader() {
         <Link href="/" className="flex items-center shrink-0 group py-1 min-w-0 logo-shift">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/img/logo.jpeg"
-            alt="Sanatan Dharm Manav Kalyan Foundation"
+            src={logo}
+            alt={siteName}
             className="h-14 xs:h-15 sm:h-18 md:h-[74px] lg:h-[78px] w-auto max-w-[220px] xs:max-w-[280px] sm:max-w-none object-contain mix-blend-multiply transition-transform group-hover:scale-[1.02]"
           />
         </Link>
@@ -124,7 +129,7 @@ export default function SiteHeader() {
             href="/donate"
             className="inline-flex items-center justify-center font-bold text-[12px] xs:text-xs text-white h-8 sm:h-9 px-3 xs:px-4 rounded-full whitespace-nowrap border border-orange-200/50 shadow-md transition-all cursor-pointer shrink-0 sd-btn sd-btn--donate-now"
           >
-            <span>Donate Now</span>
+            <span>{donateLabel}</span>
           </Link>
 
           <button
@@ -194,7 +199,7 @@ export default function SiteHeader() {
                 onClick={() => setDrawer(false)}
                 className="mt-4 flex items-center justify-center rounded-full px-4 py-3 text-sm font-bold text-white sd-btn sd-btn--donate-now"
               >
-                Donate Now
+                {donateLabel}
               </Link>
             </nav>
           </div>
