@@ -1,5 +1,6 @@
 import { getPageContent, img, t } from '@/lib/sanity/content'
 import Link from 'next/link'
+import ShareButton from '@/components/ShareButton'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -63,10 +64,7 @@ export default async function FutureActivitiesSanatanBhojanalayaPage() {
           {' '}
           <Link href="/membership" className="btn-join">{t(text, 'k15', "Join")}</Link>
           {' '}
-          <button
-            className="btn-share"
-            data-legacy-onclick="if(navigator.share){navigator.share({title:'सनातनी भोजनालय',text:' अन्न सेवा सबसे महान सेवाओं में से एक है। आइए, मिलकर ऐसा समाज बनाएँ जहाँ कोई भी भूखा न सोए।',url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('लिंक कॉपी किया गया!')}"
-          >Share</button>
+          <ShareButton title="सनातनी भोजनालय" />
         </div>
       </div>
     </div>

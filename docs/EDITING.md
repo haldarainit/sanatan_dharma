@@ -87,6 +87,7 @@ Some content appears in many places at once, so it is edited in one place:
 | **UPI ID for donations** | **Site settings** |
 | Homepage slider images and headlines | **Home hero slides** |
 | Upcoming mission cards and their detail pages | **Upcoming missions** |
+| The nine Our Missions campaigns and the pages behind their Details buttons | **Mission campaigns** |
 | Founder / inspiration figures | **Inspiration figures** |
 | Membership tiers, fees, form fields | **Membership categories** |
 | Suggested donation amounts | **Donation amounts** |

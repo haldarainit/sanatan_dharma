@@ -1,5 +1,6 @@
 import type { SchemaTypeDefinition } from 'sanity'
 
+import { campaign } from './campaign'
 import { donationTier } from './donationTier'
 import { faqItem } from './faqItem'
 import { heroSlide } from './heroSlide'

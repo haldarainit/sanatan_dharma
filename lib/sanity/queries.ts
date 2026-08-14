@@ -43,3 +43,12 @@ export const faqQuery = groq`*[_type == "faqItem" && page == $page] | order(orde
 export const statusRowsQuery = groq`*[_type == "statusRow" && table == $table] | order(order asc){
   status, meaning
 }`
+
+export const campaignsQuery = groq`*[_type == "campaign"] | order(order asc){
+  order, slug, title, tagline, image, currentSrc, lead, sub, cardText, paras,
+  topicsTitle, topics[]{ title, text },
+  checklistTitle, checklist, categoryTitle, categories,
+  supportTitle, support[]{ label, text },
+  sections[]{ title, quote, paras },
+  closing, buttons[]{ label, href, share }
+}`

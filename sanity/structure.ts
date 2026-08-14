@@ -26,6 +26,15 @@ export const structure: StructureResolver = (S) =>
         .child(S.documentTypeList('heroSlide').title('Home hero slides').defaultOrdering([{ field: 'order', direction: 'asc' }])),
 
       S.listItem()
+        .title('Mission campaigns')
+        .schemaType('campaign')
+        .child(
+          S.documentTypeList('campaign')
+            .title('Mission campaigns')
+            .defaultOrdering([{ field: 'order', direction: 'asc' }])
+        ),
+
+      S.listItem()
         .title('Upcoming missions')
         .schemaType('mission')
         .child(S.documentTypeList('mission').title('Upcoming missions').defaultOrdering([{ field: 'order', direction: 'asc' }])),

@@ -3,11 +3,12 @@ import { imageUrl } from './image'
 import { safeFetch } from './content'
 import {
   donationTiersQuery, faqQuery, heroSlidesQuery, membershipQuery, missionsQuery,
-  peopleQuery, siteSettingsQuery, statusRowsQuery,
+  campaignsQuery, peopleQuery, siteSettingsQuery, statusRowsQuery,
 } from './queries'
 
 import { HERO_SLIDES, type HeroSlide } from '@/lib/hero'
 import { FUTURE_MISSIONS, type Mission } from '@/lib/missions'
+import { CAMPAIGNS, type Campaign } from '@/lib/campaigns'
 import { PEOPLE, type Person } from '@/lib/people'
 import { DEFAULT_UPI, type Upi } from '@/lib/upi'
 import { CATEGORIES, type Category } from '@/lib/membership'
@@ -132,6 +133,36 @@ export async function getStatusRows(table: 'need-help' | 'complaint'): Promise<S
   const fallback = table === 'need-help' ? NEED_HELP_STATUS : COMPLAINT_STATUS
   const rows = await safeFetch<StatusRow[]>(statusRowsQuery, { table }, [])
   return rows.length ? rows : fallback
+}
+
+export async function getCampaigns(): Promise<Campaign[]> {
+  const rows = await safeFetch<Doc[]>(campaignsQuery, {}, [])
+  if (!rows.length) return CAMPAIGNS
+  return rows.map((r, i) => {
+    const base = CAMPAIGNS.find((c) => c.slug === r.slug) ?? CAMPAIGNS[i] ?? CAMPAIGNS[0]
+    const list = <T,>(v: unknown, fallback: T[]) => ((v as T[])?.length ? (v as T[]) : fallback)
+    return {
+      ...base,
+      title: pick(r.title as string, base.title),
+      tagline: pick(r.tagline as string, base.tagline),
+      img: imageUrl(r.image as Image, 1400) || (r.currentSrc as string) || base.img,
+      lead: pick(r.lead as string, base.lead),
+      sub: pick(r.sub as string, base.sub),
+      cardText: pick(r.cardText as string, base.cardText),
+      paras: list(r.paras, base.paras),
+      topicsTitle: pick(r.topicsTitle as string, base.topicsTitle),
+      topics: list(r.topics, base.topics ?? []),
+      checklistTitle: pick(r.checklistTitle as string, base.checklistTitle),
+      checklist: list(r.checklist, base.checklist ?? []),
+      categoryTitle: pick(r.categoryTitle as string, base.categoryTitle),
+      categories: list(r.categories, base.categories ?? []),
+      supportTitle: pick(r.supportTitle as string, base.supportTitle),
+      support: list(r.support, base.support ?? []),
+      sections: list(r.sections, base.sections ?? []),
+      closing: pick(r.closing as string, base.closing),
+      buttons: list(r.buttons, base.buttons),
+    }
+  })
 }
 
 export type SiteSettings = {

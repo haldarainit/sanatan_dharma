@@ -1,6 +1,7 @@
 'use client'
 
 import { img, t, type ImageMap, type TextMap } from '@/lib/sanity/content'
+import Link from 'next/link'
 import { useState } from 'react'
 export default function OurMissions({ text, images }: { text?: TextMap; images?: ImageMap }) {
   const [showAll, setShowAll] = useState(false)
@@ -53,7 +54,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">सनातन संस्कृति संरक्षण एवं जनजागरण अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  {t(text, 'our-missions-k6', "सनातन मूल्यों, भारतीय परंपराओं एवं सामाजिक जागरूकता के संरक्षण का सतत अभियान।")}
+                  {t(text, 'our-missions-k6', "सनातनी समाज को अपनी सांस्कृतिक जड़ों, राष्ट्रप्रेम और जागरूक नागरिकता से जोड़ने का सतत प्रयास।")}
                 </p>
               </div>
             </div>
@@ -70,9 +71,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/sanskriti-jagran"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -101,7 +103,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">महिला सुरक्षा एवं सम्मान अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k10', "सुरक्षा, सम्मान, जागरूकता एवं सहयोग के लिए समर्पित अभियान।")}</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k10', "महिलाओं एवं बालिकाओं की सुरक्षा, सम्मान, जागरूकता और सहयोग के लिए समर्पित अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
@@ -117,9 +119,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/mahila-suraksha"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -148,7 +151,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">अन्न सेवा अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k14', "जरूरतमंद एवं असहाय लोगों तक भोजन एवं सहायता पहुँचाने का सेवा अभियान।")}</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k14', "जरूरतमंद एवं असहाय लोगों तक भोजन एवं आवश्यक सहायता पहुँचाने का सेवा अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
@@ -164,9 +167,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/anna-seva"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -196,7 +200,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">शिक्षा एवं संस्कार सहायता अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k18', "शिक्षा, संस्कार एवं उज्ज्वल भविष्य की दिशा में एक सार्थक प्रयास।")}</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k18', "आर्थिक रूप से कमजोर एवं जरूरतमंद विद्यार्थियों के लिए शिक्षा, मार्गदर्शन और संस्कार आधारित सहयोग का अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
@@ -212,9 +216,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/shiksha-sanskar"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -245,7 +250,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">धोखाधड़ी जागरूकता एवं सुरक्षा अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  {t(text, 'our-missions-k22', "धोखाधड़ी, अपराध, नकली एवं मिलावटी उत्पादों के विरुद्ध जागरूकता और सहायता अभियान।")}
+                  {t(text, 'our-missions-k22', "धोखाधड़ी, फर्जीवाड़े, नकली उत्पादों, मिलावटी वस्तुओं एवं संदिग्ध गतिविधियों के विरुद्ध जागरूकता और सहयोग हेतु समर्पित अभियान।")}
                 </p>
               </div>
             </div>
@@ -262,9 +267,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/dhokhadhadi-jagrukta"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -310,9 +316,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/gau-seva"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -342,7 +349,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               </div>
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">पर्यावरण संरक्षण एवं वृक्षारोपण अभियान</h3>
-                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k30', "हरित, स्वच्छ एवं सुरक्षित भविष्य के निर्माण का जनजागरण अभियान।")}</p>
+                <p className="deva text-slate-500 text-sm leading-relaxed mb-4">{t(text, 'our-missions-k30', "वृक्षारोपण, पर्यावरण जागरूकता और संरक्षण के लिए समर्पित अभियान।")}</p>
               </div>
             </div>
             <div className="px-5 pb-5">
@@ -358,9 +365,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/paryavaran-sanrakshan"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -391,7 +399,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">आपदा राहत एवं मानव सहायता अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  {t(text, 'our-missions-k34', "आपदा एवं आपातकालीन परिस्थितियों में राहत, सहायता एवं मानव सेवा का अभियान।")}
+                  {t(text, 'our-missions-k34', "प्राकृतिक आपदा, दुर्घटना एवं आपातकालीन परिस्थितियों में राहत एवं मानव सहायता के लिए समर्पित अभियान।")}
                 </p>
               </div>
             </div>
@@ -408,9 +416,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/aapda-rahat"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
           <div
@@ -441,7 +450,7 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
               <div className="p-5">
                 <h3 className="deva text-lg font-bold text-slate-900 mb-2">फिल्म, संगीत एवं सांस्कृतिक जनजागरण अभियान</h3>
                 <p className="deva text-slate-500 text-sm leading-relaxed mb-4">
-                  {t(text, 'our-missions-k38', "फिल्म, वेब सीरीज़, संगीत एवं डिजिटल मीडिया द्वारा सकारात्मक सामाजिक संदेश पहुँचाने का अभियान।")}
+                  {t(text, 'our-missions-k38', "फिल्म, वेब सीरीज़, संगीत एवं डिजिटल मीडिया के माध्यम से सकारात्मक सामाजिक संदेश पहुँचाने का समर्पित अभियान।")}
                 </p>
               </div>
             </div>
@@ -458,9 +467,10 @@ export default function OurMissions({ text, images }: { text?: TextMap; images?:
                   ></div>
                 </div>
               </div>
-              <button
-                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details"
-              >Details</button>
+              <Link
+                href="/missions/film-sangeet"
+                className="w-full py-2 px-4 border border-orange-600 text-orange-600 font-semibold text-sm rounded-full hover:bg-orange-50 transition-colors cursor-pointer sd-btn sd-btn--view-details inline-flex items-center justify-center"
+              >Details</Link>
             </div>
           </div>
         </div>
