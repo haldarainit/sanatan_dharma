@@ -64,6 +64,12 @@
   font-size: 22px; line-height: 1.3; font-weight: 800; color: #0D1B2A; margin: 0 0 16px;
 }
 
+/* the category write-up, which the brief places ahead of the form */
+.sd-jm-details {
+  padding-bottom: 22px; margin-bottom: 24px; border-bottom: 1px solid #f1ece4;
+}
+.sd-jm-details .sd-jm-h:first-of-type { margin-top: 20px; }
+
 .sd-jm-notice {
   border-left: 4px solid #B91C1C; background: #FEF2F2; border-radius: 12px;
   padding: 14px 16px; margin: 0 0 20px;
@@ -131,10 +137,36 @@
 .sd-jm-otherinput:focus { border-bottom-color: #e35300; }
 .sd-jm-otherinput:disabled { border-bottom-style: dotted; background: transparent; }
 
+/* ---------- सेवा संकल्प panel ---------- */
+.sd-jm-sankalp {
+  background: #FFFBF4; border: 1px solid #f0e4d2; border-radius: 12px;
+  padding: 15px 17px; margin: 18px 0 4px;
+}
+.sd-jm-sankalp-h { font-size: 13px; font-weight: 800; color: #0D1B2A; margin: 0 0 6px; }
+.sd-jm-sankalp-tag {
+  font-size: 13.5px; font-weight: 700; color: #e35300;
+  margin: 0 0 10px; letter-spacing: .01em;
+}
+.sd-jm-sankalp .sd-jm-p { margin: 0; }
+
 /* ---------- contribution ---------- */
 .sd-jm-amount {
   font-size: 30px; font-weight: 800; color: #e35300; margin: 4px 0 6px; letter-spacing: -.01em;
 }
+
+/* the brief prints every level and its amount, with the chosen one marked */
+.sd-jm-fees { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 9px; }
+.sd-jm-fee {
+  display: grid; gap: 2px;
+  border: 1px solid #ece5db; border-left: 3px solid #ece5db; border-radius: 10px;
+  background: #fff; padding: 11px 14px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.sd-jm-fee.is-active { border-color: #f0c9a0; border-left-color: #e35300; background: #FFF8EC; }
+.sd-jm-fee-name { font-size: 13px; font-weight: 700; color: #0D1B2A; }
+.sd-jm-fee-amt { font-size: 13px; font-weight: 700; color: #e35300; }
+.sd-jm-fee-id { font-weight: 600; color: #7c6f5c; }
+.sd-jm-fee-min { font-size: 12px; line-height: 1.7; color: #7c6f5c; }
 
 /* ---------- payment ---------- */
 .sd-jm-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }

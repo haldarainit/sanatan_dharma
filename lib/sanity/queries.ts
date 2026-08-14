@@ -29,8 +29,9 @@ export const peopleQuery = groq`*[_type == "person"] | order(order asc){
 export const membershipQuery = groq`*[_type == "membershipCategory"] | order(order asc){
   order, slug, cardTitle, cardText, image, currentSrc,
   formTitle, headingEn, headingHi, notice, aboutTitle, about,
-  roles, interests, skills, declaration, feeLine, levelNote, idCardNote,
-  pledge, autoUpdateNote, fees[]{ level, base, withId }
+  objectives, roles, sankalpTitle, sankalpTagline, sankalpText,
+  interests, skills, declaration, levelNote, idCardNote,
+  pledge, autoUpdateNote, fees[]{ level, label, base, withId, minMembers }
 }`
 
 export const donationTiersQuery = groq`*[_type == "donationTier"] | order(order asc){

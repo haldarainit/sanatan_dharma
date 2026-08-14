@@ -116,6 +116,48 @@ export default function MembershipWizard({ categories = CATEGORIES }: { categori
       {/* ---------------- step 1: registration form ---------------- */}
       {screen === 'form' && cat && (
         <div className="sd-jm-panel">
+          {/* "Category-wise Details" — the brief puts all of this ahead of the
+              registration form, and repeats the category name above the form */}
+          {cat.about && cat.about.length > 0 && (
+            <section className="sd-jm-details">
+              <p className="sd-jm-caps">{cat.headingEn}</p>
+              <p className="sd-jm-caps-hi deva">{cat.headingHi}</p>
+
+              <h4 className="sd-jm-h">{cat.aboutTitle}</h4>
+              {cat.about.map((para) => (
+                <p className="sd-jm-p deva" key={para.slice(0, 40)}>
+                  {para}
+                </p>
+              ))}
+
+              {cat.objectives && cat.objectives.length > 0 && (
+                <>
+                  <p className="sd-jm-sub deva">मुख्य उद्देश्य</p>
+                  <ul className="sd-jm-list deva">
+                    {cat.objectives.map((o) => (
+                      <li key={o}>{o}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              <p className="sd-jm-sub deva">संभावित भूमिका एवं दायित्व</p>
+              <ul className="sd-jm-list deva">
+                {cat.roles?.map((r) => (
+                  <li key={r}>{r}</li>
+                ))}
+              </ul>
+
+              {cat.sankalpText && (
+                <div className="sd-jm-sankalp">
+                  <p className="sd-jm-sankalp-h">{cat.sankalpTitle}</p>
+                  <p className="sd-jm-sankalp-tag deva">{cat.sankalpTagline}</p>
+                  <p className="sd-jm-p deva">{cat.sankalpText}</p>
+                </div>
+              )}
+            </section>
+          )}
+
           <h3 className="sd-jm-formtitle deva">{cat.formTitle}</h3>
 
           <div className="sd-jm-notice">
@@ -165,19 +207,6 @@ export default function MembershipWizard({ categories = CATEGORIES }: { categori
               </div>
             ))}
           </div>
-
-          {cat.about && (
-            <>
-              <h4 className="sd-jm-h">{cat.aboutTitle}</h4>
-              <p className="sd-jm-p deva">{cat.about}</p>
-              <p className="sd-jm-sub deva">संभावित भूमिका एवं दायित्व</p>
-              <ul className="sd-jm-list deva">
-                {cat.roles?.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ul>
-            </>
-          )}
 
           <h4 className="sd-jm-h">Service Interest | सेवा रुचि</h4>
           <p className="sd-jm-sub deva">
@@ -293,7 +322,7 @@ export default function MembershipWizard({ categories = CATEGORIES }: { categori
               ))}
             </select>
           </div>
-          <p className="sd-jm-note deva">{cat.levelNote}</p>
+          {cat.levelNote && <p className="sd-jm-note deva">{cat.levelNote}</p>}
 
           <h4 className="sd-jm-h deva">पहचान पत्र (ID Card)</h4>
           <label className="sd-jm-check">
@@ -341,7 +370,29 @@ export default function MembershipWizard({ categories = CATEGORIES }: { categori
 
           <h4 className="sd-jm-h">Service Contribution | सेवा सहयोग राशि</h4>
           <p className="sd-jm-amount">{amount === null ? '₹ XXXX' : inr(amount)}</p>
-          <p className="sd-jm-note deva">{cat.feeLine}</p>
+
+          {/* the brief lists every level and what it costs, so show the whole
+              table and mark the one the applicant has selected */}
+          <ul className="sd-jm-fees">
+            {cat.fees.map((f) => (
+              <li
+                key={f.level}
+                className={'sd-jm-fee' + (f.level === level ? ' is-active' : '')}
+              >
+                <span className="sd-jm-fee-name">{f.label}</span>
+                <span className="sd-jm-fee-amt">
+                  {inr(f.base)}
+                  <span className="sd-jm-fee-id"> · with ID Card {inr(f.withId)}</span>
+                </span>
+                {f.minMembers && (
+                  <span className="sd-jm-fee-min deva">
+                    न्यूनतम सक्रिय सदस्य नेटवर्क: ({f.minMembers} Member)
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+
           {cat.autoUpdateNote && (
             <p className="sd-jm-note deva">
               (यह राशि चयनित सेवा स्तर एवं ID Card विकल्प के अनुसार स्वतः बदलती रहेगी।)
