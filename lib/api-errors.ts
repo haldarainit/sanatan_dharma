@@ -21,6 +21,9 @@ export function isConfigError(err: unknown): boolean {
     /Invalid connection string/.test(message) ||
     /querySrv ENOTFOUND/.test(message) ||
     /ENOTFOUND/.test(message) ||
-    /option .* is not supported/i.test(message)
+    /option .* is not supported/i.test(message) ||
+    /Server selection timed out/i.test(message) ||
+    /ReplicaSetNoPrimary/i.test(message) ||
+    /Authentication failed/i.test(message)
   )
 }
