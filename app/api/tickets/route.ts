@@ -5,8 +5,10 @@ import { checkSpam } from '@/lib/anti-spam'
 import { collections, type Ticket, type TicketKind } from '@/lib/db/collections'
 import { nextTicketNo } from '@/lib/ids'
 import { rateLimit } from '@/lib/rate-limit'
-import { required } from '@/lib/env'
 import { fieldErrors, flowFor, SLA_HOURS, ticketSchema } from '@/lib/validation/tickets'
+import { sendEmail } from '@/lib/email/send'
+import { adminNotification, ticketAcknowledgement } from '@/lib/email/templates'
+import { env, required } from '@/lib/env'
 
 /* Every "get in touch" on the site lands here: help requests, enquiries,
    complaints, partnership approaches, callbacks, fake-ID reports.
@@ -104,7 +106,41 @@ export async function POST(req: NextRequest) {
     }
 
     const tickets = await collections.tickets()
-    await tickets.insertOne(ticket)
+    const { insertedId } = await tickets.insertOne(ticket)
+
+    /* Acknowledgement only. It confirms receipt and gives the tracking
+       number — it is not a receipt, an approval or a promise of one. Email
+       failure must not undo a submission that has already been stored, so
+       these are awaited but their result is ignored. */
+    const slaHours = SLA_HOURS[kind] ?? 48
+    if (ticket.contact.email) {
+      const ack = ticketAcknowledgement({
+        name, kind, ticketNo, slaHours,
+      })
+      await sendEmail({
+        to: ticket.contact.email,
+        subject: ack.subject,
+        html: ack.html,
+        text: ack.text,
+        template: 'ticket_acknowledgement',
+        about: { type: 'ticket', id: String(insertedId) },
+      })
+    }
+
+    if (env.ADMIN_NOTIFY_EMAIL) {
+      const note = adminNotification({
+        kind, ticketNo, name, mobile,
+        summary: ticket.subject || ticket.details,
+      })
+      await sendEmail({
+        to: env.ADMIN_NOTIFY_EMAIL,
+        subject: note.subject,
+        html: note.html,
+        text: note.text,
+        template: 'admin_new_ticket',
+        about: { type: 'ticket', id: String(insertedId) },
+      })
+    }
 
     return NextResponse.json({ ok: true, ticketNo, status: ticket.status })
   } catch (err) {
