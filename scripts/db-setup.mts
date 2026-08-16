@@ -4,18 +4,15 @@
    reports what it created versus what was already there.
 
    Run:  npm run db:setup */
-import fs from 'node:fs'
 import { MongoClient } from 'mongodb'
+import { loadEnv } from './load-env.mts'
 import { ensureIndexes } from '../lib/db/indexes.ts'
 
-for (const line of fs.readFileSync('.env.local', 'utf8').split('\n')) {
-  const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/)
-  if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim()
-}
+loadEnv()
 
 const uri = process.env.MONGODB_URI
 if (!uri) {
-  console.error('MONGODB_URI is not set in .env.local')
+  console.error('MONGODB_URI is not set in .env or .env.local')
   process.exit(1)
 }
 

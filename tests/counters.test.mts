@@ -8,15 +8,12 @@
 
    It uses throwaway counter keys and deletes them afterwards, so the real
    receipt and member series still start at 1. */
-import fs from 'node:fs'
 import { MongoClient } from 'mongodb'
+import { loadEnv } from '../scripts/load-env.mts'
 import { nextSeq, peekSeq } from '../lib/db/counters.ts'
 import { receiptNo, memberNo, ticketNo } from '../lib/id-format.ts'
 
-for (const line of fs.readFileSync('.env.local', 'utf8').split('\n')) {
-  const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/)
-  if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim()
-}
+loadEnv()
 
 let pass = 0
 let fail = 0
