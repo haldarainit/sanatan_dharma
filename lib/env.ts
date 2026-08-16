@@ -39,6 +39,8 @@ const schema = z.object({
   RAZORPAY_KEY_ID: z.string().optional(),
   RAZORPAY_KEY_SECRET: z.string().optional(),
   RAZORPAY_WEBHOOK_SECRET: z.string().optional(),
+  /* the key id is safe to expose — Checkout runs in the browser and needs it */
+  NEXT_PUBLIC_RAZORPAY_KEY_ID: z.string().optional(),
 })
 
 export type Env = z.infer<typeof schema>
