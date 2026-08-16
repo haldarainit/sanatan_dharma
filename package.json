@@ -18,7 +18,7 @@
     "check:translate": "node legacy/tools/probe-translate.js",
     "cms:campaigns": "node legacy/tools/build-campaigns.js --write && node legacy/tools/sanity-seed-campaigns.mjs --write",
     "check:campaigns": "node legacy/tools/verify-campaigns.js",
-    "test": "node --experimental-strip-types --no-warnings tests/id-format.test.mts",
+    "test": "node --experimental-strip-types --no-warnings tests/id-format.test.mts && node --experimental-strip-types --no-warnings tests/mobile.test.mts",
     "typecheck": "tsc --noEmit",
     "db:setup": "node --experimental-strip-types --no-warnings scripts/db-setup.mts",
     "test:db": "node --experimental-strip-types --no-warnings tests/counters.test.mts",

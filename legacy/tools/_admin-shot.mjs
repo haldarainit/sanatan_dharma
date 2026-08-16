@@ -87,7 +87,7 @@ try {
   /* ---- desktop ---- */
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false })
   await send('Page.navigate', { url: BASE + '/admin' })
-  await new Promise((r) => setTimeout(r, 3500))
+  await new Promise((r) => setTimeout(r, 6000))
 
   const atLogin = await evalIn(`return location.pathname`)
 
@@ -99,7 +99,7 @@ try {
     set.call(pw, ${JSON.stringify(PASSWORD)}); pw.dispatchEvent(new Event('input', { bubbles: true }))
     await wait(200)
     document.querySelector('form button[type=submit]').click()
-    await wait(4000)
+    await wait(9000)
     return { path: location.pathname, err: document.querySelector('[role=alert]')?.textContent || null }
   `)
 
