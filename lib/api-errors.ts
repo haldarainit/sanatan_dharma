@@ -24,6 +24,7 @@ export function isConfigError(err: unknown): boolean {
     /option .* is not supported/i.test(message) ||
     /Server selection timed out/i.test(message) ||
     /ReplicaSetNoPrimary/i.test(message) ||
-    /Authentication failed/i.test(message)
+    /Authentication failed/i.test(message) ||
+    /tlsv1 alert internal error|SSL alert number 80/i.test(message)
   )
 }

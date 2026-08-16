@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
          Atlas rejects the connection when the caller's IP is not allowlisted,
          and Vercel's outbound addresses are dynamic. */
       const looksLikeAllowlist =
-        /Server selection timed out|ETIMEDOUT|ECONNREFUSED|no primary|ReplicaSetNoPrimary/i.test(
+        /Server selection timed out|ETIMEDOUT|ECONNREFUSED|no primary|ReplicaSetNoPrimary|tlsv1 alert internal error|SSL alert number 80/i.test(
           message
         )
       checks.mongodb = {
