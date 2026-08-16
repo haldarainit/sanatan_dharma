@@ -45,6 +45,7 @@
     "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
     "node-html-parser": "^9.0.1",
+    "playwright": "^1.62.1",
     "postcss": "^8.5.1",
     "sanity": "^5.31.1",
     "styled-components": "^6.5.2",

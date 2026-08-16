@@ -12,6 +12,17 @@ export type Upi = { id: string; name: string }
 
 export const DEFAULT_UPI: Upi = { id: DEFAULT_UPI_ID, name: DEFAULT_UPI_NAME }
 
+/* The bank account, for the same reason: it is printed in the Bank Transfer
+   panel, again beside the Indian Bank QR, and copied by donors who are about
+   to send real money to it. One wrong digit in one of those copies is a
+   donation that never arrives. */
+export const BANK = {
+  accountName: 'Sanatan Dharm Manav Kalyan Foundation',
+  bankName: 'Indian Bank',
+  accountNumber: '8302858027',
+  ifsc: 'IDIB000M706',
+} as const
+
 /** the deep link a phone opens in its UPI app */
 export function upiLink(upi: Upi = DEFAULT_UPI, amount = 501) {
   const q = new URLSearchParams({

@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FREQUENCIES, PURPOSES, TIERS, inr, type Tier } from '@/lib/donation'
 import { checkRequired } from '@/components/portals/fields'
+import { GatewayOffError, startCheckout } from '@/lib/razorpay-checkout'
 
 const DOTS = ['आपका विवरण', 'भुगतान विवरण', 'प्रमाण एवं 80G']
 
@@ -26,8 +27,45 @@ export default function DonationFlow({ tiers = TIERS }: { tiers?: Tier[] }) {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [formErr, setFormErr] = useState('')
   const [receipt, setReceipt] = useState('')
+  const [paying, setPaying] = useState(false)
+  const [payErr, setPayErr] = useState('')
+  /* true once the gateway has told us it is switched off, so the panel can
+     stop offering a button that cannot work and point at the QR instead */
+  const [gatewayOff, setGatewayOff] = useState(false)
+  const startedAt = useRef(Date.now())
 
   const set = (k: keyof typeof f) => (v: string) => setF((p) => ({ ...p, [k]: v }))
+
+  async function payNow() {
+    if (paying) return
+    setPaying(true)
+    setPayErr('')
+    try {
+      const result = await startCheckout({
+        purpose: 'donation',
+        name: f.name,
+        mobile: f.mobile,
+        email: f.email || undefined,
+        amount,
+        frequency: freq,
+        cause: f.purpose,
+        message: f.message || undefined,
+        claim80g,
+        pan: claim80g ? f.pan : undefined,
+        city: f.city || undefined,
+        state: f.state || undefined,
+        startedAt: startedAt.current,
+      })
+      if (result.outcome === 'processing') setReceipt(result.reference)
+      /* dismissed: the donor closed the window. Say nothing and leave the
+         review step as it was, so they can simply press Pay Now again. */
+    } catch (err) {
+      if (err instanceof GatewayOffError) setGatewayOff(true)
+      setPayErr((err as Error).message)
+    } finally {
+      setPaying(false)
+    }
+  }
 
   function proceed() {
     if (custom) {
@@ -267,11 +305,29 @@ export default function DonationFlow({ tiers = TIERS }: { tiers?: Tier[] }) {
             {claim80g && <Row k="80G / PAN" v={f.pan} />}
           </ul>
 
-          <div className="rounded-xl border-l-4 border-[#FF6F00] bg-orange-50 p-4 text-[13px] leading-relaxed deva">
-            <strong>सूचना:</strong> भुगतान गेटवे अभी जुड़ा नहीं है। &ldquo;Pay Now&rdquo; दबाने पर
-            केवल एक संदर्भ संख्या बनेगी — कोई राशि नहीं ली जाएगी। Razorpay कुंजी मिलते ही यह सक्रिय
-            हो जाएगा।
-          </div>
+          {freq !== 'One Time' && (
+            /* Auto-debit is a separate Razorpay product and is not wired.
+               Saying "Monthly" while taking a single payment would be a
+               promise the system cannot keep, so it is spelled out here. */
+            <div className="rounded-xl border-l-4 border-[#FF6F00] bg-orange-50 p-4 text-[13px] leading-relaxed deva">
+              <strong>सूचना:</strong> यह {freq} संकल्प है। अभी केवल एक बार{' '}
+              {inr(amount)} का भुगतान लिया जाएगा — राशि स्वतः नहीं कटेगी। अगली बार हम आपको
+              स्मरण पत्र भेजेंगे।
+            </div>
+          )}
+
+          {gatewayOff && (
+            <div className="rounded-xl border-l-4 border-[#FF6F00] bg-orange-50 p-4 text-[13px] leading-relaxed deva">
+              <strong>सूचना:</strong> कार्ड भुगतान अभी उपलब्ध नहीं है। कृपया ऊपर दिए गए UPI /
+              QR Code अथवा बैंक ट्रांसफर विकल्प का उपयोग करें।
+            </div>
+          )}
+
+          {payErr && !gatewayOff && (
+            <p className="text-sm font-semibold text-red-600 deva" role="alert">
+              {payErr}
+            </p>
+          )}
 
           <div className="flex flex-wrap gap-3">
             <button type="button" onClick={() => setStep(2)} className="rounded-full border border-slate-300 px-6 py-3 text-sm font-bold">
@@ -279,12 +335,12 @@ export default function DonationFlow({ tiers = TIERS }: { tiers?: Tier[] }) {
             </button>
             <button
               type="button"
-              onClick={() =>
-                setReceipt('SDMKF-DN-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 90000 + 10000))
-              }
-              className="sd-btn sd-btn--donate-now flex-1 rounded-full px-7 py-3 text-sm font-bold text-white"
+              onClick={payNow}
+              disabled={paying || gatewayOff}
+              aria-busy={paying}
+              className="sd-btn sd-btn--donate-now flex-1 rounded-full px-7 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Pay Now
+              {paying ? 'कृपया प्रतीक्षा करें…' : `Pay ${inr(amount)}`}
             </button>
           </div>
         </div>
@@ -298,13 +354,21 @@ export default function DonationFlow({ tiers = TIERS }: { tiers?: Tier[] }) {
               <path d="M20 6 9 17l-5-5" />
             </svg>
           </div>
-          <h3 className="text-xl font-bold deva">आपका संकल्प दर्ज हो गया</h3>
+          <h3 className="text-xl font-bold deva">हार्दिक धन्यवाद 🙏</h3>
           <div className="sd-fx-ref">{receipt}</div>
           <p className="text-sm text-[#0D1B2A]/70 deva">
             {f.name} — {inr(amount)} / {freq}
           </p>
+          {/* Careful wording: the money is confirmed by the gateway server-to-
+              server, and the 80G receipt is issued by the office afterwards.
+              Promising an instant receipt here would be a promise this system
+              deliberately does not keep. */}
+          <p className="text-xs text-[#0D1B2A]/60 deva">
+            आपका भुगतान प्राप्त हो गया है और पुष्टि की जा रही है। सत्यापन के पश्चात{' '}
+            {claim80g ? '80G रसीद' : 'रसीद'} आपके ईमेल पर भेज दी जाएगी।
+          </p>
           <p className="text-xs text-[#0D1B2A]/50 deva">
-            यह परीक्षण संदर्भ है; भुगतान अभी संसाधित नहीं हुआ।
+            कृपया यह संदर्भ संख्या सुरक्षित रखें।
           </p>
         </div>
       )}

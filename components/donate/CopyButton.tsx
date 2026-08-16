@@ -3,13 +3,15 @@
 import { useState } from 'react'
 
 /* Bank details copy-to-clipboard, one button per row. */
-export default function CopyButton({ value }: { value: string }) {
+export default function CopyButton({ value, label }: { value: string; label?: string }) {
   const [done, setDone] = useState(false)
   return (
     <button
       type="button"
       className={'sd-bank-copy' + (done ? ' is-done' : '')}
-      aria-label={`Copy ${value}`}
+      /* the label names the field, not the digits -- a screen reader
+         announcing "Copy 8302858027" reads the account number aloud */
+      aria-label={done ? `Copied ${label ?? value}` : `Copy ${label ?? value}`}
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(value)

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import CopyButton from './CopyButton'
-import { DEFAULT_UPI, upiLink, upiQr, type Upi } from '@/lib/upi'
+import { BANK, DEFAULT_UPI, upiLink, upiQr, type Upi } from '@/lib/upi'
 
 /* The three payment panels from the donate page, split out during the
    Next.js rebuild so PayTabs can switch between them. */
@@ -10,7 +10,7 @@ export function QrPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   const [qr, setQr] = useState<string>('gpay')
 
   return (
-    <div className="sd-pay-panel">
+    <div className="sd-pay-body">
       <div className="sd-pay-lead">
         <h3 className="deva">UPI एवं QR Code द्वारा दान</h3>
         <p className="deva">
@@ -104,11 +104,11 @@ export function QrPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
             <div className="sd-phone-foot">
               <div>
                 Account:{' '}
-                <strong className="sd-mono">8302858027</strong>
+                <strong className="sd-mono">{BANK.accountNumber}</strong>
               </div>
               <div>
                 IFSC:{' '}
-                <strong className="sd-mono">IDIB000M706</strong>
+                <strong className="sd-mono">{BANK.ifsc}</strong>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ export function QrPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
 
 export function BankPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   return (
-    <div className="sd-pay-panel">
+    <div className="sd-pay-body">
       <div className="sd-pay-lead">
         <h3 className="deva">बैंक ट्रांसफर द्वारा दान</h3>
         <p className="deva">
@@ -201,23 +201,23 @@ export function BankPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
         <div className="sd-bank-rows">
           <div className="sd-bank-row">
             <span className="sd-bank-k">Account Name:</span>
-            <span className="sd-bank-v">Sanatan Dharm Manav Kalyan Foundation</span>
-            <CopyButton value="" />
+            <span className="sd-bank-v">{BANK.accountName}</span>
+            <CopyButton value={BANK.accountName} label="account name" />
           </div>
           <div className="sd-bank-row">
             <span className="sd-bank-k">Bank Name:</span>
-            <span className="sd-bank-v">Indian Bank</span>
-            <CopyButton value="" />
+            <span className="sd-bank-v">{BANK.bankName}</span>
+            <CopyButton value={BANK.bankName} label="bank name" />
           </div>
           <div className="sd-bank-row">
             <span className="sd-bank-k">Account Number:</span>
-            <span className="sd-bank-v sd-mono">8302858027</span>
-            <CopyButton value="" />
+            <span className="sd-bank-v sd-mono">{BANK.accountNumber}</span>
+            <CopyButton value={BANK.accountNumber} label="account number" />
           </div>
           <div className="sd-bank-row">
             <span className="sd-bank-k">IFSC Code:</span>
-            <span className="sd-bank-v sd-mono">IDIB000M706</span>
-            <CopyButton value="" />
+            <span className="sd-bank-v sd-mono">{BANK.ifsc}</span>
+            <CopyButton value={BANK.ifsc} label="IFSC code" />
           </div>
         </div>
       </div>
@@ -251,19 +251,20 @@ export function BankPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
               Transfer the donation amount via NEFT / RTGS / IMPS to the account above.
             </span>
           </li>
+          {/* Steps 2-4 point at the Payment Confirmation form further down this
+              page. Telling donors to phone the details in instead left the
+              office reconciling transfers by hand against a bank statement. */}
           <li>
             <span className="sd-how-n">2</span>
-            <span>Keep the UTR / Transaction Reference Number from your bank safe.</span>
+            <span>Fill out the Payment Confirmation form below with your details.</span>
           </li>
           <li>
             <span className="sd-how-n">3</span>
-            <span>Save a screenshot of the successful payment as evidence.</span>
+            <span>Provide the UTR / Transaction Reference Number from your bank.</span>
           </li>
           <li>
             <span className="sd-how-n">4</span>
-            <span>
-              Share the details with our team on +91 97680 00666 or through the contact page.
-            </span>
+            <span>Upload a screenshot of the successful payment as evidence.</span>
           </li>
           <li>
             <span className="sd-how-n">5</span>
@@ -279,7 +280,7 @@ export function BankPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
 
 export function OtherPanel({ upi = DEFAULT_UPI }: { upi?: Upi }) {
   return (
-    <div className="sd-pay-panel">
+    <div className="sd-pay-body">
       <div className="sd-pay-lead">
         <h3 className="deva">अन्य सहयोग माध्यम</h3>
         <p className="deva">नीचे दिए गए माध्यमों से भी आप सहयोग प्रदान कर सकते हैं।</p>
