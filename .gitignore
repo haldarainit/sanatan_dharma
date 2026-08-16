@@ -22,3 +22,6 @@ admin-*.png
 
 # generated paste-block for Vercel; contains real secrets
 vercel-env.txt
+
+# stray page dump from a debugging session, not part of the app
+/membership.html
