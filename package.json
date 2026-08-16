@@ -22,7 +22,8 @@
     "typecheck": "tsc --noEmit",
     "db:setup": "node --experimental-strip-types --no-warnings scripts/db-setup.mts",
     "test:db": "node --experimental-strip-types --no-warnings tests/counters.test.mts",
-    "health": "node --experimental-strip-types --no-warnings scripts/health.mts"
+    "health": "node --experimental-strip-types --no-warnings scripts/health.mts",
+    "admin:create": "node --experimental-strip-types --no-warnings scripts/create-admin.mts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

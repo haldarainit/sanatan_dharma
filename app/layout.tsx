@@ -3,6 +3,7 @@ import { Noto_Sans_Devanagari, Playfair_Display, Plus_Jakarta_Sans } from 'next/
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import GoogleTranslate from '@/components/GoogleTranslate'
+import PublicChrome from '@/components/PublicChrome'
 import { getSiteSettings } from '@/lib/sanity/data'
 import '@/styles/globals.css'
 
@@ -47,9 +48,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="hi" className={`${jakarta.variable} ${playfair.variable} ${deva.variable}`}>
       <body>
-        <SiteHeader settings={settings} />
+        <PublicChrome>
+          <SiteHeader settings={settings} />
+        </PublicChrome>
         <main>{children}</main>
-        <SiteFooter settings={settings} />
+        <PublicChrome>
+          <SiteFooter settings={settings} />
+        </PublicChrome>
         <GoogleTranslate />
       </body>
     </html>

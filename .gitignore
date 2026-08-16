@@ -16,3 +16,6 @@ next-env.d.ts
 
 # sanity studio build output
 dist/
+
+# local screenshots from the admin probe
+admin-*.png
