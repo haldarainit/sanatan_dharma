@@ -19,3 +19,6 @@ dist/
 
 # local screenshots from the admin probe
 admin-*.png
+
+# generated paste-block for Vercel; contains real secrets
+vercel-env.txt
